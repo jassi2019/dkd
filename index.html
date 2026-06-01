@@ -29,6 +29,25 @@
     .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
     .ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
     .ba-caption { text-align: center; margin-top: 12px; font-size: .82rem; color: var(--muted); }
+
+    /* ── BEFORE/AFTER CASES GRID ── */
+    .cases-section { background: var(--ink); position: relative; overflow: hidden; }
+    .cases-section::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background: linear-gradient(90deg, var(--teal), var(--gold), var(--teal)); }
+    .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .case-card { border-radius: var(--r-lg); overflow: hidden; position: relative; cursor: pointer; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); transition: all .4s var(--ease); }
+    .case-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0,0,0,.4); border-color: rgba(184,150,62,.35); }
+    .case-card img { width: 100%; display: block; transition: transform .6s var(--ease); }
+    .case-card:hover img { transform: scale(1.03); }
+    .case-card-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(0deg, rgba(6,15,31,.92) 0%, transparent 100%); padding: 20px 16px 14px; display: flex; align-items: center; justify-content: space-between; }
+    .case-label { color: var(--white); font-size: .78rem; font-weight: 700; }
+    .case-label span { display: block; font-size: .62rem; color: var(--gold-xl); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2px; }
+    .case-badge { background: rgba(184,150,62,.2); border: 1px solid rgba(184,150,62,.35); color: var(--gold-xl); font-size: .58rem; font-weight: 800; padding: 4px 10px; border-radius: 50px; letter-spacing: .8px; text-transform: uppercase; white-space: nowrap; }
+    .cases-counter { display: flex; align-items: center; gap: 24px; justify-content: center; margin-bottom: 40px; }
+    .cases-counter-item { text-align: center; }
+    .cases-counter-item .cc-num { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 500; color: var(--gold-xl); line-height: 1; }
+    .cases-counter-item .cc-label { font-size: .65rem; color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 4px; }
+    .cases-counter-divider { width: 1px; height: 40px; background: rgba(255,255,255,.12); }
+
     /* Celebrity */
     .celeb-scroll { display: grid; grid-template-columns: repeat(6,1fr); gap: 16px; }
     .celeb-card { border-radius: var(--r-md); overflow: hidden; position: relative; aspect-ratio: 3/4; }
@@ -73,494 +92,155 @@
     .countries-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:300px 1fr; gap:60px; align-items:center; }
     .countries-stat .num-big { font-family:'Cormorant Garamond',serif; font-size:7rem; font-weight:400; color:var(--gold-xl); line-height:1; }
     .countries-stat p { color:rgba(255,255,255,.6); font-size:.9rem; }
-    @media(max-width:1100px){ .celeb-scroll{grid-template-columns:repeat(3,1fr)} .tech-grid{grid-template-columns:repeat(2,1fr)} }
+    /* Charges */
+    .charges-section { background: var(--cream); }
+    .charges-table-wrap { max-width: 900px; margin: 0 auto; }
+    .charges-table { width: 100%; border-collapse: collapse; border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow); }
+    .charges-table thead tr { background: var(--navy); }
+    .charges-table th { padding: 16px 24px; color: var(--white); font-size: .78rem; font-weight: 700; text-align: left; letter-spacing: .5px; text-transform: uppercase; }
+    .charges-table th:last-child { text-align: right; }
+    .charges-table td { padding: 16px 24px; border-bottom: 1px solid var(--border); font-size: .88rem; color: var(--ink); background: var(--white); }
+    .charges-table td:last-child { text-align: right; font-weight: 800; color: var(--teal); }
+    .charges-table tbody tr:hover td { background: var(--cream); }
+    .charges-intl { text-decoration: line-through; color: var(--muted); font-size: .74rem; font-weight: 400; margin-left: 8px; }
+    .charges-save { display: inline-block; background: rgba(52,211,153,.12); color: #22c55e; font-size: .6rem; font-weight: 800; padding: 2px 8px; border-radius: 3px; margin-left: 6px; letter-spacing: .5px; text-transform: uppercase; }
+
+    @media(max-width:1100px){ .celeb-scroll{grid-template-columns:repeat(3,1fr)} .tech-grid{grid-template-columns:repeat(2,1fr)} .cases-grid{grid-template-columns:repeat(2,1fr)} }
     @media(max-width:960px){ .about-row{grid-template-columns:1fr} .why-grid{grid-template-columns:1fr} .ba-grid{grid-template-columns:1fr} .img-badge-home{left:0} .vc-grid{grid-template-columns:1fr} .reviews-3{grid-template-columns:1fr 1fr} .countries-inner{grid-template-columns:1fr} }
-    @media(max-width:600px){ .about-mini{display:none} .celeb-scroll{grid-template-columns:repeat(2,1fr)} .tech-grid{grid-template-columns:1fr 1fr} .reviews-3{grid-template-columns:1fr} .ig-grid{grid-template-columns:repeat(3,1fr)} .vc-phones{grid-template-columns:1fr} }
+    @media(max-width:600px){ .about-mini{display:none} .celeb-scroll{grid-template-columns:repeat(2,1fr)} .tech-grid{grid-template-columns:1fr 1fr} .reviews-3{grid-template-columns:1fr} .ig-grid{grid-template-columns:repeat(3,1fr)} .vc-phones{grid-template-columns:1fr} .cases-grid{grid-template-columns:1fr} .cases-counter{gap:16px} .cases-counter-item .cc-num{font-size:2rem} .charges-table th,.charges-table td{padding:12px 14px;font-size:.78rem} }
     .scs-section{background:linear-gradient(135deg,#060f1f 0%,#0a1f3d 50%,#001a2e 100%);position:relative;overflow:hidden}.scs-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(0,168,192,.12) 0%,transparent 70%);pointer-events:none}.scs-wrap{max-width:780px;margin:0 auto;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:24px;padding:48px 52px;backdrop-filter:blur(12px);position:relative}.scs-progress-bar{height:4px;background:rgba(255,255,255,.1);border-radius:99px;margin-bottom:10px;overflow:hidden}.scs-progress-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--gold));border-radius:99px;transition:width .5s cubic-bezier(.4,0,.2,1)}.scs-step-label{text-align:right;font-size:.72rem;color:rgba(255,255,255,.35);letter-spacing:1px;text-transform:uppercase;margin-bottom:32px}.scs-q{display:none}.scs-q.active{display:block;animation:scsSlide .35s ease}@keyframes scsSlide{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}.scs-q-text{font-family:'Cormorant Garamond',serif;font-size:1.55rem;color:var(--white);margin-bottom:24px;font-weight:400;line-height:1.35}.scs-q-text strong{color:var(--gold-xl)}.scs-opts{display:flex;flex-direction:column;gap:10px}.scs-opt{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.8);padding:14px 20px;border-radius:12px;font-size:.92rem;text-align:left;cursor:pointer;transition:all .22s}.scs-opt:hover{background:rgba(0,168,192,.15);border-color:rgba(0,168,192,.5);color:var(--white);transform:translateX(6px)}.scs-result{display:none;align-items:center;gap:48px}.scs-result.show{display:flex;animation:scsSlide .4s ease}.scs-score-ring{position:relative;flex-shrink:0;width:150px;height:150px}.scs-score-ring svg{transform:rotate(-90deg);width:150px;height:150px}.scs-ring-bg{fill:none;stroke:rgba(255,255,255,.08);stroke-width:8}.scs-ring-fill{fill:none;stroke:var(--teal);stroke-width:8;stroke-linecap:round;transition:stroke-dasharray 1.2s cubic-bezier(.4,0,.2,1)}.scs-score-num{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:500;color:var(--white);line-height:1}.scs-score-pct{position:absolute;top:50%;left:50%;transform:translate(-50%,30%);font-size:.72rem;color:rgba(255,255,255,.4);letter-spacing:1px}.scs-result-badge{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:99px;margin-bottom:12px}.badge-excellent{background:rgba(52,211,153,.15);color:#34d399;border:1px solid rgba(52,211,153,.3)}.badge-good{background:rgba(0,168,192,.15);color:var(--teal);border:1px solid rgba(0,168,192,.3)}.badge-fair{background:rgba(251,191,36,.15);color:#fbbf24;border:1px solid rgba(251,191,36,.3)}.badge-needs{background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.25)}.scs-result-content h3{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--white);margin-bottom:10px}.scs-result-content p{color:rgba(255,255,255,.6);font-size:.88rem;line-height:1.7;margin-bottom:18px}.scs-treatments{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}.scs-treat-tag{background:rgba(184,150,62,.12);border:1px solid rgba(184,150,62,.25);color:var(--gold-xl);font-size:.72rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:5px 12px;border-radius:99px}.scs-result-btns{display:flex;gap:12px;flex-wrap:wrap}.scs-retake{border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.6)}.scs-retake:hover{border-color:rgba(255,255,255,.5);color:var(--white)}@media(max-width:700px){.scs-wrap{padding:32px 24px}.scs-result.show{flex-direction:column;align-items:center;text-align:center}.scs-treatments{justify-content:center}.scs-result-btns{justify-content:center}}
   </style>
 </head>
 <body>
 
 <!-- PAGE LOADER -->
-<div id="page-loader"><div class="loader-inner"><div class="tooth">🦷</div><p>Loading…</p></div></div>
-
-<!-- CURSOR GLOW -->
+<div id="page-loader"><div class="loader-inner"><div class="tooth">&#x1f9b7;</div><p>Loading...</p></div></div>
 <div class="cursor-glow"></div>
 
-<!-- ═══ NAV ═══ -->
+<!-- NAV -->
 <nav class="site-nav" id="mainNav">
   <div class="nav-inner">
-    <a class='nav-logo' href='/'>
-      <div class="logo-mark"><i class="fas fa-tooth"></i></div>
-      <div class="logo-text">
-        <strong>Dr. Kathuria's Dentistry</strong>
-        <span>East of Kailash, New Delhi</span>
-      </div>
-    </a>
+    <a class='nav-logo' href='/'><div class="logo-mark"><i class="fas fa-tooth"></i></div><div class="logo-text"><strong>Dr. Kathuria's Dentistry</strong><span>East of Kailash, New Delhi</span></div></a>
     <ul class="nav-links">
       <li><a class='active' href='/'>Home</a></li>
-      <li>
-        <a href='/about'>About <i class="fas fa-chevron-down chevron"></i></a>
-        <div class="nav-dropdown">
-          <a href='/about#team'><i class="fas fa-user-md"></i>Our Doctors</a>
-          <a href='/about#clinic'><i class="fas fa-hospital"></i>Clinic Tour</a>
-          <a href='/about#certifications'><i class="fas fa-certificate"></i>Certifications</a>
-          <a href='/about#timeline'><i class="fas fa-history"></i>Our Journey</a>
-        </div>
-      </li>
-      <li>
-        <a href='/services'>Services <i class="fas fa-chevron-down chevron"></i></a>
-        <div class="nav-dropdown">
-          <a href='/services#cosmetic'><i class="fas fa-star"></i>Cosmetic Dentistry</a>
-          <a href='/services#implants'><i class="fas fa-tooth"></i>Dental Implants</a>
-          <a href='/services#aligners'><i class="fas fa-align-center"></i>Clear Aligners</a>
-          <a href='/services#whitening'><i class="fas fa-sun"></i>Teeth Whitening</a>
-          <a href='/services#rct'><i class="fas fa-syringe"></i>Root Canal</a>
-          <a href='/services#gums'><i class="fas fa-leaf"></i>Gum Treatment</a>
-        </div>
-      </li>
-      <li><a href='/cases'>Cases</a></li>
+      <li><a href='/about'>About <i class="fas fa-chevron-down chevron"></i></a><div class="nav-dropdown"><a href='/about#team'><i class="fas fa-user-md"></i>Our Doctors</a><a href='/about#clinic'><i class="fas fa-hospital"></i>Clinic Tour</a><a href='/about#certifications'><i class="fas fa-certificate"></i>Certifications</a><a href='/about#timeline'><i class="fas fa-history"></i>Our Journey</a></div></li>
+      <li><a href='/services'>Services <i class="fas fa-chevron-down chevron"></i></a><div class="nav-dropdown"><a href='/services#cosmetic'><i class="fas fa-star"></i>Cosmetic Dentistry</a><a href='/services#implants'><i class="fas fa-tooth"></i>Dental Implants</a><a href='/services#aligners'><i class="fas fa-align-center"></i>Clear Aligners</a><a href='/services#whitening'><i class="fas fa-sun"></i>Teeth Whitening</a><a href='/services#rct'><i class="fas fa-syringe"></i>Root Canal</a><a href='/services#gums'><i class="fas fa-leaf"></i>Gum Treatment</a></div></li>
+      <li><a href='#cases'>Cases</a></li>
       <li><a href='/contact'>Contact</a></li>
     </ul>
     <div class="nav-right">
       <a class="nav-phone" href="tel:18001177272"><i class="fas fa-phone-alt"></i> 1800-11-7272</a>
-      <button class="nav-cta" onclick="document.getElementById('floatPanel').classList.add('open')">
-        <i class="fas fa-calendar-check"></i> Book Free Consult
-      </button>
+      <button class="nav-cta" onclick="document.getElementById('floatPanel').classList.add('open')"><i class="fas fa-calendar-check"></i> Book Free Consult</button>
     </div>
     <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
   </div>
 </nav>
-
-<!-- Mobile Nav -->
 <div class="mobile-nav" id="mobileNav">
-  <a href='/'><i class="fas fa-home"></i> Home</a>
-  <a href='/about'><i class="fas fa-user-md"></i> About Us</a>
-  <a href='/services'><i class="fas fa-tooth"></i> Services</a>
-  <a href='/cases'><i class="fas fa-images"></i> Cases</a>
-  <a href='/contact'><i class="fas fa-envelope"></i> Contact</a>
-  <a class='mobile-cta' href='/contact'><i class="fas fa-calendar-check"></i> Book Free Consultation</a>
+  <a href='/'><i class="fas fa-home"></i> Home</a><a href='/about'><i class="fas fa-user-md"></i> About Us</a><a href='/services'><i class="fas fa-tooth"></i> Services</a><a href='#cases'><i class="fas fa-images"></i> Cases</a><a href='/contact'><i class="fas fa-envelope"></i> Contact</a><a class='mobile-cta' href='/contact'><i class="fas fa-calendar-check"></i> Book Free Consultation</a>
 </div>
 
 <!-- ═══ HERO SLIDER ═══ -->
 <div class="hero-wrap">
-
-  <!-- Slide 1 -->
   <div class="hs-slide active">
     <img class="hs-img" src="https://images.unsplash.com/photo-1588776814546-1ffedebf5f6f?w=1920&q=85" alt="Dental Clinic Delhi"/>
     <div class="hs-overlay" style="background:linear-gradient(120deg,rgba(6,15,31,.88) 0%,rgba(15,34,72,.55) 100%)"></div>
     <div class="hs-content">
-      <div class="hs-eyebrow"><i class="fas fa-award"></i> NABH Accredited · ISO Certified · 18+ Years</div>
+      <div class="hs-eyebrow"><i class="fas fa-award"></i> NABH Accredited &middot; ISO Certified &middot; 18+ Years</div>
       <h1>Delhi's Most Trusted<br/><em>Smile Transformation</em><br/>Centre</h1>
-      <p>Dr. Kathuria's Dentistry — East of Kailash, New Delhi. Trusted by patients from 44+ countries worldwide for world-class dental care.</p>
-      <div class="hs-btns">
-        <a class='btn btn-gold btn-lg' href='/contact'><i class="fas fa-calendar-check"></i> Book Free Consultation</a>
-        <a class='btn btn-outline btn-lg' href='/cases'><i class="fas fa-images"></i> View Cases</a>
-      </div>
+      <p>Trusted by patients from 44+ countries worldwide for world-class dental care.</p>
+      <div class="hs-btns"><a class='btn btn-gold btn-lg' href='/contact'><i class="fas fa-calendar-check"></i> Book Free Consultation</a><a class='btn btn-outline btn-lg' href='#cases'><i class="fas fa-images"></i> View Cases</a></div>
     </div>
   </div>
-
-  <!-- Slide 2 -->
   <div class="hs-slide">
     <img class="hs-img" src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1920&q=85" alt="Dental Treatment"/>
     <div class="hs-overlay" style="background:linear-gradient(120deg,rgba(6,15,31,.9) 0%,rgba(0,90,70,.55) 100%)"></div>
     <div class="hs-content">
-      <div class="hs-eyebrow"><i class="fas fa-star"></i> Hollywood Smile · Veneers · Implants · Zoom Whitening</div>
-      <h1>Your Perfect Smile<br/><em>Delivered in</em><br/>Just 3–5 Days</h1>
-      <p>No-prep porcelain veneers, All-on-4 implants, Zoom whitening — painless, precision-crafted by specialist doctors.</p>
-      <div class="hs-btns">
-        <a class='btn btn-gold btn-lg' href='/services'><i class="fas fa-tooth"></i> Explore Treatments</a>
-      </div>
+      <div class="hs-eyebrow"><i class="fas fa-star"></i> Hollywood Smile &middot; Veneers &middot; Implants &middot; Zoom Whitening</div>
+      <h1>Your Perfect Smile<br/><em>Delivered in</em><br/>Just 3&ndash;5 Days</h1>
+      <p>No-prep porcelain veneers, All-on-4 implants, Zoom whitening &mdash; painless, precision-crafted.</p>
+      <div class="hs-btns"><a class='btn btn-gold btn-lg' href='/services'><i class="fas fa-tooth"></i> Explore Treatments</a></div>
     </div>
   </div>
-
-  <!-- Slide 3 -->
   <div class="hs-slide">
     <img class="hs-img" src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1920&q=85" alt="Modern Dental Clinic"/>
     <div class="hs-overlay" style="background:linear-gradient(120deg,rgba(6,15,31,.88) 0%,rgba(50,20,80,.55) 100%)"></div>
     <div class="hs-content">
-      <div class="hs-eyebrow"><i class="fas fa-video"></i> Teledentistry · Video Consultations Worldwide</div>
+      <div class="hs-eyebrow"><i class="fas fa-video"></i> Teledentistry &middot; Video Consultations Worldwide</div>
       <h1>Patients from<br/><em>44 Countries</em><br/>Trust Us</h1>
-      <p>Book a free video consultation from anywhere in the world. India Toll Free: 1800-11-7272 · WhatsApp: +91 98109 36360</p>
-      <div class="hs-btns">
-        <a class='btn btn-gold btn-lg' href='/contact'><i class="fas fa-video"></i> Video Consultation</a>
-        <a class='btn btn-outline btn-lg' href='/about'><i class="fas fa-globe-asia"></i> Our Reach</a>
-      </div>
+      <p>Book a free video consultation from anywhere. India Toll Free: 1800-11-7272</p>
+      <div class="hs-btns"><a class='btn btn-gold btn-lg' href='/contact'><i class="fas fa-video"></i> Video Consultation</a><a class='btn btn-outline btn-lg' href='/about'><i class="fas fa-globe-asia"></i> Our Reach</a></div>
     </div>
   </div>
-
-  <div class="hs-arrows">
-    <button class="hs-arr" id="hsPrev"><i class="fas fa-chevron-left"></i></button>
-    <button class="hs-arr" id="hsNext"><i class="fas fa-chevron-right"></i></button>
-  </div>
-  <div class="hs-dots">
-    <button class="hs-dot on"></button>
-    <button class="hs-dot"></button>
-    <button class="hs-dot"></button>
-  </div>
-  <div class="hs-scroll">
-    <div class="hs-scroll-line"></div>
-    <span>Scroll to explore</span>
-  </div>
+  <div class="hs-arrows"><button class="hs-arr" id="hsPrev"><i class="fas fa-chevron-left"></i></button><button class="hs-arr" id="hsNext"><i class="fas fa-chevron-right"></i></button></div>
+  <div class="hs-dots"><button class="hs-dot on"></button><button class="hs-dot"></button><button class="hs-dot"></button></div>
+  <div class="hs-scroll"><div class="hs-scroll-line"></div><span>Scroll to explore</span></div>
 </div>
 
 <!-- INFO BAR -->
 <div class="info-bar">
-  <div class="info-bar-item">
-    <div class="info-bar-icon"><i class="fab fa-google"></i></div>
-    <div class="info-bar-text">
-      <span>Google Rating</span>
-      <strong>4.8 ★ · 2,400+ Reviews</strong>
-    </div>
-  </div>
-  <div class="info-bar-item">
-    <div class="info-bar-icon"><i class="fas fa-phone-alt"></i></div>
-    <div class="info-bar-text">
-      <span>India Toll Free</span>
-      <strong>1800-11-7272</strong>
-    </div>
-  </div>
-  <div class="info-bar-item">
-    <div class="info-bar-icon"><i class="fas fa-clock"></i></div>
-    <div class="info-bar-text">
-      <span>Clinic Hours</span>
-      <strong>Mon–Sat: 10 AM – 7 PM</strong>
-    </div>
-  </div>
+  <div class="info-bar-item"><div class="info-bar-icon"><i class="fab fa-google"></i></div><div class="info-bar-text"><span>Google Rating</span><strong>4.8 &#x2605; &middot; 2,400+ Reviews</strong></div></div>
+  <div class="info-bar-item"><div class="info-bar-icon"><i class="fas fa-phone-alt"></i></div><div class="info-bar-text"><span>India Toll Free</span><strong>1800-11-7272</strong></div></div>
+  <div class="info-bar-item"><div class="info-bar-icon"><i class="fas fa-clock"></i></div><div class="info-bar-text"><span>Clinic Hours</span><strong>Mon&ndash;Sat: 10 AM &ndash; 7 PM</strong></div></div>
 </div>
 
 <!-- TICKER -->
-<div class="ticker-bar">
-  <div class="ticker-inner">
-    <div class="ticker-item"><i class="fas fa-award"></i> NABH Accredited</div>
-    <div class="ticker-item"><i class="fas fa-globe-asia"></i> Patients from 44+ Countries</div>
-    <div class="ticker-item"><i class="fab fa-google"></i> 4.8 Google Rating</div>
-    <div class="ticker-item"><i class="fas fa-tv"></i> NDTV – 5 Best Dental Clinics in Delhi</div>
-    <div class="ticker-item"><i class="fas fa-crown"></i> Femina Miss India Smile Care Partner</div>
-    <div class="ticker-item"><i class="fas fa-university"></i> University of Louisville USA Tie-up</div>
-    <div class="ticker-item"><i class="fas fa-phone"></i> USA: +1 888 981 2145</div>
-    <div class="ticker-item"><i class="fas fa-phone"></i> UK: +44 1970 450032</div>
-    <!-- duplicate for seamless loop -->
-    <div class="ticker-item"><i class="fas fa-award"></i> NABH Accredited</div>
-    <div class="ticker-item"><i class="fas fa-globe-asia"></i> Patients from 44+ Countries</div>
-    <div class="ticker-item"><i class="fab fa-google"></i> 4.8 Google Rating</div>
-    <div class="ticker-item"><i class="fas fa-tv"></i> NDTV – 5 Best Dental Clinics in Delhi</div>
-    <div class="ticker-item"><i class="fas fa-crown"></i> Femina Miss India Smile Care Partner</div>
-    <div class="ticker-item"><i class="fas fa-university"></i> University of Louisville USA Tie-up</div>
-    <div class="ticker-item"><i class="fas fa-phone"></i> USA: +1 888 981 2145</div>
-    <div class="ticker-item"><i class="fas fa-phone"></i> UK: +44 1970 450032</div>
-  </div>
-</div>
+<div class="ticker-bar"><div class="ticker-inner">
+  <div class="ticker-item"><i class="fas fa-award"></i> NABH Accredited</div><div class="ticker-item"><i class="fas fa-globe-asia"></i> Patients from 44+ Countries</div><div class="ticker-item"><i class="fab fa-google"></i> 4.8 Google Rating</div><div class="ticker-item"><i class="fas fa-tv"></i> NDTV &ndash; 5 Best Dental Clinics in Delhi</div><div class="ticker-item"><i class="fas fa-crown"></i> Femina Miss India Smile Care Partner</div><div class="ticker-item"><i class="fas fa-university"></i> University of Louisville USA Tie-up</div><div class="ticker-item"><i class="fas fa-phone"></i> USA: +1 888 981 2145</div><div class="ticker-item"><i class="fas fa-phone"></i> UK: +44 1970 450032</div>
+  <div class="ticker-item"><i class="fas fa-award"></i> NABH Accredited</div><div class="ticker-item"><i class="fas fa-globe-asia"></i> Patients from 44+ Countries</div><div class="ticker-item"><i class="fab fa-google"></i> 4.8 Google Rating</div><div class="ticker-item"><i class="fas fa-tv"></i> NDTV &ndash; 5 Best Dental Clinics in Delhi</div><div class="ticker-item"><i class="fas fa-crown"></i> Femina Miss India Smile Care Partner</div><div class="ticker-item"><i class="fas fa-university"></i> University of Louisville USA Tie-up</div><div class="ticker-item"><i class="fas fa-phone"></i> USA: +1 888 981 2145</div><div class="ticker-item"><i class="fas fa-phone"></i> UK: +44 1970 450032</div>
+</div></div>
 
-<!-- CERT MARQUEE -->
-<div class="cert-marquee">
-  <div class="cert-track">
-    <div class="cert-item"><i class="fas fa-award"></i> NABH Accredited</div>
-    <div class="cert-item"><i class="fas fa-certificate"></i> ISO Certified</div>
-    <div class="cert-item"><i class="fas fa-university"></i> University of Louisville USA</div>
-    <div class="cert-item"><i class="fas fa-tv"></i> NDTV Top 5 Dental Clinics</div>
-    <div class="cert-item"><i class="fas fa-crown"></i> Femina Miss India Partner</div>
-    <div class="cert-item"><i class="fab fa-google"></i> 4.8 ★ Google · 2400+ Reviews</div>
-    <div class="cert-item"><i class="fas fa-globe"></i> 44+ Countries · 15,000+ Patients</div>
-    <div class="cert-item"><i class="fas fa-microscope"></i> ADA Standards · F.P.F.A. USA</div>
-    <!-- duplicate -->
-    <div class="cert-item"><i class="fas fa-award"></i> NABH Accredited</div>
-    <div class="cert-item"><i class="fas fa-certificate"></i> ISO Certified</div>
-    <div class="cert-item"><i class="fas fa-university"></i> University of Louisville USA</div>
-    <div class="cert-item"><i class="fas fa-tv"></i> NDTV Top 5 Dental Clinics</div>
-    <div class="cert-item"><i class="fas fa-crown"></i> Femina Miss India Partner</div>
-    <div class="cert-item"><i class="fab fa-google"></i> 4.8 ★ Google · 2400+ Reviews</div>
-    <div class="cert-item"><i class="fas fa-globe"></i> 44+ Countries · 15,000+ Patients</div>
-    <div class="cert-item"><i class="fas fa-microscope"></i> ADA Standards · F.P.F.A. USA</div>
-  </div>
-</div>
-
-<!-- FLOATING STATS — overlaps hero -->
+<!-- FLOATING STATS -->
 <div class="float-stats stats-overlap">
-  <div class="float-stat-cell reveal up d1">
-    <div class="award-cell-line"></div>
-    <span class="n stat-num" data-target="15000" data-suffix="+">0</span>
-    <span class="l">Happy Patients</span>
-  </div>
-  <div class="float-stat-cell reveal up d2">
-    <div class="award-cell-line"></div>
-    <span class="n stat-num" data-target="44" data-suffix="+">0</span>
-    <span class="l">Countries</span>
-  </div>
-  <div class="float-stat-cell reveal up d3">
-    <div class="award-cell-line"></div>
-    <span class="n stat-num" data-target="18" data-suffix="+">0</span>
-    <span class="l">Years Experience</span>
-  </div>
-  <div class="float-stat-cell reveal up d4">
-    <div class="award-cell-line"></div>
-    <span class="n stat-num" data-decimal="4.8">0</span>
-    <span class="l">Google Rating ★</span>
-  </div>
+  <div class="float-stat-cell reveal up d1"><div class="award-cell-line"></div><span class="n stat-num" data-target="15000" data-suffix="+">0</span><span class="l">Happy Patients</span></div>
+  <div class="float-stat-cell reveal up d2"><div class="award-cell-line"></div><span class="n stat-num" data-target="44" data-suffix="+">0</span><span class="l">Countries</span></div>
+  <div class="float-stat-cell reveal up d3"><div class="award-cell-line"></div><span class="n stat-num" data-target="18" data-suffix="+">0</span><span class="l">Years Experience</span></div>
+  <div class="float-stat-cell reveal up d4"><div class="award-cell-line"></div><span class="n stat-num" data-decimal="4.8">0</span><span class="l">Google Rating &#x2605;</span></div>
 </div>
 
-<!-- ═══ ABOUT PREVIEW ═══ -->
-<section class="has-watermark" data-wm="SMILE">
-  <div class="container">
-    <div class="about-row">
-      <div class="about-imgs reveal left">
-        <img class="img-main" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=85" alt="Dr. Kathuria consultation" style="width:100%;border-radius:var(--radius);box-shadow:var(--shadow-l)"/>
-        <div class="img-badge-home">
-          <span class="num">18+</span>
-          <p>Years of Excellence</p>
-        </div>
-        <div class="about-mini">
-          <img src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=300&q=85" alt="Clinic interior"/>
-        </div>
-      </div>
-      <div class="reveal right">
-        <div class="sec-h">
-          <div class="sec-chip"><i class="fas fa-stethoscope"></i> About Us</div>
-          <div class="sec-divider"></div>
-          <h2>Delhi's Premier <em>Dental</em> Destination</h2>
-          <p>Founded by Dr. Sween Kathuria and Dr. Puneet Kathuria, our clinic at E-143, East of Kailash has been delivering world-class dental care since 2006. NABH accredited, ISO certified, and trusted by patients from 44+ countries.</p>
-        </div>
-        <div class="checks">
-          <div class="check-item"><div class="ci"><i class="fas fa-check"></i></div><span>NABH Accredited · ISO Certified · ADA Standards</span></div>
-          <div class="check-item"><div class="ci"><i class="fas fa-check"></i></div><span>University of Louisville USA Sterilisation Tie-up</span></div>
-          <div class="check-item"><div class="ci"><i class="fas fa-check"></i></div><span>NDTV Recognised – 5 Best Dental Clinics in Delhi</span></div>
-          <div class="check-item"><div class="ci"><i class="fas fa-check"></i></div><span>Femina Miss India Smile Care Partner</span></div>
-          <div class="check-item"><div class="ci"><i class="fas fa-check"></i></div><span>F.P.F.A. (USA) &amp; F.I.C.O.I. (USA) certified doctors</span></div>
-        </div>
-        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:24px">
-          <button type="button" class="btn btn-navy" onclick="document.getElementById('floatPanel').classList.add('open')"><i class="fas fa-calendar-check"></i> Book Appointment</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ═══════════════════════════════════════
+     DECISION-MAKING SECTIONS (TOP)
+═══════════════════════════════════════ -->
 
-<!-- ═══ SERVICES ═══ -->
-<section class="bg-off">
+<!-- ═══ 1. BEFORE / AFTER CASES ═══ -->
+<section class="cases-section" id="cases">
   <div class="container">
     <div class="sec-h center reveal up">
-      <div class="sec-chip"><i class="fas fa-tooth"></i> Our Services</div>
+      <div class="sec-chip" style="color:var(--gold-xl)"><i class="fas fa-images"></i> Before &amp; After</div>
       <div class="sec-divider"></div>
-      <h2>Treatments We <em>Specialise</em> In</h2>
-      <p>From routine cleaning to full smile makeovers — we offer 50+ dental treatments under one roof.</p>
+      <h2 style="color:var(--white)">Real Patient <em style="color:var(--gold-xl)">Transformations</em></h2>
+      <p style="color:rgba(255,255,255,.55)">Every case is real &mdash; performed by Dr. Kathuria's specialist team at our Delhi clinic.</p>
     </div>
-    <div class="srv-grid-3">
-      <div class="srv-card reveal up d1">
-        <div class="srv-img">
-          <img src="https://images.unsplash.com/photo-1609840114035-3c981b65dbb9?w=600&q=85" alt="Smile Makeover"/>
-          <div class="srv-img-overlay"></div>
-          <span class="srv-badge">Most Popular</span>
-        </div>
-        <div class="srv-body">
-          <h4>Smile Makeover / Veneers</h4>
-          <p>No-prep porcelain veneers for a Hollywood smile. Complete transformation in just 3–5 days.</p>
-          <div class="srv-foot">
-            <strong>₹18,000/tooth</strong>
-            <a href='/services#cosmetic'>Learn More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="srv-card reveal up d2">
-        <div class="srv-img">
-          <img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=600&q=85" alt="Teeth Whitening"/>
-          <div class="srv-img-overlay"></div>
-          <span class="srv-badge">Same Day</span>
-        </div>
-        <div class="srv-body">
-          <h4>Zoom Teeth Whitening</h4>
-          <p>Zoom Advanced Power instant whitening — up to 8 shades whiter in a single 60-minute session.</p>
-          <div class="srv-foot">
-            <strong>₹15,000</strong>
-            <a href='/services#whitening'>Learn More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="srv-card reveal up d3">
-        <div class="srv-img">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=85" alt="Dental Implants"/>
-          <div class="srv-img-overlay"></div>
-          <span class="srv-badge">Lifetime Guarantee</span>
-        </div>
-        <div class="srv-body">
-          <h4>Dental Implants</h4>
-          <p>Nobel Replace implants with computer-guided surgery. Single, multiple or All-on-4 full arch restorations.</p>
-          <div class="srv-foot">
-            <strong>₹29,500 onwards</strong>
-            <a href='/services#implants'>Learn More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="srv-card reveal up d1">
-        <div class="srv-img">
-          <img src="https://images.unsplash.com/photo-1523952578875-e6bb16c70f48?w=600&q=85" alt="Clear Aligners"/>
-          <div class="srv-img-overlay"></div>
-          <span class="srv-badge">Invisible</span>
-        </div>
-        <div class="srv-body">
-          <h4>Clear / Invisible Aligners</h4>
-          <p>Straighten your teeth with removable, invisible aligners. No metal braces — digital scan in 60 seconds.</p>
-          <div class="srv-foot">
-            <strong>₹75,000 full treatment</strong>
-            <a href='/services#aligners'>Learn More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="srv-card reveal up d2">
-        <div class="srv-img">
-          <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&q=85" alt="Root Canal"/>
-          <div class="srv-img-overlay"></div>
-          <span class="srv-badge">Painless</span>
-        </div>
-        <div class="srv-body">
-          <h4>Microscopic Root Canal</h4>
-          <p>Single-sitting painless RCT using dental microscope and latest endomotors. Crown included in package.</p>
-          <div class="srv-foot">
-            <strong>₹6,000 onwards</strong>
-            <a href='/services#rct'>Learn More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="srv-card reveal up d3">
-        <div class="srv-img">
-          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=85" alt="Gum Treatment"/>
-          <div class="srv-img-overlay"></div>
-          <span class="srv-badge">Laser</span>
-        </div>
-        <div class="srv-body">
-          <h4>Laser Gum Treatment</h4>
-          <p>Gummy smile correction, gum depigmentation, deep cleaning and gum surgery using precision laser technology.</p>
-          <div class="srv-foot">
-            <strong>₹5,000 onwards</strong>
-            <a href='/services#gums'>Learn More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
+    <div class="cases-counter reveal up">
+      <div class="cases-counter-item"><div class="cc-num">15K+</div><div class="cc-label">Patients Treated</div></div>
+      <div class="cases-counter-divider"></div>
+      <div class="cases-counter-item"><div class="cc-num">44+</div><div class="cc-label">Countries</div></div>
+      <div class="cases-counter-divider"></div>
+      <div class="cases-counter-item"><div class="cc-num">4.8</div><div class="cc-label">Google Rating</div></div>
+    </div>
+    <div class="cases-grid">
+      <div class="case-card reveal up d1"><img src="images/cases/case-01.jpeg" alt="Smile Makeover Before After"/><div class="case-card-overlay"><div class="case-label"><span>Smile Makeover</span>Porcelain Veneers</div><div class="case-badge">Veneers</div></div></div>
+      <div class="case-card reveal up d2"><img src="images/cases/case-02.jpeg" alt="Cosmetic Dentistry Before After"/><div class="case-card-overlay"><div class="case-label"><span>Cosmetic</span>Smile Correction</div><div class="case-badge">Cosmetic</div></div></div>
+      <div class="case-card reveal up d3"><img src="images/cases/case-03.jpeg" alt="Veneers Before After"/><div class="case-card-overlay"><div class="case-label"><span>Veneers</span>Complete Makeover</div><div class="case-badge">Veneers</div></div></div>
+      <div class="case-card reveal up d1"><img src="images/cases/case-04.jpeg" alt="Full Mouth Rehab"/><div class="case-card-overlay"><div class="case-label"><span>Full Mouth</span>Rehabilitation</div><div class="case-badge">Rehab</div></div></div>
+      <div class="case-card reveal up d2"><img src="images/cases/case-05.jpeg" alt="Smile Design Before After"/><div class="case-card-overlay"><div class="case-label"><span>Smile Design</span>Gummy Smile Fix</div><div class="case-badge">Smile Design</div></div></div>
+      <div class="case-card reveal up d3"><img src="images/cases/case-06.jpeg" alt="Crowns Before After"/><div class="case-card-overlay"><div class="case-label"><span>Crowns</span>Smile Restoration</div><div class="case-badge">Crowns</div></div></div>
+      <div class="case-card reveal up d1"><img src="images/cases/case-07.jpeg" alt="Gap Closure Before After"/><div class="case-card-overlay"><div class="case-label"><span>Gap Closure</span>Veneers &amp; Bonding</div><div class="case-badge">Gap Fix</div></div></div>
+      <div class="case-card reveal up d2"><img src="images/cases/case-08.jpeg" alt="Senior Rehab Before After"/><div class="case-card-overlay"><div class="case-label"><span>Full Mouth</span>Senior Rehabilitation</div><div class="case-badge">Rehab</div></div></div>
+      <div class="case-card reveal up d3"><img src="images/cases/case-09.jpeg" alt="Implants Before After"/><div class="case-card-overlay"><div class="case-label"><span>Implants</span>Full Arch Restoration</div><div class="case-badge">Implants</div></div></div>
+      <div class="case-card reveal up d1"><img src="images/cases/case-10.jpeg" alt="Smile Makeover Before After"/><div class="case-card-overlay"><div class="case-label"><span>Smile Makeover</span>Complete Transformation</div><div class="case-badge">Makeover</div></div></div>
+      <div class="case-card reveal up d2"><img src="images/cases/case-11.jpeg" alt="Veneers Before After"/><div class="case-card-overlay"><div class="case-label"><span>Veneers</span>Smile Enhancement</div><div class="case-badge">Veneers</div></div></div>
+      <div class="case-card reveal up d3"><img src="images/cases/case-12.jpeg" alt="Implants &amp; Crowns Before After"/><div class="case-card-overlay"><div class="case-label"><span>Full Mouth</span>Implants &amp; Crowns</div><div class="case-badge">Implants</div></div></div>
+      <div class="case-card reveal up d1"><img src="images/cases/case-13.jpeg" alt="International Patient Before After"/><div class="case-card-overlay"><div class="case-label"><span>International Patient</span>Implants &amp; Crowns</div><div class="case-badge">International</div></div></div>
+      <div class="case-card reveal up d2"><img src="images/cases/case-14.jpeg" alt="Cosmetic Dentistry Before After"/><div class="case-card-overlay"><div class="case-label"><span>Cosmetic</span>Whitening &amp; Veneers</div><div class="case-badge">Cosmetic</div></div></div>
+      <div class="case-card reveal up d3"><img src="images/cases/case-15.jpeg" alt="Full Mouth Rehabilitation Before After"/><div class="case-card-overlay"><div class="case-label"><span>Senior Patient</span>Full Rehabilitation</div><div class="case-badge">Rehab</div></div></div>
     </div>
     <div style="text-align:center;margin-top:44px">
-      <a class='btn btn-navy btn-lg' href='/services'><i class="fas fa-th-list"></i> View All 50+ Treatments</a>
+      <button type="button" class="btn btn-gold btn-lg" onclick="document.getElementById('floatPanel').classList.add('open')"><i class="fas fa-calendar-check"></i> Book Free Consultation</button>
     </div>
   </div>
 </section>
 
-<!-- ═══ WHY CHOOSE US ═══ -->
-<section class="cut-bottom" style="background:var(--cream)">
-  <div class="container">
-    <div class="why-grid">
-      <div class="why-col-img reveal left">
-        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=800&q=85" alt="Why Choose Dr Kathuria"/>
-        <div class="why-col-img-badge">
-          <i class="fas fa-award"></i>
-          <div><strong>NABH</strong><span>Accredited Clinic</span></div>
-        </div>
-      </div>
-      <div class="reveal right">
-        <div class="sec-h">
-          <div class="sec-chip"><i class="fas fa-shield-alt"></i> Why Choose Us</div>
-          <div class="sec-divider"></div>
-          <h2>Why Patients from <em>44 Countries</em> Choose Us</h2>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:14px">
-          <div class="why-item">
-            <div class="why-icon"><i class="fas fa-microscope"></i></div>
-            <div><h4>Microscopic Precision</h4><p>High-magnification dental microscope for root canals and precision restorations — unmatched accuracy.</p></div>
-          </div>
-          <div class="why-item">
-            <div class="why-icon"><i class="fas fa-cube"></i></div>
-            <div><h4>CEREC Same-Day Crowns</h4><p>Digital impressions and milled ceramic crowns designed, made and placed in one appointment.</p></div>
-          </div>
-          <div class="why-item">
-            <div class="why-icon"><i class="fas fa-shield-virus"></i></div>
-            <div><h4>Hospital-Grade Sterilisation</h4><p>Faro Class B autoclave, Biosonic ultrasonic cleaning, University of Louisville USA monitoring tie-up.</p></div>
-          </div>
-          <div class="why-item">
-            <div class="why-icon"><i class="fas fa-globe-asia"></i></div>
-            <div><h4>International Patient Care</h4><p>Dedicated helplines in USA, UK, Canada and Australia. Hotel, airport transfer &amp; itinerary assistance.</p></div>
-          </div>
-          <div class="why-item">
-            <div class="why-icon"><i class="fas fa-rupee-sign"></i></div>
-            <div><h4>Save 60–80% vs Western Pricing</h4><p>World-class treatment at a fraction of US/UK/Australian costs — without compromise on quality.</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ BEFORE / AFTER DRAG SLIDER ═══ -->
-<section class="cut-top has-watermark" data-wm="BEFORE AFTER" style="background:var(--off)">
-  <div class="container">
-    <div class="sec-h center reveal up">
-      <div class="sec-chip"><i class="fas fa-sliders-h"></i> Before &amp; After</div>
-      <div class="sec-divider"></div>
-      <h2>Drag to <em>Compare</em> Results</h2>
-      <p>Slide left and right to see real patient transformations from Dr. Kathuria's Dentistry.</p>
-    </div>
-    <div class="ba-grid reveal up">
-      <div>
-        <div class="ba-wrap">
-          <img class="ba-after-img" src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?w=700&q=85" alt="After Smile Makeover"/>
-          <div class="ba-before-panel">
-            <img class="ba-before-img" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=700&q=85" alt="Before Smile Makeover"/>
-          </div>
-          <div class="ba-divider"><div class="ba-btn"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-right"></i></div></div>
-          <span class="ba-lbl b">BEFORE</span>
-          <span class="ba-lbl a">AFTER</span>
-        </div>
-        <p class="ba-caption">Smile Makeover – Porcelain Veneers</p>
-      </div>
-      <div>
-        <div class="ba-wrap">
-          <img class="ba-after-img" src="https://images.unsplash.com/photo-1609840114035-3c981b65dbb9?w=700&q=85" alt="After Whitening"/>
-          <div class="ba-before-panel">
-            <img class="ba-before-img" src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=700&q=85" alt="Before Whitening"/>
-          </div>
-          <div class="ba-divider"><div class="ba-btn"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-right"></i></div></div>
-          <span class="ba-lbl b">BEFORE</span>
-          <span class="ba-lbl a">AFTER</span>
-        </div>
-        <p class="ba-caption">Zoom Whitening – 8 Shades Whiter</p>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:40px">
-      <a class='btn btn-navy' href='/cases'><i class="fas fa-images"></i> View All Before &amp; After Cases</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ HOW IT WORKS ═══ -->
-<section>
-  <div class="container">
-    <div class="sec-h center reveal up">
-      <div class="sec-chip"><i class="fas fa-list-ol"></i> How It Works</div>
-      <div class="sec-divider"></div>
-      <h2>Your Journey to a <em>Perfect Smile</em></h2>
-    </div>
-    <div class="steps reveal up">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h4>Free Consultation</h4>
-        <p>Book in-clinic or video consultation. Share X-rays &amp; concerns. Completely free.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h4>Smile Design</h4>
-        <p>3D digital scan + IVO smile simulation. See your new smile before treatment starts.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h4>Treatment</h4>
-        <p>Precision treatment by specialist doctors using cutting-edge technology. Pain-free.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <h4>Follow-Up</h4>
-        <p>Free follow-up consultation. Remote check-ins for international patients via WhatsApp.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ TESTIMONIALS ═══ -->
+<!-- ═══ 2. TESTIMONIALS ═══ -->
 <section class="bg-off">
   <div class="container">
     <div class="sec-h center reveal up">
@@ -569,128 +249,23 @@
       <h2>What Our <em>Patients</em> Say</h2>
       <p>Real patients who flew from across the world to smile with Dr. Kathuria's Dentistry.</p>
     </div>
-    <!-- Big editorial quote -->
     <div class="big-quote-section reveal up" style="border-radius:var(--r-lg);margin-bottom:48px">
-      <p class="big-quote-text">"The best investment I ever made was flying to Delhi for my smile makeover. Dr. Kathuria's team gave me <strong>a Hollywood smile at Indian prices</strong> — and it changed my life."</p>
-      <div class="big-quote-author"><span>— Kyle Steller, USA &nbsp;·&nbsp; Implants &amp; Veneers Patient</span></div>
+      <p class="big-quote-text">"The best investment I ever made was flying to Delhi for my smile makeover. Dr. Kathuria's team gave me <strong>a Hollywood smile at Indian prices</strong> &mdash; and it changed my life."</p>
+      <div class="big-quote-author"><span>&mdash; Kyle Steller, USA &nbsp;&middot;&nbsp; Implants &amp; Veneers Patient</span></div>
     </div>
     <div style="max-width:900px;margin:0 auto" class="reveal up">
-      <div class="testi-outer">
-        <div class="testi-track" id="testiTrack">
-          <div class="testi-slide">
-            <div class="testi-card">
-              <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-              <p class="testi-text">"Experience was exceptional. I underwent veneers, crowns, and fillings. Dr. Kathuria and his team are world-class. I have recommended the clinic to all my friends and family back in Canada."</p>
-              <div class="testi-author">
-                <div class="testi-av">B</div>
-                <div>
-                  <div class="testi-name">Bill Yakimec</div>
-                  <div class="testi-from">Veneers &amp; Crowns Patient</div>
-                  <div class="testi-country"><i class="fas fa-globe-americas"></i> Canada</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="testi-slide">
-            <div class="testi-card">
-              <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-              <p class="testi-text">"Best dental care I have ever received in my entire life. The staff is incredibly friendly and Dr. Kathuria is very thorough and professional. I will definitely come back."</p>
-              <div class="testi-author">
-                <div class="testi-av">K</div>
-                <div>
-                  <div class="testi-name">Kyle Steller</div>
-                  <div class="testi-from">Implants &amp; Veneers Patient</div>
-                  <div class="testi-country"><i class="fas fa-globe-americas"></i> USA</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="testi-slide">
-            <div class="testi-card">
-              <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-              <p class="testi-text">"I gave Dr. Kathuria a very difficult case — crowns, implants and a complex bite. She gave me a new smile which I thought was impossible. Absolutely brilliant work."</p>
-              <div class="testi-author">
-                <div class="testi-av">M</div>
-                <div>
-                  <div class="testi-name">Marlene Powell</div>
-                  <div class="testi-from">Full Mouth Rehabilitation</div>
-                  <div class="testi-country"><i class="fas fa-globe-americas"></i> USA</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="testi-slide">
-            <div class="testi-card">
-              <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-              <p class="testi-text">"Flew in from the UK. Multiple implants and crowns done. The treatment was completely painless and the results are fantastic. I cannot recommend this clinic highly enough."</p>
-              <div class="testi-author">
-                <div class="testi-av">D</div>
-                <div>
-                  <div class="testi-name">Donald McLean</div>
-                  <div class="testi-from">Implants &amp; Crowns</div>
-                  <div class="testi-country"><i class="fas fa-globe-europe"></i> United Kingdom</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-nav">
-        <button class="testi-btn" id="testiPrev"><i class="fas fa-chevron-left"></i></button>
-        <div class="testi-pips">
-          <button class="testi-pip on"></button>
-          <button class="testi-pip"></button>
-          <button class="testi-pip"></button>
-          <button class="testi-pip"></button>
-        </div>
-        <button class="testi-btn" id="testiNext"><i class="fas fa-chevron-right"></i></button>
-      </div>
+      <div class="testi-outer"><div class="testi-track" id="testiTrack">
+        <div class="testi-slide"><div class="testi-card"><div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="testi-text">"Experience was exceptional. I underwent veneers, crowns, and fillings. Dr. Kathuria and his team are world-class. I have recommended the clinic to all my friends and family back in Canada."</p><div class="testi-author"><div class="testi-av">B</div><div><div class="testi-name">Bill Yakimec</div><div class="testi-from">Veneers &amp; Crowns Patient</div><div class="testi-country"><i class="fas fa-globe-americas"></i> Canada</div></div></div></div></div>
+        <div class="testi-slide"><div class="testi-card"><div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="testi-text">"Best dental care I have ever received in my entire life. The staff is incredibly friendly and Dr. Kathuria is very thorough and professional. I will definitely come back."</p><div class="testi-author"><div class="testi-av">K</div><div><div class="testi-name">Kyle Steller</div><div class="testi-from">Implants &amp; Veneers Patient</div><div class="testi-country"><i class="fas fa-globe-americas"></i> USA</div></div></div></div></div>
+        <div class="testi-slide"><div class="testi-card"><div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="testi-text">"I gave Dr. Kathuria a very difficult case &mdash; crowns, implants and a complex bite. She gave me a new smile which I thought was impossible. Absolutely brilliant work."</p><div class="testi-author"><div class="testi-av">M</div><div><div class="testi-name">Marlene Powell</div><div class="testi-from">Full Mouth Rehabilitation</div><div class="testi-country"><i class="fas fa-globe-americas"></i> USA</div></div></div></div></div>
+        <div class="testi-slide"><div class="testi-card"><div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="testi-text">"Flew in from the UK. Multiple implants and crowns done. The treatment was completely painless and the results are fantastic. I cannot recommend this clinic highly enough."</p><div class="testi-author"><div class="testi-av">D</div><div><div class="testi-name">Donald McLean</div><div class="testi-from">Implants &amp; Crowns</div><div class="testi-country"><i class="fas fa-globe-europe"></i> United Kingdom</div></div></div></div></div>
+      </div></div>
+      <div class="testi-nav"><button class="testi-btn" id="testiPrev"><i class="fas fa-chevron-left"></i></button><div class="testi-pips"><button class="testi-pip on"></button><button class="testi-pip"></button><button class="testi-pip"></button><button class="testi-pip"></button></div><button class="testi-btn" id="testiNext"><i class="fas fa-chevron-right"></i></button></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ CELEBRITY SMILES ═══ -->
-<section class="bg-ink cut-bottom has-watermark light" data-wm="VIP">
-  <div class="container">
-    <div class="sec-h center reveal up" style="--c:var(--white)">
-      <div class="sec-chip" style="color:var(--gold-xl)"><i class="fas fa-crown"></i> Celebrity Smiles</div>
-      <div class="sec-divider"></div>
-      <h2 style="color:var(--white)">VIPs &amp; Celebrities <em style="color:var(--gold-xl)">Trust Us</em></h2>
-      <p style="color:rgba(255,255,255,.58)">From Bollywood to international dignitaries — Delhi's most trusted smile partner.</p>
-    </div>
-    <div class="celeb-scroll reveal up">
-      <div class="celeb-card">
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Celebrity Patient"/>
-        <div class="celeb-ov"><div class="celeb-name">Balajee Singh</div><div class="celeb-tag">Smile Makeover</div></div>
-      </div>
-      <div class="celeb-card">
-        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&q=80" alt="Celebrity Patient"/>
-        <div class="celeb-ov"><div class="celeb-name">Chef Nita Mehta</div><div class="celeb-tag">Celebrity Chef</div></div>
-      </div>
-      <div class="celeb-card">
-        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Celebrity Patient"/>
-        <div class="celeb-ov"><div class="celeb-name">Dr. Christine Burnett</div><div class="celeb-tag">USA · Veneers</div></div>
-      </div>
-      <div class="celeb-card">
-        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80" alt="Celebrity Patient"/>
-        <div class="celeb-ov"><div class="celeb-name">Donald Barr</div><div class="celeb-tag">UK · Implants</div></div>
-      </div>
-      <div class="celeb-card">
-        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="Celebrity Patient"/>
-        <div class="celeb-ov"><div class="celeb-name">Vera Fritsch</div><div class="celeb-tag">Austria · Full Rehab</div></div>
-      </div>
-      <div class="celeb-card">
-        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" alt="Celebrity Patient"/>
-        <div class="celeb-ov"><div class="celeb-name">Mr. SC Vashist</div><div class="celeb-tag">Senior Diplomat</div></div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:36px">
-      <a class='btn btn-outline' href='/about#celebrity' style='border-color:rgba(184,150,62,.5);color:var(--gold-xl)'><i class="fas fa-crown"></i> View All Celebrity Cases</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ VIDEO CONSULTATION ═══ -->
+<!-- ═══ 3. FREE VIDEO CONSULTATION ═══ -->
 <section style="background:linear-gradient(135deg,var(--navy) 0%,#003d5c 100%)">
   <div class="container">
     <div class="vc-grid reveal up">
@@ -698,9 +273,9 @@
         <div class="sec-chip" style="color:var(--gold-xl)"><i class="fas fa-video"></i> Teledentistry</div>
         <div class="sec-divider"></div>
         <h2 style="color:var(--white);font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:400;line-height:1.15;margin-bottom:18px">Free Video Consultation<br/><em style="color:var(--gold-xl)">From Anywhere</em> in the World</h2>
-        <p style="color:rgba(255,255,255,.65);font-size:.95rem;line-height:1.75;margin-bottom:28px">No need to travel. Share your X-rays, photos, and concerns. Dr. Kathuria's team will give you a full treatment plan with costs within 24 hours.</p>
+        <p style="color:rgba(255,255,255,.65);font-size:.95rem;line-height:1.75;margin-bottom:28px">No need to travel. Share your X-rays, photos, and concerns. Full treatment plan with costs within 24 hours.</p>
         <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:30px">
-          <div style="display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.8);font-size:.88rem"><i class="fas fa-check-circle" style="color:var(--teal)"></i> Free consultation — no charges</div>
+          <div style="display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.8);font-size:.88rem"><i class="fas fa-check-circle" style="color:var(--teal)"></i> Free consultation &mdash; no charges</div>
           <div style="display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.8);font-size:.88rem"><i class="fas fa-check-circle" style="color:var(--teal)"></i> Detailed treatment plan with costs via email</div>
           <div style="display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.8);font-size:.88rem"><i class="fas fa-check-circle" style="color:var(--teal)"></i> WhatsApp / Zoom / Google Meet available</div>
           <div style="display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.8);font-size:.88rem"><i class="fas fa-check-circle" style="color:var(--teal)"></i> Patients served from 44+ countries</div>
@@ -718,43 +293,111 @@
       </div>
       <div class="vc-video reveal right">
         <img src="https://images.unsplash.com/photo-1609840114035-3c981b65dbb9?w=800&q=85" alt="Video Consultation"/>
-        <div class="vc-play">
-          <div class="play-circle"><i class="fas fa-play" style="margin-left:4px"></i></div>
-        </div>
+        <div class="vc-play"><div class="play-circle"><i class="fas fa-play" style="margin-left:4px"></i></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ ADVANCED TECHNOLOGY ═══ -->
-<section class="bg-ink cut-top has-watermark light" data-wm="TECH">
+<!-- ═══ 4. CELEBRITY SMILES ═══ -->
+<section class="bg-ink cut-bottom has-watermark light" data-wm="VIP">
   <div class="container">
     <div class="sec-h center reveal up">
-      <div class="sec-chip" style="color:var(--teal)"><i class="fas fa-microchip"></i> Advanced Technology</div>
+      <div class="sec-chip" style="color:var(--gold-xl)"><i class="fas fa-crown"></i> Celebrity Smiles</div>
       <div class="sec-divider"></div>
-      <h2 style="color:var(--white)">Cutting-Edge <em style="color:var(--gold-xl)">Dental Technology</em></h2>
-      <p style="color:rgba(255,255,255,.55)">We invest in the world's best dental technology so your results are precise, fast and lasting.</p>
+      <h2 style="color:var(--white)">VIPs &amp; Celebrities <em style="color:var(--gold-xl)">Trust Us</em></h2>
+      <p style="color:rgba(255,255,255,.58)">From Bollywood to international dignitaries &mdash; Delhi's most trusted smile partner.</p>
     </div>
-    <div class="tech-grid reveal up">
-      <div class="tech-card">
-        <div class="tech-ic"><i class="fas fa-cube"></i></div>
-        <h4>CEREC Same-Day Crowns</h4>
-        <p>Digital impressions + ceramic milling. Crowns designed, fabricated and placed in a single visit — no temporaries.</p>
+    <div class="celeb-scroll reveal up">
+      <div class="celeb-card"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Celebrity"/><div class="celeb-ov"><div class="celeb-name">Balajee Singh</div><div class="celeb-tag">Smile Makeover</div></div></div>
+      <div class="celeb-card"><img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&q=80" alt="Celebrity"/><div class="celeb-ov"><div class="celeb-name">Chef Nita Mehta</div><div class="celeb-tag">Celebrity Chef</div></div></div>
+      <div class="celeb-card"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Celebrity"/><div class="celeb-ov"><div class="celeb-name">Dr. Christine Burnett</div><div class="celeb-tag">USA &middot; Veneers</div></div></div>
+      <div class="celeb-card"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80" alt="Celebrity"/><div class="celeb-ov"><div class="celeb-name">Donald Barr</div><div class="celeb-tag">UK &middot; Implants</div></div></div>
+      <div class="celeb-card"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="Celebrity"/><div class="celeb-ov"><div class="celeb-name">Vera Fritsch</div><div class="celeb-tag">Austria &middot; Full Rehab</div></div></div>
+      <div class="celeb-card"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" alt="Celebrity"/><div class="celeb-ov"><div class="celeb-name">Mr. SC Vashist</div><div class="celeb-tag">Senior Diplomat</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 5. INSTAGRAM ═══ -->
+<section class="cut-top bg-off" style="padding-bottom:60px">
+  <div class="container">
+    <div class="sec-h center reveal up">
+      <div class="sec-chip"><i class="fab fa-instagram"></i> Instagram</div>
+      <div class="sec-divider"></div>
+      <h2>Follow Our <em>Smile Journey</em></h2>
+      <p>@drkathuriasdentistry &mdash; Real cases, happy patients, behind-the-scenes.</p>
+    </div>
+    <div class="ig-grid reveal up">
+      <div class="ig-cell"><img src="images/cases/case-01.jpeg" alt="Instagram"/><div class="ig-ov"><i class="fab fa-instagram"></i></div></div>
+      <div class="ig-cell"><img src="images/cases/case-05.jpeg" alt="Instagram"/><div class="ig-ov"><i class="fab fa-instagram"></i></div></div>
+      <div class="ig-cell"><img src="images/cases/case-09.jpeg" alt="Instagram"/><div class="ig-ov"><i class="fab fa-instagram"></i></div></div>
+      <div class="ig-cell"><img src="images/cases/case-13.jpeg" alt="Instagram"/><div class="ig-ov"><i class="fab fa-instagram"></i></div></div>
+      <div class="ig-cell"><img src="images/cases/case-11.jpeg" alt="Instagram"/><div class="ig-ov"><i class="fab fa-instagram"></i></div></div>
+      <div class="ig-cell"><img src="images/cases/case-14.jpeg" alt="Instagram"/><div class="ig-ov"><i class="fab fa-instagram"></i></div></div>
+    </div>
+    <div style="text-align:center;margin-top:28px"><a href="https://www.instagram.com/drkathuriasdentistry" class="btn btn-outline-navy" target="_blank"><i class="fab fa-instagram"></i> Follow @drkathuriasdentistry</a></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SUPPORTING SECTIONS
+═══════════════════════════════════════ -->
+
+<!-- ═══ SERVICES ═══ -->
+<section>
+  <div class="container">
+    <div class="sec-h center reveal up"><div class="sec-chip"><i class="fas fa-tooth"></i> Our Services</div><div class="sec-divider"></div><h2>Treatments We <em>Specialise</em> In</h2><p>From routine cleaning to full smile makeovers &mdash; 50+ dental treatments under one roof.</p></div>
+    <div class="srv-grid-3">
+      <div class="srv-card reveal up d1"><div class="srv-img"><img src="https://images.unsplash.com/photo-1609840114035-3c981b65dbb9?w=600&q=85" alt="Smile Makeover"/><div class="srv-img-overlay"></div><span class="srv-badge">Most Popular</span></div><div class="srv-body"><h4>Smile Makeover / Veneers</h4><p>No-prep porcelain veneers for a Hollywood smile. Complete transformation in just 3&ndash;5 days.</p><div class="srv-foot"><strong>&#x20B9;18,000/tooth</strong><a href='/services#cosmetic'>Learn More <i class="fas fa-arrow-right"></i></a></div></div></div>
+      <div class="srv-card reveal up d2"><div class="srv-img"><img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=600&q=85" alt="Whitening"/><div class="srv-img-overlay"></div><span class="srv-badge">Same Day</span></div><div class="srv-body"><h4>Zoom Teeth Whitening</h4><p>Up to 8 shades whiter in a single 60-minute session.</p><div class="srv-foot"><strong>&#x20B9;15,000</strong><a href='/services#whitening'>Learn More <i class="fas fa-arrow-right"></i></a></div></div></div>
+      <div class="srv-card reveal up d3"><div class="srv-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=85" alt="Implants"/><div class="srv-img-overlay"></div><span class="srv-badge">Lifetime Guarantee</span></div><div class="srv-body"><h4>Dental Implants</h4><p>Nobel Replace implants with computer-guided surgery. Single, multiple or All-on-4.</p><div class="srv-foot"><strong>&#x20B9;29,500 onwards</strong><a href='/services#implants'>Learn More <i class="fas fa-arrow-right"></i></a></div></div></div>
+      <div class="srv-card reveal up d1"><div class="srv-img"><img src="https://images.unsplash.com/photo-1523952578875-e6bb16c70f48?w=600&q=85" alt="Aligners"/><div class="srv-img-overlay"></div><span class="srv-badge">Invisible</span></div><div class="srv-body"><h4>Clear / Invisible Aligners</h4><p>Straighten teeth with removable, invisible aligners. Digital scan in 60 seconds.</p><div class="srv-foot"><strong>&#x20B9;75,000 full treatment</strong><a href='/services#aligners'>Learn More <i class="fas fa-arrow-right"></i></a></div></div></div>
+      <div class="srv-card reveal up d2"><div class="srv-img"><img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&q=85" alt="Root Canal"/><div class="srv-img-overlay"></div><span class="srv-badge">Painless</span></div><div class="srv-body"><h4>Microscopic Root Canal</h4><p>Single-sitting painless RCT using dental microscope. Crown included in package.</p><div class="srv-foot"><strong>&#x20B9;6,000 onwards</strong><a href='/services#rct'>Learn More <i class="fas fa-arrow-right"></i></a></div></div></div>
+      <div class="srv-card reveal up d3"><div class="srv-img"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=85" alt="Gum Treatment"/><div class="srv-img-overlay"></div><span class="srv-badge">Laser</span></div><div class="srv-body"><h4>Laser Gum Treatment</h4><p>Gummy smile correction, depigmentation, deep cleaning using precision laser.</p><div class="srv-foot"><strong>&#x20B9;5,000 onwards</strong><a href='/services#gums'>Learn More <i class="fas fa-arrow-right"></i></a></div></div></div>
+    </div>
+    <div style="text-align:center;margin-top:44px"><a class='btn btn-navy btn-lg' href='/services'><i class="fas fa-th-list"></i> View All 50+ Treatments</a></div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="has-watermark bg-off" data-wm="SMILE">
+  <div class="container">
+    <div class="about-row">
+      <div class="about-imgs reveal left">
+        <img class="img-main" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=85" alt="Dr. Kathuria" style="width:100%;border-radius:var(--radius);box-shadow:var(--shadow-l)"/>
+        <div class="img-badge-home"><span class="num">18+</span><p>Years of Excellence</p></div>
+        <div class="about-mini"><img src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=300&q=85" alt="Clinic"/></div>
       </div>
-      <div class="tech-card">
-        <div class="tech-ic"><i class="fas fa-microscope"></i></div>
-        <h4>Dental Microscope</h4>
-        <p>High-magnification microscope for root canals and precision restorations. Accuracy that's unmatched in Delhi.</p>
+      <div class="reveal right">
+        <div class="sec-h"><div class="sec-chip"><i class="fas fa-stethoscope"></i> About Us</div><div class="sec-divider"></div><h2>Delhi's Premier <em>Dental</em> Destination</h2><p>Founded by Dr. Sween Kathuria and Dr. Puneet Kathuria, our clinic at E-143, East of Kailash has been delivering world-class dental care since 2006.</p></div>
+        <div class="checks">
+          <div class="check-item"><div class="ci"><i class="fas fa-check"></i></div><span>NABH Accredited &middot; ISO Certified &middot; ADA Standards</span></div>
+          <div class="check-item"><div class="ci"><i class="fas fa-check"></i></div><span>University of Louisville USA Sterilisation Tie-up</span></div>
+          <div class="check-item"><div class="ci"><i class="fas fa-check"></i></div><span>NDTV Recognised &ndash; 5 Best Dental Clinics in Delhi</span></div>
+          <div class="check-item"><div class="ci"><i class="fas fa-check"></i></div><span>Femina Miss India Smile Care Partner</span></div>
+          <div class="check-item"><div class="ci"><i class="fas fa-check"></i></div><span>F.P.F.A. (USA) &amp; F.I.C.O.I. (USA) certified doctors</span></div>
+        </div>
+        <div style="margin-top:24px"><button type="button" class="btn btn-navy" onclick="document.getElementById('floatPanel').classList.add('open')"><i class="fas fa-calendar-check"></i> Book Appointment</button></div>
       </div>
-      <div class="tech-card">
-        <div class="tech-ic"><i class="fas fa-sun"></i></div>
-        <h4>Zoom Advanced Power</h4>
-        <p>Clinically proven whitening system — up to 8 shades whiter in 60 minutes. Safe, comfortable, dramatic results.</p>
-      </div>
-      <div class="tech-card">
-        <div class="tech-ic"><i class="fas fa-laptop-medical"></i></div>
-        <h4>DTX Implant Studio</h4>
-        <p>3D implant planning software for computer-guided surgery. Pre-planned precision means faster healing and perfect placement.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY CHOOSE US ═══ -->
+<section style="background:var(--cream)">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-col-img reveal left"><img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=800&q=85" alt="Why Choose Us"/><div class="why-col-img-badge"><i class="fas fa-award"></i><div><strong>NABH</strong><span>Accredited Clinic</span></div></div></div>
+      <div class="reveal right">
+        <div class="sec-h"><div class="sec-chip"><i class="fas fa-shield-alt"></i> Why Choose Us</div><div class="sec-divider"></div><h2>Why Patients from <em>44 Countries</em> Choose Us</h2></div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div class="why-item"><div class="why-icon"><i class="fas fa-microscope"></i></div><div><h4>Microscopic Precision</h4><p>High-magnification dental microscope for root canals and precision restorations.</p></div></div>
+          <div class="why-item"><div class="why-icon"><i class="fas fa-cube"></i></div><div><h4>CEREC Same-Day Crowns</h4><p>Digital impressions and milled ceramic crowns in one appointment.</p></div></div>
+          <div class="why-item"><div class="why-icon"><i class="fas fa-shield-virus"></i></div><div><h4>Hospital-Grade Sterilisation</h4><p>Faro Class B autoclave, University of Louisville USA monitoring tie-up.</p></div></div>
+          <div class="why-item"><div class="why-icon"><i class="fas fa-globe-asia"></i></div><div><h4>International Patient Care</h4><p>Dedicated helplines in USA, UK, Canada. Hotel &amp; airport transfer assistance.</p></div></div>
+          <div class="why-item"><div class="why-icon"><i class="fas fa-rupee-sign"></i></div><div><h4>Save 60&ndash;80% vs Western Pricing</h4><p>World-class treatment at a fraction of US/UK/Australian costs.</p></div></div>
+        </div>
       </div>
     </div>
   </div>
@@ -764,55 +407,32 @@
 <section>
   <div class="container">
     <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:36px" class="reveal up">
-      <div class="sec-h" style="margin-bottom:0">
-        <div class="sec-chip"><i class="fab fa-google"></i> Google Reviews</div>
-        <div class="sec-divider"></div>
-        <h2>2,400+ Real <em>Patient Reviews</em></h2>
-      </div>
-      <div class="g-badge">
-        <div class="g-score">4.8</div>
-        <div>
-          <div style="color:var(--gold);font-size:.9rem;margin-bottom:4px"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-          <div class="g-info"><strong>2,400+ Reviews</strong><span>on Google Maps</span></div>
-        </div>
-      </div>
+      <div class="sec-h" style="margin-bottom:0"><div class="sec-chip"><i class="fab fa-google"></i> Google Reviews</div><div class="sec-divider"></div><h2>2,400+ Real <em>Patient Reviews</em></h2></div>
+      <div class="g-badge"><div class="g-score">4.8</div><div><div style="color:var(--gold);font-size:.9rem;margin-bottom:4px"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><div class="g-info"><strong>2,400+ Reviews</strong><span>on Google Maps</span></div></div></div>
     </div>
     <div class="reviews-3 reveal up">
-      <div class="rv-card">
-        <div class="rv-head">
-          <div class="rv-av">S</div>
-          <div class="rv-meta"><h5>Sarah Mitchell</h5><span><i class="fas fa-globe-americas"></i> United Kingdom · Veneers</span></div>
-        </div>
-        <div class="rv-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="rv-text">"Flew from London for 8 veneers. The result is absolutely stunning — exactly what I wanted. Dr. Kathuria and the team made me feel completely at ease. Worth every penny."</p>
-        <div class="rv-footer"><i class="fab fa-google" style="color:#4285F4"></i> Posted on Google <span class="rv-verified">Verified</span></div>
-      </div>
-      <div class="rv-card">
-        <div class="rv-head">
-          <div class="rv-av" style="background:linear-gradient(135deg,#EA4335,#FBBC04)">R</div>
-          <div class="rv-meta"><h5>Raj Khanna</h5><span><i class="fas fa-globe-asia"></i> Dubai, UAE · Implants</span></div>
-        </div>
-        <div class="rv-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="rv-text">"Had 3 implants done. Completely painless, highly professional and the pricing is a fraction of what Dubai clinics quoted me. I'm sending my whole family here."</p>
-        <div class="rv-footer"><i class="fab fa-google" style="color:#4285F4"></i> Posted on Google <span class="rv-verified">Verified</span></div>
-      </div>
-      <div class="rv-card">
-        <div class="rv-head">
-          <div class="rv-av" style="background:linear-gradient(135deg,#34a853,#0F9D58)">A</div>
-          <div class="rv-meta"><h5>Amanda Torres</h5><span><i class="fas fa-globe-americas"></i> Australia · Smile Makeover</span></div>
-        </div>
-        <div class="rv-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="rv-text">"Full smile makeover in 4 days. I cried when I saw the result. Dr. Kathuria is a true artist. The clinic is incredibly modern and hygienic. Will absolutely come back."</p>
-        <div class="rv-footer"><i class="fab fa-google" style="color:#4285F4"></i> Posted on Google <span class="rv-verified">Verified</span></div>
-      </div>
+      <div class="rv-card"><div class="rv-head"><div class="rv-av">S</div><div class="rv-meta"><h5>Sarah Mitchell</h5><span><i class="fas fa-globe-americas"></i> United Kingdom &middot; Veneers</span></div></div><div class="rv-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="rv-text">"Flew from London for 8 veneers. The result is absolutely stunning. Worth every penny."</p><div class="rv-footer"><i class="fab fa-google" style="color:#4285F4"></i> Posted on Google <span class="rv-verified">Verified</span></div></div>
+      <div class="rv-card"><div class="rv-head"><div class="rv-av" style="background:linear-gradient(135deg,#EA4335,#FBBC04)">R</div><div class="rv-meta"><h5>Raj Khanna</h5><span><i class="fas fa-globe-asia"></i> Dubai, UAE &middot; Implants</span></div></div><div class="rv-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="rv-text">"Had 3 implants done. Completely painless. Pricing is a fraction of what Dubai clinics quoted."</p><div class="rv-footer"><i class="fab fa-google" style="color:#4285F4"></i> Posted on Google <span class="rv-verified">Verified</span></div></div>
+      <div class="rv-card"><div class="rv-head"><div class="rv-av" style="background:linear-gradient(135deg,#34a853,#0F9D58)">A</div><div class="rv-meta"><h5>Amanda Torres</h5><span><i class="fas fa-globe-americas"></i> Australia &middot; Smile Makeover</span></div></div><div class="rv-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="rv-text">"Full smile makeover in 4 days. I cried when I saw the result. Dr. Kathuria is a true artist."</p><div class="rv-footer"><i class="fab fa-google" style="color:#4285F4"></i> Posted on Google <span class="rv-verified">Verified</span></div></div>
     </div>
-    <div style="text-align:center;margin-top:36px">
-      <a href="https://g.page/r/drkathuriasdentistry" class="btn btn-outline-navy" target="_blank"><i class="fab fa-google"></i> Read All 2,400+ Reviews on Google</a>
+    <div style="text-align:center;margin-top:36px"><a href="https://g.page/r/drkathuriasdentistry" class="btn btn-outline-navy" target="_blank"><i class="fab fa-google"></i> Read All 2,400+ Reviews on Google</a></div>
+  </div>
+</section>
+
+<!-- ═══ ADVANCED TECHNOLOGY ═══ -->
+<section class="bg-ink has-watermark light" data-wm="TECH">
+  <div class="container">
+    <div class="sec-h center reveal up"><div class="sec-chip" style="color:var(--teal)"><i class="fas fa-microchip"></i> Advanced Technology</div><div class="sec-divider"></div><h2 style="color:var(--white)">Cutting-Edge <em style="color:var(--gold-xl)">Dental Technology</em></h2><p style="color:rgba(255,255,255,.55)">We invest in the world's best dental technology for precise, fast and lasting results.</p></div>
+    <div class="tech-grid reveal up">
+      <div class="tech-card"><div class="tech-ic"><i class="fas fa-cube"></i></div><h4>CEREC Same-Day Crowns</h4><p>Digital impressions + ceramic milling. Crowns in a single visit.</p></div>
+      <div class="tech-card"><div class="tech-ic"><i class="fas fa-microscope"></i></div><h4>Dental Microscope</h4><p>High-magnification for root canals and precision restorations.</p></div>
+      <div class="tech-card"><div class="tech-ic"><i class="fas fa-sun"></i></div><h4>Zoom Advanced Power</h4><p>Up to 8 shades whiter in 60 minutes. Safe, dramatic results.</p></div>
+      <div class="tech-card"><div class="tech-ic"><i class="fas fa-laptop-medical"></i></div><h4>DTX Implant Studio</h4><p>3D implant planning for computer-guided surgery.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ PATIENTS FROM 44 COUNTRIES ═══ -->
+<!-- ═══ 44 COUNTRIES ═══ -->
 <div class="countries-band has-watermark light" data-wm="44">
   <div class="countries-inner">
     <div class="countries-stat reveal left">
@@ -826,197 +446,68 @@
         <div style="text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold-xl);font-weight:500">60%</div><div style="font-size:.7rem;color:rgba(255,255,255,.48);text-transform:uppercase;letter-spacing:1px">Savings</div></div>
       </div>
     </div>
-    <div class="reveal right">
-      <div class="countries-pills">
-        <span class="c-pill">🇺🇸 USA</span><span class="c-pill">🇬🇧 UK</span><span class="c-pill">🇦🇺 Australia</span><span class="c-pill">🇨🇦 Canada</span><span class="c-pill">🇩🇪 Germany</span><span class="c-pill">🇫🇷 France</span><span class="c-pill">🇳🇿 New Zealand</span><span class="c-pill">🇸🇬 Singapore</span><span class="c-pill">🇦🇪 UAE</span><span class="c-pill">🇸🇦 Saudi Arabia</span><span class="c-pill">🇸🇪 Sweden</span><span class="c-pill">🇳🇴 Norway</span><span class="c-pill">🇦🇹 Austria</span><span class="c-pill">🇨🇭 Switzerland</span><span class="c-pill">🇮🇹 Italy</span><span class="c-pill">🇳🇱 Netherlands</span><span class="c-pill">🇿🇦 South Africa</span><span class="c-pill">🇰🇪 Kenya</span><span class="c-pill">🇯🇵 Japan</span><span class="c-pill">🇭🇰 Hong Kong</span><span class="c-pill">🇲🇾 Malaysia</span><span class="c-pill">🇵🇭 Philippines</span><span class="c-pill">🇮🇱 Israel</span><span class="c-pill">🇷🇺 Russia</span><span class="c-pill">🇧🇷 Brazil</span><span class="c-pill">🇲🇺 Mauritius</span><span class="c-pill">🇧🇩 Bangladesh</span><span class="c-pill">🇱🇰 Sri Lanka</span><span class="c-pill">🇳🇵 Nepal</span><span class="c-pill">🇵🇰 Pakistan</span><span class="c-pill">+ 14 more</span>
-      </div>
-    </div>
+    <div class="reveal right"><div class="countries-pills">
+      <span class="c-pill">&#x1F1FA;&#x1F1F8; USA</span><span class="c-pill">&#x1F1EC;&#x1F1E7; UK</span><span class="c-pill">&#x1F1E6;&#x1F1FA; Australia</span><span class="c-pill">&#x1F1E8;&#x1F1E6; Canada</span><span class="c-pill">&#x1F1E9;&#x1F1EA; Germany</span><span class="c-pill">&#x1F1EB;&#x1F1F7; France</span><span class="c-pill">&#x1F1F3;&#x1F1FF; New Zealand</span><span class="c-pill">&#x1F1F8;&#x1F1EC; Singapore</span><span class="c-pill">&#x1F1E6;&#x1F1EA; UAE</span><span class="c-pill">&#x1F1F8;&#x1F1E6; Saudi Arabia</span><span class="c-pill">&#x1F1F8;&#x1F1EA; Sweden</span><span class="c-pill">&#x1F1F3;&#x1F1F4; Norway</span><span class="c-pill">&#x1F1E6;&#x1F1F9; Austria</span><span class="c-pill">&#x1F1E8;&#x1F1ED; Switzerland</span><span class="c-pill">&#x1F1EE;&#x1F1F9; Italy</span><span class="c-pill">&#x1F1F3;&#x1F1F1; Netherlands</span><span class="c-pill">&#x1F1FF;&#x1F1E6; South Africa</span><span class="c-pill">&#x1F1F0;&#x1F1EA; Kenya</span><span class="c-pill">&#x1F1EF;&#x1F1F5; Japan</span><span class="c-pill">&#x1F1ED;&#x1F1F0; Hong Kong</span><span class="c-pill">+ 24 more</span>
+    </div></div>
   </div>
 </div>
 
+<!-- ═══ CHARGES ═══ -->
+<section class="charges-section" id="charges">
+  <div class="container">
+    <div class="sec-h center reveal up"><div class="sec-chip"><i class="fas fa-rupee-sign"></i> Treatment Charges</div><div class="sec-divider"></div><h2>Transparent <em>Pricing</em></h2><p>Save 60&ndash;80% compared to US, UK &amp; Australian clinics. No hidden costs.</p></div>
+    <div class="charges-table-wrap reveal up">
+      <table class="charges-table">
+        <thead><tr><th>Treatment</th><th>Our Price (INR)</th><th style="text-align:right">International Price</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Smile Makeover / Veneers</strong></td><td><strong style="color:var(--teal)">&#x20B9;18,000</strong>/tooth</td><td style="text-align:right"><span class="charges-intl">$1,200&ndash;2,500</span><span class="charges-save">Save 80%</span></td></tr>
+          <tr><td><strong>Dental Implants (Nobel)</strong></td><td><strong style="color:var(--teal)">&#x20B9;29,500</strong> onwards</td><td style="text-align:right"><span class="charges-intl">$3,000&ndash;5,000</span><span class="charges-save">Save 75%</span></td></tr>
+          <tr><td><strong>Zoom Teeth Whitening</strong></td><td><strong style="color:var(--teal)">&#x20B9;15,000</strong></td><td style="text-align:right"><span class="charges-intl">$500&ndash;1,000</span><span class="charges-save">Save 70%</span></td></tr>
+          <tr><td><strong>Clear Aligners</strong></td><td><strong style="color:var(--teal)">&#x20B9;75,000</strong> full</td><td style="text-align:right"><span class="charges-intl">$3,500&ndash;8,000</span><span class="charges-save">Save 75%</span></td></tr>
+          <tr><td><strong>Root Canal + Crown</strong></td><td><strong style="color:var(--teal)">&#x20B9;6,000</strong> onwards</td><td style="text-align:right"><span class="charges-intl">$700&ndash;1,500</span><span class="charges-save">Save 80%</span></td></tr>
+          <tr><td><strong>Laser Gum Treatment</strong></td><td><strong style="color:var(--teal)">&#x20B9;5,000</strong> onwards</td><td style="text-align:right"><span class="charges-intl">$500&ndash;1,200</span><span class="charges-save">Save 75%</span></td></tr>
+          <tr><td><strong>All-on-4 Full Arch</strong></td><td><strong style="color:var(--teal)">&#x20B9;2,50,000</strong> onwards</td><td style="text-align:right"><span class="charges-intl">$20,000&ndash;30,000</span><span class="charges-save">Save 85%</span></td></tr>
+        </tbody>
+      </table>
+      <p style="text-align:center;margin-top:16px;font-size:.78rem;color:var(--muted)"><i class="fas fa-info-circle"></i> Prices are indicative. Final cost depends on case complexity. Free consultation available.</p>
+    </div>
+  </div>
+</section>
 
 <!-- ═══ CLINIC IMAGES ═══ -->
 <section>
   <div class="container">
-    <div class="sec-h center reveal up">
-      <div class="sec-chip"><i class="fas fa-hospital"></i> Our Clinic</div>
-      <div class="sec-divider"></div>
-      <h2>Step Inside Our <em>World-Class Clinic</em></h2>
-      <p>Designed to international standards — sterile, modern, and designed for your comfort.</p>
-    </div>
+    <div class="sec-h center reveal up"><div class="sec-chip"><i class="fas fa-hospital"></i> Our Clinic</div><div class="sec-divider"></div><h2>Step Inside Our <em>World-Class Clinic</em></h2><p>Designed to international standards &mdash; sterile, modern, comfortable.</p></div>
     <div class="gallery-4 reveal up">
-      <div class="g-item tall" data-lightbox="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=85">
-        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=85" alt="Clinic Reception"/>
-        <div class="g-ov"><i class="fas fa-expand"></i> Reception</div>
-      </div>
-      <div class="g-item" data-lightbox="https://images.unsplash.com/photo-1588776814546-1ffedebf5f6f?w=1200&q=85">
-        <img src="https://images.unsplash.com/photo-1588776814546-1ffedebf5f6f?w=600&q=85" alt="Treatment Room"/>
-        <div class="g-ov"><i class="fas fa-expand"></i> Treatment Room</div>
-      </div>
-      <div class="g-item" data-lightbox="https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=1200&q=85">
-        <img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=600&q=85" alt="Equipment"/>
-        <div class="g-ov"><i class="fas fa-expand"></i> Equipment</div>
-      </div>
-      <div class="g-item" data-lightbox="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=1200&q=85">
-        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=85" alt="Dental Chair"/>
-        <div class="g-ov"><i class="fas fa-expand"></i> Dental Chair</div>
-      </div>
-      <div class="g-item" data-lightbox="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1200&q=85">
-        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=85" alt="Consultation Room"/>
-        <div class="g-ov"><i class="fas fa-expand"></i> Consultation</div>
-      </div>
-      <div class="g-item" data-lightbox="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1200&q=85">
-        <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=600&q=85" alt="Patient Care"/>
-        <div class="g-ov"><i class="fas fa-expand"></i> Patient Care</div>
-      </div>
-      <div class="g-item" data-lightbox="https://images.unsplash.com/photo-1551076805-e1869033e561?w=1200&q=85">
-        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=600&q=85" alt="Sterilisation"/>
-        <div class="g-ov"><i class="fas fa-expand"></i> Sterilisation</div>
-      </div>
-      <div class="g-item" data-lightbox="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=1200&q=85">
-        <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&q=85" alt="Whitening Suite"/>
-        <div class="g-ov"><i class="fas fa-expand"></i> Whitening Suite</div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:36px">
-      <a class='btn btn-outline-navy' href='/cases#gallery'><i class="fas fa-images"></i> View Full Gallery</a>
+      <div class="g-item tall" data-lightbox="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=85"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=85" alt="Reception"/><div class="g-ov"><i class="fas fa-expand"></i> Reception</div></div>
+      <div class="g-item" data-lightbox="https://images.unsplash.com/photo-1588776814546-1ffedebf5f6f?w=1200&q=85"><img src="https://images.unsplash.com/photo-1588776814546-1ffedebf5f6f?w=600&q=85" alt="Treatment Room"/><div class="g-ov"><i class="fas fa-expand"></i> Treatment Room</div></div>
+      <div class="g-item" data-lightbox="https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=1200&q=85"><img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=600&q=85" alt="Equipment"/><div class="g-ov"><i class="fas fa-expand"></i> Equipment</div></div>
+      <div class="g-item" data-lightbox="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=1200&q=85"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=85" alt="Dental Chair"/><div class="g-ov"><i class="fas fa-expand"></i> Dental Chair</div></div>
+      <div class="g-item" data-lightbox="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1200&q=85"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=85" alt="Consultation"/><div class="g-ov"><i class="fas fa-expand"></i> Consultation</div></div>
+      <div class="g-item" data-lightbox="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1200&q=85"><img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=600&q=85" alt="Patient Care"/><div class="g-ov"><i class="fas fa-expand"></i> Patient Care</div></div>
+      <div class="g-item" data-lightbox="https://images.unsplash.com/photo-1551076805-e1869033e561?w=1200&q=85"><img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=600&q=85" alt="Sterilisation"/><div class="g-ov"><i class="fas fa-expand"></i> Sterilisation</div></div>
+      <div class="g-item" data-lightbox="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=1200&q=85"><img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&q=85" alt="Whitening Suite"/><div class="g-ov"><i class="fas fa-expand"></i> Whitening Suite</div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ INSTAGRAM ═══ -->
-<section class="bg-off" style="padding-bottom:60px">
-  <div class="container">
-    <div class="sec-h center reveal up">
-      <div class="sec-chip"><i class="fab fa-instagram"></i> Instagram</div>
-      <div class="sec-divider"></div>
-      <h2>Follow Our <em>Smile Journey</em></h2>
-      <p>@drkathuriasdentistry — Real cases, happy patients, behind-the-scenes.</p>
-    </div>
-    <div class="ig-grid reveal up">
-      <div class="ig-cell">
-        <img src="https://images.unsplash.com/photo-1609840114035-3c981b65dbb9?w=400&q=80" alt="Instagram Post"/>
-        <div class="ig-ov"><i class="fab fa-instagram"></i></div>
-      </div>
-      <div class="ig-cell">
-        <img src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?w=400&q=80" alt="Instagram Post"/>
-        <div class="ig-ov"><i class="fab fa-instagram"></i></div>
-      </div>
-      <div class="ig-cell">
-        <img src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=400&q=80" alt="Instagram Post"/>
-        <div class="ig-ov"><i class="fab fa-instagram"></i></div>
-      </div>
-      <div class="ig-cell">
-        <img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=400&q=80" alt="Instagram Post"/>
-        <div class="ig-ov"><i class="fab fa-instagram"></i></div>
-      </div>
-      <div class="ig-cell">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Instagram Post"/>
-        <div class="ig-ov"><i class="fab fa-instagram"></i></div>
-      </div>
-      <div class="ig-cell">
-        <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=400&q=80" alt="Instagram Post"/>
-        <div class="ig-ov"><i class="fab fa-instagram"></i></div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:28px">
-      <a href="https://www.instagram.com/drkathuriasdentistry" class="btn btn-outline-navy" target="_blank"><i class="fab fa-instagram"></i> Follow @drkathuriasdentistry</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ SMILE CONFIDENCE SCORE ═══ -->
+<!-- ═══ SMILE QUIZ ═══ -->
 <section class="scs-section">
   <div class="container">
-    <div class="sec-h center reveal up">
-      <div class="sec-chip" style="color:var(--gold-xl)"><i class="fas fa-smile-beam"></i> Smile Diagnosis</div>
-      <div class="sec-divider"></div>
-      <h2 style="color:var(--white)">What's Your <em style="color:var(--gold-xl)">Smile Score?</em></h2>
-      <p style="color:rgba(255,255,255,.55)">Answer 5 quick questions — get your personalised smile confidence score & treatment recommendation instantly.</p>
-    </div>
-
+    <div class="sec-h center reveal up"><div class="sec-chip" style="color:var(--gold-xl)"><i class="fas fa-smile-beam"></i> Smile Diagnosis</div><div class="sec-divider"></div><h2 style="color:var(--white)">What's Your <em style="color:var(--gold-xl)">Smile Score?</em></h2><p style="color:rgba(255,255,255,.55)">Answer 5 quick questions &mdash; get your personalised smile score &amp; treatment recommendation.</p></div>
     <div class="scs-wrap reveal up">
-      <!-- Progress Bar -->
-      <div class="scs-progress-bar">
-        <div class="scs-progress-fill" id="scsProgressFill" style="width:20%"></div>
-      </div>
+      <div class="scs-progress-bar"><div class="scs-progress-fill" id="scsProgressFill" style="width:20%"></div></div>
       <div class="scs-step-label"><span id="scsStepLabel">Question 1 of 5</span></div>
-
-      <!-- Questions -->
       <div class="scs-questions" id="scsQuestions">
-
-        <div class="scs-q active" data-q="1">
-          <p class="scs-q-text">How satisfied are you with the <strong>colour</strong> of your teeth?</p>
-          <div class="scs-opts">
-            <button class="scs-opt" data-score="4" data-q="1">Very satisfied — they're bright</button>
-            <button class="scs-opt" data-score="3" data-q="1">Slightly yellow, but okay</button>
-            <button class="scs-opt" data-score="2" data-q="1">Noticeably yellow / stained</button>
-            <button class="scs-opt" data-score="1" data-q="1">Very dark — bothers me a lot</button>
-          </div>
-        </div>
-
-        <div class="scs-q" data-q="2">
-          <p class="scs-q-text">How do you feel about the <strong>shape & alignment</strong> of your teeth?</p>
-          <div class="scs-opts">
-            <button class="scs-opt" data-score="4" data-q="2">Love them — perfectly straight</button>
-            <button class="scs-opt" data-score="3" data-q="2">Minor gaps or crowding</button>
-            <button class="scs-opt" data-score="2" data-q="2">Visibly crooked / uneven</button>
-            <button class="scs-opt" data-score="1" data-q="2">Broken, chipped or missing</button>
-          </div>
-        </div>
-
-        <div class="scs-q" data-q="3">
-          <p class="scs-q-text">How often do you feel <strong>self-conscious</strong> about your smile?</p>
-          <div class="scs-opts">
-            <button class="scs-opt" data-score="4" data-q="3">Never — I smile freely</button>
-            <button class="scs-opt" data-score="3" data-q="3">Occasionally in photos</button>
-            <button class="scs-opt" data-score="2" data-q="3">Often in social situations</button>
-            <button class="scs-opt" data-score="1" data-q="3">Always — I hide my smile</button>
-          </div>
-        </div>
-
-        <div class="scs-q" data-q="4">
-          <p class="scs-q-text">Do you experience any <strong>tooth sensitivity or pain?</strong></p>
-          <div class="scs-opts">
-            <button class="scs-opt" data-score="4" data-q="4">No pain at all</button>
-            <button class="scs-opt" data-score="3" data-q="4">Mild sensitivity with hot/cold</button>
-            <button class="scs-opt" data-score="2" data-q="4">Regular discomfort</button>
-            <button class="scs-opt" data-score="1" data-q="4">Constant pain / urgent issue</button>
-          </div>
-        </div>
-
-        <div class="scs-q" data-q="5">
-          <p class="scs-q-text">When did you last visit a <strong>dentist?</strong></p>
-          <div class="scs-opts">
-            <button class="scs-opt" data-score="4" data-q="5">Within last 6 months</button>
-            <button class="scs-opt" data-score="3" data-q="5">1–2 years ago</button>
-            <button class="scs-opt" data-score="2" data-q="5">3–5 years ago</button>
-            <button class="scs-opt" data-score="1" data-q="5">5+ years / never</button>
-          </div>
-        </div>
-
+        <div class="scs-q active" data-q="1"><p class="scs-q-text">How satisfied are you with the <strong>colour</strong> of your teeth?</p><div class="scs-opts"><button class="scs-opt" data-score="4" data-q="1">Very satisfied &mdash; they're bright</button><button class="scs-opt" data-score="3" data-q="1">Slightly yellow, but okay</button><button class="scs-opt" data-score="2" data-q="1">Noticeably yellow / stained</button><button class="scs-opt" data-score="1" data-q="1">Very dark &mdash; bothers me a lot</button></div></div>
+        <div class="scs-q" data-q="2"><p class="scs-q-text">How do you feel about the <strong>shape &amp; alignment</strong> of your teeth?</p><div class="scs-opts"><button class="scs-opt" data-score="4" data-q="2">Love them &mdash; perfectly straight</button><button class="scs-opt" data-score="3" data-q="2">Minor gaps or crowding</button><button class="scs-opt" data-score="2" data-q="2">Visibly crooked / uneven</button><button class="scs-opt" data-score="1" data-q="2">Broken, chipped or missing</button></div></div>
+        <div class="scs-q" data-q="3"><p class="scs-q-text">How often do you feel <strong>self-conscious</strong> about your smile?</p><div class="scs-opts"><button class="scs-opt" data-score="4" data-q="3">Never &mdash; I smile freely</button><button class="scs-opt" data-score="3" data-q="3">Occasionally in photos</button><button class="scs-opt" data-score="2" data-q="3">Often in social situations</button><button class="scs-opt" data-score="1" data-q="3">Always &mdash; I hide my smile</button></div></div>
+        <div class="scs-q" data-q="4"><p class="scs-q-text">Do you experience any <strong>tooth sensitivity or pain?</strong></p><div class="scs-opts"><button class="scs-opt" data-score="4" data-q="4">No pain at all</button><button class="scs-opt" data-score="3" data-q="4">Mild sensitivity with hot/cold</button><button class="scs-opt" data-score="2" data-q="4">Regular discomfort</button><button class="scs-opt" data-score="1" data-q="4">Constant pain / urgent issue</button></div></div>
+        <div class="scs-q" data-q="5"><p class="scs-q-text">When did you last visit a <strong>dentist?</strong></p><div class="scs-opts"><button class="scs-opt" data-score="4" data-q="5">Within last 6 months</button><button class="scs-opt" data-score="3" data-q="5">1&ndash;2 years ago</button><button class="scs-opt" data-score="2" data-q="5">3&ndash;5 years ago</button><button class="scs-opt" data-score="1" data-q="5">5+ years / never</button></div></div>
       </div>
-
-      <!-- Result Panel -->
       <div class="scs-result" id="scsResult">
-        <div class="scs-score-ring">
-          <svg viewBox="0 0 120 120">
-            <circle class="scs-ring-bg" cx="60" cy="60" r="52"/>
-            <circle class="scs-ring-fill" id="scsRingFill" cx="60" cy="60" r="52" style="stroke-dasharray:0 327"/>
-          </svg>
-          <div class="scs-score-num" id="scsScoreNum">0</div>
-          <div class="scs-score-pct">/100</div>
-        </div>
-        <div class="scs-result-content">
-          <div class="scs-result-badge" id="scsResultBadge"></div>
-          <h3 id="scsResultTitle"></h3>
-          <p id="scsResultDesc"></p>
-          <div class="scs-treatments" id="scsTreatments"></div>
-          <div class="scs-result-btns">
-            <a class='btn btn-gold btn-lg' href='/contact'><i class="fas fa-calendar-check"></i> Book Free Consultation</a>
-            <button class="btn btn-outline scs-retake" id="scsRetake"><i class="fas fa-redo"></i> Retake Quiz</button>
-          </div>
-        </div>
+        <div class="scs-score-ring"><svg viewBox="0 0 120 120"><circle class="scs-ring-bg" cx="60" cy="60" r="52"/><circle class="scs-ring-fill" id="scsRingFill" cx="60" cy="60" r="52" style="stroke-dasharray:0 327"/></svg><div class="scs-score-num" id="scsScoreNum">0</div><div class="scs-score-pct">/100</div></div>
+        <div class="scs-result-content"><div class="scs-result-badge" id="scsResultBadge"></div><h3 id="scsResultTitle"></h3><p id="scsResultDesc"></p><div class="scs-treatments" id="scsTreatments"></div><div class="scs-result-btns"><a class='btn btn-gold btn-lg' href='/contact'><i class="fas fa-calendar-check"></i> Book Free Consultation</a><button class="btn btn-outline scs-retake" id="scsRetake"><i class="fas fa-redo"></i> Retake Quiz</button></div></div>
       </div>
     </div>
   </div>
@@ -1027,7 +518,7 @@
   <div class="container">
     <div class="sec-chip white" style="margin-bottom:16px"><i class="fas fa-calendar-check"></i> Free Consultation</div>
     <h2>Ready to Transform <em style="color:var(--gold-l)">Your Smile?</em></h2>
-    <p>Join 15,000+ patients from 44 countries who chose Dr. Kathuria's Dentistry. First consultation is completely free.</p>
+    <p>Join 15,000+ patients from 44 countries who chose Dr. Kathuria's Dentistry.</p>
     <div class="cta-btns">
       <a class='btn btn-gold btn-lg' href='/contact'><i class="fas fa-calendar-check"></i> Book Free Consultation</a>
       <a href="https://wa.me/919810936360" class="btn btn-outline btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
@@ -1041,7 +532,7 @@
     <div class="footer-grid">
       <div>
         <div class="f-brand">Dr. Kathuria's <span>Dentistry</span></div>
-        <p class="f-tagline">E-143, East of Kailash, New Delhi, India. NABH Accredited · ISO Certified · 18+ Years of Excellence · Trusted by patients from 44+ countries.</p>
+        <p class="f-tagline">E-143, East of Kailash, New Delhi, India. NABH Accredited &middot; ISO Certified &middot; 18+ Years &middot; 44+ countries.</p>
         <div class="f-social">
           <a href="https://www.facebook.com/DrKathuriaDentistry" class="f-soc" target="_blank"><i class="fab fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/drkathuriasdentistry" class="f-soc" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -1050,52 +541,25 @@
           <a href="https://wa.me/919810936360" class="f-soc" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
-      <div class="f-col">
-        <h5>Treatments</h5>
-        <ul>
-          <li><a href='/services#cosmetic'><i class="fas fa-chevron-right"></i>Smile Makeover</a></li>
-          <li><a href='/services#implants'><i class="fas fa-chevron-right"></i>Dental Implants</a></li>
-          <li><a href='/services#aligners'><i class="fas fa-chevron-right"></i>Clear Aligners</a></li>
-          <li><a href='/services#whitening'><i class="fas fa-chevron-right"></i>Zoom Whitening</a></li>
-          <li><a href='/services#rct'><i class="fas fa-chevron-right"></i>Root Canal</a></li>
-          <li><a href='/services#gums'><i class="fas fa-chevron-right"></i>Gum Laser</a></li>
-        </ul>
-      </div>
-      <div class="f-col">
-        <h5>Quick Links</h5>
-        <ul>
-          <li><a href='/about'><i class="fas fa-chevron-right"></i>About Us</a></li>
-          <li><a href='/cases'><i class="fas fa-chevron-right"></i>Before &amp; After</a></li>
-          <li><a href='/about#team'><i class="fas fa-chevron-right"></i>Our Doctors</a></li>
-          <li><a href='/contact'><i class="fas fa-chevron-right"></i>Video Consult</a></li>
-          <li><a href='/contact#charges'><i class="fas fa-chevron-right"></i>Charges</a></li>
-          <li><a href='/contact'><i class="fas fa-chevron-right"></i>Contact</a></li>
-        </ul>
-      </div>
-      <div class="f-col">
-        <h5>Contact</h5>
-        <div class="f-contact">
-          <div class="f-ci"><i class="fas fa-map-marker-alt"></i><div><span>Address</span><strong>E-143, East of Kailash, New Delhi</strong></div></div>
-          <div class="f-ci"><i class="fas fa-phone-alt"></i><div><span>India Toll Free</span><strong>1800-11-7272</strong></div></div>
-          <div class="f-ci"><i class="fab fa-whatsapp"></i><div><span>WhatsApp</span><strong>+91 98109 36360</strong></div></div>
-          <div class="f-ci"><i class="fas fa-phone-alt"></i><div><span>USA / Canada</span><strong>+1 888 981 2145</strong></div></div>
-          <div class="f-ci"><i class="fas fa-phone-alt"></i><div><span>UK</span><strong>+44 1970 450032</strong></div></div>
-          <div class="f-ci"><i class="fas fa-envelope"></i><div><span>Email</span><strong>info@delhidental.com</strong></div></div>
-        </div>
-      </div>
+      <div class="f-col"><h5>Treatments</h5><ul><li><a href='/services#cosmetic'><i class="fas fa-chevron-right"></i>Smile Makeover</a></li><li><a href='/services#implants'><i class="fas fa-chevron-right"></i>Dental Implants</a></li><li><a href='/services#aligners'><i class="fas fa-chevron-right"></i>Clear Aligners</a></li><li><a href='/services#whitening'><i class="fas fa-chevron-right"></i>Zoom Whitening</a></li><li><a href='/services#rct'><i class="fas fa-chevron-right"></i>Root Canal</a></li><li><a href='/services#gums'><i class="fas fa-chevron-right"></i>Gum Laser</a></li></ul></div>
+      <div class="f-col"><h5>Quick Links</h5><ul><li><a href='/about'><i class="fas fa-chevron-right"></i>About Us</a></li><li><a href='#cases'><i class="fas fa-chevron-right"></i>Before &amp; After</a></li><li><a href='/about#team'><i class="fas fa-chevron-right"></i>Our Doctors</a></li><li><a href='/contact'><i class="fas fa-chevron-right"></i>Video Consult</a></li><li><a href='#charges'><i class="fas fa-chevron-right"></i>Charges</a></li><li><a href='/contact'><i class="fas fa-chevron-right"></i>Contact</a></li></ul></div>
+      <div class="f-col"><h5>Contact</h5><div class="f-contact">
+        <div class="f-ci"><i class="fas fa-map-marker-alt"></i><div><span>Address</span><strong>E-143, East of Kailash, New Delhi</strong></div></div>
+        <div class="f-ci"><i class="fas fa-phone-alt"></i><div><span>India Toll Free</span><strong>1800-11-7272</strong></div></div>
+        <div class="f-ci"><i class="fab fa-whatsapp"></i><div><span>WhatsApp</span><strong>+91 98109 36360</strong></div></div>
+        <div class="f-ci"><i class="fas fa-phone-alt"></i><div><span>USA / Canada</span><strong>+1 888 981 2145</strong></div></div>
+        <div class="f-ci"><i class="fas fa-phone-alt"></i><div><span>UK</span><strong>+44 1970 450032</strong></div></div>
+        <div class="f-ci"><i class="fas fa-envelope"></i><div><span>Email</span><strong>info@delhidental.com</strong></div></div>
+      </div></div>
     </div>
     <div class="footer-bottom">
-      <span>© 2024 Dr. Kathuria's Dentistry – U and K Oral Wellness LLP. All rights reserved.</span>
-      <div class="f-badges">
-        <span class="f-badge">NABH Accredited</span>
-        <span class="f-badge">ISO Certified</span>
-        <span class="f-badge">ADA Standards</span>
-      </div>
+      <span>&copy; 2026 Dr. Kathuria's Dentistry &ndash; U and K Oral Wellness LLP. All rights reserved.</span>
+      <div class="f-badges"><span class="f-badge">NABH Accredited</span><span class="f-badge">ISO Certified</span><span class="f-badge">ADA Standards</span></div>
     </div>
   </div>
 </footer>
 
-<!-- Side Contact Strip (desktop) -->
+<!-- Side Contact -->
 <div class="side-contact">
   <a href="tel:18001177272"><i class="fas fa-phone-alt"></i> <span>1800-11-7272</span></a>
   <a href="https://wa.me/919810936360" target="_blank"><i class="fab fa-whatsapp"></i> <span>WhatsApp</span></a>
@@ -1104,65 +568,34 @@
   <a href="https://www.youtube.com/@dentalclinicindelhi" target="_blank" style="background:#FF0000"><i class="fab fa-youtube"></i> <span>YouTube</span></a>
 </div>
 
-<!-- Floating Action Buttons -->
-<a href="tel:18001177272" class="fab-btn fab-call" aria-label="Call us"><i class="fas fa-phone"></i></a>
+<!-- FABs -->
+<a href="tel:18001177272" class="fab-btn fab-call" aria-label="Call"><i class="fas fa-phone"></i></a>
 <a href="https://wa.me/919810936360" target="_blank" class="fab-btn fab-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-<a href="#top" class="fab-btn fab-up" id="fabUp" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></a>
+<a href="#top" class="fab-btn fab-up" id="fabUp" aria-label="Top"><i class="fas fa-chevron-up"></i></a>
 
+<!-- Hidden Netlify form -->
+<form hidden method='post' name='appointment'><input type='hidden' name='form-name' value='appointment'/><input type="text" name="name"/><input type="text" name="country"/><input type="tel" name="phone"/><input type="email" name="email"/><select name="treatment"><option></option></select><textarea name="message"></textarea><input name="bot-field"/></form>
 
-<!-- Hidden form for Netlify build-time detection -->
-<form hidden method='post' name='appointment'><input type='hidden' name='form-name' value='appointment' />
-  <input type="text" name="name"/>
-  <input type="text" name="country"/>
-  <input type="tel" name="phone"/>
-  <input type="email" name="email"/>
-  <select name="treatment"><option></option></select>
-  <textarea name="message"></textarea>
-  <input name="bot-field"/>
-</form>
-
-<!-- Floating Appointment Panel -->
+<!-- Floating Panel -->
 <button class="float-book-btn" id="floatBookBtn">BOOK APPOINTMENT</button>
 <div class="float-panel" id="floatPanel">
   <button class="fp-close" id="fpClose"><i class="fas fa-times"></i></button>
   <h3>Book Free Consultation</h3>
-  <p>Fill in your details — we'll call back within 2 hours.</p>
+  <p>Fill in your details &mdash; we'll call back within 2 hours.</p>
   <form class='smart-form' method='POST' name='appointment'>
     <input type="hidden" name="form-name" value="appointment"/>
     <p class="hidden" style="display:none"><label>Don't fill: <input name="bot-field"/></label></p>
-    <div class="fg-row">
-      <div class="fg"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required/></div>
-      <div class="fg"><label>Country</label><input type="text" name="country" placeholder="Your country"/></div>
-    </div>
+    <div class="fg-row"><div class="fg"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required/></div><div class="fg"><label>Country</label><input type="text" name="country" placeholder="Your country"/></div></div>
     <div class="fg"><label>WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+91 or international" required/></div>
     <div class="fg"><label>Email</label><input type="email" name="email" placeholder="your@email.com"/></div>
-    <div class="fg"><label>Treatment</label>
-      <select name="treatment">
-        <option value="">Select treatment...</option>
-        <option>Smile Makeover / Veneers</option>
-        <option>Dental Implants</option>
-        <option>Clear Aligners</option>
-        <option>Zoom Whitening</option>
-        <option>Root Canal</option>
-        <option>Full Mouth Rehabilitation</option>
-        <option>Video Consultation Only</option>
-        <option>Not Sure – Need Advice</option>
-      </select>
-    </div>
+    <div class="fg"><label>Treatment</label><select name="treatment"><option value="">Select treatment...</option><option>Smile Makeover / Veneers</option><option>Dental Implants</option><option>Clear Aligners</option><option>Zoom Whitening</option><option>Root Canal</option><option>Full Mouth Rehabilitation</option><option>Video Consultation Only</option><option>Not Sure &ndash; Need Advice</option></select></div>
     <div class="fg"><label>Message (optional)</label><textarea name="message" rows="3" placeholder="Any specific concerns or preferred time"></textarea></div>
     <button type="submit" class="form-submit"><i class="fas fa-calendar-check"></i> Request Consultation</button>
   </form>
 </div>
 
 <!-- Lightbox -->
-<div class="lightbox" id="lightbox">
-  <div class="lb-inner">
-    <button class="lb-close" id="lbClose"><i class="fas fa-times"></i></button>
-    <img id="lbImg" src="" alt=""/>
-  </div>
-</div>
-
-<!-- Toast -->
+<div class="lightbox" id="lightbox"><div class="lb-inner"><button class="lb-close" id="lbClose"><i class="fas fa-times"></i></button><img id="lbImg" src="" alt=""/></div></div>
 <div class="toast" id="toast"></div>
 
 <script src="js/main.js"></script>
