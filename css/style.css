@@ -383,7 +383,7 @@ ul  { list-style: none; }
 .hs-slide {
   position: absolute; inset: 0;
   opacity: 0; transition: opacity 1.6s var(--ease);
-  display: flex; align-items: flex-end;
+  display: flex; align-items: center;
 }
 .hs-slide.active { opacity: 1; }
 .hs-img {
@@ -398,7 +398,7 @@ ul  { list-style: none; }
 .hs-overlay { position: absolute; inset: 0; }
 .hs-content {
   position: relative; z-index: 2;
-  padding: 0 6% 80px;
+  padding: 40px 6% 0;
   max-width: 900px;
 }
 .hs-eyebrow {
@@ -443,9 +443,9 @@ ul  { list-style: none; }
 .hs-arr:hover { background: var(--gold); border-color: var(--gold); }
 /* Scroll indicator */
 .hs-scroll {
-  position: absolute; bottom: 36px; left: 6%;
-  display: flex; align-items: center; gap: 10px; z-index: 10;
-  color: rgba(255,255,255,.5); font-size: .68rem; letter-spacing: 2px; text-transform: uppercase;
+  position: absolute; bottom: 16px; left: 6%;
+  display: flex; align-items: center; gap: 10px; z-index: 3;
+  color: rgba(255,255,255,.35); font-size: .6rem; letter-spacing: 2px; text-transform: uppercase;
 }
 .hs-scroll-line {
   width: 40px; height: 1px; background: rgba(255,255,255,.35);
@@ -952,7 +952,7 @@ section { padding: 100px 5%; }
   width: 420px; max-height: 90vh; overflow-y: auto;
   background: var(--white); border-radius: 14px 0 0 14px;
   box-shadow: -10px 0 60px rgba(11,18,32,.2);
-  padding: 38px 34px; z-index: 801;
+  padding: 38px 34px; z-index: 9500;
   transition: right .45s var(--ease);
 }
 .float-panel.open { right: 0; }
@@ -1120,8 +1120,9 @@ section { padding: 100px 5%; }
    COUNTRIES PILLS
 ═══════════════════════════════════ */
 .countries-pills { display: flex; flex-wrap: wrap; gap: 8px; }
-.c-pill { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); color: rgba(255,255,255,.8); padding: 6px 14px; border-radius: var(--r-sm); font-size: .76rem; font-weight: 600; transition: all .22s; cursor: default; }
-.c-pill:hover { background: rgba(184,150,62,.18); border-color: rgba(184,150,62,.35); color: var(--gold-xl); }
+.c-pill { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.85); padding: 8px 16px; border-radius: 50px; font-size: .82rem; font-weight: 600; transition: all .25s; cursor: default; display: inline-flex; align-items: center; gap: 8px; }
+.c-pill img { width: 20px; height: 15px; border-radius: 2px; object-fit: cover; flex-shrink: 0; }
+.c-pill:hover { background: rgba(184,150,62,.15); border-color: rgba(184,150,62,.4); color: var(--gold-xl); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(184,150,62,.15); }
 
 /* ═══════════════════════════════════
    RESPONSIVE BREAKPOINTS
