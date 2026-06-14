@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Awards &amp; Recognition | Dr. Kathuria's Dentistry – Credibility &amp; Accreditations</title>
+  <meta name="description" content="Explore the awards, accreditations, and recognition earned by Dr. Kathuria's Dentistry — NABH accredited, ISO certified, NDTV Top 5 Dental Clinics Delhi, Times Health Excellence Award, and more."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* ══════════════════════════════════════
+       AWARDS PAGE — UNIQUE STYLES
+    ══════════════════════════════════════ */
+
+    /* ── AWARDS GRID ── */
+    .awards-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px; max-width: 1100px; margin: 0 auto;
+    }
+    .award-card .award-icon {
+      width: 68px; height: 68px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-pale) 0%, var(--olive-pale) 100%);
+      border: 2px solid var(--border-gold);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); font-size: 1.6rem; margin: 0 auto 18px;
+      transition: all .35s var(--ease);
+    }
+    .award-card:hover .award-icon {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      color: var(--white); border-color: var(--gold);
+      transform: scale(1.1) rotate(-5deg);
+      box-shadow: 0 8px 28px rgba(198,169,77,.35);
+    }
+
+    /* ── ACCREDITATION SECTION ── */
+    .accreditation-section { background: var(--ink); position: relative; overflow: hidden; }
+    .accreditation-section::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(198,169,77,.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .accred-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 28px; max-width: 1100px; margin: 0 auto;
+    }
+    .accred-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--r-lg); padding: 36px 28px;
+      text-align: center; transition: all .4s var(--ease);
+      position: relative; overflow: hidden;
+    }
+    .accred-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--olive));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform .4s var(--ease);
+    }
+    .accred-card:hover::before { transform: scaleX(1); }
+    .accred-card:hover {
+      border-color: rgba(198,169,77,.3);
+      background: rgba(255,255,255,.07);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(0,0,0,.3);
+    }
+    .accred-icon {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: rgba(198,169,77,.1); border: 2px solid rgba(198,169,77,.2);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); font-size: 1.8rem; margin: 0 auto 20px;
+      transition: all .35s var(--ease);
+    }
+    .accred-card:hover .accred-icon {
+      background: var(--gold); color: var(--white); border-color: var(--gold);
+      box-shadow: 0 8px 30px rgba(198,169,77,.3);
+    }
+    .accred-card h4 { color: var(--white); font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+    .accred-card p { color: rgba(255,255,255,.55); font-size: .82rem; line-height: 1.72; }
+
+    /* ── TESTIMONIAL CAROUSEL ── */
+    .testi-awards-section { background: var(--cream); position: relative; }
+
+    /* ── VIDEO TESTIMONIALS ── */
+    .video-testi-section { background: var(--white); }
+    .video-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px; max-width: 1100px; margin: 0 auto;
+    }
+    .video-card {
+      position: relative; border-radius: var(--r-lg); overflow: hidden;
+      background: var(--ink); aspect-ratio: 16/9;
+      cursor: pointer; transition: all .4s var(--ease);
+      border: 2px solid rgba(255,255,255,.06);
+    }
+    .video-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0,0,0,.2);
+      border-color: rgba(198,169,77,.3);
+    }
+    .video-card-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(26,26,26,.85) 0%, rgba(91,123,58,.3) 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 12px;
+    }
+    .video-play-btn {
+      width: 60px; height: 60px; border-radius: 50%;
+      background: var(--gold); color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; transition: all .3s var(--ease);
+      box-shadow: 0 6px 24px rgba(198,169,77,.4);
+    }
+    .video-card:hover .video-play-btn {
+      transform: scale(1.15);
+      box-shadow: 0 10px 36px rgba(198,169,77,.5);
+    }
+    .video-card-label {
+      color: var(--white); font-size: .82rem; font-weight: 600;
+      text-align: center; padding: 0 20px;
+    }
+    .video-card-label span {
+      display: block; font-size: .65rem; color: rgba(255,255,255,.5);
+      font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* ── COMMUNITY OUTREACH ── */
+    .outreach-section { background: var(--olive-bg); position: relative; }
+    .outreach-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .outreach-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; font-weight: 700; color: var(--ink);
+      margin-bottom: 18px; line-height: 1.3;
+    }
+    .outreach-text h3 em { color: var(--olive); font-style: italic; }
+    .outreach-text p {
+      font-size: .9rem; color: var(--gray); line-height: 1.82; margin-bottom: 16px;
+    }
+    .outreach-stats {
+      display: flex; gap: 28px; margin-top: 24px; flex-wrap: wrap;
+    }
+    .outreach-stat {
+      text-align: center; padding: 16px 20px;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--r-md); transition: all .3s var(--ease);
+    }
+    .outreach-stat:hover { transform: translateY(-4px); box-shadow: var(--shadow-m); }
+    .outreach-stat .os-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; font-weight: 700; color: var(--olive); line-height: 1;
+    }
+    .outreach-stat p { font-size: .68rem; color: var(--gray); margin-top: 4px; text-transform: uppercase; letter-spacing: .8px; }
+    .outreach-icon-wrap {
+      position: relative; border-radius: var(--r-lg); overflow: hidden;
+      background: var(--olive); min-height: 340px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow-l);
+    }
+    .outreach-icon-wrap i {
+      font-size: 5rem; color: rgba(255,255,255,.12);
+    }
+    .outreach-icon-badge {
+      position: absolute; bottom: 20px; left: 20px; right: 20px;
+      background: rgba(0,0,0,.5); backdrop-filter: blur(10px);
+      border-radius: var(--r-md); padding: 16px 20px;
+      color: var(--white); font-size: .82rem; font-weight: 600;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .outreach-icon-badge i { font-size: 1rem; color: var(--gold); }
+
+    /* ── PRESS COVERAGE ── */
+    .press-section { background: var(--white); }
+    .press-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 20px; max-width: 1100px; margin: 0 auto;
+    }
+    .press-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--r-lg); padding: 28px 20px; text-align: center;
+      transition: all .3s; box-shadow: var(--shadow-xs);
+    }
+    .press-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-m); border-color: var(--gold-pale); }
+    .press-card .press-logo {
+      width: 56px; height: 56px; border-radius: 14px;
+      background: var(--cream); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--olive); font-size: 1.3rem; margin: 0 auto 14px;
+      transition: all .3s;
+    }
+    .press-card:hover .press-logo {
+      background: var(--olive); color: var(--white); border-color: var(--olive);
+    }
+    .press-card h4 { font-size: .86rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+    .press-card p { font-size: .72rem; color: var(--gray); line-height: 1.6; }
+
+    /* ── CTA BANNER ── */
+    .cta-banner { background: var(--cream); text-align: center; color: var(--ink); }
+    .cta-banner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px;
+    }
+    .cta-banner h2 em { color: var(--olive); font-style: italic; }
+    .cta-banner p { font-size: 1.05rem; opacity: .88; margin-bottom: 36px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:960px){
+      .awards-grid { grid-template-columns: 1fr 1fr; }
+      .accred-grid { grid-template-columns: 1fr 1fr; }
+      .video-grid { grid-template-columns: 1fr 1fr; }
+      .press-grid { grid-template-columns: 1fr 1fr; }
+      .outreach-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media(max-width:700px){
+      .awards-grid { grid-template-columns: 1fr; max-width: 400px; }
+      .accred-grid { grid-template-columns: 1fr; max-width: 400px; }
+      .video-grid { grid-template-columns: 1fr; max-width: 400px; }
+      .press-grid { grid-template-columns: 1fr 1fr; }
+      .testi-card { padding: 28px 22px; }
+      .page-hero { min-height: 320px; padding: 80px 5% 60px; }
+    }
+    @media(max-width:480px){
+      .press-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="has-topbar">
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-bar-left">
+    <a href="tel:18001177272"><i class="fas fa-phone-alt"></i> 1800-11-7272 (Toll Free)</a>
+    <a href="mailto:info@delhidental.com"><i class="fas fa-envelope"></i> info@delhidental.com</a>
+    <span><i class="fas fa-clock"></i> Mon&ndash;Sat: 10 AM &ndash; 7 PM</span>
+  </div>
+  <div class="top-bar-right">
+    <a href="https://www.facebook.com/DrKathuriaDentistry" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/drkathuriasdentistry" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@dentalclinicindelhi" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://wa.me/919810936360" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</div>
+
+<!-- PAGE LOADER -->
+<div id="page-loader"><div class="loader-inner"><div class="tooth">&#x1f9b7;</div><p>Loading...</p></div></div>
+<div class="cursor-glow"></div>
+
+<!-- NAV -->
+<nav class="site-nav" id="mainNav">
+  <div class="nav-inner">
+    <a class='nav-logo' href='/'><div class="logo-mark"><i class="fas fa-tooth"></i></div><div class="logo-text"><strong>Dr. Kathuria's Dentistry</strong><span>East of Kailash, New Delhi</span></div></a>
+    <ul class="nav-links">
+      <li><a href='/'>Home</a></li>
+      <li><a href='/about'>About <i class="fas fa-chevron-down chevron"></i></a><div class="nav-dropdown"><a href='/about#team'><i class="fas fa-user-md"></i>Our Doctors</a><a href='/about#clinic'><i class="fas fa-hospital"></i>Clinic Tour</a><a href='/about#certifications'><i class="fas fa-certificate"></i>Certifications</a><a href='/about#timeline'><i class="fas fa-history"></i>Our Journey</a></div></li>
+      <li><a href='/services'>Services <i class="fas fa-chevron-down chevron"></i></a><div class="nav-dropdown"><a href='/services#cosmetic'><i class="fas fa-star"></i>Cosmetic Dentistry</a><a href='/services#implants'><i class="fas fa-tooth"></i>Dental Implants</a><a href='/services#aligners'><i class="fas fa-align-center"></i>Clear Aligners</a><a href='/services#whitening'><i class="fas fa-sun"></i>Teeth Whitening</a><a href='/services#rct'><i class="fas fa-syringe"></i>Root Canal</a><a href='/services#gums'><i class="fas fa-leaf"></i>Gum Treatment</a></div></li>
+      <li><a href='/cases'>Cases</a></li>
+      <li><a href='/contact'>Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="nav-phone" href="tel:18001177272"><i class="fas fa-phone-alt"></i> 1800-11-7272</a>
+      <button class="nav-cta" onclick="document.getElementById('floatPanel').classList.add('open')"><i class="fas fa-calendar-check"></i> Book Consult</button>
+    </div>
+    <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href='/'><i class="fas fa-home"></i> Home</a><a href='/about'><i class="fas fa-user-md"></i> About Us</a><a href='/services'><i class="fas fa-tooth"></i> Services</a><a href='/cases'><i class="fas fa-images"></i> Cases</a><a href='/contact'><i class="fas fa-envelope"></i> Contact</a><a class='mobile-cta' href='/contact'><i class="fas fa-calendar-check"></i> Book Consultation</a>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     1. PAGE HERO
+═══════════════════════════════════════════════════ -->
+<section class="page-hero">
+  <img class="page-hero-img" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=85" alt="Awards and Recognition"/>
+  <div class="page-hero-overlay" style="background:linear-gradient(120deg, rgba(91,123,58,.92) 0%, rgba(63,90,36,.75) 50%, rgba(198,169,77,.4) 100%)"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="/">Home</a><span class="sep"><i class="fas fa-chevron-right" style="font-size:.5rem"></i></span><span>Credibility</span>
+    </div>
+    <h1>Awards &amp; <em>Recognition</em></h1>
+    <p>18+ years of clinical excellence, internationally accredited standards, and recognition from India's most trusted healthcare bodies and media platforms.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     2. AWARDS GRID
+═══════════════════════════════════════════════════ -->
+<section style="background:var(--white)">
+  <div class="container">
+    <div class="sec-h center reveal">
+      <div class="sec-chip"><i class="fas fa-trophy"></i> Awards &amp; Honours</div>
+      <div class="sec-divider"></div>
+      <h2>Recognised for <em>Excellence</em></h2>
+      <p>Our clinic's commitment to world-class dentistry has been recognised by national and international bodies.</p>
+    </div>
+
+    <div class="awards-grid">
+
+      <div class="award-card reveal">
+        <div class="award-icon"><i class="fas fa-award"></i></div>
+        <h4>NABH Accreditation</h4>
+        <p>Accredited by the National Accreditation Board for Hospitals &amp; Healthcare Providers &mdash; India's gold standard for quality in healthcare delivery and patient safety.</p>
+      </div>
+
+      <div class="award-card reveal">
+        <div class="award-icon"><i class="fas fa-certificate"></i></div>
+        <h4>ISO 9001:2015 Certified</h4>
+        <p>Certified under International Organisation for Standardisation protocols for quality management systems, ensuring consistent, world-class dental care and operational excellence.</p>
+      </div>
+
+      <div class="award-card reveal">
+        <div class="award-icon"><i class="fas fa-trophy"></i></div>
+        <h4>NDTV Top 5 Dental Clinics Delhi</h4>
+        <p>Featured by NDTV among the top 5 dental clinics in Delhi for advanced treatments, international patient care, and cutting-edge dental technology infrastructure.</p>
+      </div>
+
+      <div class="award-card reveal">
+        <div class="award-icon"><i class="fas fa-globe-americas"></i></div>
+        <h4>Dental Tourism Award</h4>
+        <p>Recognised for outstanding contribution to India's dental tourism sector &mdash; serving patients from 44+ countries with seamless international patient care protocols.</p>
+      </div>
+
+      <div class="award-card reveal">
+        <div class="award-icon"><i class="fas fa-star"></i></div>
+        <h4>Femina Miss India Smile Partner</h4>
+        <p>Official smile makeover partner for Femina Miss India &mdash; trusted to create picture-perfect smiles for India's most prominent beauty pageant contestants.</p>
+      </div>
+
+      <div class="award-card reveal">
+        <div class="award-icon"><i class="fas fa-medal"></i></div>
+        <h4>Times Health Excellence Award</h4>
+        <p>Honoured with the Times Health Excellence Award for exceptional contributions to dental healthcare, innovation in implantology, and patient-centric clinical practices.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     3. ACCREDITATION SECTION
+═══════════════════════════════════════════════════ -->
+<section class="accreditation-section" id="accreditation">
+  <div class="container">
+    <div class="sec-h center reveal">
+      <div class="sec-chip light"><i class="fas fa-shield-alt"></i> Accreditations</div>
+      <div class="sec-divider"></div>
+      <h2 style="color:var(--white)">Accredited to the <em style="color:var(--gold-light)">Highest Standards</em></h2>
+      <p style="color:rgba(255,255,255,.55)">Every treatment at our clinic meets or exceeds international benchmarks for safety, hygiene, and clinical excellence.</p>
+    </div>
+
+    <div class="accred-grid">
+
+      <div class="accred-card reveal">
+        <div class="accred-icon"><i class="fas fa-award"></i></div>
+        <h4>NABH Accredited</h4>
+        <p>National Accreditation Board for Hospitals &amp; Healthcare Providers certification &mdash; the highest quality and patient safety benchmark for healthcare facilities in India. We are among the few dental clinics in Delhi to hold this prestigious accreditation.</p>
+      </div>
+
+      <div class="accred-card reveal">
+        <div class="accred-icon"><i class="fas fa-certificate"></i></div>
+        <h4>ISO 9001:2015</h4>
+        <p>International Organisation for Standardisation certification for quality management systems. Every process &mdash; from sterilisation to patient records &mdash; follows documented, audited protocols ensuring consistent world-class care delivery.</p>
+      </div>
+
+      <div class="accred-card reveal">
+        <div class="accred-icon"><i class="fas fa-flask"></i></div>
+        <h4>NABL Standards</h4>
+        <p>Our diagnostic and laboratory processes follow National Accreditation Board for Testing and Calibration Laboratories standards, ensuring every X-ray, scan, and lab report meets the highest accuracy and reliability benchmarks.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     4. TESTIMONIALS CAROUSEL
+═══════════════════════════════════════════════════ -->
+<section class="testi-awards-section" id="testimonials">
+  <div class="container">
+    <div class="sec-h center reveal">
+      <div class="sec-chip"><i class="fas fa-quote-left"></i> Patient Stories</div>
+      <div class="sec-divider"></div>
+      <h2>Trusted by Patients from <em>Around the World</em></h2>
+      <p>Real stories from international patients who chose Dr. Kathuria's Dentistry for life-changing dental treatments.</p>
+    </div>
+
+    <div class="testi-outer reveal">
+      <div class="testi-track" id="testiTrack">
+
+        <!-- Testimonial 1 -->
+        <div class="testi-slide">
+          <div class="testi-card">
+            <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="testi-text">"I travelled from the USA specifically for dental implants at Dr. Kathuria's clinic. The entire experience was exceptional &mdash; from the initial video consultation to the final placement. Dr. Puneet Kathuria is a world-class implantologist. My new teeth feel completely natural, and I saved over 70% compared to US pricing. I cannot recommend them highly enough."</p>
+            <div class="testi-author">
+              <div class="testi-av">P</div>
+              <div>
+                <div class="testi-name">Mr. Prem Issar</div>
+                <div class="testi-from">Dental Implant Patient</div>
+                <div class="testi-country"><i class="fas fa-flag"></i> USA</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testi-slide">
+          <div class="testi-card">
+            <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="testi-text">"Dr. Sween Kathuria transformed my smile with porcelain veneers and it looks absolutely stunning. As someone who appears on television and in cookbooks, my smile matters immensely to my career. The team at Dr. Kathuria's Dentistry understood exactly what I needed and delivered beyond my expectations. Truly world-class dentistry in Delhi."</p>
+            <div class="testi-author">
+              <div class="testi-av">N</div>
+              <div>
+                <div class="testi-name">Chef Nita Mehta</div>
+                <div class="testi-from">Smile Makeover Patient</div>
+                <div class="testi-country"><i class="fas fa-flag"></i> India</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testi-slide">
+          <div class="testi-card">
+            <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="testi-text">"I'm a dentist myself from London, so I know quality work when I see it. I chose Dr. Kathuria's Dentistry for my own porcelain veneers after extensive research. The precision, aesthetics, and attention to detail were on par with the best clinics in Harley Street &mdash; at a fraction of the cost. The NABH accreditation gives real confidence in their sterilisation and protocols."</p>
+            <div class="testi-author">
+              <div class="testi-av">C</div>
+              <div>
+                <div class="testi-name">Dr. Christine Burnett</div>
+                <div class="testi-from">Porcelain Veneers Patient</div>
+                <div class="testi-country"><i class="fas fa-flag"></i> United Kingdom</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div class="testi-slide">
+          <div class="testi-card">
+            <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="testi-text">"After years of dental issues, I flew from Toronto to Delhi for a full mouth rehabilitation at Dr. Kathuria's clinic. In just 6 days, Dr. Puneet and his team completely rebuilt my smile with implants, crowns, and bridges. The clinic is spotless, the technology is cutting-edge, and the aftercare has been outstanding. I feel like a new person."</p>
+            <div class="testi-author">
+              <div class="testi-av">R</div>
+              <div>
+                <div class="testi-name">Raymond Van Geloven</div>
+                <div class="testi-from">Full Mouth Rehabilitation Patient</div>
+                <div class="testi-country"><i class="fas fa-flag"></i> Canada</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Testimonial Nav -->
+    <div class="testi-nav reveal">
+      <button class="testi-btn" id="testiPrev"><i class="fas fa-chevron-left"></i></button>
+      <div class="testi-pips">
+        <button class="testi-pip on"></button>
+        <button class="testi-pip"></button>
+        <button class="testi-pip"></button>
+        <button class="testi-pip"></button>
+      </div>
+      <button class="testi-btn" id="testiNext"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     5. VIDEO TESTIMONIALS
+═══════════════════════════════════════════════════ -->
+<section class="video-testi-section">
+  <div class="container">
+    <div class="sec-h center reveal">
+      <div class="sec-chip"><i class="fas fa-video"></i> Video Testimonials</div>
+      <div class="sec-divider"></div>
+      <h2>Hear It from <em>Our Patients</em></h2>
+      <p>Watch real patients share their experience of world-class dental care at Dr. Kathuria's Dentistry.</p>
+    </div>
+
+    <div class="video-grid">
+
+      <div class="video-card reveal">
+        <div class="video-card-bg">
+          <div class="video-play-btn"><i class="fas fa-play" style="margin-left:3px"></i></div>
+          <div class="video-card-label">
+            Mr. Prem Issar &mdash; Implant Journey
+            <span>USA &middot; Full Mouth Implants</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card reveal">
+        <div class="video-card-bg">
+          <div class="video-play-btn"><i class="fas fa-play" style="margin-left:3px"></i></div>
+          <div class="video-card-label">
+            Dr. Christine Burnett &mdash; Veneer Experience
+            <span>UK &middot; Porcelain Veneers</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card reveal">
+        <div class="video-card-bg">
+          <div class="video-play-btn"><i class="fas fa-play" style="margin-left:3px"></i></div>
+          <div class="video-card-label">
+            Raymond Van Geloven &mdash; Full Mouth Rehab
+            <span>Canada &middot; Implants &amp; Crowns</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     6. COMMUNITY OUTREACH
+═══════════════════════════════════════════════════ -->
+<section class="outreach-section">
+  <div class="container">
+    <div class="outreach-grid">
+      <div class="reveal">
+        <div class="outreach-text">
+          <div class="sec-chip"><i class="fas fa-hands-helping"></i> Giving Back</div>
+          <div class="sec-divider"></div>
+          <h3>Community <em>Outreach &amp; Service</em></h3>
+          <p>At Dr. Kathuria's Dentistry, we believe world-class dental care should extend beyond our clinic walls. We actively participate in community dental health initiatives across Delhi and neighbouring states.</p>
+          <p>Our team regularly organises free dental check-up camps in schools, orphanages, and underserved communities. We provide oral hygiene education, free screenings, and subsidised treatments for those who need it most.</p>
+          <div class="outreach-stats">
+            <div class="outreach-stat">
+              <div class="os-num">50+</div>
+              <p>Dental Camps</p>
+            </div>
+            <div class="outreach-stat">
+              <div class="os-num">5,000+</div>
+              <p>Free Screenings</p>
+            </div>
+            <div class="outreach-stat">
+              <div class="os-num">20+</div>
+              <p>Schools Covered</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="outreach-icon-wrap">
+          <i class="fas fa-hand-holding-heart"></i>
+          <div class="outreach-icon-badge">
+            <i class="fas fa-heartbeat"></i>
+            <span>Making a difference &mdash; one smile at a time</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     7. PRESS COVERAGE
+═══════════════════════════════════════════════════ -->
+<section class="press-section">
+  <div class="container">
+    <div class="sec-h center reveal">
+      <div class="sec-chip"><i class="fas fa-newspaper"></i> In the Media</div>
+      <div class="sec-divider"></div>
+      <h2>Press <em>Coverage</em></h2>
+      <p>Dr. Kathuria's Dentistry has been featured in India's leading publications and media platforms.</p>
+    </div>
+
+    <div class="press-grid">
+
+      <div class="press-card reveal">
+        <div class="press-logo"><i class="fas fa-tv"></i></div>
+        <h4>NDTV</h4>
+        <p>Featured as one of the top 5 dental clinics in Delhi for advanced treatments and dental tourism excellence.</p>
+      </div>
+
+      <div class="press-card reveal">
+        <div class="press-logo"><i class="fas fa-newspaper"></i></div>
+        <h4>Times of India</h4>
+        <p>Covered for pioneering contribution to dental implant technology and Times Health Excellence Award recognition.</p>
+      </div>
+
+      <div class="press-card reveal">
+        <div class="press-logo"><i class="fas fa-newspaper"></i></div>
+        <h4>Hindustan Times</h4>
+        <p>Featured for exceptional patient care, NABH accreditation, and international dental tourism services from Delhi.</p>
+      </div>
+
+      <div class="press-card reveal">
+        <div class="press-logo"><i class="fas fa-star"></i></div>
+        <h4>Femina</h4>
+        <p>Official smile makeover partner for Femina Miss India, recognised for world-class cosmetic dentistry expertise.</p>
+      </div>
+
+      <div class="press-card reveal">
+        <div class="press-logo"><i class="fas fa-globe-asia"></i></div>
+        <h4>India Today</h4>
+        <p>Highlighted as a leading dental tourism destination for international patients seeking affordable, quality dental care in India.</p>
+      </div>
+
+      <div class="press-card reveal">
+        <div class="press-logo"><i class="fas fa-broadcast-tower"></i></div>
+        <h4>Zee News</h4>
+        <p>Featured segment on advanced dental implant procedures and smile makeover transformations at the clinic.</p>
+      </div>
+
+      <div class="press-card reveal">
+        <div class="press-logo"><i class="fas fa-book-open"></i></div>
+        <h4>Outlook India</h4>
+        <p>Recognised for clinical excellence, patient-centric approach, and contribution to healthcare standards in Delhi.</p>
+      </div>
+
+      <div class="press-card reveal">
+        <div class="press-logo"><i class="fas fa-podcast"></i></div>
+        <h4>Health Shots</h4>
+        <p>Expert dental health insights and smile care advice featured across multiple digital health publication articles.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     8. CTA BANNER
+═══════════════════════════════════════════════════ -->
+<section class="cta-banner reveal">
+  <div class="container">
+    <div class="sec-chip" style="margin-bottom:16px;justify-content:center"><i class="fas fa-calendar-check"></i> Consultation</div>
+    <h2>Ready to Transform <em>Your Smile?</em></h2>
+    <p>Join 15,000+ patients from 44 countries who chose Dr. Kathuria's Dentistry for world-class dental care.</p>
+    <div class="cta-btns">
+      <a class='btn btn-gold btn-lg' href='/contact'><i class="fas fa-calendar-check"></i> Book Consultation</a>
+      <a href="https://wa.me/919810936360" class="btn btn-outline-olive btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="f-brand">Dr. Kathuria's <span>Dentistry</span></div>
+        <p class="f-tagline">E-143, East of Kailash, New Delhi, India. NABH Accredited &middot; ISO Certified &middot; 18+ Years &middot; 44+ countries.</p>
+        <div class="f-social">
+          <a href="https://www.facebook.com/DrKathuriaDentistry" class="f-soc" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/drkathuriasdentistry" class="f-soc" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@dentalclinicindelhi" class="f-soc" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://twitter.com/Kathuriadentist" class="f-soc" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://wa.me/919810936360" class="f-soc" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="f-col"><h5>Treatments</h5><ul><li><a href='/services#cosmetic'><i class="fas fa-chevron-right"></i>Smile Makeover</a></li><li><a href='/services#implants'><i class="fas fa-chevron-right"></i>Dental Implants</a></li><li><a href='/services#aligners'><i class="fas fa-chevron-right"></i>Clear Aligners</a></li><li><a href='/services#whitening'><i class="fas fa-chevron-right"></i>Zoom Whitening</a></li><li><a href='/services#rct'><i class="fas fa-chevron-right"></i>Root Canal</a></li><li><a href='/services#gums'><i class="fas fa-chevron-right"></i>Gum Laser</a></li></ul></div>
+      <div class="f-col"><h5>Quick Links</h5><ul><li><a href='/about'><i class="fas fa-chevron-right"></i>About Us</a></li><li><a href='/cases'><i class="fas fa-chevron-right"></i>Before &amp; After</a></li><li><a href='/about#team'><i class="fas fa-chevron-right"></i>Our Doctors</a></li><li><a href='/contact'><i class="fas fa-chevron-right"></i>Video Consult</a></li><li><a href='/awards'><i class="fas fa-chevron-right"></i>Awards</a></li><li><a href='/contact'><i class="fas fa-chevron-right"></i>Contact</a></li></ul></div>
+      <div class="f-col"><h5>Contact</h5><div class="f-contact">
+        <div class="f-ci"><i class="fas fa-map-marker-alt"></i><div><span>Address</span><strong>E-143, East of Kailash, New Delhi</strong></div></div>
+        <div class="f-ci"><i class="fas fa-phone-alt"></i><div><span>India Toll Free</span><strong>1800-11-7272</strong></div></div>
+        <div class="f-ci"><i class="fab fa-whatsapp"></i><div><span>WhatsApp</span><strong>+91 98109 36360</strong></div></div>
+        <div class="f-ci"><i class="fas fa-phone-alt"></i><div><span>USA / Canada</span><strong>+1 888 981 2145</strong></div></div>
+        <div class="f-ci"><i class="fas fa-phone-alt"></i><div><span>UK</span><strong>+44 1970 450032</strong></div></div>
+        <div class="f-ci"><i class="fas fa-envelope"></i><div><span>Email</span><strong>info@delhidental.com</strong></div></div>
+      </div></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Dr. Kathuria's Dentistry &ndash; U and K Oral Wellness LLP. All rights reserved.</span>
+      <div class="f-badges"><span class="f-badge">NABH Accredited</span><span class="f-badge">ISO Certified</span><span class="f-badge">ADA Standards</span></div>
+    </div>
+  </div>
+</footer>
+
+<!-- Side Contact -->
+<div class="side-contact">
+  <a href="tel:18001177272"><i class="fas fa-phone-alt"></i> <span>1800-11-7272</span></a>
+  <a href="https://wa.me/919810936360" target="_blank"><i class="fab fa-whatsapp"></i> <span>WhatsApp</span></a>
+  <a href="https://www.instagram.com/drkathuriasdentistry" target="_blank" style="background:#E1306C"><i class="fab fa-instagram"></i> <span>Instagram</span></a>
+  <a href="https://www.facebook.com/DrKathuriaDentistry" target="_blank" style="background:#1877F2"><i class="fab fa-facebook-f"></i> <span>Facebook</span></a>
+  <a href="https://www.youtube.com/@dentalclinicindelhi" target="_blank" style="background:#FF0000"><i class="fab fa-youtube"></i> <span>YouTube</span></a>
+</div>
+
+<!-- FABs -->
+<a href="tel:18001177272" class="fab-btn fab-call" aria-label="Call"><i class="fas fa-phone"></i></a>
+<a href="https://wa.me/919810936360" target="_blank" class="fab-btn fab-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="#top" class="fab-btn fab-up" id="fabUp" aria-label="Top"><i class="fas fa-chevron-up"></i></a>
+
+<!-- Hidden Netlify form -->
+<form hidden method='post' name='appointment'><input type='hidden' name='form-name' value='appointment'/><input type="text" name="name"/><input type="text" name="country"/><input type="tel" name="phone"/><input type="email" name="email"/><select name="treatment"><option></option></select><textarea name="message"></textarea><input name="bot-field"/></form>
+
+<!-- Floating Panel -->
+<button class="float-book-btn" id="floatBookBtn">BOOK APPOINTMENT</button>
+<div class="float-panel" id="floatPanel">
+  <button class="fp-close" id="fpClose"><i class="fas fa-times"></i></button>
+  <h3>Book Consultation</h3>
+  <p>Fill in your details &mdash; we'll call back within 2 hours.</p>
+  <form class='smart-form' method='POST' name='appointment'>
+    <input type="hidden" name="form-name" value="appointment"/>
+    <p class="hidden" style="display:none"><label>Don't fill: <input name="bot-field"/></label></p>
+    <div class="fg-row"><div class="fg"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required/></div><div class="fg"><label>Country</label><input type="text" name="country" placeholder="Your country"/></div></div>
+    <div class="fg"><label>WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+91 or international" required/></div>
+    <div class="fg"><label>Email</label><input type="email" name="email" placeholder="your@email.com"/></div>
+    <div class="fg"><label>Treatment</label><select name="treatment"><option value="">Select treatment...</option><option>Smile Makeover / Veneers</option><option>Dental Implants</option><option>Clear Aligners</option><option>Zoom Whitening</option><option>Root Canal</option><option>Full Mouth Rehabilitation</option><option>Video Consultation Only</option><option>Not Sure &ndash; Need Advice</option></select></div>
+    <div class="fg"><label>Message (optional)</label><textarea name="message" rows="3" placeholder="Any specific concerns or preferred time"></textarea></div>
+    <button type="submit" class="form-submit"><i class="fas fa-calendar-check"></i> Request Consultation</button>
+  </form>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox"><div class="lb-inner"><button class="lb-close" id="lbClose"><i class="fas fa-times"></i></button><img id="lbImg" src="" alt=""/></div></div>
+<div class="toast" id="toast"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

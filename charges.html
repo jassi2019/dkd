@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Treatment Charges | Dr. Kathuria's Dentistry &ndash; Dental Pricing Delhi</title>
+  <meta name="description" content="Transparent treatment charges at Dr. Kathuria's Dentistry, East of Kailash, Delhi. Affordable pricing for smile makeovers, implants, aligners, whitening &amp; more. NABH Accredited."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* ══════════════════════════════════════
+       CHARGES PAGE — UNIQUE STYLES
+    ══════════════════════════════════════ */
+
+    /* ── PRICING NOTE ── */
+    .pricing-note {
+      background: var(--cream);
+    }
+    .pricing-note-box {
+      display: flex; align-items: flex-start; gap: 24px;
+      background: var(--white);
+      border: 1px solid var(--border-gold);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--r-md);
+      padding: 32px 36px;
+      box-shadow: var(--shadow-xs);
+    }
+    .pricing-note-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: rgba(198,169,77,.12); border: 1px solid rgba(198,169,77,.25);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); font-size: 1.3rem; flex-shrink: 0;
+    }
+    .pricing-note-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; font-weight: 700; color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .pricing-note-text p {
+      font-size: .86rem; color: var(--gray); line-height: 1.78;
+    }
+
+    /* ── PRICE TABLE SECTIONS ── */
+    .price-section { background: var(--white); }
+    .price-category {
+      margin-bottom: 56px;
+    }
+    .price-category:last-child { margin-bottom: 0; }
+    .price-cat-header {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 22px; padding-bottom: 14px;
+      border-bottom: 2px solid var(--olive-pale);
+    }
+    .price-cat-icon {
+      width: 48px; height: 48px; border-radius: 14px;
+      background: var(--olive-bg); border: 1px solid var(--olive-pale);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--olive); font-size: 1.15rem; flex-shrink: 0;
+      transition: all .3s;
+    }
+    .price-cat-header:hover .price-cat-icon {
+      background: var(--olive); color: var(--white);
+      border-color: var(--olive);
+    }
+    .price-cat-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem; font-weight: 700; color: var(--ink);
+    }
+
+    /* ── INTERNATIONAL COMPARISON ── */
+    .compare-section { background: var(--cream); }
+    .compare-table { width: 100%; border-collapse: collapse; border-radius: var(--r-md); overflow: hidden; }
+    .compare-table thead tr { background: linear-gradient(135deg, var(--olive-dark) 0%, var(--olive) 100%); }
+    .compare-table th {
+      padding: 16px 22px; color: var(--white);
+      font-size: .78rem; font-weight: 700; text-align: left;
+      letter-spacing: .5px;
+    }
+    .compare-table td {
+      padding: 14px 22px; border-bottom: 1px solid var(--border);
+      font-size: .84rem; color: var(--ink); background: var(--white);
+    }
+    .compare-table tbody tr:hover td { background: var(--olive-bg); }
+    .compare-table .india-price { color: var(--olive); font-weight: 800; }
+    .compare-table .foreign-price { color: var(--gray); }
+    .savings-tag {
+      display: inline-flex; align-items: center; gap: 4px;
+      background: rgba(91,123,58,.1); border: 1px solid rgba(91,123,58,.25);
+      color: var(--olive); font-size: .62rem; font-weight: 800;
+      padding: 2px 10px; border-radius: 50px; letter-spacing: .5px;
+    }
+
+    /* ── CTA BANNER ── */
+    .cta-banner-section {
+      background: linear-gradient(135deg, var(--olive-dark) 0%, var(--olive) 100%);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-banner-section::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(198,169,77,.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-banner-content { position: relative; z-index: 2; }
+    .cta-banner-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 700;
+      color: var(--white); margin-bottom: 16px;
+    }
+    .cta-banner-content h2 em { color: var(--gold-light); font-style: italic; }
+    .cta-banner-content p {
+      font-size: 1.05rem; color: rgba(255,255,255,.75);
+      margin-bottom: 36px; max-width: 600px;
+      margin-left: auto; margin-right: auto; line-height: 1.78;
+    }
+    .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:960px){
+      .pricing-note-box { flex-direction: column; gap: 16px; padding: 24px; }
+      .compare-table { font-size: .78rem; }
+      .compare-table th, .compare-table td { padding: 10px 14px; }
+    }
+    @media(max-width:700px){
+      .price-table th, .price-table td { padding: 10px 14px; font-size: .78rem; }
+      .price-cat-header h3 { font-size: 1.1rem; }
+      .compare-table { display: block; overflow-x: auto; }
+    }
+    @media(max-width:500px){
+      .cta-btns { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body class="has-topbar">
+
+<!-- PAGE LOADER -->
+<div id="page-loader"><div class="loader-inner"><div class="tooth">&#x1f9b7;</div><p>Loading...</p></div></div>
+<div class="cursor-glow"></div>
+
+<!-- ═══ TOP BAR ═══ -->
+<div class="top-bar">
+  <div class="top-bar-left">
+    <a href="mailto:info@delhidental.com"><i class="fas fa-envelope"></i> info@delhidental.com</a>
+    <a href="tel:18001177272"><i class="fas fa-phone-alt"></i> 1800-11-7272 (Toll Free)</a>
+  </div>
+  <div class="top-bar-right">
+    <a href="https://www.facebook.com/DrKathuriaDentistry" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/drkathuriasdentistry" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@dentalclinicindelhi" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://twitter.com/Kathuriadentist" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="https://wa.me/919810936360" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</div>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="site-nav" id="mainNav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <div class="logo-mark"><i class="fas fa-tooth"></i></div>
+      <div class="logo-text"><strong>Dr. Kathuria's Dentistry</strong><span>East of Kailash, New Delhi</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <a href="#">The Practice <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="staff.html"><i class="fas fa-user-md"></i> Team of Specialists</a>
+          <a href="about.html#clinic-tour"><i class="fas fa-hospital"></i> Clinic Tour</a>
+          <a href="about.html#technology"><i class="fas fa-microchip"></i> Technology</a>
+        </div>
+      </li>
+      <li>
+        <a href="services.html">Treatments <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="services.html#cosmetic"><i class="fas fa-star"></i> Cosmetic Dentistry</a>
+          <a href="services.html#implants"><i class="fas fa-tooth"></i> Dental Implants</a>
+          <a href="services.html#aligners"><i class="fas fa-align-center"></i> Clear Aligners</a>
+          <a href="services.html#whitening"><i class="fas fa-sun"></i> Teeth Whitening</a>
+          <a href="services.html#rct"><i class="fas fa-syringe"></i> Root Canal</a>
+          <a href="services.html#gums"><i class="fas fa-leaf"></i> Gum Treatment</a>
+        </div>
+      </li>
+      <li>
+        <a href="awards.html">Credibility <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="awards.html#awards"><i class="fas fa-trophy"></i> Awards</a>
+          <a href="awards.html#certifications"><i class="fas fa-certificate"></i> Certifications</a>
+          <a href="awards.html#media"><i class="fas fa-newspaper"></i> Media Coverage</a>
+        </div>
+      </li>
+      <li><a href="cases.html">Cases</a></li>
+      <li><a class="active" href="charges.html">Charges</a></li>
+      <li><a href="smile-analysis.html">Smile Analysis</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="nav-phone" href="tel:18001177272"><i class="fas fa-phone-alt"></i> 1800-11-7272</a>
+      <button class="nav-cta" onclick="document.getElementById('floatPanel').classList.add('open')"><i class="fas fa-calendar-check"></i> Book Consult</button>
+    </div>
+    <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
+
+<!-- ═══ MOBILE NAV ═══ -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html"><i class="fas fa-home"></i> Home</a>
+  <a href="staff.html"><i class="fas fa-user-md"></i> Team of Specialists</a>
+  <a href="about.html#clinic-tour"><i class="fas fa-hospital"></i> Clinic Tour</a>
+  <a href="about.html#technology"><i class="fas fa-microchip"></i> Technology</a>
+  <a href="services.html"><i class="fas fa-tooth"></i> Treatments</a>
+  <a href="awards.html"><i class="fas fa-trophy"></i> Credibility</a>
+  <a href="cases.html"><i class="fas fa-images"></i> Cases</a>
+  <a href="charges.html"><i class="fas fa-indian-rupee-sign"></i> Charges</a>
+  <a href="smile-analysis.html"><i class="fas fa-smile-beam"></i> Smile Analysis</a>
+  <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
+  <a class="mobile-cta" href="contact.html"><i class="fas fa-calendar-check"></i> Book Consultation</a>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     1. PAGE HERO
+═══════════════════════════════════════════════════ -->
+<div class="page-hero">
+  <img class="page-hero-img" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80" alt="Treatment Charges — Dr. Kathuria's Dentistry"/>
+  <div class="page-hero-overlay" style="background:linear-gradient(135deg, var(--olive-dark) 0%, rgba(63,90,36,.85) 50%, rgba(91,123,58,.6) 100%)"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep"><i class="fas fa-chevron-right" style="font-size:.5rem"></i></span>
+      <span style="color:var(--gold-light);font-weight:600">Charges</span>
+    </div>
+    <h1>Treatment <em>Charges</em></h1>
+    <p>Transparent, world-class dental care at a fraction of international prices. Quality you can trust, pricing you can afford.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     2. PRICING NOTE
+═══════════════════════════════════════════════════ -->
+<section class="pricing-note reveal">
+  <div class="container">
+    <div class="pricing-note-box">
+      <div class="pricing-note-icon"><i class="fas fa-info-circle"></i></div>
+      <div class="pricing-note-text">
+        <h3>Important Pricing Information</h3>
+        <p>The prices listed below are <strong>indicative starting rates</strong> and may vary based on individual clinical assessment, complexity of the case, materials chosen, and treatment plan recommended by our specialists. A final, detailed cost estimate will be provided after your in-clinic or video consultation. We believe in 100% transparency &mdash; no hidden charges, ever.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     3. PRICE TABLES
+═══════════════════════════════════════════════════ -->
+<section class="price-section">
+  <div class="container">
+
+    <div class="sec-h center reveal">
+      <div class="sec-chip"><i class="fas fa-indian-rupee-sign"></i> Our Pricing</div>
+      <div class="sec-divider"></div>
+      <h2>Treatment <em>Price Guide</em></h2>
+      <p>Comprehensive pricing across all our specialties &mdash; among the most competitive for world-class dentistry.</p>
+    </div>
+
+    <!-- Cosmetic Dentistry -->
+    <div class="price-category reveal" id="cosmetic">
+      <div class="price-cat-header">
+        <div class="price-cat-icon"><i class="fas fa-star"></i></div>
+        <h3>Cosmetic Dentistry</h3>
+      </div>
+      <table class="price-table">
+        <thead>
+          <tr><th>Treatment</th><th>Starting Price</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Smile Makeover (per tooth)</td><td>&#8377;15,000</td></tr>
+          <tr><td>Porcelain Veneers</td><td>&#8377;12,000</td></tr>
+          <tr><td>Zirconia Crowns</td><td>&#8377;8,000</td></tr>
+          <tr><td>Zoom Teeth Whitening</td><td>&#8377;12,000</td></tr>
+          <tr><td>Composite Bonding</td><td>&#8377;3,000</td></tr>
+          <tr><td>Cosmetic Contouring</td><td>&#8377;5,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Dental Implants -->
+    <div class="price-category reveal" id="implants">
+      <div class="price-cat-header">
+        <div class="price-cat-icon"><i class="fas fa-tooth"></i></div>
+        <h3>Dental Implants</h3>
+      </div>
+      <table class="price-table">
+        <thead>
+          <tr><th>Treatment</th><th>Starting Price</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Single Tooth Implant</td><td>&#8377;25,000</td></tr>
+          <tr><td>Multiple Teeth Implants</td><td>&#8377;45,000+</td></tr>
+          <tr><td>All-on-4 Implants</td><td>&#8377;2,50,000</td></tr>
+          <tr><td>Nobel Biocare Implants</td><td>&#8377;50,000</td></tr>
+          <tr><td>Full Mouth Rehabilitation</td><td>&#8377;3,00,000+</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Orthodontics -->
+    <div class="price-category reveal" id="orthodontics">
+      <div class="price-cat-header">
+        <div class="price-cat-icon"><i class="fas fa-align-center"></i></div>
+        <h3>Orthodontics</h3>
+      </div>
+      <table class="price-table">
+        <thead>
+          <tr><th>Treatment</th><th>Starting Price</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Clear Aligners</td><td>&#8377;1,20,000</td></tr>
+          <tr><td>Ceramic Braces</td><td>&#8377;45,000</td></tr>
+          <tr><td>Metal Braces</td><td>&#8377;35,000</td></tr>
+          <tr><td>Lingual Braces</td><td>&#8377;80,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- General & Preventive -->
+    <div class="price-category reveal" id="general">
+      <div class="price-cat-header">
+        <div class="price-cat-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>General &amp; Preventive</h3>
+      </div>
+      <table class="price-table">
+        <thead>
+          <tr><th>Treatment</th><th>Starting Price</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Scaling &amp; Polishing</td><td>&#8377;2,500</td></tr>
+          <tr><td>Root Canal Treatment</td><td>&#8377;6,000</td></tr>
+          <tr><td>Tooth Extraction</td><td>&#8377;2,000</td></tr>
+          <tr><td>Dental Filling</td><td>&#8377;1,500</td></tr>
+          <tr><td>Fluoride Treatment</td><td>&#8377;1,500</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     4. COST CALCULATOR
+═══════════════════════════════════════════════════ -->
+<section class="calc-section" id="calcPanel">
+  <div class="container">
+
+    <div class="sec-h center reveal">
+      <div class="sec-chip light"><i class="fas fa-calculator"></i> Cost Estimator</div>
+      <div class="sec-divider" style="background:linear-gradient(90deg, var(--gold-light), var(--olive-light))"></div>
+      <h2 style="color:var(--white)">Estimate Your <em style="color:var(--gold-light)">Treatment Cost</em></h2>
+      <p style="color:rgba(255,255,255,.55)">Select the treatments you're considering to get an instant ballpark estimate.</p>
+    </div>
+
+    <div class="calc-panel reveal">
+      <h3><i class="fas fa-check-double" style="color:var(--gold-light);margin-right:10px"></i> Select Treatments</h3>
+
+      <div class="calc-row" data-price="15000">
+        <label><input type="checkbox" onchange="updateCalc()"/> Smile Makeover (per tooth)</label>
+        <span class="price">&#8377;15,000</span>
+      </div>
+      <div class="calc-row" data-price="12000">
+        <label><input type="checkbox" onchange="updateCalc()"/> Porcelain Veneers</label>
+        <span class="price">&#8377;12,000</span>
+      </div>
+      <div class="calc-row" data-price="8000">
+        <label><input type="checkbox" onchange="updateCalc()"/> Zirconia Crowns</label>
+        <span class="price">&#8377;8,000</span>
+      </div>
+      <div class="calc-row" data-price="12000">
+        <label><input type="checkbox" onchange="updateCalc()"/> Zoom Teeth Whitening</label>
+        <span class="price">&#8377;12,000</span>
+      </div>
+      <div class="calc-row" data-price="25000">
+        <label><input type="checkbox" onchange="updateCalc()"/> Single Tooth Implant</label>
+        <span class="price">&#8377;25,000</span>
+      </div>
+      <div class="calc-row" data-price="250000">
+        <label><input type="checkbox" onchange="updateCalc()"/> All-on-4 Implants</label>
+        <span class="price">&#8377;2,50,000</span>
+      </div>
+      <div class="calc-row" data-price="120000">
+        <label><input type="checkbox" onchange="updateCalc()"/> Clear Aligners</label>
+        <span class="price">&#8377;1,20,000</span>
+      </div>
+      <div class="calc-row" data-price="45000">
+        <label><input type="checkbox" onchange="updateCalc()"/> Ceramic Braces</label>
+        <span class="price">&#8377;45,000</span>
+      </div>
+      <div class="calc-row" data-price="6000">
+        <label><input type="checkbox" onchange="updateCalc()"/> Root Canal Treatment</label>
+        <span class="price">&#8377;6,000</span>
+      </div>
+      <div class="calc-row" data-price="2500">
+        <label><input type="checkbox" onchange="updateCalc()"/> Scaling &amp; Polishing</label>
+        <span class="price">&#8377;2,500</span>
+      </div>
+
+      <div class="calc-total">
+        <span class="lbl">Estimated Total</span>
+        <span class="amount" id="calcTotal">&#8377;0</span>
+        <span class="saving" id="calcSavings">Select treatments above to see your estimate</span>
+      </div>
+      <p class="calc-note"><i class="fas fa-info-circle" style="margin-right:6px"></i> This is a rough estimate only. Final costs depend on clinical assessment, number of units, materials chosen, and your customized treatment plan. Book a free consultation for an accurate quote.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     5. INTERNATIONAL PRICING COMPARISON
+═══════════════════════════════════════════════════ -->
+<section class="compare-section reveal">
+  <div class="container">
+
+    <div class="sec-h center reveal">
+      <div class="sec-chip"><i class="fas fa-globe-americas"></i> International Savings</div>
+      <div class="sec-divider"></div>
+      <h2>India vs <em>International Prices</em></h2>
+      <p>See how much you can save by choosing Dr. Kathuria's Dentistry in Delhi over clinics in the USA or UK.</p>
+    </div>
+
+    <table class="compare-table reveal">
+      <thead>
+        <tr>
+          <th>Treatment</th>
+          <th><i class="fas fa-flag" style="margin-right:6px"></i> India (Delhi)</th>
+          <th><i class="fas fa-flag-usa" style="margin-right:6px"></i> USA</th>
+          <th>UK</th>
+          <th>You Save</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Porcelain Veneers (per tooth)</td>
+          <td class="india-price">&#8377;12,000 (~$145)</td>
+          <td class="foreign-price">$1,200&ndash;$2,500</td>
+          <td class="foreign-price">&pound;800&ndash;&pound;1,500</td>
+          <td><span class="savings-tag"><i class="fas fa-arrow-down"></i> Up to 90%</span></td>
+        </tr>
+        <tr>
+          <td>Single Tooth Implant</td>
+          <td class="india-price">&#8377;25,000 (~$300)</td>
+          <td class="foreign-price">$3,000&ndash;$5,000</td>
+          <td class="foreign-price">&pound;2,000&ndash;&pound;3,500</td>
+          <td><span class="savings-tag"><i class="fas fa-arrow-down"></i> Up to 90%</span></td>
+        </tr>
+        <tr>
+          <td>All-on-4 Implants</td>
+          <td class="india-price">&#8377;2,50,000 (~$3,000)</td>
+          <td class="foreign-price">$25,000&ndash;$30,000</td>
+          <td class="foreign-price">&pound;15,000&ndash;&pound;20,000</td>
+          <td><span class="savings-tag"><i class="fas fa-arrow-down"></i> Up to 88%</span></td>
+        </tr>
+        <tr>
+          <td>Clear Aligners</td>
+          <td class="india-price">&#8377;1,20,000 (~$1,450)</td>
+          <td class="foreign-price">$4,000&ndash;$8,000</td>
+          <td class="foreign-price">&pound;2,500&ndash;&pound;5,000</td>
+          <td><span class="savings-tag"><i class="fas fa-arrow-down"></i> Up to 80%</span></td>
+        </tr>
+        <tr>
+          <td>Root Canal Treatment</td>
+          <td class="india-price">&#8377;6,000 (~$72)</td>
+          <td class="foreign-price">$800&ndash;$1,500</td>
+          <td class="foreign-price">&pound;500&ndash;&pound;900</td>
+          <td><span class="savings-tag"><i class="fas fa-arrow-down"></i> Up to 90%</span></td>
+        </tr>
+        <tr>
+          <td>Zoom Teeth Whitening</td>
+          <td class="india-price">&#8377;12,000 (~$145)</td>
+          <td class="foreign-price">$500&ndash;$1,000</td>
+          <td class="foreign-price">&pound;400&ndash;&pound;700</td>
+          <td><span class="savings-tag"><i class="fas fa-arrow-down"></i> Up to 85%</span></td>
+        </tr>
+        <tr>
+          <td>Full Mouth Rehabilitation</td>
+          <td class="india-price">&#8377;3,00,000 (~$3,600)</td>
+          <td class="foreign-price">$30,000&ndash;$50,000</td>
+          <td class="foreign-price">&pound;20,000&ndash;&pound;35,000</td>
+          <td><span class="savings-tag"><i class="fas fa-arrow-down"></i> Up to 90%</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     6. FAQ SECTION
+═══════════════════════════════════════════════════ -->
+<section class="bg-cream reveal">
+  <div class="container">
+
+    <div class="sec-h center reveal">
+      <div class="sec-chip"><i class="fas fa-question-circle"></i> FAQs</div>
+      <div class="sec-divider"></div>
+      <h2>Pricing &amp; Payment <em>FAQs</em></h2>
+      <p>Everything you need to know about our charges, payment options, and insurance.</p>
+    </div>
+
+    <div style="max-width:820px;margin:0 auto">
+      <div class="faq-item reveal">
+        <button class="faq-q">Are the listed prices final, or can they change after consultation? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-ans">The prices shown are indicative starting rates. Your final cost depends on the complexity of your case, materials selected (e.g., standard vs. premium zirconia), number of teeth involved, and the treatment plan designed by our specialists. After an in-clinic or video consultation, we provide a detailed, itemized cost sheet with no hidden fees.</div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q">Do you offer EMI or payment plans for expensive treatments? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-ans">Yes. For treatments above &#8377;20,000, we offer no-cost EMI options through select partner banks (HDFC, ICICI, SBI, Bajaj Finserv). You can split your bill into 3, 6, 9, or 12 monthly installments. We also accept phased payments aligned with multi-visit treatment schedules.</div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q">Does my dental insurance cover treatments at your clinic? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-ans">We are empaneled with several major health insurance providers and TPA networks. We accept cashless claims where applicable and can also provide the necessary invoices and documentation for reimbursement claims. Please share your insurance details during booking, and our team will verify coverage before your appointment.</div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q">What payment methods do you accept? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-ans">We accept cash (INR), all major credit and debit cards (Visa, MasterCard, Amex, RuPay), UPI payments (Google Pay, PhonePe, Paytm), bank transfers (NEFT/RTGS), and international wire transfers. For international patients, we can also process payments in USD, GBP, EUR, and AUD.</div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q">Why are your prices so much lower than the USA or UK? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-ans">Lower operational costs in India &mdash; not lower quality. We use the same premium materials (Nobel Biocare, Ivoclar, 3M, Invisalign), the same technology (CBCT, digital scanners, CAD/CAM), and follow the same international protocols (ADA, NABH). Our doctors are globally trained with 18+ years of experience. Patients from 44+ countries trust us precisely because they get world-class results at a fraction of Western prices.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     7. CTA BANNER
+═══════════════════════════════════════════════════ -->
+<section class="cta-banner-section reveal">
+  <div class="container">
+    <div class="cta-banner-content">
+      <h2>Get a Personalized <em>Cost Estimate</em></h2>
+      <p>Share your dental concerns with us and receive a detailed, no-obligation treatment plan with exact pricing &mdash; within 24 hours.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-gold btn-lg"><i class="fas fa-calendar-check"></i> Book Free Consultation</a>
+        <a href="https://wa.me/919810936360" target="_blank" class="btn btn-outline btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+        <a href="tel:18001177272" class="btn btn-outline btn-lg"><i class="fas fa-phone-alt"></i> 1800-11-7272</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="ft-grid">
+      <!-- Brand -->
+      <div class="ft-brand">
+        <div class="ft-logo">
+          <div class="ft-logo-mark"><i class="fas fa-tooth"></i></div>
+          <div class="ft-logo-text"><strong>Dr. Kathuria's Dentistry</strong><span>Est. 2006 &middot; East of Kailash</span></div>
+        </div>
+        <p>NABH Accredited &amp; ISO Certified dental clinic trusted by 15,000+ patients from 44 countries. Delivering world-class smile transformations since 2006.</p>
+        <div class="ft-socials">
+          <a href="https://www.facebook.com/DrKathuriaDentistry" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/drkathuriasdentistry" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@dentalclinicindelhi" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://twitter.com/Kathuriadentist" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://wa.me/919810936360" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <!-- Quick Links -->
+      <div class="ft-col">
+        <h4>Quick Links</h4>
+        <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+        <a href="staff.html"><i class="fas fa-chevron-right"></i> Our Doctors</a>
+        <a href="about.html#clinic-tour"><i class="fas fa-chevron-right"></i> Clinic Tour</a>
+        <a href="cases.html"><i class="fas fa-chevron-right"></i> Before &amp; After</a>
+        <a href="charges.html"><i class="fas fa-chevron-right"></i> Charges</a>
+        <a href="smile-analysis.html"><i class="fas fa-chevron-right"></i> Smile Analysis</a>
+      </div>
+      <!-- Treatments -->
+      <div class="ft-col">
+        <h4>Treatments</h4>
+        <a href="services.html#cosmetic"><i class="fas fa-chevron-right"></i> Smile Makeover</a>
+        <a href="services.html#implants"><i class="fas fa-chevron-right"></i> Dental Implants</a>
+        <a href="services.html#aligners"><i class="fas fa-chevron-right"></i> Clear Aligners</a>
+        <a href="services.html#whitening"><i class="fas fa-chevron-right"></i> Zoom Whitening</a>
+        <a href="services.html#rct"><i class="fas fa-chevron-right"></i> Root Canal</a>
+        <a href="services.html#gums"><i class="fas fa-chevron-right"></i> Gum Laser</a>
+      </div>
+      <!-- Contact -->
+      <div class="ft-col">
+        <h4>Contact</h4>
+        <div class="ft-contact-item">
+          <div class="ft-contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="ft-contact-text">
+            <span>Address</span>
+            <p>E-143, East of Kailash, New Delhi</p>
+          </div>
+        </div>
+        <div class="ft-contact-item">
+          <div class="ft-contact-icon"><i class="fas fa-phone-alt"></i></div>
+          <div class="ft-contact-text">
+            <span>India Toll Free</span>
+            <a href="tel:18001177272">1800-11-7272</a>
+          </div>
+        </div>
+        <div class="ft-contact-item">
+          <div class="ft-contact-icon"><i class="fab fa-whatsapp"></i></div>
+          <div class="ft-contact-text">
+            <span>WhatsApp</span>
+            <a href="https://wa.me/919810936360" target="_blank">+91 98109 36360</a>
+          </div>
+        </div>
+        <div class="ft-contact-item">
+          <div class="ft-contact-icon"><i class="fas fa-envelope"></i></div>
+          <div class="ft-contact-text">
+            <span>Email</span>
+            <a href="mailto:info@delhidental.com">info@delhidental.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>&copy; 2026 Dr. Kathuria's Dentistry &ndash; U and K Oral Wellness LLP. All rights reserved.</span>
+      <span>Designed with care for beautiful smiles.</span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ═══ FLOATING APPOINTMENT PANEL ═══ -->
+<button class="float-book-btn" id="floatBookBtn">BOOK APPOINTMENT</button>
+<div class="float-panel" id="floatPanel">
+  <button class="fp-close" id="fpClose"><i class="fas fa-times"></i></button>
+  <h3>Book Consultation</h3>
+  <p>Fill in your details &mdash; we'll call back within 2 hours.</p>
+  <form class="smart-form" method="POST" name="appointment">
+    <input type="hidden" name="form-name" value="appointment"/>
+    <p class="hidden" style="display:none"><label>Don't fill: <input name="bot-field"/></label></p>
+    <div class="fg-row">
+      <div class="fg"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required/></div>
+      <div class="fg"><label>Country</label><input type="text" name="country" placeholder="Your country"/></div>
+    </div>
+    <div class="fg"><label>WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+91 or international" required/></div>
+    <div class="fg"><label>Email</label><input type="email" name="email" placeholder="your@email.com"/></div>
+    <div class="fg">
+      <label>Treatment</label>
+      <select name="treatment">
+        <option value="">Select treatment...</option>
+        <option>Smile Makeover / Veneers</option>
+        <option>Dental Implants</option>
+        <option>Clear Aligners</option>
+        <option>Zoom Whitening</option>
+        <option>Root Canal</option>
+        <option>Full Mouth Rehabilitation</option>
+        <option>Video Consultation Only</option>
+        <option>Not Sure &ndash; Need Advice</option>
+      </select>
+    </div>
+    <div class="fg"><label>Message (optional)</label><textarea name="message" rows="3" placeholder="Any specific concerns or preferred time"></textarea></div>
+    <button type="submit" class="form-submit"><i class="fas fa-calendar-check"></i> Request Consultation</button>
+  </form>
+</div>
+
+
+<!-- ═══ FABs ═══ -->
+<div class="fab-group">
+  <a href="https://wa.me/919810936360" target="_blank" class="fab fab-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="tel:18001177272" class="fab fab-call" aria-label="Call"><i class="fas fa-phone-alt"></i></a>
+  <button class="fab fab-up" id="fabUp" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+</div>
+
+<!-- ═══ SIDE STRIP ═══ -->
+<div class="side-strip">
+  <a href="tel:18001177272" aria-label="Call"><i class="fas fa-phone-alt"></i></a>
+  <a href="https://wa.me/919810936360" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://www.instagram.com/drkathuriasdentistry" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+</div>
+
+<!-- ═══ LIGHTBOX ═══ -->
+<div class="lightbox" id="lightbox">
+  <div class="lb-inner">
+    <button class="lb-close" id="lbClose"><i class="fas fa-times"></i></button>
+    <img id="lbImg" src="" alt=""/>
+  </div>
+</div>
+
+<!-- ═══ TOAST ═══ -->
+<div id="toast"></div>
+
+<!-- ═══ CALCULATOR SCRIPT ═══ -->
+<script>
+function updateCalc(){
+  var rows=document.querySelectorAll('.calc-row');
+  var total=0;
+  rows.forEach(function(r){
+    var cb=r.querySelector('input[type=checkbox]');
+    if(cb&&cb.checked) total+=parseInt(r.getAttribute('data-price'))||0;
+  });
+  var el=document.getElementById('calcTotal');
+  var sv=document.getElementById('calcSavings');
+  if(el) el.textContent='\u20B9'+total.toLocaleString('en-IN');
+  if(sv){
+    if(total>0){
+      var usd=Math.round(total/83);
+      var intlMin=usd*6;
+      var saved=intlMin-usd;
+      sv.innerHTML='Approx. <strong>$'+usd.toLocaleString()+'</strong> &mdash; You could save up to <strong>$'+saved.toLocaleString()+'</strong> vs. USA prices';
+    } else {
+      sv.textContent='Select treatments above to see your estimate';
+    }
+  }
+}
+</script>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Our Treatments | Dr. Kathuria's Dentistry &ndash; Best Dental Treatments Delhi</title>
+  <meta name="description" content="Explore 50+ dental treatments at Dr. Kathuria's Dentistry, East of Kailash, Delhi. Implants, smile makeover, aligners, whitening, gum treatment, kids dentistry. NABH Accredited."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* ══════════════════════════════════════
+       TREATMENTS PAGE — UNIQUE STYLES
+    ══════════════════════════════════════ */
+
+    /* ── FILTER BAR ── */
+    .treatments-filter {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 5%;
+      position: sticky;
+      top: 80px;
+      z-index: 100;
+      transition: top .3s var(--ease);
+    }
+    .has-topbar .treatments-filter { top: 116px; }
+    .site-nav.scrolled ~ .treatments-filter,
+    .scrolled-filter { top: 68px !important; }
+    .filter-pills {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      justify-content: center;
+      max-width: 1340px; margin: 0 auto;
+    }
+    .filter-pill {
+      padding: 9px 22px; border-radius: 99px;
+      background: var(--cream); border: 1.5px solid var(--border);
+      font-size: .76rem; font-weight: 700; color: var(--gray);
+      cursor: pointer; transition: all .25s var(--ease);
+      font-family: 'Inter', sans-serif;
+      letter-spacing: .5px; text-transform: uppercase;
+    }
+    .filter-pill:hover { border-color: var(--olive); color: var(--olive); background: var(--olive-bg); }
+    .filter-pill.active { background: var(--olive); color: #fff; border-color: var(--olive); box-shadow: 0 4px 16px rgba(91,123,58,.25); }
+
+    /* ── TREATMENT CATEGORY SECTION ── */
+    .treat-category {
+      padding: 80px 5% 60px;
+      position: relative;
+    }
+    .treat-category:nth-child(even) { background: var(--cream); }
+    .treat-category:nth-child(odd) { background: var(--white); }
+
+    .treat-cat-header {
+      display: flex; align-items: center; gap: 18px;
+      margin-bottom: 44px;
+    }
+    .treat-cat-icon {
+      width: 60px; height: 60px; border-radius: 16px;
+      background: var(--olive-pale); border: 1px solid rgba(91,123,58,.2);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--olive); font-size: 1.5rem; flex-shrink: 0;
+      transition: all .3s;
+    }
+    .treat-cat-header:hover .treat-cat-icon {
+      background: var(--olive); color: #fff;
+      transform: scale(1.06) rotate(-5deg);
+    }
+    .treat-cat-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700; color: var(--ink);
+      line-height: 1.15; margin-bottom: 6px;
+    }
+    .treat-cat-text h2 em { color: var(--olive); font-style: italic; }
+    .treat-cat-text p {
+      font-size: .86rem; color: var(--gray);
+      line-height: 1.7; max-width: 560px;
+    }
+
+    /* ── SERVICE CARDS (with image) ── */
+    .srv-card .srv-img { position: relative; height: 200px; overflow: hidden; }
+    .srv-card .srv-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
+    .srv-card:hover .srv-img img { transform: scale(1.08); }
+
+    /* ── CTA BANNER ── */
+    .cta-treat {
+      background: linear-gradient(135deg, var(--olive-dark) 0%, #2d4a1a 50%, var(--ink) 100%);
+      text-align: center; color: var(--white);
+      position: relative; overflow: hidden;
+    }
+    .cta-treat::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 20%, rgba(198,169,77,.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-treat h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700; margin-bottom: 16px;
+      position: relative;
+    }
+    .cta-treat h2 em { color: var(--gold-light); font-style: italic; }
+    .cta-treat p {
+      font-size: 1rem; color: rgba(255,255,255,.72);
+      margin-bottom: 36px; max-width: 560px;
+      margin-left: auto; margin-right: auto;
+      position: relative;
+    }
+    .cta-treat .btn { position: relative; }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:1100px){
+      .treatments-filter { top: 68px; }
+      .has-topbar .treatments-filter { top: 68px; }
+    }
+    @media(max-width:700px){
+      .treat-category { padding: 50px 5% 40px; }
+      .filter-pills { gap: 6px; }
+      .filter-pill { font-size: .68rem; padding: 7px 14px; }
+      .treat-cat-header { gap: 14px; margin-bottom: 30px; }
+      .treat-cat-icon { width: 48px; height: 48px; font-size: 1.2rem; }
+      .treatments-filter { padding: 12px 4%; top: 68px !important; }
+    }
+  </style>
+</head>
+<body class="has-topbar">
+
+<!-- PAGE LOADER -->
+<div id="page-loader"><div class="loader-inner"><div class="tooth">&#x1f9b7;</div><p>Loading...</p></div></div>
+<div class="cursor-glow"></div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-bar-left">
+    <span><i class="fas fa-map-marker-alt"></i> E-143, East of Kailash, New Delhi</span>
+    <a href="mailto:info@delhidental.com"><i class="fas fa-envelope"></i> info@delhidental.com</a>
+    <a href="tel:18001177272"><i class="fas fa-phone-alt"></i> 1800-11-7272</a>
+  </div>
+  <div class="top-bar-right">
+    <a href="https://www.facebook.com/DrKathuriaDentistry" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/drkathuriasdentistry" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@dentalclinicindelhi" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://wa.me/919810936360" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="site-nav" id="mainNav">
+  <div class="nav-inner">
+    <a class='nav-logo' href='/'><div class="logo-mark"><i class="fas fa-tooth"></i></div><div class="logo-text"><strong>Dr. Kathuria's Dentistry</strong><span>East of Kailash, New Delhi</span></div></a>
+    <ul class="nav-links">
+      <li><a href='/'>Home</a></li>
+      <li><a href='/about'>The Practice <i class="fas fa-chevron-down chevron"></i></a><div class="nav-dropdown"><a href='/about#team'><i class="fas fa-user-md"></i>Our Doctors</a><a href='/about#clinic'><i class="fas fa-hospital"></i>Clinic Tour</a><a href='/about#certifications'><i class="fas fa-certificate"></i>Certifications</a><a href='/about#timeline'><i class="fas fa-history"></i>Our Journey</a></div></li>
+      <li><a class='active' href='/services'>Treatments <i class="fas fa-chevron-down chevron"></i></a><div class="nav-dropdown"><a href='/services#cosmetic'><i class="fas fa-star"></i>Cosmetic Dentistry</a><a href='/services#implants'><i class="fas fa-tooth"></i>Dental Implants</a><a href='/services#orthodontics'><i class="fas fa-align-center"></i>Orthodontics</a><a href='/services#gums'><i class="fas fa-leaf"></i>Gum Treatment</a><a href='/services#kids'><i class="fas fa-child"></i>Kids Dentistry</a><a href='/services#surgical'><i class="fas fa-syringe"></i>Surgical</a></div></li>
+      <li><a href='/about#certifications'>Credibility</a></li>
+      <li><a href='/cases'>Cases</a></li>
+      <li><a href='#charges'>Charges</a></li>
+      <li><a href='#smile-analysis'>Smile Analysis</a></li>
+      <li><a href='/contact'>Contact Us</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="nav-phone" href="tel:18001177272"><i class="fas fa-phone-alt"></i> 1800-11-7272</a>
+      <button class="nav-cta" onclick="document.getElementById('floatPanel').classList.add('open')"><i class="fas fa-calendar-check"></i> Book Consult</button>
+    </div>
+    <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href='/'><i class="fas fa-home"></i> Home</a>
+  <a href='/about'><i class="fas fa-hospital"></i> The Practice</a>
+  <a href='/services'><i class="fas fa-tooth"></i> Treatments</a>
+  <a href='/about#certifications'><i class="fas fa-certificate"></i> Credibility</a>
+  <a href='/cases'><i class="fas fa-images"></i> Cases</a>
+  <a href='#charges'><i class="fas fa-rupee-sign"></i> Charges</a>
+  <a href='#smile-analysis'><i class="fas fa-smile"></i> Smile Analysis</a>
+  <a href='/contact'><i class="fas fa-envelope"></i> Contact Us</a>
+  <a class='mobile-cta' href='/contact'><i class="fas fa-calendar-check"></i> Book Consultation</a>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     1. PAGE HERO
+═══════════════════════════════════════ -->
+<section class="page-hero">
+  <img class="page-hero-img" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1920&q=80" alt="Dental Treatments at Dr. Kathuria's Dentistry Delhi"/>
+  <div class="page-hero-overlay" style="background:linear-gradient(135deg,rgba(91,123,58,.85) 0%,rgba(63,90,36,.7) 50%,rgba(26,26,26,.8) 100%)"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep"><i class="fas fa-chevron-right" style="font-size:.5rem"></i></span>
+      <span style="color:var(--gold-light)">Treatments</span>
+    </div>
+    <h1>Our <em>Treatments</em></h1>
+    <p>From cosmetic smile makeovers to complex full-mouth rehabilitation &mdash; world-class dental care under one roof with results that speak for themselves.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     2. FILTER BAR
+═══════════════════════════════════════ -->
+<div class="treatments-filter" id="treatFilter">
+  <div class="filter-pills">
+    <button class="filter-pill active" data-filter="all">All</button>
+    <button class="filter-pill" data-filter="cosmetic">Cosmetic</button>
+    <button class="filter-pill" data-filter="implants">Implants</button>
+    <button class="filter-pill" data-filter="orthodontics">Orthodontics</button>
+    <button class="filter-pill" data-filter="surgical">Surgical</button>
+    <button class="filter-pill" data-filter="preventive">Preventive</button>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     3. TREATMENT CATEGORIES
+═══════════════════════════════════════ -->
+
+<!-- ── DENTAL IMPLANTS ── -->
+<div class="treat-category reveal" id="implants" data-category="implants">
+  <div class="container">
+    <div class="treat-cat-header">
+      <div class="treat-cat-icon"><i class="fas fa-tooth"></i></div>
+      <div class="treat-cat-text">
+        <h2>Dental <em>Implants</em></h2>
+        <p>Permanent, natural-looking tooth replacements using world-class Nobel Biocare and guided surgery protocols for precision placement.</p>
+      </div>
+    </div>
+    <div class="srv-grid-3">
+
+      <!-- Single Tooth Implant -->
+      <div class="srv-card reveal" data-category="implants">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&q=80" alt="Single Tooth Implant"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Implants</span>
+        </div>
+        <div class="srv-body">
+          <h4>Single Tooth Implant</h4>
+          <p>A titanium implant root fused with your jawbone, topped with a custom porcelain crown that looks and feels exactly like your natural tooth. Lifetime warranty on the fixture.</p>
+          <div class="srv-foot">
+            <strong>&rupee;25,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Multiple Teeth Implants -->
+      <div class="srv-card reveal" data-category="implants">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80" alt="Multiple Teeth Implants"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Implants</span>
+        </div>
+        <div class="srv-body">
+          <h4>Multiple Teeth Implants</h4>
+          <p>Strategically placed implants to support bridges replacing several adjacent missing teeth. Preserves jawbone density and restores full chewing function without affecting healthy teeth.</p>
+          <div class="srv-foot">
+            <strong>&rupee;45,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- All-on-4 -->
+      <div class="srv-card reveal" data-category="implants">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=600&q=80" alt="All-on-4 Dental Implants"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Full Arch</span>
+        </div>
+        <div class="srv-body">
+          <h4>All-on-4 Implants</h4>
+          <p>A complete arch of fixed, natural-looking teeth anchored on just four implants &mdash; placed in a single day. Ideal for patients with significant tooth loss or failing dentition.</p>
+          <div class="srv-foot">
+            <strong>&rupee;2,50,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Full Mouth Rehabilitation -->
+      <div class="srv-card reveal" data-category="implants">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1588776814546-1ffedebf5f6f?w=600&q=80" alt="Full Mouth Rehabilitation"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Premium</span>
+        </div>
+        <div class="srv-body">
+          <h4>Full Mouth Rehabilitation</h4>
+          <p>Comprehensive restoration of both arches using implants, crowns, bridges, and veneers. Digitally planned with 3D imaging for complete functional and aesthetic rebuilding of the entire mouth.</p>
+          <div class="srv-foot">
+            <strong>&rupee;3,00,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nobel Biocare Implants -->
+      <div class="srv-card reveal" data-category="implants">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80" alt="Nobel Biocare Implants"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">International</span>
+        </div>
+        <div class="srv-body">
+          <h4>Nobel Biocare Implants</h4>
+          <p>Swedish-engineered Nobel Biocare implants &mdash; the gold standard worldwide. TiUnite surface technology ensures superior osseointegration and long-term stability with a lifetime guarantee.</p>
+          <div class="srv-foot">
+            <strong>&rupee;50,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nobel Guide Surgery -->
+      <div class="srv-card reveal" data-category="implants">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?w=600&q=80" alt="Nobel Guide Surgery"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Guided</span>
+        </div>
+        <div class="srv-body">
+          <h4>Nobel Guide Surgery</h4>
+          <p>Computer-guided implant placement using 3D CBCT scans and surgical templates. Minimally invasive, flapless procedure with faster healing, reduced swelling, and pinpoint accuracy.</p>
+          <div class="srv-foot">
+            <strong>&rupee;35,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ── COSMETIC DENTISTRY ── -->
+<div class="treat-category reveal" id="cosmetic" data-category="cosmetic">
+  <div class="container">
+    <div class="treat-cat-header">
+      <div class="treat-cat-icon"><i class="fas fa-star"></i></div>
+      <div class="treat-cat-text">
+        <h2>Cosmetic <em>Dentistry</em></h2>
+        <p>Transform your smile with Hollywood-grade aesthetics. From porcelain veneers to professional whitening &mdash; artistry meets precision.</p>
+      </div>
+    </div>
+    <div class="srv-grid-3">
+
+      <!-- Smile Makeover -->
+      <div class="srv-card reveal" data-category="cosmetic">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?w=600&q=80" alt="Smile Makeover"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Popular</span>
+        </div>
+        <div class="srv-body">
+          <h4>Smile Makeover</h4>
+          <p>A fully customised smile transformation using Digital Smile Design technology. Combines veneers, whitening, and contouring to craft the perfect smile &mdash; previewed before we even begin.</p>
+          <div class="srv-foot">
+            <strong>&rupee;15,000 <span style="font-size:.75rem;font-weight:400;color:var(--gray)">/ tooth</span></strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Porcelain Veneers -->
+      <div class="srv-card reveal" data-category="cosmetic">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&q=80" alt="Porcelain Veneers"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Cosmetic</span>
+        </div>
+        <div class="srv-body">
+          <h4>Porcelain Veneers</h4>
+          <p>Ultra-thin, hand-crafted porcelain shells bonded to the front surface of teeth to correct shape, size, colour, and alignment. Stain-resistant and natural-looking for 15&ndash;20 years.</p>
+          <div class="srv-foot">
+            <strong>&rupee;12,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gap Closure -->
+      <div class="srv-card reveal" data-category="cosmetic">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80" alt="Gap Closure Dentistry"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Cosmetic</span>
+        </div>
+        <div class="srv-body">
+          <h4>Gap Closure</h4>
+          <p>Close unsightly gaps between teeth using composite bonding or porcelain veneers. A minimally invasive procedure that delivers dramatic aesthetic improvement in just one or two visits.</p>
+          <div class="srv-foot">
+            <strong>&rupee;8,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teeth Whitening / Zoom -->
+      <div class="srv-card reveal" data-category="cosmetic">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1570612861542-284f4c12e75f?w=600&q=80" alt="Teeth Whitening Zoom"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">1 Hour</span>
+        </div>
+        <div class="srv-body">
+          <h4>Teeth Whitening / Zoom</h4>
+          <p>Philips Zoom in-office whitening &mdash; up to 8 shades brighter in a single 45-minute session. Safe, dentist-supervised treatment with instant, visibly dramatic results.</p>
+          <div class="srv-foot">
+            <strong>&rupee;12,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cosmetic Contouring -->
+      <div class="srv-card reveal" data-category="cosmetic">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80" alt="Cosmetic Contouring"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Cosmetic</span>
+        </div>
+        <div class="srv-body">
+          <h4>Cosmetic Contouring</h4>
+          <p>Subtle reshaping of tooth edges to correct chips, uneven lengths, and minor overlaps. A painless, no-anaesthesia procedure that refines your smile in a single appointment.</p>
+          <div class="srv-foot">
+            <strong>&rupee;5,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Metal Free Crowns -->
+      <div class="srv-card reveal" data-category="cosmetic">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80" alt="Metal Free Crowns"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Same Day</span>
+        </div>
+        <div class="srv-body">
+          <h4>Metal Free Crowns</h4>
+          <p>Zirconia and e.max ceramic crowns that perfectly match your natural teeth. Biocompatible, incredibly strong, and crafted with CAD/CAM precision for a seamless, metal-free smile.</p>
+          <div class="srv-foot">
+            <strong>&rupee;8,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ── GUMS TREATMENT ── -->
+<div class="treat-category reveal" id="gums" data-category="preventive">
+  <div class="container">
+    <div class="treat-cat-header">
+      <div class="treat-cat-icon"><i class="fas fa-leaf"></i></div>
+      <div class="treat-cat-text">
+        <h2>Gums <em>Treatment</em></h2>
+        <p>Advanced laser and surgical solutions for gum disease, gummy smiles, and periodontal health &mdash; faster healing, minimally invasive.</p>
+      </div>
+    </div>
+    <div class="srv-grid-3">
+
+      <!-- Laser Gum Treatment -->
+      <div class="srv-card reveal" data-category="preventive">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=600&q=80" alt="Laser Gum Treatment"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Laser</span>
+        </div>
+        <div class="srv-body">
+          <h4>Laser Gum Treatment</h4>
+          <p>Advanced diode laser therapy for gum disease, infection elimination, and pocket reduction. Minimally invasive with dramatically faster healing compared to traditional gum surgery.</p>
+          <div class="srv-foot">
+            <strong>&rupee;10,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gummy Smile Correction -->
+      <div class="srv-card reveal" data-category="preventive">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?w=600&q=80" alt="Gummy Smile Correction"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Popular</span>
+        </div>
+        <div class="srv-body">
+          <h4>Gummy Smile Correction</h4>
+          <p>Laser-assisted crown lengthening to reduce excessive gum display when smiling. Reveals more tooth structure for a balanced, confident smile with minimal downtime.</p>
+          <div class="srv-foot">
+            <strong>&rupee;15,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scaling & Polishing -->
+      <div class="srv-card reveal" data-category="preventive">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&q=80" alt="Scaling and Polishing"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Preventive</span>
+        </div>
+        <div class="srv-body">
+          <h4>Scaling &amp; Polishing</h4>
+          <p>Professional ultrasonic cleaning to remove tartar, plaque, and surface stains. Essential preventive care that keeps gums healthy, breath fresh, and teeth looking their best.</p>
+          <div class="srv-foot">
+            <strong>&rupee;2,500</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deep Cleaning -->
+      <div class="srv-card reveal" data-category="preventive">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&q=80" alt="Deep Cleaning"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Preventive</span>
+        </div>
+        <div class="srv-body">
+          <h4>Deep Cleaning</h4>
+          <p>Root planing and subgingival scaling to eliminate bacteria below the gum line. Treats early to moderate periodontal disease and halts bone loss before it becomes irreversible.</p>
+          <div class="srv-foot">
+            <strong>&rupee;5,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gum Surgery -->
+      <div class="srv-card reveal" data-category="preventive">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?w=600&q=80" alt="Gum Surgery"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Surgical</span>
+        </div>
+        <div class="srv-body">
+          <h4>Gum Surgery</h4>
+          <p>Flap surgery and tissue grafting for advanced periodontal disease. Restores gum attachment, reduces pocket depth, and regenerates lost bone to save teeth from extraction.</p>
+          <div class="srv-foot">
+            <strong>&rupee;12,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bad Breath Treatment -->
+      <div class="srv-card reveal" data-category="preventive">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80" alt="Bad Breath Treatment"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Preventive</span>
+        </div>
+        <div class="srv-body">
+          <h4>Bad Breath Treatment</h4>
+          <p>Comprehensive halitosis assessment and targeted treatment. Identifies the root cause &mdash; from gum disease to digestive factors &mdash; and eliminates persistent bad breath permanently.</p>
+          <div class="srv-foot">
+            <strong>&rupee;3,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ── ORTHODONTICS ── -->
+<div class="treat-category reveal" id="orthodontics" data-category="orthodontics">
+  <div class="container">
+    <div class="treat-cat-header">
+      <div class="treat-cat-icon"><i class="fas fa-align-center"></i></div>
+      <div class="treat-cat-text">
+        <h2>Orthodontics &amp; <em>Aligners</em></h2>
+        <p>Straighten your smile with cutting-edge orthodontic systems &mdash; from invisible aligners to traditional braces, supervised by specialist orthodontists.</p>
+      </div>
+    </div>
+    <div class="srv-grid-3">
+
+      <!-- Clear Aligners -->
+      <div class="srv-card reveal" data-category="orthodontics">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80" alt="Clear Aligners"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Invisible</span>
+        </div>
+        <div class="srv-body">
+          <h4>Clear Aligners</h4>
+          <p>Virtually invisible, removable aligners that straighten teeth without metal brackets. AI-planned treatment with ClinCheck software ensures predictable, comfortable results in 6&ndash;18 months.</p>
+          <div class="srv-foot">
+            <strong>&rupee;1,20,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ceramic Braces -->
+      <div class="srv-card reveal" data-category="orthodontics">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=600&q=80" alt="Ceramic Braces"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Discreet</span>
+        </div>
+        <div class="srv-body">
+          <h4>Ceramic Braces</h4>
+          <p>Tooth-coloured ceramic brackets that blend with your natural enamel. All the corrective power of traditional braces with a significantly more aesthetic, discreet appearance.</p>
+          <div class="srv-foot">
+            <strong>&rupee;45,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Metal Braces -->
+      <div class="srv-card reveal" data-category="orthodontics">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1588776814546-1ffedebf5f6f?w=600&q=80" alt="Metal Braces"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Classic</span>
+        </div>
+        <div class="srv-body">
+          <h4>Metal Braces</h4>
+          <p>High-quality stainless steel brackets with self-ligating options for faster, more comfortable treatment. The most effective solution for complex crowding, spacing, and bite correction.</p>
+          <div class="srv-foot">
+            <strong>&rupee;35,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lingual Braces -->
+      <div class="srv-card reveal" data-category="orthodontics">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80" alt="Lingual Braces"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Hidden</span>
+        </div>
+        <div class="srv-body">
+          <h4>Lingual Braces</h4>
+          <p>Custom-made brackets placed behind the teeth for completely invisible orthodontic treatment. Ideal for professionals and adults who want straight teeth without anyone knowing.</p>
+          <div class="srv-foot">
+            <strong>&rupee;80,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ── KIDS DENTISTRY ── -->
+<div class="treat-category reveal" id="kids" data-category="preventive">
+  <div class="container">
+    <div class="treat-cat-header">
+      <div class="treat-cat-icon"><i class="fas fa-child"></i></div>
+      <div class="treat-cat-text">
+        <h2>Kids <em>Dentistry</em></h2>
+        <p>Gentle, anxiety-free dental care designed specially for children. Building healthy smiles and positive dental habits from an early age.</p>
+      </div>
+    </div>
+    <div class="srv-grid-3">
+
+      <!-- Fluoride Treatment -->
+      <div class="srv-card reveal" data-category="preventive">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80" alt="Fluoride Treatment for Kids"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Kids</span>
+        </div>
+        <div class="srv-body">
+          <h4>Fluoride Treatment</h4>
+          <p>Professional-strength fluoride varnish applied to strengthen developing enamel, prevent cavities, and reverse early signs of decay. Quick, painless, and highly effective for children.</p>
+          <div class="srv-foot">
+            <strong>&rupee;1,500</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kids Root Canal -->
+      <div class="srv-card reveal" data-category="preventive">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80" alt="Kids Root Canal Pulpectomy"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Kids</span>
+        </div>
+        <div class="srv-body">
+          <h4>Kids Root Canal</h4>
+          <p>Pulpectomy or pulpotomy to save infected baby teeth until they naturally shed. Preserves space for permanent teeth and prevents early loss that can cause alignment issues.</p>
+          <div class="srv-foot">
+            <strong>&rupee;3,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fluoride Applications -->
+      <div class="srv-card reveal" data-category="preventive">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1570612861542-284f4c12e75f?w=600&q=80" alt="Fluoride Applications"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Preventive</span>
+        </div>
+        <div class="srv-body">
+          <h4>Fluoride Applications</h4>
+          <p>Tray-based fluoride gel applications for comprehensive enamel protection. Recommended every six months during formative years to build cavity resistance and strengthen tooth structure.</p>
+          <div class="srv-foot">
+            <strong>&rupee;1,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dental Sealants -->
+      <div class="srv-card reveal" data-category="preventive">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?w=600&q=80" alt="Dental Sealants for Children"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Preventive</span>
+        </div>
+        <div class="srv-body">
+          <h4>Dental Sealants</h4>
+          <p>Thin protective coatings applied to the chewing surfaces of molars to prevent food and bacteria from settling in deep grooves. Reduces cavity risk by up to 80% in children.</p>
+          <div class="srv-foot">
+            <strong>&rupee;2,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ── SURGICAL ── -->
+<div class="treat-category reveal" id="surgical" data-category="surgical">
+  <div class="container">
+    <div class="treat-cat-header">
+      <div class="treat-cat-icon"><i class="fas fa-syringe"></i></div>
+      <div class="treat-cat-text">
+        <h2>Surgical <em>Dentistry</em></h2>
+        <p>Precision oral surgery using state-of-the-art microscopes and guided techniques for extractions, root canals, and advanced bone procedures.</p>
+      </div>
+    </div>
+    <div class="srv-grid-3">
+
+      <!-- Tooth Extraction -->
+      <div class="srv-card reveal" data-category="surgical">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&q=80" alt="Tooth Extraction"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Surgical</span>
+        </div>
+        <div class="srv-body">
+          <h4>Tooth Extraction</h4>
+          <p>Simple and surgical extractions performed under local anaesthesia with atraumatic techniques. Includes wisdom tooth removal, impacted teeth, and pre-orthodontic extractions with minimal discomfort.</p>
+          <div class="srv-foot">
+            <strong>&rupee;2,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sinus Lift -->
+      <div class="srv-card reveal" data-category="surgical">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80" alt="Sinus Lift Surgery"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Advanced</span>
+        </div>
+        <div class="srv-body">
+          <h4>Sinus Lift</h4>
+          <p>Bone augmentation procedure that adds bone material to the upper jaw where the sinuses sit too close for implant placement. Creates adequate bone height for successful, long-lasting implants.</p>
+          <div class="srv-foot">
+            <strong>&rupee;30,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Root Canal -->
+      <div class="srv-card reveal" data-category="surgical">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=600&q=80" alt="Root Canal Treatment"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Painless</span>
+        </div>
+        <div class="srv-body">
+          <h4>Root Canal</h4>
+          <p>Painless single-sitting root canal treatment using rotary NiTi files and electronic apex locators. Removes infected pulp, disinfects canals, and seals the tooth to save it from extraction.</p>
+          <div class="srv-foot">
+            <strong>&rupee;6,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Microscopic Dentistry -->
+      <div class="srv-card reveal" data-category="surgical">
+        <div class="srv-img">
+          <img src="https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?w=600&q=80" alt="Microscopic Dentistry"/>
+          <div class="srv-img-overlay"></div>
+          <span class="srv-badge">Precision</span>
+        </div>
+        <div class="srv-body">
+          <h4>Microscopic Dentistry</h4>
+          <p>Ultra-precise treatments performed under 20x magnification using Carl Zeiss dental microscopes. Ensures no infected tissue is missed and enables conservative, tooth-preserving procedures.</p>
+          <div class="srv-foot">
+            <strong>&rupee;10,000</strong>
+            <a href="/contact">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     4. CTA SECTION
+═══════════════════════════════════════ -->
+<section class="cta-treat reveal">
+  <div class="container" style="position:relative">
+    <h2>Not Sure Which Treatment <em>You Need?</em></h2>
+    <p>Our specialists will assess your case and recommend the best treatment plan &mdash; no obligation, no pressure. Book a free consultation today.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="/contact" class="btn btn-gold btn-lg btn-pill"><i class="fas fa-calendar-check"></i> Book Free Consultation</a>
+      <a href="https://wa.me/919810936360" target="_blank" class="btn btn-outline btn-lg btn-pill"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="f-brand">Dr. Kathuria's <span>Dentistry</span></div>
+        <p class="f-tagline">E-143, East of Kailash, New Delhi, India. NABH Accredited &middot; ISO Certified &middot; 18+ Years &middot; 44+ countries.</p>
+        <div class="f-social">
+          <a href="https://www.facebook.com/DrKathuriaDentistry" class="f-soc" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/drkathuriasdentistry" class="f-soc" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@dentalclinicindelhi" class="f-soc" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://twitter.com/Kathuriadentist" class="f-soc" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://wa.me/919810936360" class="f-soc" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="f-col"><h5>Treatments</h5><ul><li><a href='/services#cosmetic'><i class="fas fa-chevron-right"></i>Smile Makeover</a></li><li><a href='/services#implants'><i class="fas fa-chevron-right"></i>Dental Implants</a></li><li><a href='/services#orthodontics'><i class="fas fa-chevron-right"></i>Orthodontics</a></li><li><a href='/services#gums'><i class="fas fa-chevron-right"></i>Gum Treatment</a></li><li><a href='/services#surgical'><i class="fas fa-chevron-right"></i>Root Canal</a></li><li><a href='/services#kids'><i class="fas fa-chevron-right"></i>Kids Dentistry</a></li></ul></div>
+      <div class="f-col"><h5>Quick Links</h5><ul><li><a href='/about'><i class="fas fa-chevron-right"></i>The Practice</a></li><li><a href='/cases'><i class="fas fa-chevron-right"></i>Before &amp; After</a></li><li><a href='/about#team'><i class="fas fa-chevron-right"></i>Our Doctors</a></li><li><a href='/about#certifications'><i class="fas fa-chevron-right"></i>Credibility</a></li><li><a href='#charges'><i class="fas fa-chevron-right"></i>Charges</a></li><li><a href='/contact'><i class="fas fa-chevron-right"></i>Contact Us</a></li></ul></div>
+      <div class="f-col"><h5>Contact</h5><div class="f-contact">
+        <div class="f-ci"><i class="fas fa-map-marker-alt"></i><div><span>Address</span><strong>E-143, East of Kailash, New Delhi</strong></div></div>
+        <div class="f-ci"><i class="fas fa-phone-alt"></i><div><span>India Toll Free</span><strong>1800-11-7272</strong></div></div>
+        <div class="f-ci"><i class="fab fa-whatsapp"></i><div><span>WhatsApp</span><strong>+91 98109 36360</strong></div></div>
+        <div class="f-ci"><i class="fas fa-phone-alt"></i><div><span>USA / Canada</span><strong>+1 888 981 2145</strong></div></div>
+        <div class="f-ci"><i class="fas fa-phone-alt"></i><div><span>UK</span><strong>+44 1970 450032</strong></div></div>
+        <div class="f-ci"><i class="fas fa-envelope"></i><div><span>Email</span><strong>info@delhidental.com</strong></div></div>
+      </div></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Dr. Kathuria's Dentistry &ndash; U and K Oral Wellness LLP. All rights reserved.</span>
+      <div class="f-badges"><span class="f-badge">NABH Accredited</span><span class="f-badge">ISO Certified</span><span class="f-badge">ADA Standards</span></div>
+    </div>
+  </div>
+</footer>
+
+<!-- Side Contact -->
+<div class="side-contact">
+  <a href="tel:18001177272"><i class="fas fa-phone-alt"></i> <span>1800-11-7272</span></a>
+  <a href="https://wa.me/919810936360" target="_blank"><i class="fab fa-whatsapp"></i> <span>WhatsApp</span></a>
+  <a href="https://www.instagram.com/drkathuriasdentistry" target="_blank" style="background:#E1306C"><i class="fab fa-instagram"></i> <span>Instagram</span></a>
+  <a href="https://www.facebook.com/DrKathuriaDentistry" target="_blank" style="background:#1877F2"><i class="fab fa-facebook-f"></i> <span>Facebook</span></a>
+  <a href="https://www.youtube.com/@dentalclinicindelhi" target="_blank" style="background:#FF0000"><i class="fab fa-youtube"></i> <span>YouTube</span></a>
+</div>
+
+<!-- FABs -->
+<a href="tel:18001177272" class="fab-btn fab-call" aria-label="Call"><i class="fas fa-phone"></i></a>
+<a href="https://wa.me/919810936360" target="_blank" class="fab-btn fab-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="#top" class="fab-btn fab-up" id="fabUp" aria-label="Top"><i class="fas fa-chevron-up"></i></a>
+
+<!-- Hidden Netlify form -->
+<form hidden method='post' name='appointment'><input type='hidden' name='form-name' value='appointment'/><input type="text" name="name"/><input type="text" name="country"/><input type="tel" name="phone"/><input type="email" name="email"/><select name="treatment"><option></option></select><textarea name="message"></textarea><input name="bot-field"/></form>
+
+<!-- Floating Panel -->
+<button class="float-book-btn" id="floatBookBtn">BOOK APPOINTMENT</button>
+<div class="float-panel" id="floatPanel">
+  <button class="fp-close" id="fpClose"><i class="fas fa-times"></i></button>
+  <h3>Book Consultation</h3>
+  <p>Fill in your details &mdash; we'll call back within 2 hours.</p>
+  <form class='smart-form' method='POST' name='appointment'>
+    <input type="hidden" name="form-name" value="appointment"/>
+    <p class="hidden" style="display:none"><label>Don't fill: <input name="bot-field"/></label></p>
+    <div class="fg-row"><div class="fg"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required/></div><div class="fg"><label>Country</label><input type="text" name="country" placeholder="Your country"/></div></div>
+    <div class="fg"><label>WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+91 or international" required/></div>
+    <div class="fg"><label>Email</label><input type="email" name="email" placeholder="your@email.com"/></div>
+    <div class="fg"><label>Treatment</label><select name="treatment"><option value="">Select treatment...</option><option>Smile Makeover / Veneers</option><option>Dental Implants</option><option>Clear Aligners</option><option>Zoom Whitening</option><option>Root Canal</option><option>Full Mouth Rehabilitation</option><option>Kids Dentistry</option><option>Gum Treatment</option><option>Video Consultation Only</option><option>Not Sure &ndash; Need Advice</option></select></div>
+    <div class="fg"><label>Message (optional)</label><textarea name="message" rows="3" placeholder="Any specific concerns or preferred time"></textarea></div>
+    <button type="submit" class="form-submit"><i class="fas fa-calendar-check"></i> Request Consultation</button>
+  </form>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox"><div class="lb-inner"><button class="lb-close" id="lbClose"><i class="fas fa-times"></i></button><img id="lbImg" src="" alt=""/></div></div>
+<div class="toast" id="toast"></div>
+
+<script src="js/main.js"></script>
+<script>
+/* ── TREATMENT FILTER TABS ── */
+(function(){
+  const pills = document.querySelectorAll('.filter-pill');
+  const categories = document.querySelectorAll('.treat-category');
+  if(!pills.length || !categories.length) return;
+
+  pills.forEach(function(pill){
+    pill.addEventListener('click', function(){
+      pills.forEach(function(p){ p.classList.remove('active'); });
+      pill.classList.add('active');
+      var filter = pill.getAttribute('data-filter');
+
+      categories.forEach(function(cat){
+        if(filter === 'all' || cat.getAttribute('data-category') === filter){
+          cat.style.display = '';
+          cat.style.opacity = '1';
+          cat.style.transform = 'translateY(0)';
+        } else {
+          cat.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  /* Sticky filter bar adjustment on scroll */
+  var filterBar = document.getElementById('treatFilter');
+  if(filterBar){
+    window.addEventListener('scroll', function(){
+      var nav = document.getElementById('mainNav');
+      if(nav && nav.classList.contains('scrolled')){
+        filterBar.style.top = '68px';
+      } else {
+        filterBar.style.top = '';
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>

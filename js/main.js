@@ -1,5 +1,6 @@
 /* ═══════════════════════════════════════
-   DR. KATHURIA'S DENTISTRY — SHARED JS
+   DR. KATHURIA'S DENTISTRY — SHARED JS v5
+   White · Gold · Olive Green
 ═══════════════════════════════════════ */
 
 /* ── PAGE LOADER ── */
@@ -8,16 +9,7 @@ window.addEventListener('load', () => {
   if (loader) setTimeout(() => loader.classList.add('hidden'), 500);
 });
 
-/* ── CURSOR GLOW ── */
-const cursorGlow = document.querySelector('.cursor-glow');
-if (cursorGlow) {
-  document.addEventListener('mousemove', e => {
-    cursorGlow.style.left = e.clientX + 'px';
-    cursorGlow.style.top  = e.clientY + 'px';
-  });
-}
-
-/* ── STICKY NAV (enhanced shadow on scroll) ── */
+/* ── STICKY NAV ── */
 const siteNav = document.querySelector('.site-nav');
 if (siteNav) {
   window.addEventListener('scroll', () => {
@@ -45,7 +37,7 @@ const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 
-document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObs.observe(el));
 
 /* ── ANIMATED COUNTERS ── */
 function animCount(el) {
@@ -215,7 +207,7 @@ document.querySelectorAll('[data-lightbox]').forEach(el => {
   el.addEventListener('click', () => openLB(el.dataset.lightbox));
 });
 
-/* ── FORM SUBMIT (Netlify Forms via AJAX) ── */
+/* ── FORM SUBMIT ── */
 document.querySelectorAll('.smart-form').forEach(form => {
   form.addEventListener('submit', async e => {
     e.preventDefault();
@@ -235,15 +227,15 @@ document.querySelectorAll('.smart-form').forEach(form => {
         body: params.toString()
       });
       if (response.ok) {
-        showToast('✅ Request received! We will call / WhatsApp you within 2 hours.');
+        showToast('Request received! We will call / WhatsApp you within 2 hours.');
         form.reset();
         const panel = document.getElementById('floatPanel');
         if (panel) panel.classList.remove('open');
       } else {
-        showToast('❌ Could not send. Please WhatsApp us at +91 98109 36360.', 'error');
+        showToast('Could not send. Please WhatsApp us at +91 98109 36360.', 'error');
       }
     } catch (err) {
-      showToast('❌ Network error. Please WhatsApp us at +91 98109 36360.', 'error');
+      showToast('Network error. Please WhatsApp us at +91 98109 36360.', 'error');
     } finally {
       if (submitBtn) {
         submitBtn.disabled = false;
@@ -258,7 +250,7 @@ function showToast(msg, type = 'success') {
   const t = document.getElementById('toast');
   if (!t) return;
   t.textContent = msg;
-  t.style.borderLeftColor = type === 'error' ? '#EF4444' : 'var(--teal)';
+  t.style.borderLeftColor = type === 'error' ? '#EF4444' : 'var(--olive)';
   t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 4500);
 }
@@ -271,7 +263,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-/* ── FILTER TABS (Cases / Services) ── */
+/* ── FILTER TABS ── */
 document.querySelectorAll('.filter-bar').forEach(bar => {
   bar.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -331,34 +323,10 @@ document.querySelectorAll('.nav-links a').forEach(a => {
   const circumference = 2 * Math.PI * 52;
 
   const results = [
-    {
-      min: 85,
-      badge: 'Excellent Smile', badgeClass: 'badge-excellent',
-      title: 'Your Smile is in Great Shape!',
-      desc: 'You have a healthy, confident smile. A routine check-up and professional cleaning every 6 months will keep it that way. Optional cosmetic enhancements can make it even brighter.',
-      treatments: ['Professional Cleaning', 'Zoom Whitening', 'Routine Check-up']
-    },
-    {
-      min: 65,
-      badge: 'Good Smile', badgeClass: 'badge-good',
-      title: 'Your Smile Needs a Little Polish',
-      desc: 'You\'re in good shape but there\'s room for improvement. A consultation with our specialists will reveal quick wins — whitening, minor corrections, or a clean-up can make a big visible difference.',
-      treatments: ['Zoom Whitening', 'Clear Aligners', 'Dental Cleaning', 'Composite Bonding']
-    },
-    {
-      min: 45,
-      badge: 'Needs Attention', badgeClass: 'badge-fair',
-      title: 'Your Smile Deserves an Upgrade',
-      desc: 'Several areas of your smile need professional attention. The good news: our experts can transform your smile in as little as 3–5 days with treatments tailored to your needs.',
-      treatments: ['Smile Makeover', 'Porcelain Veneers', 'Teeth Whitening', 'Clear Aligners', 'Gum Treatment']
-    },
-    {
-      min: 0,
-      badge: 'Urgent Care Needed', badgeClass: 'badge-needs',
-      title: 'Your Smile Needs Immediate Care',
-      desc: 'Your answers suggest you need urgent dental attention. Please don\'t delay — early treatment saves teeth, reduces costs, and restores your confidence. Book a free consultation today.',
-      treatments: ['Full Mouth Rehabilitation', 'Dental Implants', 'Root Canal', 'Smile Makeover', 'Laser Gum Treatment']
-    }
+    { min: 85, badge: 'Excellent Smile', badgeClass: 'badge-excellent', title: 'Your Smile is in Great Shape!', desc: 'You have a healthy, confident smile. A routine check-up and professional cleaning every 6 months will keep it that way.', treatments: ['Professional Cleaning', 'Zoom Whitening', 'Routine Check-up'] },
+    { min: 65, badge: 'Good Smile', badgeClass: 'badge-good', title: 'Your Smile Needs a Little Polish', desc: 'You\'re in good shape but there\'s room for improvement. A consultation with our specialists will reveal quick wins.', treatments: ['Zoom Whitening', 'Clear Aligners', 'Dental Cleaning', 'Composite Bonding'] },
+    { min: 45, badge: 'Needs Attention', badgeClass: 'badge-fair', title: 'Your Smile Deserves an Upgrade', desc: 'Several areas need professional attention. Our experts can transform your smile in as little as 3-5 days.', treatments: ['Smile Makeover', 'Porcelain Veneers', 'Teeth Whitening', 'Clear Aligners', 'Gum Treatment'] },
+    { min: 0, badge: 'Urgent Care Needed', badgeClass: 'badge-needs', title: 'Your Smile Needs Immediate Care', desc: 'Please don\'t delay - early treatment saves teeth, reduces costs, and restores your confidence. Book a free consultation today.', treatments: ['Full Mouth Rehabilitation', 'Dental Implants', 'Root Canal', 'Smile Makeover', 'Laser Gum Treatment'] }
   ];
 
   function showQuestion(n) {
@@ -379,13 +347,12 @@ document.querySelectorAll('.nav-links a').forEach(a => {
     if (questionsWrap) questionsWrap.style.display = 'none';
     if (progressFill) progressFill.style.width = '100%';
     if (stepLabel) stepLabel.textContent = 'Your Results';
-
     if (resultPanel) resultPanel.classList.add('show');
     if (scoreNum) scoreNum.textContent = pct;
 
     const dash = (pct / 100) * circumference;
     if (ringFill) {
-      const color = pct >= 85 ? '#34d399' : pct >= 65 ? 'var(--teal)' : pct >= 45 ? '#fbbf24' : '#f87171';
+      const color = pct >= 85 ? '#5B7B3A' : pct >= 65 ? '#C6A94D' : pct >= 45 ? '#fbbf24' : '#f87171';
       ringFill.style.stroke = color;
       setTimeout(() => { ringFill.style.strokeDasharray = dash + ' ' + circumference; }, 100);
     }
@@ -403,13 +370,9 @@ document.querySelectorAll('.nav-links a').forEach(a => {
       const qNum = parseInt(this.dataset.q);
       const score = parseInt(this.dataset.score);
       scores[qNum] = score;
-
       const nextQ = qNum + 1;
-      if (nextQ <= totalQ) {
-        showQuestion(nextQ);
-      } else {
-        showResult();
-      }
+      if (nextQ <= totalQ) showQuestion(nextQ);
+      else showResult();
     });
   });
 

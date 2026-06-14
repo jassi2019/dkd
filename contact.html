@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Contact Us | Dr. Kathuria's Dentistry – East of Kailash, New Delhi</title>
+  <meta name="description" content="Contact Dr. Kathuria's Dentistry, East of Kailash, New Delhi. Book appointments, video consultations. India toll-free 1800-11-7272. Patients from 44+ countries."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* ══════════════════════════════════════
+       CONTACT PAGE — UNIQUE STYLES
+    ══════════════════════════════════════ */
+
+    /* ── INTERNATIONAL PHONE NUMBERS ── */
+    .intl-phones-section { background: var(--white); position: relative; overflow: hidden; }
+    .intl-phones-section::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--olive), var(--gold), var(--olive));
+    }
+    .intl-phones-grid {
+      display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;
+    }
+    .intl-phone-pill {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: var(--olive-bg); border: 1px solid rgba(91,123,58,.15);
+      border-radius: 50px; padding: 12px 24px 12px 16px;
+      transition: all .32s var(--ease);
+      text-decoration: none;
+    }
+    .intl-phone-pill:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(91,123,58,.15);
+      border-color: var(--olive);
+      background: var(--olive-pale);
+    }
+    .intl-phone-flag {
+      font-size: 1.4rem; line-height: 1;
+    }
+    .intl-phone-info span {
+      display: block; font-size: .6rem; color: var(--gray-light);
+      text-transform: uppercase; letter-spacing: 1px; font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .intl-phone-info strong {
+      font-size: .9rem; color: var(--ink); font-weight: 700;
+    }
+    .intl-phone-pill:hover .intl-phone-info strong { color: var(--olive-dark); }
+
+    /* ── CONTACT GRID OVERRIDES ── */
+    .contact-page-grid {
+      display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; align-items: start;
+    }
+
+    /* ── CONTACT HOURS BLOCK ── */
+    .cp-hours {
+      margin-top: 28px; padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,.1);
+    }
+    .cp-hours h5 {
+      font-size: .72rem; font-weight: 700; color: var(--gold-light);
+      text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px;
+    }
+    .cp-hours p { font-size: .84rem; color: rgba(255,255,255,.6); line-height: 1.8; }
+
+    /* ── MAP SECTION ── */
+    .map-section { padding-top: 0 !important; padding-bottom: 0 !important; }
+    .map-full {
+      width: 100%; height: 420px; border: 0; display: block;
+    }
+
+    /* ── REVIEWS BADGES ── */
+    .reviews-badges-section { background: var(--cream); }
+    .reviews-badges-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      max-width: 900px; margin: 0 auto;
+    }
+    .review-badge-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 20px; padding: 32px 28px; text-align: center;
+      transition: all .35s var(--ease); position: relative; overflow: hidden;
+    }
+    .review-badge-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--olive));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform .4s var(--ease);
+    }
+    .review-badge-card:hover::before { transform: scaleX(1); }
+    .review-badge-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0,0,0,.08);
+      border-color: transparent;
+    }
+    .review-badge-icon {
+      width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+    }
+    .review-badge-icon.google { background: #E8F0FE; color: #4285F4; }
+    .review-badge-icon.facebook { background: #E7F3FF; color: #1877F2; }
+    .review-badge-icon.trustpilot { background: #E8FAF1; color: #00B67A; }
+    .review-badge-card h4 { font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+    .review-badge-stars { color: #FBBC04; font-size: .8rem; letter-spacing: 2px; margin-bottom: 8px; }
+    .review-badge-card .rating-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 700; color: var(--ink); line-height: 1; margin-bottom: 4px;
+    }
+    .review-badge-card p { font-size: .78rem; color: var(--gray); }
+
+    /* ── CTA SECTION ── */
+    .cta-contact { background: var(--olive-dark); text-align: center; color: var(--white); position: relative; overflow: hidden; }
+    .cta-contact::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(198,169,77,.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-contact h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px;
+      position: relative;
+    }
+    .cta-contact h2 em { color: var(--gold-light); font-style: italic; }
+    .cta-contact p {
+      font-size: 1.05rem; color: rgba(255,255,255,.7);
+      margin-bottom: 36px; max-width: 600px; margin-left: auto; margin-right: auto;
+      position: relative;
+    }
+    .cta-contact .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:960px){
+      .contact-page-grid { grid-template-columns: 1fr; }
+      .reviews-badges-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media(max-width:700px){
+      .intl-phones-grid { flex-direction: column; align-items: stretch; }
+      .intl-phone-pill { justify-content: flex-start; }
+      .map-full { height: 300px; }
+      .reviews-badges-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body class="has-topbar">
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-bar-left">
+    <a href="mailto:info@delhidental.com"><i class="fas fa-envelope"></i> info@delhidental.com</a>
+    <a href="tel:18001177272"><i class="fas fa-phone-alt"></i> 1800-11-7272</a>
+    <span><i class="fas fa-clock"></i> Mon&ndash;Sat: 9:30 AM &ndash; 7:00 PM</span>
+  </div>
+  <div class="top-bar-right">
+    <a href="https://www.facebook.com/DrKathuriaDentistry" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/drkathuriasdentistry" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@dentalclinicindelhi" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://wa.me/919810936360" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</div>
+
+<!-- PAGE LOADER -->
+<div id="page-loader"><div class="loader-inner"><div class="tooth">&#x1f9b7;</div><p>Loading...</p></div></div>
+<div class="cursor-glow"></div>
+
+<!-- NAV -->
+<nav class="site-nav" id="mainNav">
+  <div class="nav-inner">
+    <a class='nav-logo' href='/'><div class="logo-mark"><i class="fas fa-tooth"></i></div><div class="logo-text"><strong>Dr. Kathuria's Dentistry</strong><span>East of Kailash, New Delhi</span></div></a>
+    <ul class="nav-links">
+      <li><a href='/'>Home</a></li>
+      <li><a href='/about'>About <i class="fas fa-chevron-down chevron"></i></a><div class="nav-dropdown"><a href='/about#team'><i class="fas fa-user-md"></i>Our Doctors</a><a href='/about#clinic'><i class="fas fa-hospital"></i>Clinic Tour</a><a href='/about#certifications'><i class="fas fa-certificate"></i>Certifications</a><a href='/about#timeline'><i class="fas fa-history"></i>Our Journey</a></div></li>
+      <li><a href='/services'>Services <i class="fas fa-chevron-down chevron"></i></a><div class="nav-dropdown"><a href='/services#cosmetic'><i class="fas fa-star"></i>Cosmetic Dentistry</a><a href='/services#implants'><i class="fas fa-tooth"></i>Dental Implants</a><a href='/services#aligners'><i class="fas fa-align-center"></i>Clear Aligners</a><a href='/services#whitening'><i class="fas fa-sun"></i>Teeth Whitening</a><a href='/services#rct'><i class="fas fa-syringe"></i>Root Canal</a><a href='/services#gums'><i class="fas fa-leaf"></i>Gum Treatment</a></div></li>
+      <li><a href='#cases'>Cases</a></li>
+      <li><a class='active' href='/contact'>Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="nav-phone" href="tel:18001177272"><i class="fas fa-phone-alt"></i> 1800-11-7272</a>
+      <button class="nav-cta" onclick="document.getElementById('floatPanel').classList.add('open')"><i class="fas fa-calendar-check"></i> Book Consult</button>
+    </div>
+    <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href='/'><i class="fas fa-home"></i> Home</a><a href='/about'><i class="fas fa-user-md"></i> About Us</a><a href='/services'><i class="fas fa-tooth"></i> Services</a><a href='#cases'><i class="fas fa-images"></i> Cases</a><a href='/contact'><i class="fas fa-envelope"></i> Contact</a><a class='mobile-cta' href='/contact'><i class="fas fa-calendar-check"></i> Book Consultation</a>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     1. PAGE HERO
+═══════════════════════════════════════════════════ -->
+<div class="page-hero">
+  <img class="page-hero-img" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80" alt="Contact Dr. Kathuria's Dentistry"/>
+  <div class="page-hero-overlay" style="background:linear-gradient(135deg,rgba(63,90,36,.88) 0%,rgba(91,123,58,.7) 40%,rgba(63,90,36,.85) 100%)"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep"><i class="fas fa-chevron-right" style="font-size:.55rem"></i></span>
+      <span style="color:var(--gold-light)">Contact Us</span>
+    </div>
+    <h1>Contact <em>Us</em></h1>
+    <p>Reach out to Delhi's most trusted dental clinic. Call our India toll-free number <strong style="color:var(--gold-light)">1800-11-7272</strong> or fill in the form below &mdash; we respond within 2 hours.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a href="tel:18001177272" class="btn btn-gold btn-lg"><i class="fas fa-phone-alt"></i> Call Now</a>
+      <a href="https://wa.me/919810936360" class="btn btn-outline btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     2. INTERNATIONAL PHONE NUMBERS
+═══════════════════════════════════════════════════ -->
+<section class="intl-phones-section reveal">
+  <div class="container">
+    <div class="sec-h center reveal up">
+      <div class="sec-chip"><i class="fas fa-globe-asia"></i> Dial Local, Reach Us</div>
+      <div class="sec-divider"></div>
+      <h2>Call Us from <em>Anywhere</em></h2>
+      <p>Local numbers for patients worldwide &mdash; no international dialling charges.</p>
+    </div>
+    <div class="intl-phones-grid reveal up">
+      <a href="tel:18001177272" class="intl-phone-pill">
+        <span class="intl-phone-flag">&#x1F1EE;&#x1F1F3;</span>
+        <div class="intl-phone-info">
+          <span>India Toll Free</span>
+          <strong>1800-11-7272</strong>
+        </div>
+      </a>
+      <a href="tel:+919811026060" class="intl-phone-pill">
+        <span class="intl-phone-flag">&#x1F1EE;&#x1F1F3;</span>
+        <div class="intl-phone-info">
+          <span>India</span>
+          <strong>+91-9811026060</strong>
+        </div>
+      </a>
+      <a href="tel:+919811776073" class="intl-phone-pill">
+        <span class="intl-phone-flag">&#x1F1EE;&#x1F1F3;</span>
+        <div class="intl-phone-info">
+          <span>India</span>
+          <strong>+91-9811776073</strong>
+        </div>
+      </a>
+      <a href="tel:+18889812145" class="intl-phone-pill">
+        <span class="intl-phone-flag">&#x1F1FA;&#x1F1F8;</span>
+        <div class="intl-phone-info">
+          <span>USA / Canada</span>
+          <strong>+1 888 981 2145</strong>
+        </div>
+      </a>
+      <a href="tel:+441970450032" class="intl-phone-pill">
+        <span class="intl-phone-flag">&#x1F1EC;&#x1F1E7;</span>
+        <div class="intl-phone-info">
+          <span>United Kingdom</span>
+          <strong>+44 1970 450032</strong>
+        </div>
+      </a>
+      <a href="tel:+61280051630" class="intl-phone-pill">
+        <span class="intl-phone-flag">&#x1F1E6;&#x1F1FA;</span>
+        <div class="intl-phone-info">
+          <span>Australia</span>
+          <strong>+61 2 8005 1630</strong>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     3. CONTACT GRID — INFO + FORM
+═══════════════════════════════════════════════════ -->
+<section class="bg-off reveal">
+  <div class="container">
+    <div class="sec-h center reveal up">
+      <div class="sec-chip"><i class="fas fa-paper-plane"></i> Get in Touch</div>
+      <div class="sec-divider"></div>
+      <h2>Book Your <em>Appointment</em></h2>
+      <p>Fill in the form and our team will contact you within 2 hours, or reach us directly.</p>
+    </div>
+
+    <div class="contact-grid reveal up">
+
+      <!-- LEFT — Contact Info Card (olive-dark bg) -->
+      <div class="contact-info-card">
+        <h3>Get in Touch</h3>
+        <p>Our NABH-accredited clinic is located in South Delhi, easily accessible from all parts of the city and international airports.</p>
+
+        <div class="contact-info-item">
+          <div class="icon-wrap"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <h5>Address</h5>
+            <p>E-143, East of Kailash, New Delhi - 110065, India</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="icon-wrap"><i class="fas fa-phone-alt"></i></div>
+          <div>
+            <h5>Phone</h5>
+            <a href="tel:+919811026060">+91-9811026060</a><br/>
+            <span style="font-size:.76rem;color:rgba(255,255,255,.5)">Toll Free: </span><a href="tel:18001177272">1800-11-7272</a>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="icon-wrap"><i class="fas fa-envelope"></i></div>
+          <div>
+            <h5>Email</h5>
+            <a href="mailto:info@delhidental.com">info@delhidental.com</a>
+          </div>
+        </div>
+
+        <div class="cp-hours">
+          <h5><i class="fas fa-clock"></i> Clinic Hours</h5>
+          <p>Monday &ndash; Saturday: 9:30 AM &ndash; 7:00 PM<br/>Sunday: Closed</p>
+        </div>
+
+        <div class="contact-socials">
+          <a href="https://www.facebook.com/DrKathuriaDentistry" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/drkathuriasdentistry" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@dentalclinicindelhi" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://twitter.com/Kathuriadentist" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://wa.me/919810936360" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- RIGHT — Contact Form Card -->
+      <div class="contact-form-card">
+        <h3>Request an Appointment</h3>
+        <p>Complete the form below and we'll call you back to confirm your appointment.</p>
+        <form class="smart-form" method="POST" name="contact" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact"/>
+          <p class="hidden" style="display:none"><label>Don't fill: <input name="bot-field"/></label></p>
+
+          <div class="fg">
+            <label>Procedure *</label>
+            <select name="procedure" required>
+              <option value="">Select a procedure...</option>
+              <option>General Consultation</option>
+              <option>Smile Makeover</option>
+              <option>Dental Implants</option>
+              <option>Porcelain Veneers</option>
+              <option>Teeth Whitening / Zoom</option>
+              <option>Root Canal Treatment</option>
+              <option>Clear Aligners / Invisalign</option>
+              <option>Gum Treatment / Laser</option>
+              <option>Crowns &amp; Bridges</option>
+              <option>Full Mouth Rehabilitation</option>
+              <option>Dentures</option>
+              <option>Wisdom Tooth Extraction</option>
+              <option>Paediatric Dentistry</option>
+              <option>Facial Aesthetics / Botox</option>
+              <option>Video Consultation Only</option>
+              <option>Not Sure &ndash; Need Advice</option>
+            </select>
+          </div>
+
+          <div class="fg-row">
+            <div class="fg">
+              <label>Full Name *</label>
+              <input type="text" name="name" placeholder="Your full name" required/>
+            </div>
+            <div class="fg">
+              <label>Email *</label>
+              <input type="email" name="email" placeholder="your@email.com" required/>
+            </div>
+          </div>
+
+          <div class="fg">
+            <label>Country</label>
+            <select name="country">
+              <option value="">Select your country...</option>
+              <option>India</option>
+              <option>United States</option>
+              <option>Canada</option>
+              <option>United Kingdom</option>
+              <option>Australia</option>
+              <option>UAE</option>
+              <option>Saudi Arabia</option>
+              <option>Germany</option>
+              <option>France</option>
+              <option>Singapore</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="fg">
+            <label>Phone / WhatsApp *</label>
+            <input type="tel" name="phone" placeholder="+91 or international number" required/>
+          </div>
+
+          <div class="fg-row">
+            <div class="fg">
+              <label>Preferred Date</label>
+              <input type="date" name="preferred_date"/>
+            </div>
+            <div class="fg">
+              <label>Preferred Time</label>
+              <select name="preferred_time">
+                <option value="">Select time...</option>
+                <option>9:30 AM - 11:00 AM</option>
+                <option>11:00 AM - 1:00 PM</option>
+                <option>1:00 PM - 3:00 PM</option>
+                <option>3:00 PM - 5:00 PM</option>
+                <option>5:00 PM - 7:00 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="fg">
+            <label>Message (optional)</label>
+            <textarea name="message" rows="4" placeholder="Any specific concerns, questions, or additional details"></textarea>
+          </div>
+
+          <button type="submit" class="form-submit"><i class="fas fa-calendar-check"></i> Submit Appointment Request</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     4. GOOGLE MAP EMBED
+═══════════════════════════════════════════════════ -->
+<section class="map-section reveal" style="padding:0 !important">
+  <iframe class="map-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.9345264606!2d77.2391!3d28.5505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3e3c4f1f0e1%3A0x9c9f0e8e7f7f7f7f!2sDr%20Kathuria&#39;s%20Dentistry%20-%20Best%20Dental%20Clinic%20in%20Delhi!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     5. REVIEWS BADGES
+═══════════════════════════════════════════════════ -->
+<section class="reviews-badges-section reveal">
+  <div class="container">
+    <div class="sec-h center reveal up">
+      <div class="sec-chip"><i class="fas fa-star"></i> Trusted Worldwide</div>
+      <div class="sec-divider"></div>
+      <h2>Our <em>Reputation</em> Speaks</h2>
+      <p>Verified ratings across the world's leading review platforms.</p>
+    </div>
+    <div class="reviews-badges-grid reveal up">
+
+      <div class="review-badge-card">
+        <div class="review-badge-icon google"><i class="fab fa-google"></i></div>
+        <h4>Google Reviews</h4>
+        <div class="rating-num">4.8</div>
+        <div class="review-badge-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+        </div>
+        <p>1,200+ verified reviews</p>
+      </div>
+
+      <div class="review-badge-card">
+        <div class="review-badge-icon facebook"><i class="fab fa-facebook-f"></i></div>
+        <h4>Facebook Reviews</h4>
+        <div class="rating-num">4.9</div>
+        <div class="review-badge-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p>500+ recommendations</p>
+      </div>
+
+      <div class="review-badge-card">
+        <div class="review-badge-icon trustpilot"><i class="fas fa-check-circle"></i></div>
+        <h4>Trustpilot</h4>
+        <div class="rating-num">4.7</div>
+        <div class="review-badge-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+        </div>
+        <p>Excellent &mdash; trusted by international patients</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     6. CTA
+═══════════════════════════════════════════════════ -->
+<section class="cta-contact reveal">
+  <div class="container">
+    <div class="sec-chip" style="color:var(--gold-light);margin-bottom:16px"><i class="fas fa-calendar-check"></i> Consultation</div>
+    <h2>Ready to Transform <em>Your Smile?</em></h2>
+    <p>Join 15,000+ patients from 44 countries who chose Dr. Kathuria's Dentistry.</p>
+    <div class="cta-btns">
+      <a class='btn btn-gold btn-lg' href='tel:18001177272'><i class="fas fa-phone-alt"></i> Call 1800-11-7272</a>
+      <a href="https://wa.me/919810936360" class="btn btn-outline btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="f-brand">Dr. Kathuria's <span>Dentistry</span></div>
+        <p class="f-tagline">E-143, East of Kailash, New Delhi, India. NABH Accredited &middot; ISO Certified &middot; 18+ Years &middot; 44+ countries.</p>
+        <div class="f-social">
+          <a href="https://www.facebook.com/DrKathuriaDentistry" class="f-soc" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/drkathuriasdentistry" class="f-soc" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@dentalclinicindelhi" class="f-soc" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://twitter.com/Kathuriadentist" class="f-soc" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://wa.me/919810936360" class="f-soc" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="f-col"><h5>Treatments</h5><ul><li><a href='/services#cosmetic'><i class="fas fa-chevron-right"></i>Smile Makeover</a></li><li><a href='/services#implants'><i class="fas fa-chevron-right"></i>Dental Implants</a></li><li><a href='/services#aligners'><i class="fas fa-chevron-right"></i>Clear Aligners</a></li><li><a href='/services#whitening'><i class="fas fa-chevron-right"></i>Zoom Whitening</a></li><li><a href='/services#rct'><i class="fas fa-chevron-right"></i>Root Canal</a></li><li><a href='/services#gums'><i class="fas fa-chevron-right"></i>Gum Laser</a></li></ul></div>
+      <div class="f-col"><h5>Quick Links</h5><ul><li><a href='/about'><i class="fas fa-chevron-right"></i>About Us</a></li><li><a href='#cases'><i class="fas fa-chevron-right"></i>Before &amp; After</a></li><li><a href='/about#team'><i class="fas fa-chevron-right"></i>Our Doctors</a></li><li><a href='/contact'><i class="fas fa-chevron-right"></i>Video Consult</a></li><li><a href='#charges'><i class="fas fa-chevron-right"></i>Charges</a></li><li><a href='/contact'><i class="fas fa-chevron-right"></i>Contact</a></li></ul></div>
+      <div class="f-col"><h5>Contact</h5><div class="f-contact">
+        <div class="f-ci"><i class="fas fa-map-marker-alt"></i><div><span>Address</span><strong>E-143, East of Kailash, New Delhi</strong></div></div>
+        <div class="f-ci"><i class="fas fa-phone-alt"></i><div><span>India Toll Free</span><strong>1800-11-7272</strong></div></div>
+        <div class="f-ci"><i class="fab fa-whatsapp"></i><div><span>WhatsApp</span><strong>+91 98109 36360</strong></div></div>
+        <div class="f-ci"><i class="fas fa-phone-alt"></i><div><span>USA / Canada</span><strong>+1 888 981 2145</strong></div></div>
+        <div class="f-ci"><i class="fas fa-phone-alt"></i><div><span>UK</span><strong>+44 1970 450032</strong></div></div>
+        <div class="f-ci"><i class="fas fa-envelope"></i><div><span>Email</span><strong>info@delhidental.com</strong></div></div>
+      </div></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Dr. Kathuria's Dentistry &ndash; U and K Oral Wellness LLP. All rights reserved.</span>
+      <div class="f-badges"><span class="f-badge">NABH Accredited</span><span class="f-badge">ISO Certified</span><span class="f-badge">ADA Standards</span></div>
+    </div>
+  </div>
+</footer>
+
+<!-- Side Contact -->
+<div class="side-contact">
+  <a href="tel:18001177272"><i class="fas fa-phone-alt"></i> <span>1800-11-7272</span></a>
+  <a href="https://wa.me/919810936360" target="_blank"><i class="fab fa-whatsapp"></i> <span>WhatsApp</span></a>
+  <a href="https://www.instagram.com/drkathuriasdentistry" target="_blank" style="background:#E1306C"><i class="fab fa-instagram"></i> <span>Instagram</span></a>
+  <a href="https://www.facebook.com/DrKathuriaDentistry" target="_blank" style="background:#1877F2"><i class="fab fa-facebook-f"></i> <span>Facebook</span></a>
+  <a href="https://www.youtube.com/@dentalclinicindelhi" target="_blank" style="background:#FF0000"><i class="fab fa-youtube"></i> <span>YouTube</span></a>
+</div>
+
+<!-- FABs -->
+<a href="tel:18001177272" class="fab-btn fab-call" aria-label="Call"><i class="fas fa-phone"></i></a>
+<a href="https://wa.me/919810936360" target="_blank" class="fab-btn fab-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="#top" class="fab-btn fab-up" id="fabUp" aria-label="Top"><i class="fas fa-chevron-up"></i></a>
+
+<!-- Hidden Netlify form -->
+<form hidden method='post' name='contact'><input type='hidden' name='form-name' value='contact'/><input type="text" name="name"/><input type="text" name="country"/><input type="tel" name="phone"/><input type="email" name="email"/><select name="procedure"><option></option></select><input type="date" name="preferred_date"/><select name="preferred_time"><option></option></select><textarea name="message"></textarea><input name="bot-field"/></form>
+
+<!-- Floating Panel -->
+<button class="float-book-btn" id="floatBookBtn">BOOK APPOINTMENT</button>
+<div class="float-panel" id="floatPanel">
+  <button class="fp-close" id="fpClose"><i class="fas fa-times"></i></button>
+  <h3>Book Consultation</h3>
+  <p>Fill in your details &mdash; we'll call back within 2 hours.</p>
+  <form class='smart-form' method='POST' name='appointment'>
+    <input type="hidden" name="form-name" value="appointment"/>
+    <p class="hidden" style="display:none"><label>Don't fill: <input name="bot-field"/></label></p>
+    <div class="fg-row"><div class="fg"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required/></div><div class="fg"><label>Country</label><input type="text" name="country" placeholder="Your country"/></div></div>
+    <div class="fg"><label>WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+91 or international" required/></div>
+    <div class="fg"><label>Email</label><input type="email" name="email" placeholder="your@email.com"/></div>
+    <div class="fg"><label>Treatment</label><select name="treatment"><option value="">Select treatment...</option><option>Smile Makeover / Veneers</option><option>Dental Implants</option><option>Clear Aligners</option><option>Zoom Whitening</option><option>Root Canal</option><option>Full Mouth Rehabilitation</option><option>Video Consultation Only</option><option>Not Sure &ndash; Need Advice</option></select></div>
+    <div class="fg"><label>Message (optional)</label><textarea name="message" rows="3" placeholder="Any specific concerns or preferred time"></textarea></div>
+    <button type="submit" class="form-submit"><i class="fas fa-calendar-check"></i> Request Consultation</button>
+  </form>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox"><div class="lb-inner"><button class="lb-close" id="lbClose"><i class="fas fa-times"></i></button><img id="lbImg" src="" alt=""/></div></div>
+<div class="toast" id="toast"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
