@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Patient Testimonials | Dr. Kathuria's Dentistry – What Our Patients Say</title>
+  <meta name="description" content="Read real testimonials from international patients who chose Dr. Kathuria's Dentistry for dental implants, smile makeovers, veneers, and full mouth rehabilitation in Delhi, India."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    .rv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:1100px;margin:0 auto}
+    .rv-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:32px 28px;transition:all .4s var(--ease);position:relative;overflow:hidden;box-shadow:var(--shadow-xs)}
+    .rv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--olive));transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+    .rv-card:hover::before{transform:scaleX(1)}
+    .rv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-l);border-color:var(--gold-pale)}
+    .rv-stars{display:flex;gap:3px;margin-bottom:14px;color:var(--gold);font-size:.85rem}
+    .rv-quote{font-size:.88rem;color:var(--gray);line-height:1.82;margin-bottom:20px;font-style:italic;position:relative;padding-left:20px;border-left:3px solid var(--gold-pale)}
+    .rv-author{display:flex;align-items:center;gap:14px}
+    .rv-av{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--olive));display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:700;font-size:1.1rem;flex-shrink:0}
+    .rv-name{font-size:.9rem;font-weight:700;color:var(--ink)}
+    .rv-country{font-size:.72rem;color:var(--gray);display:flex;align-items:center;gap:5px;margin-top:2px}
+    .rv-verified{display:inline-flex;align-items:center;gap:4px;font-size:.65rem;color:var(--olive);font-weight:600;margin-top:4px}
+    .rv-verified i{font-size:.6rem}
+    @media(max-width:760px){.rv-grid{grid-template-columns:1fr;max-width:500px}}
+  </style>
+</head>
+<body class="has-topbar">
+
+<!-- PAGE LOADER -->
+<div id="page-loader"><div class="loader-inner"><div class="tooth">&#x1f9b7;</div><p>Loading...</p></div></div>
+<div class="cursor-glow"></div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-bar-left">
+    <a href="mailto:info@delhidental.com"><i class="fas fa-envelope"></i> info@delhidental.com</a>
+    <a href="tel:18001177272"><i class="fas fa-phone-alt"></i> 1800-11-7272 (Toll Free)</a>
+  </div>
+  <div class="top-bar-right">
+    <a href="https://www.facebook.com/DrKathuriaDentistry" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/drkathuriasdentistry" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@dentalclinicindelhi" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://twitter.com/Kathuriadentist" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="https://wa.me/919810936360" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="site-nav" id="mainNav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <div class="logo-mark"><i class="fas fa-tooth"></i></div>
+      <div class="logo-text"><strong>Dr. Kathuria's Dentistry</strong><span>East of Kailash, New Delhi</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <a href="#">The Practice <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="staff.html"><i class="fas fa-user-md"></i> Team of Specialists</a>
+          <a href="clinic-tour.html"><i class="fas fa-hospital"></i> Clinic Tour</a>
+          <a href="technology.html"><i class="fas fa-microchip"></i> Technology</a>
+        </div>
+      </li>
+      <li>
+        <a href="services.html">Treatments <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="dental-implants.html"><i class="fas fa-tooth"></i> Dental Implants</a>
+          <a href="cosmetic-dentistry.html"><i class="fas fa-star"></i> Cosmetic Dentistry</a>
+          <a href="gum-treatment.html"><i class="fas fa-leaf"></i> Gum Treatment</a>
+          <a href="orthodontics.html"><i class="fas fa-align-center"></i> Orthodontics</a>
+          <a href="kids-dentistry.html"><i class="fas fa-child"></i> Kids Dentistry</a>
+          <a href="services.html"><i class="fas fa-th-list"></i> All Services</a>
+        </div>
+      </li>
+      <li>
+        <a href="awards.html" class="active">Credibility <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="awards.html"><i class="fas fa-trophy"></i> Awards</a>
+          <a href="testimonials.html"><i class="fas fa-quote-left"></i> Testimonials</a>
+          <a href="accreditation.html"><i class="fas fa-certificate"></i> Accreditation</a>
+        </div>
+      </li>
+      <li><a href="cases.html">Cases</a></li>
+      <li><a href="charges.html">Charges</a></li>
+      <li><a href="smile-analysis.html">Smile Analysis</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="nav-phone" href="tel:18001177272"><i class="fas fa-phone-alt"></i> 1800-11-7272</a>
+      <button class="nav-cta" onclick="document.getElementById('floatPanel').classList.add('open')"><i class="fas fa-calendar-check"></i> Book Consult</button>
+    </div>
+    <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html"><i class="fas fa-home"></i> Home</a>
+  <a href="staff.html"><i class="fas fa-user-md"></i> Team of Specialists</a>
+  <a href="clinic-tour.html"><i class="fas fa-hospital"></i> Clinic Tour</a>
+  <a href="technology.html"><i class="fas fa-microchip"></i> Technology</a>
+  <a href="services.html"><i class="fas fa-tooth"></i> Treatments</a>
+  <a href="awards.html"><i class="fas fa-trophy"></i> Credibility</a>
+  <a href="cases.html"><i class="fas fa-images"></i> Cases</a>
+  <a href="charges.html"><i class="fas fa-indian-rupee-sign"></i> Charges</a>
+  <a href="smile-analysis.html"><i class="fas fa-smile-beam"></i> Smile Analysis</a>
+  <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
+  <a class="mobile-cta" href="contact.html"><i class="fas fa-calendar-check"></i> Book Consultation</a>
+</div>
+
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <img class="page-hero-img" src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1920&q=80" alt="Patient Testimonials"/>
+  <div class="page-hero-overlay" style="background:linear-gradient(135deg,rgba(91,123,58,.92) 0%,rgba(63,90,36,.8) 50%,rgba(198,169,77,.4) 100%)"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep"><i class="fas fa-chevron-right" style="font-size:.5rem"></i></span>
+      <span>Credibility</span>
+      <span class="sep"><i class="fas fa-chevron-right" style="font-size:.5rem"></i></span>
+      <span style="color:var(--gold-light);font-weight:600">Testimonials</span>
+    </div>
+    <h1>What Our <em>Patients Say</em></h1>
+    <p>Real stories from patients across 44 countries who trusted Dr. Kathuria's Dentistry for life-changing dental care.</p>
+  </div>
+</section>
+
+
+<!-- TESTIMONIALS GRID -->
+<section style="background:var(--cream)">
+  <div class="container">
+    <div class="sec-h center reveal">
+      <span class="sec-chip"><i class="fas fa-quote-left"></i> Patient Reviews</span>
+      <h2>Trusted by Patients <em>Worldwide</em></h2>
+      <div class="sec-divider"></div>
+      <p>Every review is from a verified patient. We're proud of the trust our patients place in us.</p>
+    </div>
+
+    <div class="rv-grid">
+
+      <!-- 1. Mr. Prem Issar -->
+      <div class="rv-card reveal">
+        <div class="rv-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="rv-quote">"I travelled from the USA specifically for dental implants at Dr. Kathuria's clinic. The entire experience was exceptional &mdash; from the initial video consultation to the final placement. My new teeth feel completely natural, and I saved over 70% compared to US pricing. I cannot recommend them highly enough."</p>
+        <div class="rv-author">
+          <div class="rv-av">P</div>
+          <div>
+            <div class="rv-name">Mr. Prem Issar</div>
+            <div class="rv-country"><i class="fas fa-flag"></i> USA &middot; Dental Implants</div>
+            <div class="rv-verified"><i class="fas fa-check-circle"></i> Verified Patient</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Chef Nita Mehta -->
+      <div class="rv-card reveal">
+        <div class="rv-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="rv-quote">"Dr. Sween Kathuria transformed my smile with porcelain veneers and it looks absolutely stunning. As someone who appears on television and in cookbooks, my smile matters immensely to my career. The team understood exactly what I needed and delivered beyond my expectations."</p>
+        <div class="rv-author">
+          <div class="rv-av">N</div>
+          <div>
+            <div class="rv-name">Chef Nita Mehta</div>
+            <div class="rv-country"><i class="fas fa-flag"></i> India &middot; Smile Makeover</div>
+            <div class="rv-verified"><i class="fas fa-check-circle"></i> Verified Patient</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Dr. Christine Burnett -->
+      <div class="rv-card reveal">
+        <div class="rv-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="rv-quote">"I'm a dentist myself from London, so I know quality work when I see it. The precision, aesthetics, and attention to detail were on par with the best clinics in Harley Street &mdash; at a fraction of the cost. The NABH accreditation gives real confidence in their protocols."</p>
+        <div class="rv-author">
+          <div class="rv-av">C</div>
+          <div>
+            <div class="rv-name">Dr. Christine Burnett</div>
+            <div class="rv-country"><i class="fas fa-flag"></i> United Kingdom &middot; Porcelain Veneers</div>
+            <div class="rv-verified"><i class="fas fa-check-circle"></i> Verified Patient</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Raymond Van Geloven -->
+      <div class="rv-card reveal">
+        <div class="rv-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="rv-quote">"After years of dental issues, I flew from Toronto to Delhi for full mouth rehabilitation. In just 6 days, Dr. Puneet and his team completely rebuilt my smile with implants, crowns, and bridges. The clinic is spotless, the technology is cutting-edge, and I feel like a new person."</p>
+        <div class="rv-author">
+          <div class="rv-av">R</div>
+          <div>
+            <div class="rv-name">Raymond Van Geloven</div>
+            <div class="rv-country"><i class="fas fa-flag"></i> Canada &middot; Full Mouth Rehabilitation</div>
+            <div class="rv-verified"><i class="fas fa-check-circle"></i> Verified Patient</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Sarah Johnson -->
+      <div class="rv-card reveal">
+        <div class="rv-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="rv-quote">"Flying from Melbourne to Delhi for dental work seemed daunting at first, but Dr. Kathuria's team made the entire process seamless. The airport pickup, hotel arrangement, and the treatment itself were all world-class. My Zoom whitening results are absolutely brilliant &mdash; my friends can't believe it."</p>
+        <div class="rv-author">
+          <div class="rv-av">S</div>
+          <div>
+            <div class="rv-name">Sarah Johnson</div>
+            <div class="rv-country"><i class="fas fa-flag"></i> Australia &middot; Zoom Whitening</div>
+            <div class="rv-verified"><i class="fas fa-check-circle"></i> Verified Patient</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Mohammad Al-Rashid -->
+      <div class="rv-card reveal">
+        <div class="rv-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="rv-quote">"I was referred to Dr. Kathuria's Dentistry by a friend in Dubai. The All-on-4 implant procedure was carried out with outstanding precision. Dr. Puneet explained every step beforehand and the results exceeded my expectations. The international patient coordinator made everything effortless."</p>
+        <div class="rv-author">
+          <div class="rv-av">M</div>
+          <div>
+            <div class="rv-name">Mohammad Al-Rashid</div>
+            <div class="rv-country"><i class="fas fa-flag"></i> UAE &middot; All-on-4 Implants</div>
+            <div class="rv-verified"><i class="fas fa-check-circle"></i> Verified Patient</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Lisa Chen -->
+      <div class="rv-card reveal">
+        <div class="rv-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="rv-quote">"I got clear aligners at Dr. Kathuria's Dentistry during a business trip to Delhi. The digital scan was done in minutes and the treatment plan was explained with 3D simulations. Six months later, my teeth are perfectly aligned. Incredible value compared to Singapore pricing."</p>
+        <div class="rv-author">
+          <div class="rv-av">L</div>
+          <div>
+            <div class="rv-name">Lisa Chen</div>
+            <div class="rv-country"><i class="fas fa-flag"></i> Singapore &middot; Clear Aligners</div>
+            <div class="rv-verified"><i class="fas fa-check-circle"></i> Verified Patient</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Hans Mueller -->
+      <div class="rv-card reveal">
+        <div class="rv-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="rv-quote">"After a cycling accident damaged several teeth, I needed crowns and an implant. The CEREC same-day crowns were remarkable &mdash; designed and milled while I waited. The quality is indistinguishable from my natural teeth. German engineering standards, but in Delhi. Very impressive."</p>
+        <div class="rv-author">
+          <div class="rv-av">H</div>
+          <div>
+            <div class="rv-name">Hans Mueller</div>
+            <div class="rv-country"><i class="fas fa-flag"></i> Germany &middot; CEREC Crowns &amp; Implant</div>
+            <div class="rv-verified"><i class="fas fa-check-circle"></i> Verified Patient</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA BANNER -->
+<section class="bg-olive" style="text-align:center">
+  <div class="container reveal">
+    <span class="sec-chip light"><i class="fas fa-calendar-check"></i> Your Turn</span>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);color:var(--white);margin-bottom:16px;font-weight:700">Ready to Write Your <em style="color:var(--gold-light);font-style:italic">Success Story?</em></h2>
+    <p style="color:rgba(255,255,255,.7);font-size:1rem;max-width:600px;margin:0 auto 36px;line-height:1.78">Join 15,000+ patients from 44 countries who chose Dr. Kathuria's Dentistry for world-class dental care.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-gold btn-lg btn-pill" href="contact.html"><i class="fas fa-calendar-check"></i> Book Consultation</a>
+      <a class="btn btn-outline btn-lg btn-pill" href="https://wa.me/919810936360" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <div class="ft-logo">
+          <div class="ft-logo-mark"><i class="fas fa-tooth"></i></div>
+          <div class="ft-logo-text"><strong>Dr. Kathuria's Dentistry</strong><span>Est. 2006 &middot; East of Kailash</span></div>
+        </div>
+        <p>NABH Accredited &amp; ISO Certified dental clinic trusted by 15,000+ patients from 44 countries. Delivering world-class smile transformations since 2006.</p>
+        <div class="ft-socials">
+          <a href="https://www.facebook.com/DrKathuriaDentistry" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/drkathuriasdentistry" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@dentalclinicindelhi" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://twitter.com/Kathuriadentist" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://wa.me/919810936360" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="ft-col"><h4>Quick Links</h4>
+        <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+        <a href="staff.html"><i class="fas fa-chevron-right"></i> Our Doctors</a>
+        <a href="clinic-tour.html"><i class="fas fa-chevron-right"></i> Clinic Tour</a>
+        <a href="cases.html"><i class="fas fa-chevron-right"></i> Before &amp; After</a>
+        <a href="charges.html"><i class="fas fa-chevron-right"></i> Charges</a>
+        <a href="smile-analysis.html"><i class="fas fa-chevron-right"></i> Smile Analysis</a>
+      </div>
+      <div class="ft-col"><h4>Treatments</h4>
+        <a href="dental-implants.html"><i class="fas fa-chevron-right"></i> Dental Implants</a>
+        <a href="cosmetic-dentistry.html"><i class="fas fa-chevron-right"></i> Cosmetic Dentistry</a>
+        <a href="orthodontics.html"><i class="fas fa-chevron-right"></i> Orthodontics</a>
+        <a href="gum-treatment.html"><i class="fas fa-chevron-right"></i> Gum Treatment</a>
+        <a href="kids-dentistry.html"><i class="fas fa-chevron-right"></i> Kids Dentistry</a>
+        <a href="services.html"><i class="fas fa-chevron-right"></i> All Services</a>
+      </div>
+      <div class="ft-col"><h4>Contact</h4>
+        <div class="ft-contact-item"><div class="ft-contact-icon"><i class="fas fa-map-marker-alt"></i></div><div class="ft-contact-text"><span>Address</span><p>E-143, East of Kailash, New Delhi</p></div></div>
+        <div class="ft-contact-item"><div class="ft-contact-icon"><i class="fas fa-phone-alt"></i></div><div class="ft-contact-text"><span>India Toll Free</span><a href="tel:18001177272">1800-11-7272</a></div></div>
+        <div class="ft-contact-item"><div class="ft-contact-icon"><i class="fab fa-whatsapp"></i></div><div class="ft-contact-text"><span>WhatsApp</span><a href="https://wa.me/919810936360" target="_blank">+91 98109 36360</a></div></div>
+        <div class="ft-contact-item"><div class="ft-contact-icon"><i class="fas fa-envelope"></i></div><div class="ft-contact-text"><span>Email</span><a href="mailto:info@delhidental.com">info@delhidental.com</a></div></div>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>&copy; 2026 Dr. Kathuria's Dentistry &ndash; U and K Oral Wellness LLP. All rights reserved.</span>
+      <span>Designed with care for beautiful smiles.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING PANEL -->
+<button class="float-book-btn" id="floatBookBtn">BOOK APPOINTMENT</button>
+<div class="float-panel" id="floatPanel">
+  <button class="fp-close" id="fpClose"><i class="fas fa-times"></i></button>
+  <h3>Book Consultation</h3>
+  <p>Fill in your details &mdash; we'll call back within 2 hours.</p>
+  <form class="smart-form" method="POST" name="appointment">
+    <input type="hidden" name="form-name" value="appointment"/>
+    <p class="hidden" style="display:none"><label>Don't fill: <input name="bot-field"/></label></p>
+    <div class="fg-row"><div class="fg"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required/></div><div class="fg"><label>Country</label><input type="text" name="country" placeholder="Your country"/></div></div>
+    <div class="fg"><label>WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+91 or international" required/></div>
+    <div class="fg"><label>Email</label><input type="email" name="email" placeholder="your@email.com"/></div>
+    <div class="fg"><label>Treatment</label><select name="treatment"><option value="">Select treatment...</option><option>Smile Makeover / Veneers</option><option>Dental Implants</option><option>Clear Aligners</option><option>Zoom Whitening</option><option>Root Canal</option><option>Full Mouth Rehabilitation</option><option>Video Consultation Only</option><option>Not Sure &ndash; Need Advice</option></select></div>
+    <div class="fg"><label>Message (optional)</label><textarea name="message" rows="3" placeholder="Any specific concerns or preferred time"></textarea></div>
+    <button type="submit" class="form-submit"><i class="fas fa-calendar-check"></i> Request Consultation</button>
+  </form>
+</div>
+
+<!-- FABs -->
+<div class="fab-group">
+  <a href="https://wa.me/919810936360" target="_blank" class="fab fab-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="tel:18001177272" class="fab fab-call" aria-label="Call"><i class="fas fa-phone-alt"></i></a>
+  <button class="fab fab-up" id="fabUp" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+</div>
+
+<div class="side-strip">
+  <a href="tel:18001177272" aria-label="Call"><i class="fas fa-phone-alt"></i></a>
+  <a href="https://wa.me/919810936360" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://www.instagram.com/drkathuriasdentistry" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+</div>
+
+<div class="lightbox" id="lightbox"><div class="lb-inner"><button class="lb-close" id="lbClose"><i class="fas fa-times"></i></button><img id="lbImg" src="" alt=""/></div></div>
+<div id="toast"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

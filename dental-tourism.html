@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Dental Tourism India | Dr. Kathuria's Dentistry &ndash; Save up to 80%</title>
+  <meta name="description" content="World-class dentistry at Indian prices. Save up to 80% on dental implants, smile makeovers, and veneers. Airport pickup, hotel booking, translator — all arranged by Dr. Kathuria's Dentistry Delhi."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* ── DENTAL TOURISM PAGE — UNIQUE STYLES ── */
+    .price-table-wrap{max-width:900px;margin:0 auto;overflow-x:auto}
+    .price-table{width:100%;border-collapse:collapse;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow)}
+    .price-table thead th{background:var(--olive-dark);color:var(--white);padding:16px 20px;font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;text-align:left}
+    .price-table thead th:first-child{border-radius:var(--r-lg) 0 0 0}
+    .price-table thead th:last-child{border-radius:0 var(--r-lg) 0 0}
+    .price-table tbody td{padding:14px 20px;font-size:.85rem;color:var(--gray);border-bottom:1px solid var(--border)}
+    .price-table tbody tr:hover{background:var(--olive-pale)}
+    .price-table tbody td:first-child{font-weight:700;color:var(--ink)}
+    .price-table .india-price{color:var(--olive);font-weight:800}
+    .price-table .savings{background:var(--gold-pale);color:var(--gold-dark);font-weight:800;text-align:center;border-radius:4px;padding:4px 8px;font-size:.76rem}
+
+    .tourism-services{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto}
+    .ts-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:32px 24px;text-align:center;transition:all .4s var(--ease)}
+    .ts-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-l);border-color:var(--gold)}
+    .ts-card i{font-size:2.2rem;color:var(--gold);margin-bottom:16px;display:block}
+    .ts-card h4{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:8px}
+    .ts-card p{font-size:.82rem;color:var(--gray);line-height:1.72}
+
+    .countries-wrap{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:32px}
+    .country-pill{display:inline-flex;align-items:center;gap:6px;background:var(--white);border:1px solid var(--border);border-radius:99px;padding:8px 18px;font-size:.8rem;font-weight:600;color:var(--dark);transition:all .25s;box-shadow:var(--shadow-xs)}
+    .country-pill:hover{border-color:var(--olive);background:var(--olive-pale);transform:translateY(-3px);box-shadow:var(--shadow)}
+
+    .testi-tourism{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto}
+    .testi-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px 24px;transition:all .4s var(--ease)}
+    .testi-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-l);border-color:var(--olive-pale)}
+    .testi-card .stars{color:var(--gold);font-size:.8rem;margin-bottom:12px}
+    .testi-card blockquote{font-size:.84rem;color:var(--gray);line-height:1.72;font-style:italic;margin-bottom:16px}
+    .testi-card .testi-author{display:flex;align-items:center;gap:12px}
+    .testi-card .testi-author img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--border-gold)}
+    .testi-card .testi-author strong{font-size:.84rem;color:var(--ink);display:block}
+    .testi-card .testi-author span{font-size:.72rem;color:var(--gray)}
+
+    .process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;max-width:1100px;margin:0 auto;position:relative}
+    .process-steps::before{content:'';position:absolute;top:40px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,var(--olive),var(--gold));z-index:0}
+    .process-step{text-align:center;position:relative;z-index:1;background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px 14px;transition:all .4s var(--ease)}
+    .process-step:hover{transform:translateY(-6px);box-shadow:var(--shadow-l);border-color:var(--olive-pale)}
+    .process-num{width:44px;height:44px;border-radius:50%;background:var(--olive);color:var(--white);font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:0 4px 14px rgba(91,123,58,.25)}
+    .process-step h4{font-size:.82rem;font-weight:700;color:var(--ink);margin-bottom:6px}
+    .process-step p{font-size:.74rem;color:var(--gray);line-height:1.6}
+
+    .savings-banner{background:linear-gradient(135deg,var(--gold-pale) 0%,var(--olive-pale) 100%);border:2px solid var(--border-gold);border-radius:var(--r-lg);padding:40px;text-align:center;max-width:800px;margin:0 auto}
+    .savings-banner h3{font-family:'Playfair Display',serif;font-size:2rem;color:var(--ink);margin-bottom:8px}
+    .savings-banner h3 em{color:var(--olive);font-style:italic}
+    .savings-banner p{font-size:.9rem;color:var(--gray);margin-bottom:20px}
+
+    @media(max-width:960px){.tourism-services,.testi-tourism{grid-template-columns:1fr 1fr}.process-steps{grid-template-columns:repeat(3,1fr)}.process-steps::before{display:none}}
+    @media(max-width:600px){.tourism-services,.testi-tourism{grid-template-columns:1fr}.process-steps{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body class="has-topbar">
+
+<!-- ══════════════════ PAGE LOADER ══════════════════ -->
+<div id="page-loader">
+  <div class="loader-inner">
+    <i class="fas fa-tooth tooth"></i>
+    <p>Loading</p>
+  </div>
+</div>
+
+<!-- ══════════════════ TOP BAR ══════════════════ -->
+<div class="top-bar">
+  <div class="top-bar-left">
+    <a href="mailto:info@delhidental.com"><i class="fas fa-envelope"></i> info@delhidental.com</a>
+    <a href="tel:1800117272"><i class="fas fa-phone"></i> 1800-11-7272</a>
+  </div>
+  <div class="top-bar-right">
+    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+</div>
+
+<!-- ══════════════════ NAVIGATION ══════════════════ -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark"><i class="fas fa-tooth"></i></div>
+      <div class="logo-text">
+        <strong>Dr. Kathuria's Dentistry</strong>
+        <span>Premium Dental Care</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <a href="about.html">The Practice <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialists</a>
+          <a href="about.html#clinic-tour"><i class="fas fa-hospital"></i> Clinic Tour</a>
+          <a href="about.html#technology"><i class="fas fa-microchip"></i> Technology</a>
+        </div>
+      </li>
+      <li>
+        <a href="services.html">Treatments <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="dental-implants.html"><i class="fas fa-teeth"></i> Dental Implants</a>
+          <a href="services.html#cosmetic"><i class="fas fa-sparkles"></i> Cosmetic Dentistry</a>
+          <a href="services.html#gums"><i class="fas fa-hand-holding-medical"></i> Gum Treatment</a>
+          <a href="services.html#orthodontics"><i class="fas fa-teeth-open"></i> Orthodontics</a>
+          <a href="services.html#kids"><i class="fas fa-child"></i> Kids Dentistry</a>
+          <a href="services.html"><i class="fas fa-th-list"></i> All Treatments</a>
+        </div>
+      </li>
+      <li>
+        <a href="awards.html">Credibility <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="awards.html"><i class="fas fa-trophy"></i> Awards</a>
+          <a href="awards.html#testimonials"><i class="fas fa-comments"></i> Testimonials</a>
+          <a href="awards.html#accreditation"><i class="fas fa-certificate"></i> Accreditation</a>
+        </div>
+      </li>
+      <li><a href="cases.html">Cases</a></li>
+      <li><a href="charges.html">Charges</a></li>
+      <li><a href="smile-analysis.html">Smile Analysis</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:1800117272" class="nav-phone"><i class="fas fa-phone"></i> 1800-11-7272</a>
+      <button class="nav-cta" id="floatBookBtn"><i class="fas fa-calendar-check"></i> Book Appointment</button>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════ MOBILE NAV ══════════════════ -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html"><i class="fas fa-home"></i> Home</a>
+  <a href="about.html"><i class="fas fa-hospital"></i> The Practice</a>
+  <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialists</a>
+  <a href="services.html"><i class="fas fa-teeth"></i> All Treatments</a>
+  <a href="dental-implants.html"><i class="fas fa-teeth-open"></i> Dental Implants</a>
+  <a href="services.html#cosmetic"><i class="fas fa-sparkles"></i> Cosmetic Dentistry</a>
+  <a href="awards.html"><i class="fas fa-trophy"></i> Credibility</a>
+  <a href="cases.html"><i class="fas fa-images"></i> Cases</a>
+  <a href="charges.html"><i class="fas fa-indian-rupee-sign"></i> Charges</a>
+  <a href="smile-analysis.html"><i class="fas fa-face-smile-beam"></i> Smile Analysis</a>
+  <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
+  <a href="tel:1800117272" class="mobile-cta"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE HERO
+═══════════════════════════════════════════════════ -->
+<section class="page-hero">
+  <img class="page-hero-img" src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1920&q=85" alt="Dental Tourism India"/>
+  <div class="page-hero-overlay" style="background:linear-gradient(120deg, rgba(91,123,58,.92) 0%, rgba(63,90,36,.75) 50%, rgba(198,169,77,.4) 100%)"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span class="sep"><i class="fas fa-chevron-right" style="font-size:.5rem"></i></span><span>Dental Tourism</span>
+    </div>
+    <h1>World-Class Dentistry at <em>Indian Prices</em></h1>
+    <p>Save up to 80% on dental treatments while experiencing the same quality standards as the USA, UK, and Australia. Trusted by patients from 44+ countries.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     WHY INDIA
+═══════════════════════════════════════════════════ -->
+<section style="background:var(--white)">
+  <div class="container">
+    <div class="sec-h center reveal">
+      <div class="sec-chip"><i class="fas fa-plane"></i> Why India?</div>
+      <div class="sec-divider"></div>
+      <h2>Why Choose India for <em>Dental Care?</em></h2>
+      <p>India has emerged as the world's leading destination for dental tourism, combining internationally trained specialists, cutting-edge technology, and costs that are a fraction of Western prices.</p>
+    </div>
+
+    <div class="savings-banner reveal">
+      <h3>Save Up to <em>80%</em> on Dental Treatments</h3>
+      <p>Same materials, same brands, same international standards &mdash; at a fraction of the cost. Your savings alone can cover flights and a holiday in India.</p>
+      <a href="charges.html" class="btn btn-olive btn-pill"><i class="fas fa-indian-rupee-sign"></i> View Our Price List</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     PRICE COMPARISON
+═══════════════════════════════════════════════════ -->
+<section style="background:var(--cream)">
+  <div class="container">
+    <div class="sec-h center reveal">
+      <div class="sec-chip"><i class="fas fa-chart-bar"></i> Price Comparison</div>
+      <div class="sec-divider"></div>
+      <h2>International <em>Price Comparison</em></h2>
+      <p>See how our prices compare with dental clinics in the USA, UK, and Australia.</p>
+    </div>
+
+    <div class="price-table-wrap reveal">
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th>Treatment</th>
+            <th>India (DKD)</th>
+            <th>USA</th>
+            <th>UK</th>
+            <th>Australia</th>
+            <th>You Save</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Single Dental Implant</td>
+            <td class="india-price">$400 &ndash; $800</td>
+            <td>$3,000 &ndash; $5,000</td>
+            <td>&pound;2,000 &ndash; &pound;3,500</td>
+            <td>A$3,500 &ndash; A$6,000</td>
+            <td><span class="savings">Up to 85%</span></td>
+          </tr>
+          <tr>
+            <td>Porcelain Veneer (per tooth)</td>
+            <td class="india-price">$150 &ndash; $350</td>
+            <td>$1,000 &ndash; $2,500</td>
+            <td>&pound;500 &ndash; &pound;1,200</td>
+            <td>A$1,200 &ndash; A$2,500</td>
+            <td><span class="savings">Up to 85%</span></td>
+          </tr>
+          <tr>
+            <td>Full Mouth Rehabilitation</td>
+            <td class="india-price">$3,000 &ndash; $8,000</td>
+            <td>$20,000 &ndash; $50,000</td>
+            <td>&pound;15,000 &ndash; &pound;35,000</td>
+            <td>A$25,000 &ndash; A$55,000</td>
+            <td><span class="savings">Up to 85%</span></td>
+          </tr>
+          <tr>
+            <td>Root Canal + Crown</td>
+            <td class="india-price">$100 &ndash; $250</td>
+            <td>$1,500 &ndash; $3,000</td>
+            <td>&pound;700 &ndash; &pound;1,500</td>
+            <td>A$1,500 &ndash; A$3,000</td>
+            <td><span class="savings">Up to 90%</span></td>
+          </tr>
+          <tr>
+            <td>Zoom Teeth Whitening</td>
+            <td class="india-price">$200 &ndash; $350</td>
+            <td>$500 &ndash; $1,000</td>
+            <td>&pound;400 &ndash; &pound;800</td>
+            <td>A$600 &ndash; A$1,200</td>
+            <td><span class="savings">Up to 70%</span></td>
+          </tr>
+          <tr>
+            <td>All-on-4 Implants (per jaw)</td>
+            <td class="india-price">$3,500 &ndash; $6,000</td>
+            <td>$20,000 &ndash; $30,000</td>
+            <td>&pound;12,000 &ndash; &pound;20,000</td>
+            <td>A$20,000 &ndash; A$35,000</td>
+            <td><span class="savings">Up to 82%</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     OUR TOURISM SERVICES
+═══════════════════════════════════════════════════ -->
+<section style="background:var(--white)">
+  <div class="container">
+    <div class="sec-h center reveal">
+      <div class="sec-chip"><i class="fas fa-concierge-bell"></i> Concierge Services</div>
+      <div class="sec-divider"></div>
+      <h2>We Take Care of <em>Everything</em></h2>
+      <p>From the moment you land in India to your flight back home, our dedicated international patient team handles every detail.</p>
+    </div>
+
+    <div class="tourism-services reveal">
+      <div class="ts-card">
+        <i class="fas fa-plane-arrival"></i>
+        <h4>Airport Pickup &amp; Drop</h4>
+        <p>Complimentary airport transfer in an air-conditioned vehicle. Our team greets you at arrivals with a personalised welcome board.</p>
+      </div>
+      <div class="ts-card">
+        <i class="fas fa-hotel"></i>
+        <h4>Hotel Booking Assistance</h4>
+        <p>We partner with nearby hotels ranging from budget to 5-star luxury. Special rates available for our dental tourism patients.</p>
+      </div>
+      <div class="ts-card">
+        <i class="fas fa-language"></i>
+        <h4>Translator Services</h4>
+        <p>Multilingual coordinators available in English, Arabic, French, and Russian to ensure clear communication throughout your treatment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     COUNTRIES WE SERVE
+═══════════════════════════════════════════════════ -->
+<section style="background:var(--cream)">
+  <div class="container">
+    <div class="sec-h center reveal">
+      <div class="sec-chip"><i class="fas fa-globe"></i> Global Reach</div>
+      <div class="sec-divider"></div>
+      <h2>Countries We <em>Serve</em></h2>
+      <p>Patients from over 44 countries across 6 continents trust us for their dental care.</p>
+    </div>
+
+    <div class="countries-wrap reveal">
+      <span class="country-pill">USA</span>
+      <span class="country-pill">United Kingdom</span>
+      <span class="country-pill">Canada</span>
+      <span class="country-pill">Australia</span>
+      <span class="country-pill">Germany</span>
+      <span class="country-pill">UAE</span>
+      <span class="country-pill">Saudi Arabia</span>
+      <span class="country-pill">Kenya</span>
+      <span class="country-pill">Nigeria</span>
+      <span class="country-pill">South Africa</span>
+      <span class="country-pill">Japan</span>
+      <span class="country-pill">Singapore</span>
+      <span class="country-pill">New Zealand</span>
+      <span class="country-pill">France</span>
+      <span class="country-pill">Italy</span>
+      <span class="country-pill">Russia</span>
+      <span class="country-pill">Bangladesh</span>
+      <span class="country-pill">Nepal</span>
+      <span class="country-pill">Afghanistan</span>
+      <span class="country-pill">Oman</span>
+      <span class="country-pill">Kuwait</span>
+      <span class="country-pill">Ethiopia</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     TESTIMONIALS
+═══════════════════════════════════════════════════ -->
+<section style="background:var(--white)">
+  <div class="container">
+    <div class="sec-h center reveal">
+      <div class="sec-chip"><i class="fas fa-comments"></i> Patient Stories</div>
+      <div class="sec-divider"></div>
+      <h2>What International Patients <em>Say</em></h2>
+    </div>
+
+    <div class="testi-tourism reveal">
+      <div class="testi-card">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <blockquote>"I saved over $15,000 on my full mouth implants compared to quotes in the US. The quality is identical &mdash; same Nobel Biocare implants, same CEREC crowns. The clinic is cleaner than most I've seen back home."</blockquote>
+        <div class="testi-author">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="James W."/>
+          <div><strong>James W.</strong><span>New York, USA</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <blockquote>"From the airport pickup to the hotel arrangements, everything was seamless. Dr. Kathuria's team treated me like family. My smile makeover was completed in 4 days and looks absolutely perfect."</blockquote>
+        <div class="testi-author">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80" alt="Sarah M."/>
+          <div><strong>Sarah M.</strong><span>London, UK</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <blockquote>"I was quoted $45,000 in Sydney for All-on-4 implants. Dr. Kathuria's did the same procedure for $5,500 with the same brand of implants. I used the savings for a beautiful holiday in Rajasthan!"</blockquote>
+        <div class="testi-author">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="David L."/>
+          <div><strong>David L.</strong><span>Sydney, Australia</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     PROCESS STEPS
+═══════════════════════════════════════════════════ -->
+<section style="background:var(--cream)">
+  <div class="container">
+    <div class="sec-h center reveal">
+      <div class="sec-chip"><i class="fas fa-route"></i> Your Journey</div>
+      <div class="sec-divider"></div>
+      <h2>How It <em>Works</em></h2>
+      <p>Your dental tourism journey with us is simple, safe, and well-coordinated from start to finish.</p>
+    </div>
+
+    <div class="process-steps reveal">
+      <div class="process-step">
+        <div class="process-num">1</div>
+        <h4>Free Video Consult</h4>
+        <p>Share your X-rays and photos for a free online evaluation and treatment plan.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">2</div>
+        <h4>Book Your Trip</h4>
+        <p>We help with visa letters, hotel bookings, and flight suggestions for your visit.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">3</div>
+        <h4>Arrive in Delhi</h4>
+        <p>Airport pickup, hotel check-in, and a warm welcome from our international team.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">4</div>
+        <h4>Treatment (3&ndash;7 Days)</h4>
+        <p>Complete your dental treatment with our specialists using world-class facilities.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">5</div>
+        <h4>Fly Home Smiling</h4>
+        <p>Airport drop-off and lifetime follow-up support via teledentistry.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     CTA
+═══════════════════════════════════════════════════ -->
+<section class="cta-banner reveal">
+  <div class="container">
+    <div class="sec-chip" style="margin-bottom:16px;justify-content:center"><i class="fas fa-plane"></i> Start Your Journey</div>
+    <h2>Ready to Save Thousands on <em>Dental Care?</em></h2>
+    <p>Book a free video consultation today. Our international patient coordinators will guide you through every step.</p>
+    <div class="cta-btns">
+      <a href="teledentistry.html" class="btn btn-gold btn-lg"><i class="fas fa-video"></i> Free Video Consultation</a>
+      <a href="https://wa.me/919810936360" class="btn btn-outline-olive btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="f-brand">Dr. Kathuria's <span>Dentistry</span></div>
+        <p class="f-tagline">E-143, East of Kailash, New Delhi, India. NABH Accredited &middot; ISO Certified &middot; 18+ Years &middot; 44+ countries.</p>
+        <div class="f-social">
+          <a href="https://www.facebook.com/DrKathuriaDentistry" class="f-soc" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/drkathuriasdentistry" class="f-soc" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@dentalclinicindelhi" class="f-soc" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://twitter.com/Kathuriadentist" class="f-soc" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://wa.me/919810936360" class="f-soc" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="f-col"><h5>Treatments</h5><ul><li><a href="services.html#cosmetic"><i class="fas fa-chevron-right"></i>Smile Makeover</a></li><li><a href="dental-implants.html"><i class="fas fa-chevron-right"></i>Dental Implants</a></li><li><a href="services.html#orthodontics"><i class="fas fa-chevron-right"></i>Clear Aligners</a></li><li><a href="services.html#cosmetic"><i class="fas fa-chevron-right"></i>Zoom Whitening</a></li><li><a href="services.html#gums"><i class="fas fa-chevron-right"></i>Root Canal</a></li><li><a href="services.html#gums"><i class="fas fa-chevron-right"></i>Gum Laser</a></li></ul></div>
+      <div class="f-col"><h5>Quick Links</h5><ul><li><a href="about.html"><i class="fas fa-chevron-right"></i>About Us</a></li><li><a href="cases.html"><i class="fas fa-chevron-right"></i>Before &amp; After</a></li><li><a href="staff.html"><i class="fas fa-chevron-right"></i>Our Doctors</a></li><li><a href="teledentistry.html"><i class="fas fa-chevron-right"></i>Video Consult</a></li><li><a href="awards.html"><i class="fas fa-chevron-right"></i>Awards</a></li><li><a href="contact.html"><i class="fas fa-chevron-right"></i>Contact</a></li></ul></div>
+      <div class="f-col"><h5>Contact</h5><div class="f-contact">
+        <div class="f-ci"><i class="fas fa-map-marker-alt"></i><div><span>Address</span><strong>E-143, East of Kailash, New Delhi</strong></div></div>
+        <div class="f-ci"><i class="fas fa-phone-alt"></i><div><span>India Toll Free</span><strong>1800-11-7272</strong></div></div>
+        <div class="f-ci"><i class="fab fa-whatsapp"></i><div><span>WhatsApp</span><strong>+91 98109 36360</strong></div></div>
+        <div class="f-ci"><i class="fas fa-envelope"></i><div><span>Email</span><strong>info@delhidental.com</strong></div></div>
+      </div></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Dr. Kathuria's Dentistry &ndash; U and K Oral Wellness LLP. All rights reserved.</span>
+      <div class="f-badges"><span class="f-badge">NABH Accredited</span><span class="f-badge">ISO Certified</span><span class="f-badge">ADA Standards</span></div>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating Panel -->
+<div class="float-panel" id="floatPanel">
+  <button class="fp-close" id="fpClose"><i class="fas fa-times"></i></button>
+  <h3>Book Consultation</h3>
+  <p>Fill in your details &mdash; we'll call back within 2 hours.</p>
+  <form class="smart-form" method="POST" name="appointment">
+    <input type="hidden" name="form-name" value="appointment"/>
+    <div class="fg-row"><div class="fg"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required/></div><div class="fg"><label>Country</label><input type="text" name="country" placeholder="Your country"/></div></div>
+    <div class="fg"><label>WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+91 or international" required/></div>
+    <div class="fg"><label>Email</label><input type="email" name="email" placeholder="your@email.com"/></div>
+    <div class="fg"><label>Treatment</label><select name="treatment"><option value="">Select treatment...</option><option>Smile Makeover / Veneers</option><option>Dental Implants</option><option>Clear Aligners</option><option>Zoom Whitening</option><option>Root Canal</option><option>Full Mouth Rehabilitation</option><option>Video Consultation Only</option><option>Not Sure &ndash; Need Advice</option></select></div>
+    <div class="fg"><label>Message (optional)</label><textarea name="message" rows="3" placeholder="Any specific concerns or preferred time"></textarea></div>
+    <button type="submit" class="form-submit"><i class="fas fa-calendar-check"></i> Request Consultation</button>
+  </form>
+</div>
+
+<!-- FABs -->
+<a href="tel:18001177272" class="fab-btn fab-call" aria-label="Call"><i class="fas fa-phone"></i></a>
+<a href="https://wa.me/919810936360" target="_blank" class="fab-btn fab-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="#top" class="fab-btn fab-up" id="fabUp" aria-label="Top"><i class="fas fa-chevron-up"></i></a>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

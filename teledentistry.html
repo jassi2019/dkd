@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Teledentistry &ndash; Video Consultation | Dr. Kathuria's Dentistry Delhi</title>
+  <meta name="description" content="Consult with Dr. Kathuria's Dentistry from anywhere in the world via video call. Free initial teledentistry consultation for dental implants, smile makeovers, and more."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* ── TELEDENTISTRY PAGE — UNIQUE STYLES ── */
+    .tele-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;max-width:1100px;margin:0 auto;position:relative}
+    .tele-steps::before{content:'';position:absolute;top:48px;left:14%;right:14%;height:2px;background:linear-gradient(90deg,var(--olive),var(--gold));z-index:0}
+    .tele-step{text-align:center;position:relative;z-index:1;background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:32px 20px;transition:all .4s var(--ease)}
+    .tele-step:hover{transform:translateY(-8px);box-shadow:var(--shadow-l);border-color:var(--olive-pale)}
+    .tele-icon{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--olive) 0%,var(--olive-dark) 100%);color:var(--white);font-size:1.3rem;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;box-shadow:0 6px 20px rgba(91,123,58,.3)}
+    .tele-step h4{font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:8px}
+    .tele-step p{font-size:.82rem;color:var(--gray);line-height:1.72}
+
+    .benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto}
+    .benefit-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px 24px;text-align:center;transition:all .4s var(--ease)}
+    .benefit-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-l);border-color:var(--gold)}
+    .benefit-card i{font-size:2rem;color:var(--gold);margin-bottom:16px}
+    .benefit-card h4{font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:8px}
+    .benefit-card p{font-size:.82rem;color:var(--gray);line-height:1.72}
+
+    .inline-form-wrap{max-width:700px;margin:0 auto;background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:40px 36px;box-shadow:var(--shadow)}
+    .inline-form-wrap h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--ink);margin-bottom:6px;text-align:center}
+    .inline-form-wrap>p{font-size:.85rem;color:var(--gray);text-align:center;margin-bottom:28px}
+
+    .price-highlight{display:flex;align-items:center;justify-content:center;gap:16px;padding:24px 32px;background:linear-gradient(135deg,var(--olive-pale) 0%,var(--gold-pale) 100%);border:2px solid var(--border-gold);border-radius:var(--r-lg);max-width:500px;margin:0 auto}
+    .price-highlight i{font-size:2.2rem;color:var(--gold)}
+    .price-highlight .ph-text h4{font-size:1.1rem;font-weight:800;color:var(--ink);margin-bottom:2px}
+    .price-highlight .ph-text p{font-size:.82rem;color:var(--gray)}
+
+    @media(max-width:960px){.tele-steps{grid-template-columns:1fr 1fr;gap:20px}.tele-steps::before{display:none}.benefits-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.tele-steps{grid-template-columns:1fr}.benefits-grid{grid-template-columns:1fr}.inline-form-wrap{padding:28px 20px}}
+  </style>
+</head>
+<body class="has-topbar">
+
+<!-- ══════════════════ PAGE LOADER ══════════════════ -->
+<div id="page-loader">
+  <div class="loader-inner">
+    <i class="fas fa-tooth tooth"></i>
+    <p>Loading</p>
+  </div>
+</div>
+
+<!-- ══════════════════ TOP BAR ══════════════════ -->
+<div class="top-bar">
+  <div class="top-bar-left">
+    <a href="mailto:info@delhidental.com"><i class="fas fa-envelope"></i> info@delhidental.com</a>
+    <a href="tel:1800117272"><i class="fas fa-phone"></i> 1800-11-7272</a>
+  </div>
+  <div class="top-bar-right">
+    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+</div>
+
+<!-- ══════════════════ NAVIGATION ══════════════════ -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark"><i class="fas fa-tooth"></i></div>
+      <div class="logo-text">
+        <strong>Dr. Kathuria's Dentistry</strong>
+        <span>Premium Dental Care</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <a href="about.html">The Practice <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialists</a>
+          <a href="about.html#clinic-tour"><i class="fas fa-hospital"></i> Clinic Tour</a>
+          <a href="about.html#technology"><i class="fas fa-microchip"></i> Technology</a>
+        </div>
+      </li>
+      <li>
+        <a href="services.html">Treatments <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="dental-implants.html"><i class="fas fa-teeth"></i> Dental Implants</a>
+          <a href="services.html#cosmetic"><i class="fas fa-sparkles"></i> Cosmetic Dentistry</a>
+          <a href="services.html#gums"><i class="fas fa-hand-holding-medical"></i> Gum Treatment</a>
+          <a href="services.html#orthodontics"><i class="fas fa-teeth-open"></i> Orthodontics</a>
+          <a href="services.html#kids"><i class="fas fa-child"></i> Kids Dentistry</a>
+          <a href="services.html"><i class="fas fa-th-list"></i> All Treatments</a>
+        </div>
+      </li>
+      <li>
+        <a href="awards.html">Credibility <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="awards.html"><i class="fas fa-trophy"></i> Awards</a>
+          <a href="awards.html#testimonials"><i class="fas fa-comments"></i> Testimonials</a>
+          <a href="awards.html#accreditation"><i class="fas fa-certificate"></i> Accreditation</a>
+        </div>
+      </li>
+      <li><a href="cases.html">Cases</a></li>
+      <li><a href="charges.html">Charges</a></li>
+      <li><a href="smile-analysis.html">Smile Analysis</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:1800117272" class="nav-phone"><i class="fas fa-phone"></i> 1800-11-7272</a>
+      <button class="nav-cta" id="floatBookBtn"><i class="fas fa-calendar-check"></i> Book Appointment</button>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════ MOBILE NAV ══════════════════ -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html"><i class="fas fa-home"></i> Home</a>
+  <a href="about.html"><i class="fas fa-hospital"></i> The Practice</a>
+  <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialists</a>
+  <a href="services.html"><i class="fas fa-teeth"></i> All Treatments</a>
+  <a href="dental-implants.html"><i class="fas fa-teeth-open"></i> Dental Implants</a>
+  <a href="services.html#cosmetic"><i class="fas fa-sparkles"></i> Cosmetic Dentistry</a>
+  <a href="awards.html"><i class="fas fa-trophy"></i> Credibility</a>
+  <a href="cases.html"><i class="fas fa-images"></i> Cases</a>
+  <a href="charges.html"><i class="fas fa-indian-rupee-sign"></i> Charges</a>
+  <a href="smile-analysis.html"><i class="fas fa-face-smile-beam"></i> Smile Analysis</a>
+  <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
+  <a href="tel:1800117272" class="mobile-cta"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE HERO
+═══════════════════════════════════════════════════ -->
+<section class="page-hero">
+  <img class="page-hero-img" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920&q=85" alt="Teledentistry Video Consultation"/>
+  <div class="page-hero-overlay" style="background:linear-gradient(120deg, rgba(91,123,58,.92) 0%, rgba(63,90,36,.75) 50%, rgba(198,169,77,.4) 100%)"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span class="sep"><i class="fas fa-chevron-right" style="font-size:.5rem"></i></span><span>Teledentistry</span>
+    </div>
+    <h1>Consult From <em>Anywhere in the World</em></h1>
+    <p>Connect with our specialists via secure video call. Get expert dental advice, treatment plans, and second opinions without leaving your home.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     HOW IT WORKS
+═══════════════════════════════════════════════════ -->
+<section style="background:var(--white)">
+  <div class="container">
+    <div class="sec-h center reveal">
+      <div class="sec-chip"><i class="fas fa-video"></i> How It Works</div>
+      <div class="sec-divider"></div>
+      <h2>4 Simple Steps to Your <em>Video Consultation</em></h2>
+      <p>Our teledentistry platform makes it easy to consult with top dental specialists from anywhere in the world.</p>
+    </div>
+
+    <div class="tele-steps reveal">
+      <div class="tele-step">
+        <div class="tele-icon"><i class="fas fa-calendar-check"></i></div>
+        <h4>Book Online</h4>
+        <p>Fill out the booking form below or WhatsApp us to schedule a convenient time slot for your video consultation.</p>
+      </div>
+      <div class="tele-step">
+        <div class="tele-icon"><i class="fas fa-video"></i></div>
+        <h4>Video Call</h4>
+        <p>Connect with our specialist via a secure Zoom or WhatsApp video call. Show your dental concerns on camera.</p>
+      </div>
+      <div class="tele-step">
+        <div class="tele-icon"><i class="fas fa-file-medical"></i></div>
+        <h4>Get Treatment Plan</h4>
+        <p>Receive a detailed treatment plan with cost estimates, treatment options, and timeline &mdash; sent to your email within 24 hours.</p>
+      </div>
+      <div class="tele-step">
+        <div class="tele-icon"><i class="fas fa-hospital"></i></div>
+        <h4>Visit for Treatment</h4>
+        <p>When you're ready, visit our clinic in Delhi. For international patients, we assist with travel and accommodation planning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     PRICING
+═══════════════════════════════════════════════════ -->
+<section style="background:var(--cream)">
+  <div class="container">
+    <div class="sec-h center reveal">
+      <div class="sec-chip"><i class="fas fa-gift"></i> Pricing</div>
+      <div class="sec-divider"></div>
+      <h2>Free Initial <em>Video Consultation</em></h2>
+      <p>Your first teledentistry session is completely free. No hidden charges, no obligations &mdash; just expert dental advice.</p>
+    </div>
+
+    <div class="price-highlight reveal">
+      <i class="fas fa-tags"></i>
+      <div class="ph-text">
+        <h4>FREE &mdash; Initial Video Consultation</h4>
+        <p>15&ndash;20 minute session with a specialist. Treatment plan &amp; cost estimate included.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     BENEFITS
+═══════════════════════════════════════════════════ -->
+<section style="background:var(--white)">
+  <div class="container">
+    <div class="sec-h center reveal">
+      <div class="sec-chip"><i class="fas fa-star"></i> Benefits</div>
+      <div class="sec-divider"></div>
+      <h2>Why Choose <em>Teledentistry?</em></h2>
+      <p>Whether you are in another city or another country, our teledentistry service brings world-class dental care to your screen.</p>
+    </div>
+
+    <div class="benefits-grid reveal">
+      <div class="benefit-card">
+        <i class="fas fa-globe"></i>
+        <h4>Consult from Anywhere</h4>
+        <p>No travel required. Connect from your living room, office, or even while on vacation abroad.</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fas fa-clock"></i>
+        <h4>Save Time</h4>
+        <p>Skip the commute and waiting room. Get expert advice in a focused 15&ndash;20 minute video session.</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fas fa-user-doctor"></i>
+        <h4>Specialist Access</h4>
+        <p>Consult directly with our senior specialists &mdash; implantologists, cosmetic dentists, and orthodontists.</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fas fa-shield-halved"></i>
+        <h4>Secure &amp; Private</h4>
+        <p>All video consultations are conducted via secure, encrypted platforms ensuring complete patient privacy.</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fas fa-file-invoice-dollar"></i>
+        <h4>Transparent Pricing</h4>
+        <p>Receive a detailed cost breakdown before committing. No surprises, no hidden charges at any stage.</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fas fa-comments"></i>
+        <h4>Second Opinion</h4>
+        <p>Already have a treatment plan elsewhere? Get an unbiased second opinion from our NABH-accredited team.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     BOOKING FORM
+═══════════════════════════════════════════════════ -->
+<section style="background:var(--cream)">
+  <div class="container">
+    <div class="sec-h center reveal">
+      <div class="sec-chip"><i class="fas fa-calendar-plus"></i> Book Now</div>
+      <div class="sec-divider"></div>
+      <h2>Schedule Your Free <em>Video Consultation</em></h2>
+    </div>
+
+    <div class="inline-form-wrap reveal">
+      <h3>Book Video Consultation</h3>
+      <p>Fill in your details and we'll send you a meeting link within 2 hours.</p>
+      <form class="smart-form" method="POST" name="teledentistry">
+        <input type="hidden" name="form-name" value="teledentistry"/>
+        <div class="fg-row">
+          <div class="fg"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required/></div>
+          <div class="fg"><label>Country</label><input type="text" name="country" placeholder="Your country"/></div>
+        </div>
+        <div class="fg"><label>WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+91 or international number" required/></div>
+        <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="your@email.com" required/></div>
+        <div class="fg"><label>Treatment Interest</label>
+          <select name="treatment">
+            <option value="">Select treatment...</option>
+            <option>Smile Makeover / Veneers</option>
+            <option>Dental Implants</option>
+            <option>Clear Aligners</option>
+            <option>Zoom Whitening</option>
+            <option>Root Canal</option>
+            <option>Full Mouth Rehabilitation</option>
+            <option>Second Opinion</option>
+            <option>Not Sure &ndash; Need Advice</option>
+          </select>
+        </div>
+        <div class="fg"><label>Preferred Date &amp; Time</label><input type="text" name="preferred_time" placeholder="e.g., Mon-Fri, 10 AM IST"/></div>
+        <div class="fg"><label>Describe Your Concern</label><textarea name="message" rows="3" placeholder="Tell us about your dental issue or attach X-ray links"></textarea></div>
+        <button type="submit" class="form-submit"><i class="fas fa-video"></i> Request Free Video Consultation</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     CTA
+═══════════════════════════════════════════════════ -->
+<section class="cta-banner reveal">
+  <div class="container">
+    <div class="sec-chip" style="margin-bottom:16px;justify-content:center"><i class="fas fa-headset"></i> We're Here</div>
+    <h2>Prefer to Chat <em>Right Now?</em></h2>
+    <p>Send us a WhatsApp message or call our toll-free number for instant assistance.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/919810936360" class="btn btn-gold btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us Now</a>
+      <a href="tel:1800117272" class="btn btn-outline-olive btn-lg"><i class="fas fa-phone"></i> Call 1800-11-7272</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="f-brand">Dr. Kathuria's <span>Dentistry</span></div>
+        <p class="f-tagline">E-143, East of Kailash, New Delhi, India. NABH Accredited &middot; ISO Certified &middot; 18+ Years &middot; 44+ countries.</p>
+        <div class="f-social">
+          <a href="https://www.facebook.com/DrKathuriaDentistry" class="f-soc" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/drkathuriasdentistry" class="f-soc" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@dentalclinicindelhi" class="f-soc" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://twitter.com/Kathuriadentist" class="f-soc" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://wa.me/919810936360" class="f-soc" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="f-col"><h5>Treatments</h5><ul><li><a href="services.html#cosmetic"><i class="fas fa-chevron-right"></i>Smile Makeover</a></li><li><a href="dental-implants.html"><i class="fas fa-chevron-right"></i>Dental Implants</a></li><li><a href="services.html#orthodontics"><i class="fas fa-chevron-right"></i>Clear Aligners</a></li><li><a href="services.html#cosmetic"><i class="fas fa-chevron-right"></i>Zoom Whitening</a></li><li><a href="services.html#gums"><i class="fas fa-chevron-right"></i>Root Canal</a></li><li><a href="services.html#gums"><i class="fas fa-chevron-right"></i>Gum Laser</a></li></ul></div>
+      <div class="f-col"><h5>Quick Links</h5><ul><li><a href="about.html"><i class="fas fa-chevron-right"></i>About Us</a></li><li><a href="cases.html"><i class="fas fa-chevron-right"></i>Before &amp; After</a></li><li><a href="staff.html"><i class="fas fa-chevron-right"></i>Our Doctors</a></li><li><a href="teledentistry.html"><i class="fas fa-chevron-right"></i>Video Consult</a></li><li><a href="awards.html"><i class="fas fa-chevron-right"></i>Awards</a></li><li><a href="contact.html"><i class="fas fa-chevron-right"></i>Contact</a></li></ul></div>
+      <div class="f-col"><h5>Contact</h5><div class="f-contact">
+        <div class="f-ci"><i class="fas fa-map-marker-alt"></i><div><span>Address</span><strong>E-143, East of Kailash, New Delhi</strong></div></div>
+        <div class="f-ci"><i class="fas fa-phone-alt"></i><div><span>India Toll Free</span><strong>1800-11-7272</strong></div></div>
+        <div class="f-ci"><i class="fab fa-whatsapp"></i><div><span>WhatsApp</span><strong>+91 98109 36360</strong></div></div>
+        <div class="f-ci"><i class="fas fa-envelope"></i><div><span>Email</span><strong>info@delhidental.com</strong></div></div>
+      </div></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Dr. Kathuria's Dentistry &ndash; U and K Oral Wellness LLP. All rights reserved.</span>
+      <div class="f-badges"><span class="f-badge">NABH Accredited</span><span class="f-badge">ISO Certified</span><span class="f-badge">ADA Standards</span></div>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating Panel -->
+<div class="float-panel" id="floatPanel">
+  <button class="fp-close" id="fpClose"><i class="fas fa-times"></i></button>
+  <h3>Book Consultation</h3>
+  <p>Fill in your details &mdash; we'll call back within 2 hours.</p>
+  <form class="smart-form" method="POST" name="appointment">
+    <input type="hidden" name="form-name" value="appointment"/>
+    <div class="fg-row"><div class="fg"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required/></div><div class="fg"><label>Country</label><input type="text" name="country" placeholder="Your country"/></div></div>
+    <div class="fg"><label>WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+91 or international" required/></div>
+    <div class="fg"><label>Email</label><input type="email" name="email" placeholder="your@email.com"/></div>
+    <div class="fg"><label>Treatment</label><select name="treatment"><option value="">Select treatment...</option><option>Smile Makeover / Veneers</option><option>Dental Implants</option><option>Clear Aligners</option><option>Zoom Whitening</option><option>Root Canal</option><option>Full Mouth Rehabilitation</option><option>Video Consultation Only</option><option>Not Sure &ndash; Need Advice</option></select></div>
+    <div class="fg"><label>Message (optional)</label><textarea name="message" rows="3" placeholder="Any specific concerns or preferred time"></textarea></div>
+    <button type="submit" class="form-submit"><i class="fas fa-calendar-check"></i> Request Consultation</button>
+  </form>
+</div>
+
+<!-- FABs -->
+<a href="tel:18001177272" class="fab-btn fab-call" aria-label="Call"><i class="fas fa-phone"></i></a>
+<a href="https://wa.me/919810936360" target="_blank" class="fab-btn fab-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="#top" class="fab-btn fab-up" id="fabUp" aria-label="Top"><i class="fas fa-chevron-up"></i></a>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

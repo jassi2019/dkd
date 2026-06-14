@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Patient Gallery | Dr. Kathuria's Dentistry &ndash; Smile Transformations</title>
+  <meta name="description" content="Browse our patient smile gallery — real before and after results of smile makeovers, veneers, dental implants, whitening, and crowns at Dr. Kathuria's Dentistry Delhi."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* ── GALLERY PAGE — UNIQUE STYLES ── */
+    .filter-bar{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:48px}
+    .filter-btn{padding:10px 22px;border-radius:99px;border:1px solid var(--border);background:var(--white);font-size:.8rem;font-weight:700;color:var(--gray);cursor:pointer;transition:all .3s var(--ease)}
+    .filter-btn:hover,.filter-btn.active{background:var(--olive);color:var(--white);border-color:var(--olive);box-shadow:0 4px 16px rgba(91,123,58,.25)}
+
+    .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1200px;margin:0 auto}
+    .gallery-item{position:relative;border-radius:var(--r-md);overflow:hidden;cursor:pointer;aspect-ratio:1;transition:all .4s var(--ease);border:2px solid transparent}
+    .gallery-item:hover{transform:translateY(-6px);box-shadow:var(--shadow-l);border-color:var(--gold)}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s var(--ease)}
+    .gallery-item:hover img{transform:scale(1.08)}
+    .gallery-item .gallery-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(0deg,rgba(26,26,26,.85) 0%,transparent 100%);padding:16px 14px 12px;transform:translateY(100%);transition:transform .35s var(--ease)}
+    .gallery-item:hover .gallery-overlay{transform:translateY(0)}
+    .gallery-overlay span{color:var(--gold-light);font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;display:block;margin-bottom:2px}
+    .gallery-overlay strong{color:#fff;font-size:.82rem;font-weight:700}
+    .gallery-item .gallery-zoom{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,.5);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.8rem;opacity:0;transition:opacity .3s}
+    .gallery-item:hover .gallery-zoom{opacity:1}
+
+    @media(max-width:960px){.gallery-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:600px){.gallery-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
+  </style>
+</head>
+<body class="has-topbar">
+
+<!-- ══════════════════ PAGE LOADER ══════════════════ -->
+<div id="page-loader">
+  <div class="loader-inner">
+    <i class="fas fa-tooth tooth"></i>
+    <p>Loading</p>
+  </div>
+</div>
+
+<!-- ══════════════════ TOP BAR ══════════════════ -->
+<div class="top-bar">
+  <div class="top-bar-left">
+    <a href="mailto:info@delhidental.com"><i class="fas fa-envelope"></i> info@delhidental.com</a>
+    <a href="tel:1800117272"><i class="fas fa-phone"></i> 1800-11-7272</a>
+  </div>
+  <div class="top-bar-right">
+    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+</div>
+
+<!-- ══════════════════ NAVIGATION ══════════════════ -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark"><i class="fas fa-tooth"></i></div>
+      <div class="logo-text">
+        <strong>Dr. Kathuria's Dentistry</strong>
+        <span>Premium Dental Care</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <a href="about.html">The Practice <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialists</a>
+          <a href="about.html#clinic-tour"><i class="fas fa-hospital"></i> Clinic Tour</a>
+          <a href="about.html#technology"><i class="fas fa-microchip"></i> Technology</a>
+        </div>
+      </li>
+      <li>
+        <a href="services.html">Treatments <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="dental-implants.html"><i class="fas fa-teeth"></i> Dental Implants</a>
+          <a href="services.html#cosmetic"><i class="fas fa-sparkles"></i> Cosmetic Dentistry</a>
+          <a href="services.html#gums"><i class="fas fa-hand-holding-medical"></i> Gum Treatment</a>
+          <a href="services.html#orthodontics"><i class="fas fa-teeth-open"></i> Orthodontics</a>
+          <a href="services.html#kids"><i class="fas fa-child"></i> Kids Dentistry</a>
+          <a href="services.html"><i class="fas fa-th-list"></i> All Treatments</a>
+        </div>
+      </li>
+      <li>
+        <a href="awards.html">Credibility <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="awards.html"><i class="fas fa-trophy"></i> Awards</a>
+          <a href="awards.html#testimonials"><i class="fas fa-comments"></i> Testimonials</a>
+          <a href="awards.html#accreditation"><i class="fas fa-certificate"></i> Accreditation</a>
+        </div>
+      </li>
+      <li><a href="cases.html">Cases</a></li>
+      <li><a href="charges.html">Charges</a></li>
+      <li><a href="smile-analysis.html">Smile Analysis</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:1800117272" class="nav-phone"><i class="fas fa-phone"></i> 1800-11-7272</a>
+      <button class="nav-cta" id="floatBookBtn"><i class="fas fa-calendar-check"></i> Book Appointment</button>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════ MOBILE NAV ══════════════════ -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html"><i class="fas fa-home"></i> Home</a>
+  <a href="about.html"><i class="fas fa-hospital"></i> The Practice</a>
+  <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialists</a>
+  <a href="services.html"><i class="fas fa-teeth"></i> All Treatments</a>
+  <a href="dental-implants.html"><i class="fas fa-teeth-open"></i> Dental Implants</a>
+  <a href="services.html#cosmetic"><i class="fas fa-sparkles"></i> Cosmetic Dentistry</a>
+  <a href="awards.html"><i class="fas fa-trophy"></i> Credibility</a>
+  <a href="cases.html"><i class="fas fa-images"></i> Cases</a>
+  <a href="charges.html"><i class="fas fa-indian-rupee-sign"></i> Charges</a>
+  <a href="smile-analysis.html"><i class="fas fa-face-smile-beam"></i> Smile Analysis</a>
+  <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
+  <a href="tel:1800117272" class="mobile-cta"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE HERO
+═══════════════════════════════════════════════════ -->
+<section class="page-hero">
+  <img class="page-hero-img" src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1920&q=85" alt="Smile Gallery"/>
+  <div class="page-hero-overlay" style="background:linear-gradient(120deg, rgba(91,123,58,.92) 0%, rgba(63,90,36,.75) 50%, rgba(198,169,77,.4) 100%)"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span class="sep"><i class="fas fa-chevron-right" style="font-size:.5rem"></i></span><a href="cases.html">Cases</a><span class="sep"><i class="fas fa-chevron-right" style="font-size:.5rem"></i></span><span>Patient Gallery</span>
+    </div>
+    <h1>Smile <em>Gallery</em></h1>
+    <p>Real patients, real results. Browse through our collection of smile transformations created by our team of specialists.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     GALLERY
+═══════════════════════════════════════════════════ -->
+<section style="background:var(--white)">
+  <div class="container">
+    <div class="sec-h center reveal">
+      <div class="sec-chip"><i class="fas fa-images"></i> Patient Results</div>
+      <div class="sec-divider"></div>
+      <h2>Our Smile <em>Transformations</em></h2>
+      <p>Click any image to view full size. Filter by treatment type to find cases similar to yours.</p>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="makeover">Smile Makeover</button>
+      <button class="filter-btn" data-filter="veneers">Veneers</button>
+      <button class="filter-btn" data-filter="implants">Implants</button>
+      <button class="filter-btn" data-filter="whitening">Whitening</button>
+      <button class="filter-btn" data-filter="crowns">Crowns</button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid">
+
+      <div class="gallery-item reveal" data-category="makeover" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=500&q=80" alt="Smile Makeover Case 1"/>
+        <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+        <div class="gallery-overlay"><span>Smile Makeover</span><strong>Full Mouth Veneers &mdash; 3 Days</strong></div>
+      </div>
+
+      <div class="gallery-item reveal" data-category="veneers" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1570612861542-284f4c12e75f?w=500&q=80" alt="Veneers Case 1"/>
+        <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+        <div class="gallery-overlay"><span>Veneers</span><strong>Porcelain Veneers &mdash; Upper Arch</strong></div>
+      </div>
+
+      <div class="gallery-item reveal" data-category="implants" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=500&q=80" alt="Implant Case 1"/>
+        <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+        <div class="gallery-overlay"><span>Implants</span><strong>Full Mouth Implants &mdash; All-on-6</strong></div>
+      </div>
+
+      <div class="gallery-item reveal" data-category="whitening" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=500&q=80" alt="Whitening Case 1"/>
+        <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+        <div class="gallery-overlay"><span>Whitening</span><strong>Zoom Whitening &mdash; 8 Shades Brighter</strong></div>
+      </div>
+
+      <div class="gallery-item reveal" data-category="crowns" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&q=80" alt="Crown Case 1"/>
+        <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+        <div class="gallery-overlay"><span>Crowns</span><strong>Zirconia Crowns &mdash; Natural Look</strong></div>
+      </div>
+
+      <div class="gallery-item reveal" data-category="makeover" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?w=500&q=80" alt="Smile Makeover Case 2"/>
+        <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+        <div class="gallery-overlay"><span>Smile Makeover</span><strong>Smile Design &mdash; International Patient</strong></div>
+      </div>
+
+      <div class="gallery-item reveal" data-category="veneers" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=500&q=80" alt="Veneers Case 2"/>
+        <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+        <div class="gallery-overlay"><span>Veneers</span><strong>E-Max Veneers &mdash; Gap Closure</strong></div>
+      </div>
+
+      <div class="gallery-item reveal" data-category="implants" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=500&q=80" alt="Implant Case 2"/>
+        <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+        <div class="gallery-overlay"><span>Implants</span><strong>Single Tooth Implant &mdash; Front Tooth</strong></div>
+      </div>
+
+      <div class="gallery-item reveal" data-category="makeover" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1602532305019-3dbbd482dae9?w=500&q=80" alt="Smile Makeover Case 3"/>
+        <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+        <div class="gallery-overlay"><span>Smile Makeover</span><strong>Digital Smile Design &mdash; Celebrity</strong></div>
+      </div>
+
+      <div class="gallery-item reveal" data-category="whitening" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&q=80" alt="Whitening Case 2"/>
+        <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+        <div class="gallery-overlay"><span>Whitening</span><strong>Laser Whitening &mdash; Stain Removal</strong></div>
+      </div>
+
+      <div class="gallery-item reveal" data-category="crowns" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=500&q=80" alt="Crown Case 2"/>
+        <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+        <div class="gallery-overlay"><span>Crowns</span><strong>CEREC Same-Day Crowns &mdash; Molar</strong></div>
+      </div>
+
+      <div class="gallery-item reveal" data-category="veneers" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=500&q=80" alt="Veneers Case 3"/>
+        <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+        <div class="gallery-overlay"><span>Veneers</span><strong>Composite Veneers &mdash; Budget Smile</strong></div>
+      </div>
+
+      <div class="gallery-item reveal" data-category="implants" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=500&q=80" alt="Implant Case 3"/>
+        <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+        <div class="gallery-overlay"><span>Implants</span><strong>Zygomatic Implants &mdash; Bone Loss</strong></div>
+      </div>
+
+      <div class="gallery-item reveal" data-category="makeover" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1601288496920-b6154fe3626a?w=500&q=80" alt="Smile Makeover Case 4"/>
+        <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+        <div class="gallery-overlay"><span>Smile Makeover</span><strong>Hollywood Smile &mdash; UK Patient</strong></div>
+      </div>
+
+      <div class="gallery-item reveal" data-category="crowns" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&q=80" alt="Crown Case 3"/>
+        <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+        <div class="gallery-overlay"><span>Crowns</span><strong>Full Mouth Zirconia Rehabilitation</strong></div>
+      </div>
+
+      <div class="gallery-item reveal" data-category="whitening" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1600170311833-c2cf5280ce49?w=500&q=80" alt="Whitening Case 3"/>
+        <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+        <div class="gallery-overlay"><span>Whitening</span><strong>In-Office Bleaching &mdash; Tetracycline</strong></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     CTA
+═══════════════════════════════════════════════════ -->
+<section class="cta-banner reveal">
+  <div class="container">
+    <div class="sec-chip" style="margin-bottom:16px;justify-content:center"><i class="fas fa-camera"></i> Your Turn</div>
+    <h2>Ready to Join Our <em>Gallery?</em></h2>
+    <p>Your smile transformation starts with a free consultation. Book today and become our next success story.</p>
+    <div class="cta-btns">
+      <a class="btn btn-gold btn-lg" href="smile-analysis.html"><i class="fas fa-face-smile-beam"></i> Free Smile Analysis</a>
+      <a href="https://wa.me/919810936360" class="btn btn-outline-olive btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="f-brand">Dr. Kathuria's <span>Dentistry</span></div>
+        <p class="f-tagline">E-143, East of Kailash, New Delhi, India. NABH Accredited &middot; ISO Certified &middot; 18+ Years &middot; 44+ countries.</p>
+        <div class="f-social">
+          <a href="https://www.facebook.com/DrKathuriaDentistry" class="f-soc" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/drkathuriasdentistry" class="f-soc" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@dentalclinicindelhi" class="f-soc" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://twitter.com/Kathuriadentist" class="f-soc" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://wa.me/919810936360" class="f-soc" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="f-col"><h5>Treatments</h5><ul><li><a href="services.html#cosmetic"><i class="fas fa-chevron-right"></i>Smile Makeover</a></li><li><a href="dental-implants.html"><i class="fas fa-chevron-right"></i>Dental Implants</a></li><li><a href="services.html#orthodontics"><i class="fas fa-chevron-right"></i>Clear Aligners</a></li><li><a href="services.html#cosmetic"><i class="fas fa-chevron-right"></i>Zoom Whitening</a></li><li><a href="services.html#gums"><i class="fas fa-chevron-right"></i>Root Canal</a></li><li><a href="services.html#gums"><i class="fas fa-chevron-right"></i>Gum Laser</a></li></ul></div>
+      <div class="f-col"><h5>Quick Links</h5><ul><li><a href="about.html"><i class="fas fa-chevron-right"></i>About Us</a></li><li><a href="cases.html"><i class="fas fa-chevron-right"></i>Before &amp; After</a></li><li><a href="staff.html"><i class="fas fa-chevron-right"></i>Our Doctors</a></li><li><a href="contact.html"><i class="fas fa-chevron-right"></i>Video Consult</a></li><li><a href="awards.html"><i class="fas fa-chevron-right"></i>Awards</a></li><li><a href="contact.html"><i class="fas fa-chevron-right"></i>Contact</a></li></ul></div>
+      <div class="f-col"><h5>Contact</h5><div class="f-contact">
+        <div class="f-ci"><i class="fas fa-map-marker-alt"></i><div><span>Address</span><strong>E-143, East of Kailash, New Delhi</strong></div></div>
+        <div class="f-ci"><i class="fas fa-phone-alt"></i><div><span>India Toll Free</span><strong>1800-11-7272</strong></div></div>
+        <div class="f-ci"><i class="fab fa-whatsapp"></i><div><span>WhatsApp</span><strong>+91 98109 36360</strong></div></div>
+        <div class="f-ci"><i class="fas fa-envelope"></i><div><span>Email</span><strong>info@delhidental.com</strong></div></div>
+      </div></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Dr. Kathuria's Dentistry &ndash; U and K Oral Wellness LLP. All rights reserved.</span>
+      <div class="f-badges"><span class="f-badge">NABH Accredited</span><span class="f-badge">ISO Certified</span><span class="f-badge">ADA Standards</span></div>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating Panel -->
+<div class="float-panel" id="floatPanel">
+  <button class="fp-close" id="fpClose"><i class="fas fa-times"></i></button>
+  <h3>Book Consultation</h3>
+  <p>Fill in your details &mdash; we'll call back within 2 hours.</p>
+  <form class="smart-form" method="POST" name="appointment">
+    <input type="hidden" name="form-name" value="appointment"/>
+    <div class="fg-row"><div class="fg"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required/></div><div class="fg"><label>Country</label><input type="text" name="country" placeholder="Your country"/></div></div>
+    <div class="fg"><label>WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+91 or international" required/></div>
+    <div class="fg"><label>Email</label><input type="email" name="email" placeholder="your@email.com"/></div>
+    <div class="fg"><label>Treatment</label><select name="treatment"><option value="">Select treatment...</option><option>Smile Makeover / Veneers</option><option>Dental Implants</option><option>Clear Aligners</option><option>Zoom Whitening</option><option>Root Canal</option><option>Full Mouth Rehabilitation</option><option>Video Consultation Only</option><option>Not Sure &ndash; Need Advice</option></select></div>
+    <div class="fg"><label>Message (optional)</label><textarea name="message" rows="3" placeholder="Any specific concerns or preferred time"></textarea></div>
+    <button type="submit" class="form-submit"><i class="fas fa-calendar-check"></i> Request Consultation</button>
+  </form>
+</div>
+
+<!-- FABs -->
+<a href="tel:18001177272" class="fab-btn fab-call" aria-label="Call"><i class="fas fa-phone"></i></a>
+<a href="https://wa.me/919810936360" target="_blank" class="fab-btn fab-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="#top" class="fab-btn fab-up" id="fabUp" aria-label="Top"><i class="fas fa-chevron-up"></i></a>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <div class="lb-inner">
+    <button class="lb-close" id="lbClose"><i class="fas fa-times"></i></button>
+    <img id="lbImg" src="" alt="Gallery preview"/>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script src="js/main.js"></script>
+<script>
+  /* Gallery filter */
+  document.querySelectorAll('.filter-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});
+      btn.classList.add('active');
+      var f=btn.dataset.filter;
+      document.querySelectorAll('.gallery-item').forEach(function(item){
+        if(f==='all'||item.dataset.category===f){item.style.display=''}
+        else{item.style.display='none'}
+      });
+    });
+  });
+  /* Lightbox open */
+  function openLightbox(el){
+    var src=el.querySelector('img').src;
+    document.getElementById('lbImg').src=src;
+    document.getElementById('lightbox').classList.add('active');
+  }
+</script>
+</body>
+</html>

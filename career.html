@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Career at Dr. Kathuria's Dentistry | Join Our Team &ndash; Delhi</title>
+  <meta name="description" content="Join Dr. Kathuria's Dentistry — Delhi's premier NABH accredited dental clinic. Current openings for Dental Hygienist, Front Desk Coordinator, Dental Assistant, and Associate Dentist."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* ── CAREER PAGE — UNIQUE STYLES ── */
+    .why-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;max-width:1100px;margin:0 auto}
+    .why-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px 20px;text-align:center;transition:all .4s var(--ease)}
+    .why-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-l);border-color:var(--olive-pale)}
+    .why-card i{font-size:2rem;color:var(--gold);margin-bottom:16px;display:block}
+    .why-card h4{font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:8px}
+    .why-card p{font-size:.78rem;color:var(--gray);line-height:1.72}
+
+    .openings-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;max-width:1000px;margin:0 auto}
+    .opening-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:32px 28px;transition:all .4s var(--ease);position:relative;overflow:hidden}
+    .opening-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--olive),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+    .opening-card:hover::before{transform:scaleX(1)}
+    .opening-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-l);border-color:var(--olive-pale)}
+    .opening-badge{display:inline-block;padding:4px 12px;border-radius:99px;font-size:.68rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;background:var(--olive-pale);color:var(--olive-dark);border:1px solid rgba(91,123,58,.2);margin-bottom:14px}
+    .opening-card h3{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:8px}
+    .opening-card p{font-size:.84rem;color:var(--gray);line-height:1.72;margin-bottom:20px}
+    .opening-meta{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+    .opening-meta span{display:inline-flex;align-items:center;gap:6px;font-size:.76rem;color:var(--gray)}
+    .opening-meta span i{color:var(--olive);font-size:.7rem}
+
+    .culture-section{position:relative;overflow:hidden}
+    .culture-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:1100px;margin:0 auto}
+    .culture-img{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-l)}
+    .culture-img img{width:100%;height:400px;object-fit:cover;display:block}
+    .culture-text h3{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--ink);margin-bottom:16px;line-height:1.3}
+    .culture-text h3 em{color:var(--olive);font-style:italic}
+    .culture-text p{font-size:.88rem;color:var(--gray);line-height:1.82;margin-bottom:16px}
+
+    @media(max-width:960px){.why-grid{grid-template-columns:repeat(3,1fr)}.openings-grid{grid-template-columns:1fr}.culture-grid{grid-template-columns:1fr;gap:32px}}
+    @media(max-width:600px){.why-grid{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body class="has-topbar">
+
+<!-- ══════════════════ PAGE LOADER ══════════════════ -->
+<div id="page-loader">
+  <div class="loader-inner">
+    <i class="fas fa-tooth tooth"></i>
+    <p>Loading</p>
+  </div>
+</div>
+
+<!-- ══════════════════ TOP BAR ══════════════════ -->
+<div class="top-bar">
+  <div class="top-bar-left">
+    <a href="mailto:info@delhidental.com"><i class="fas fa-envelope"></i> info@delhidental.com</a>
+    <a href="tel:1800117272"><i class="fas fa-phone"></i> 1800-11-7272</a>
+  </div>
+  <div class="top-bar-right">
+    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+</div>
+
+<!-- ══════════════════ NAVIGATION ══════════════════ -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark"><i class="fas fa-tooth"></i></div>
+      <div class="logo-text">
+        <strong>Dr. Kathuria's Dentistry</strong>
+        <span>Premium Dental Care</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <a href="about.html">The Practice <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialists</a>
+          <a href="about.html#clinic-tour"><i class="fas fa-hospital"></i> Clinic Tour</a>
+          <a href="about.html#technology"><i class="fas fa-microchip"></i> Technology</a>
+        </div>
+      </li>
+      <li>
+        <a href="services.html">Treatments <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="dental-implants.html"><i class="fas fa-teeth"></i> Dental Implants</a>
+          <a href="services.html#cosmetic"><i class="fas fa-sparkles"></i> Cosmetic Dentistry</a>
+          <a href="services.html#gums"><i class="fas fa-hand-holding-medical"></i> Gum Treatment</a>
+          <a href="services.html#orthodontics"><i class="fas fa-teeth-open"></i> Orthodontics</a>
+          <a href="services.html#kids"><i class="fas fa-child"></i> Kids Dentistry</a>
+          <a href="services.html"><i class="fas fa-th-list"></i> All Treatments</a>
+        </div>
+      </li>
+      <li>
+        <a href="awards.html">Credibility <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="awards.html"><i class="fas fa-trophy"></i> Awards</a>
+          <a href="awards.html#testimonials"><i class="fas fa-comments"></i> Testimonials</a>
+          <a href="awards.html#accreditation"><i class="fas fa-certificate"></i> Accreditation</a>
+        </div>
+      </li>
+      <li><a href="cases.html">Cases</a></li>
+      <li><a href="charges.html">Charges</a></li>
+      <li><a href="smile-analysis.html">Smile Analysis</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:1800117272" class="nav-phone"><i class="fas fa-phone"></i> 1800-11-7272</a>
+      <button class="nav-cta" id="floatBookBtn"><i class="fas fa-calendar-check"></i> Book Appointment</button>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════ MOBILE NAV ══════════════════ -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html"><i class="fas fa-home"></i> Home</a>
+  <a href="about.html"><i class="fas fa-hospital"></i> The Practice</a>
+  <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialists</a>
+  <a href="services.html"><i class="fas fa-teeth"></i> All Treatments</a>
+  <a href="dental-implants.html"><i class="fas fa-teeth-open"></i> Dental Implants</a>
+  <a href="services.html#cosmetic"><i class="fas fa-sparkles"></i> Cosmetic Dentistry</a>
+  <a href="awards.html"><i class="fas fa-trophy"></i> Credibility</a>
+  <a href="cases.html"><i class="fas fa-images"></i> Cases</a>
+  <a href="charges.html"><i class="fas fa-indian-rupee-sign"></i> Charges</a>
+  <a href="smile-analysis.html"><i class="fas fa-face-smile-beam"></i> Smile Analysis</a>
+  <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
+  <a href="tel:1800117272" class="mobile-cta"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE HERO
+═══════════════════════════════════════════════════ -->
+<section class="page-hero">
+  <img class="page-hero-img" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&q=85" alt="Join Our Team"/>
+  <div class="page-hero-overlay" style="background:linear-gradient(120deg, rgba(91,123,58,.92) 0%, rgba(63,90,36,.75) 50%, rgba(198,169,77,.4) 100%)"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span class="sep"><i class="fas fa-chevron-right" style="font-size:.5rem"></i></span><span>Career</span>
+    </div>
+    <h1>Join Our <em>Team</em></h1>
+    <p>Build your career at Delhi's most awarded NABH-accredited dental clinic. Work alongside internationally trained specialists and make a real impact on patients' lives.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     WHY WORK WITH US
+═══════════════════════════════════════════════════ -->
+<section style="background:var(--white)">
+  <div class="container">
+    <div class="sec-h center reveal">
+      <div class="sec-chip"><i class="fas fa-heart"></i> Why Join Us</div>
+      <div class="sec-divider"></div>
+      <h2>Why Work at <em>Dr. Kathuria's?</em></h2>
+      <p>We offer more than just a job &mdash; we provide a platform to grow, learn, and thrive in a world-class clinical environment.</p>
+    </div>
+
+    <div class="why-grid reveal">
+      <div class="why-card">
+        <i class="fas fa-graduation-cap"></i>
+        <h4>Continuous Learning</h4>
+        <p>Regular workshops, international conference sponsorships, and hands-on training with the latest dental technology.</p>
+      </div>
+      <div class="why-card">
+        <i class="fas fa-hand-holding-heart"></i>
+        <h4>Supportive Culture</h4>
+        <p>A collaborative, respectful environment where every team member is valued and empowered to do their best work.</p>
+      </div>
+      <div class="why-card">
+        <i class="fas fa-chart-line"></i>
+        <h4>Career Growth</h4>
+        <p>Clear progression paths with performance-based promotions and opportunities to specialise in advanced procedures.</p>
+      </div>
+      <div class="why-card">
+        <i class="fas fa-microchip"></i>
+        <h4>Cutting-Edge Tech</h4>
+        <p>Work with CEREC, 3D CBCT, digital scanners, laser systems, and the most advanced dental equipment in India.</p>
+      </div>
+      <div class="why-card">
+        <i class="fas fa-globe"></i>
+        <h4>Global Exposure</h4>
+        <p>Treat patients from 44+ countries and gain international clinical exposure without leaving Delhi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     CULTURE
+═══════════════════════════════════════════════════ -->
+<section class="culture-section" style="background:var(--cream)">
+  <div class="container">
+    <div class="culture-grid reveal">
+      <div class="culture-img">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=700&q=80" alt="Our clinic team"/>
+      </div>
+      <div class="culture-text">
+        <h3>A Clinic That Feels Like <em>Family</em></h3>
+        <p>At Dr. Kathuria's Dentistry, we believe that happy teams create happy patients. Our clinic culture is built on mutual respect, open communication, and a shared passion for delivering the best dental care in India.</p>
+        <p>With over 18 years of legacy, we've built a team of 40+ professionals who are not just colleagues but a close-knit family dedicated to clinical excellence and patient welfare.</p>
+        <a href="about.html" class="btn btn-olive btn-pill"><i class="fas fa-hospital"></i> Learn About Our Practice</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     CURRENT OPENINGS
+═══════════════════════════════════════════════════ -->
+<section style="background:var(--white)">
+  <div class="container">
+    <div class="sec-h center reveal">
+      <div class="sec-chip"><i class="fas fa-briefcase"></i> Openings</div>
+      <div class="sec-divider"></div>
+      <h2>Current <em>Openings</em></h2>
+      <p>We're always looking for talented, passionate individuals to join our growing team. See what positions are available.</p>
+    </div>
+
+    <div class="openings-grid reveal">
+
+      <!-- Opening 1 -->
+      <div class="opening-card">
+        <span class="opening-badge">Full Time</span>
+        <h3>Dental Hygienist</h3>
+        <div class="opening-meta">
+          <span><i class="fas fa-map-marker-alt"></i> East of Kailash, Delhi</span>
+          <span><i class="fas fa-clock"></i> Mon&ndash;Sat</span>
+          <span><i class="fas fa-indian-rupee-sign"></i> Competitive Salary</span>
+        </div>
+        <p>Perform professional cleanings, take X-rays, educate patients on oral hygiene, and assist doctors with periodontal assessments. Minimum 2 years of clinical experience required.</p>
+        <a href="mailto:hr@delhidental.com?subject=Application%20-%20Dental%20Hygienist" class="btn btn-gold btn-pill btn-sm"><i class="fas fa-paper-plane"></i> Apply Now</a>
+      </div>
+
+      <!-- Opening 2 -->
+      <div class="opening-card">
+        <span class="opening-badge">Full Time</span>
+        <h3>Front Desk Coordinator</h3>
+        <div class="opening-meta">
+          <span><i class="fas fa-map-marker-alt"></i> East of Kailash, Delhi</span>
+          <span><i class="fas fa-clock"></i> Mon&ndash;Sat</span>
+          <span><i class="fas fa-indian-rupee-sign"></i> Competitive Salary</span>
+        </div>
+        <p>Manage patient scheduling, coordinate appointments, handle inquiries from international patients, and ensure a premium front-desk experience. Fluent English and Hindi required.</p>
+        <a href="mailto:hr@delhidental.com?subject=Application%20-%20Front%20Desk%20Coordinator" class="btn btn-gold btn-pill btn-sm"><i class="fas fa-paper-plane"></i> Apply Now</a>
+      </div>
+
+      <!-- Opening 3 -->
+      <div class="opening-card">
+        <span class="opening-badge">Full Time</span>
+        <h3>Dental Assistant</h3>
+        <div class="opening-meta">
+          <span><i class="fas fa-map-marker-alt"></i> East of Kailash, Delhi</span>
+          <span><i class="fas fa-clock"></i> Mon&ndash;Sat</span>
+          <span><i class="fas fa-indian-rupee-sign"></i> Competitive Salary</span>
+        </div>
+        <p>Assist specialists during procedures, manage sterilisation protocols, prepare treatment rooms, and maintain patient records. Diploma in dental assisting preferred.</p>
+        <a href="mailto:hr@delhidental.com?subject=Application%20-%20Dental%20Assistant" class="btn btn-gold btn-pill btn-sm"><i class="fas fa-paper-plane"></i> Apply Now</a>
+      </div>
+
+      <!-- Opening 4 -->
+      <div class="opening-card">
+        <span class="opening-badge">Full Time</span>
+        <h3>Associate Dentist</h3>
+        <div class="opening-meta">
+          <span><i class="fas fa-map-marker-alt"></i> East of Kailash, Delhi</span>
+          <span><i class="fas fa-clock"></i> Mon&ndash;Sat</span>
+          <span><i class="fas fa-indian-rupee-sign"></i> Competitive + Incentives</span>
+        </div>
+        <p>Join our clinical team as a general dentist handling consultations, restorations, root canals, and referrals. BDS with minimum 3 years experience. MDS preferred.</p>
+        <a href="mailto:hr@delhidental.com?subject=Application%20-%20Associate%20Dentist" class="btn btn-gold btn-pill btn-sm"><i class="fas fa-paper-plane"></i> Apply Now</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     CTA
+═══════════════════════════════════════════════════ -->
+<section class="cta-banner reveal">
+  <div class="container">
+    <div class="sec-chip" style="margin-bottom:16px;justify-content:center"><i class="fas fa-envelope-open-text"></i> Get in Touch</div>
+    <h2>Don't See Your Role? <em>Reach Out Anyway</em></h2>
+    <p>We're always open to hearing from talented professionals. Send your CV to <strong>hr@delhidental.com</strong> and we'll keep it on file for future openings.</p>
+    <div class="cta-btns">
+      <a href="mailto:hr@delhidental.com" class="btn btn-gold btn-lg"><i class="fas fa-envelope"></i> Email Your CV</a>
+      <a href="https://wa.me/919810936360" class="btn btn-outline-olive btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="f-brand">Dr. Kathuria's <span>Dentistry</span></div>
+        <p class="f-tagline">E-143, East of Kailash, New Delhi, India. NABH Accredited &middot; ISO Certified &middot; 18+ Years &middot; 44+ countries.</p>
+        <div class="f-social">
+          <a href="https://www.facebook.com/DrKathuriaDentistry" class="f-soc" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/drkathuriasdentistry" class="f-soc" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@dentalclinicindelhi" class="f-soc" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://twitter.com/Kathuriadentist" class="f-soc" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://wa.me/919810936360" class="f-soc" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="f-col"><h5>Treatments</h5><ul><li><a href="services.html#cosmetic"><i class="fas fa-chevron-right"></i>Smile Makeover</a></li><li><a href="dental-implants.html"><i class="fas fa-chevron-right"></i>Dental Implants</a></li><li><a href="services.html#orthodontics"><i class="fas fa-chevron-right"></i>Clear Aligners</a></li><li><a href="services.html#cosmetic"><i class="fas fa-chevron-right"></i>Zoom Whitening</a></li><li><a href="services.html#gums"><i class="fas fa-chevron-right"></i>Root Canal</a></li><li><a href="services.html#gums"><i class="fas fa-chevron-right"></i>Gum Laser</a></li></ul></div>
+      <div class="f-col"><h5>Quick Links</h5><ul><li><a href="about.html"><i class="fas fa-chevron-right"></i>About Us</a></li><li><a href="cases.html"><i class="fas fa-chevron-right"></i>Before &amp; After</a></li><li><a href="staff.html"><i class="fas fa-chevron-right"></i>Our Doctors</a></li><li><a href="contact.html"><i class="fas fa-chevron-right"></i>Video Consult</a></li><li><a href="awards.html"><i class="fas fa-chevron-right"></i>Awards</a></li><li><a href="contact.html"><i class="fas fa-chevron-right"></i>Contact</a></li></ul></div>
+      <div class="f-col"><h5>Contact</h5><div class="f-contact">
+        <div class="f-ci"><i class="fas fa-map-marker-alt"></i><div><span>Address</span><strong>E-143, East of Kailash, New Delhi</strong></div></div>
+        <div class="f-ci"><i class="fas fa-phone-alt"></i><div><span>India Toll Free</span><strong>1800-11-7272</strong></div></div>
+        <div class="f-ci"><i class="fab fa-whatsapp"></i><div><span>WhatsApp</span><strong>+91 98109 36360</strong></div></div>
+        <div class="f-ci"><i class="fas fa-envelope"></i><div><span>Email</span><strong>info@delhidental.com</strong></div></div>
+      </div></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Dr. Kathuria's Dentistry &ndash; U and K Oral Wellness LLP. All rights reserved.</span>
+      <div class="f-badges"><span class="f-badge">NABH Accredited</span><span class="f-badge">ISO Certified</span><span class="f-badge">ADA Standards</span></div>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating Panel -->
+<div class="float-panel" id="floatPanel">
+  <button class="fp-close" id="fpClose"><i class="fas fa-times"></i></button>
+  <h3>Book Consultation</h3>
+  <p>Fill in your details &mdash; we'll call back within 2 hours.</p>
+  <form class="smart-form" method="POST" name="appointment">
+    <input type="hidden" name="form-name" value="appointment"/>
+    <div class="fg-row"><div class="fg"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required/></div><div class="fg"><label>Country</label><input type="text" name="country" placeholder="Your country"/></div></div>
+    <div class="fg"><label>WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+91 or international" required/></div>
+    <div class="fg"><label>Email</label><input type="email" name="email" placeholder="your@email.com"/></div>
+    <div class="fg"><label>Treatment</label><select name="treatment"><option value="">Select treatment...</option><option>Smile Makeover / Veneers</option><option>Dental Implants</option><option>Clear Aligners</option><option>Zoom Whitening</option><option>Root Canal</option><option>Full Mouth Rehabilitation</option><option>Video Consultation Only</option><option>Not Sure &ndash; Need Advice</option></select></div>
+    <div class="fg"><label>Message (optional)</label><textarea name="message" rows="3" placeholder="Any specific concerns or preferred time"></textarea></div>
+    <button type="submit" class="form-submit"><i class="fas fa-calendar-check"></i> Request Consultation</button>
+  </form>
+</div>
+
+<!-- FABs -->
+<a href="tel:18001177272" class="fab-btn fab-call" aria-label="Call"><i class="fas fa-phone"></i></a>
+<a href="https://wa.me/919810936360" target="_blank" class="fab-btn fab-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="#top" class="fab-btn fab-up" id="fabUp" aria-label="Top"><i class="fas fa-chevron-up"></i></a>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Latest News &amp; Events | Dr. Kathuria's Dentistry &ndash; Delhi</title>
+  <meta name="description" content="Stay updated with the latest news, events, and media coverage from Dr. Kathuria's Dentistry — Femina Miss India Partnership, NDTV Recognition, free dental camps, and more."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* ── NEWS PAGE — UNIQUE STYLES ── */
+    .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1100px;margin:0 auto}
+    .news-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;transition:all .4s var(--ease);position:relative}
+    .news-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-l);border-color:var(--olive-pale)}
+    .news-card img{width:100%;height:220px;object-fit:cover;display:block;transition:transform .5s var(--ease)}
+    .news-card:hover img{transform:scale(1.05)}
+    .news-card-body{padding:24px}
+    .news-date{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;color:var(--olive);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+    .news-card-body h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.4}
+    .news-card-body p{font-size:.84rem;color:var(--gray);line-height:1.72;margin-bottom:16px}
+    .news-tag{display:inline-block;padding:4px 12px;border-radius:99px;font-size:.68rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+    .news-tag.event{background:var(--gold-pale);color:var(--gold-dark);border:1px solid var(--border-gold)}
+    .news-tag.press{background:var(--olive-pale);color:var(--olive-dark);border:1px solid rgba(91,123,58,.2)}
+    .news-read-more{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:700;color:var(--gold);transition:all .25s}
+    .news-read-more:hover{color:var(--olive);gap:10px}
+
+    @media(max-width:960px){.news-grid{grid-template-columns:1fr 1fr;gap:20px}}
+    @media(max-width:600px){.news-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body class="has-topbar">
+
+<!-- ══════════════════ PAGE LOADER ══════════════════ -->
+<div id="page-loader">
+  <div class="loader-inner">
+    <i class="fas fa-tooth tooth"></i>
+    <p>Loading</p>
+  </div>
+</div>
+
+<!-- ══════════════════ TOP BAR ══════════════════ -->
+<div class="top-bar">
+  <div class="top-bar-left">
+    <a href="mailto:info@delhidental.com"><i class="fas fa-envelope"></i> info@delhidental.com</a>
+    <a href="tel:1800117272"><i class="fas fa-phone"></i> 1800-11-7272</a>
+  </div>
+  <div class="top-bar-right">
+    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+</div>
+
+<!-- ══════════════════ NAVIGATION ══════════════════ -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark"><i class="fas fa-tooth"></i></div>
+      <div class="logo-text">
+        <strong>Dr. Kathuria's Dentistry</strong>
+        <span>Premium Dental Care</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <a href="about.html">The Practice <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialists</a>
+          <a href="about.html#clinic-tour"><i class="fas fa-hospital"></i> Clinic Tour</a>
+          <a href="about.html#technology"><i class="fas fa-microchip"></i> Technology</a>
+        </div>
+      </li>
+      <li>
+        <a href="services.html">Treatments <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="dental-implants.html"><i class="fas fa-teeth"></i> Dental Implants</a>
+          <a href="services.html#cosmetic"><i class="fas fa-sparkles"></i> Cosmetic Dentistry</a>
+          <a href="services.html#gums"><i class="fas fa-hand-holding-medical"></i> Gum Treatment</a>
+          <a href="services.html#orthodontics"><i class="fas fa-teeth-open"></i> Orthodontics</a>
+          <a href="services.html#kids"><i class="fas fa-child"></i> Kids Dentistry</a>
+          <a href="services.html"><i class="fas fa-th-list"></i> All Treatments</a>
+        </div>
+      </li>
+      <li>
+        <a href="awards.html">Credibility <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="awards.html"><i class="fas fa-trophy"></i> Awards</a>
+          <a href="awards.html#testimonials"><i class="fas fa-comments"></i> Testimonials</a>
+          <a href="awards.html#accreditation"><i class="fas fa-certificate"></i> Accreditation</a>
+        </div>
+      </li>
+      <li><a href="cases.html">Cases</a></li>
+      <li><a href="charges.html">Charges</a></li>
+      <li><a href="smile-analysis.html">Smile Analysis</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:1800117272" class="nav-phone"><i class="fas fa-phone"></i> 1800-11-7272</a>
+      <button class="nav-cta" id="floatBookBtn"><i class="fas fa-calendar-check"></i> Book Appointment</button>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════ MOBILE NAV ══════════════════ -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html"><i class="fas fa-home"></i> Home</a>
+  <a href="about.html"><i class="fas fa-hospital"></i> The Practice</a>
+  <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialists</a>
+  <a href="services.html"><i class="fas fa-teeth"></i> All Treatments</a>
+  <a href="dental-implants.html"><i class="fas fa-teeth-open"></i> Dental Implants</a>
+  <a href="services.html#cosmetic"><i class="fas fa-sparkles"></i> Cosmetic Dentistry</a>
+  <a href="awards.html"><i class="fas fa-trophy"></i> Credibility</a>
+  <a href="cases.html"><i class="fas fa-images"></i> Cases</a>
+  <a href="charges.html"><i class="fas fa-indian-rupee-sign"></i> Charges</a>
+  <a href="smile-analysis.html"><i class="fas fa-face-smile-beam"></i> Smile Analysis</a>
+  <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
+  <a href="tel:1800117272" class="mobile-cta"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE HERO
+═══════════════════════════════════════════════════ -->
+<section class="page-hero">
+  <img class="page-hero-img" src="https://images.unsplash.com/photo-1504711434969-e33886168d6c?w=1920&q=85" alt="News and Events"/>
+  <div class="page-hero-overlay" style="background:linear-gradient(120deg, rgba(91,123,58,.92) 0%, rgba(63,90,36,.75) 50%, rgba(198,169,77,.4) 100%)"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span class="sep"><i class="fas fa-chevron-right" style="font-size:.5rem"></i></span><a href="awards.html">Credibility</a><span class="sep"><i class="fas fa-chevron-right" style="font-size:.5rem"></i></span><span>News &amp; Events</span>
+    </div>
+    <h1>News &amp; <em>Events</em></h1>
+    <p>Stay updated with our latest milestones, media coverage, partnerships, and community initiatives that make us Delhi's most trusted dental clinic.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     NEWS GRID
+═══════════════════════════════════════════════════ -->
+<section style="background:var(--white)">
+  <div class="container">
+    <div class="sec-h center reveal">
+      <div class="sec-chip"><i class="fas fa-newspaper"></i> Latest Updates</div>
+      <div class="sec-divider"></div>
+      <h2>In the <em>Spotlight</em></h2>
+      <p>From national television features to international dental conferences, we continue to set new benchmarks in dental excellence.</p>
+    </div>
+
+    <div class="news-grid">
+
+      <!-- Card 1 -->
+      <div class="news-card reveal">
+        <img src="https://images.unsplash.com/photo-1529543544282-4943fe18e8c5?w=600&q=80" alt="Femina Miss India Partnership"/>
+        <div class="news-card-body">
+          <div class="news-date"><i class="fas fa-calendar-alt"></i> March 15, 2024</div>
+          <span class="news-tag event">Event</span>
+          <h3>Femina Miss India Partnership &mdash; Official Smile Makeover Partner</h3>
+          <p>Dr. Kathuria's Dentistry was selected as the official smile makeover partner for Femina Miss India 2024, providing premium cosmetic dentistry services to contestants from across the country.</p>
+          <a href="#" class="news-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="news-card reveal">
+        <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=600&q=80" alt="NDTV Top 5 Recognition"/>
+        <div class="news-card-body">
+          <div class="news-date"><i class="fas fa-calendar-alt"></i> January 22, 2024</div>
+          <span class="news-tag press">Press</span>
+          <h3>NDTV Top 5 Dental Clinics in Delhi &mdash; National Recognition</h3>
+          <p>NDTV featured Dr. Kathuria's Dentistry as one of the Top 5 dental clinics in Delhi, recognising our advanced treatment capabilities, patient care standards, and dental tourism excellence.</p>
+          <a href="#" class="news-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="news-card reveal">
+        <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=600&q=80" alt="DC Women IPL Partnership"/>
+        <div class="news-card-body">
+          <div class="news-date"><i class="fas fa-calendar-alt"></i> April 8, 2024</div>
+          <span class="news-tag event">Event</span>
+          <h3>Delhi Capitals Women IPL &mdash; Official Dental Care Partner</h3>
+          <p>We partnered with Delhi Capitals Women's team in the IPL, providing comprehensive dental health and oral wellness services to players throughout the season.</p>
+          <a href="#" class="news-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="news-card reveal">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" alt="CEREC Technology Launch"/>
+        <div class="news-card-body">
+          <div class="news-date"><i class="fas fa-calendar-alt"></i> November 5, 2023</div>
+          <span class="news-tag press">Press</span>
+          <h3>CEREC Same-Day Crown Technology Launch in Delhi</h3>
+          <p>Dr. Kathuria's Dentistry became one of the first clinics in North India to introduce CEREC same-day ceramic crown technology, eliminating the need for multiple visits and temporary crowns.</p>
+          <a href="#" class="news-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="news-card reveal">
+        <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&q=80" alt="International Dental Conference"/>
+        <div class="news-card-body">
+          <div class="news-date"><i class="fas fa-calendar-alt"></i> September 18, 2024</div>
+          <span class="news-tag event">Event</span>
+          <h3>International Dental Conference 2024 &mdash; Speaker Panel</h3>
+          <p>Dr. Sween Kathuria presented at the International Dental Conference 2024 on advanced implantology techniques and digital smile design protocols for full mouth rehabilitation.</p>
+          <a href="#" class="news-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="news-card reveal">
+        <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=600&q=80" alt="Free Dental Camp"/>
+        <div class="news-card-body">
+          <div class="news-date"><i class="fas fa-calendar-alt"></i> August 2, 2024</div>
+          <span class="news-tag event">Event</span>
+          <h3>Free Dental Camp Delhi &mdash; Community Oral Health Drive</h3>
+          <p>Over 500 patients benefited from our annual free dental camp in South Delhi, offering complimentary check-ups, scaling, and oral health awareness sessions for underprivileged communities.</p>
+          <a href="#" class="news-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     CTA
+═══════════════════════════════════════════════════ -->
+<section class="cta-banner reveal">
+  <div class="container">
+    <div class="sec-chip" style="margin-bottom:16px;justify-content:center"><i class="fas fa-calendar-check"></i> Stay Connected</div>
+    <h2>Want to Be Part of Our <em>Story?</em></h2>
+    <p>Book a consultation and experience the award-winning dental care that keeps making headlines.</p>
+    <div class="cta-btns">
+      <a class="btn btn-gold btn-lg" href="contact.html"><i class="fas fa-calendar-check"></i> Book Consultation</a>
+      <a href="https://wa.me/919810936360" class="btn btn-outline-olive btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="f-brand">Dr. Kathuria's <span>Dentistry</span></div>
+        <p class="f-tagline">E-143, East of Kailash, New Delhi, India. NABH Accredited &middot; ISO Certified &middot; 18+ Years &middot; 44+ countries.</p>
+        <div class="f-social">
+          <a href="https://www.facebook.com/DrKathuriaDentistry" class="f-soc" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/drkathuriasdentistry" class="f-soc" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@dentalclinicindelhi" class="f-soc" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://twitter.com/Kathuriadentist" class="f-soc" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://wa.me/919810936360" class="f-soc" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="f-col"><h5>Treatments</h5><ul><li><a href="services.html#cosmetic"><i class="fas fa-chevron-right"></i>Smile Makeover</a></li><li><a href="dental-implants.html"><i class="fas fa-chevron-right"></i>Dental Implants</a></li><li><a href="services.html#orthodontics"><i class="fas fa-chevron-right"></i>Clear Aligners</a></li><li><a href="services.html#cosmetic"><i class="fas fa-chevron-right"></i>Zoom Whitening</a></li><li><a href="services.html#gums"><i class="fas fa-chevron-right"></i>Root Canal</a></li><li><a href="services.html#gums"><i class="fas fa-chevron-right"></i>Gum Laser</a></li></ul></div>
+      <div class="f-col"><h5>Quick Links</h5><ul><li><a href="about.html"><i class="fas fa-chevron-right"></i>About Us</a></li><li><a href="cases.html"><i class="fas fa-chevron-right"></i>Before &amp; After</a></li><li><a href="staff.html"><i class="fas fa-chevron-right"></i>Our Doctors</a></li><li><a href="contact.html"><i class="fas fa-chevron-right"></i>Video Consult</a></li><li><a href="awards.html"><i class="fas fa-chevron-right"></i>Awards</a></li><li><a href="contact.html"><i class="fas fa-chevron-right"></i>Contact</a></li></ul></div>
+      <div class="f-col"><h5>Contact</h5><div class="f-contact">
+        <div class="f-ci"><i class="fas fa-map-marker-alt"></i><div><span>Address</span><strong>E-143, East of Kailash, New Delhi</strong></div></div>
+        <div class="f-ci"><i class="fas fa-phone-alt"></i><div><span>India Toll Free</span><strong>1800-11-7272</strong></div></div>
+        <div class="f-ci"><i class="fab fa-whatsapp"></i><div><span>WhatsApp</span><strong>+91 98109 36360</strong></div></div>
+        <div class="f-ci"><i class="fas fa-envelope"></i><div><span>Email</span><strong>info@delhidental.com</strong></div></div>
+      </div></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Dr. Kathuria's Dentistry &ndash; U and K Oral Wellness LLP. All rights reserved.</span>
+      <div class="f-badges"><span class="f-badge">NABH Accredited</span><span class="f-badge">ISO Certified</span><span class="f-badge">ADA Standards</span></div>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating Panel -->
+<div class="float-panel" id="floatPanel">
+  <button class="fp-close" id="fpClose"><i class="fas fa-times"></i></button>
+  <h3>Book Consultation</h3>
+  <p>Fill in your details &mdash; we'll call back within 2 hours.</p>
+  <form class="smart-form" method="POST" name="appointment">
+    <input type="hidden" name="form-name" value="appointment"/>
+    <div class="fg-row"><div class="fg"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required/></div><div class="fg"><label>Country</label><input type="text" name="country" placeholder="Your country"/></div></div>
+    <div class="fg"><label>WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+91 or international" required/></div>
+    <div class="fg"><label>Email</label><input type="email" name="email" placeholder="your@email.com"/></div>
+    <div class="fg"><label>Treatment</label><select name="treatment"><option value="">Select treatment...</option><option>Smile Makeover / Veneers</option><option>Dental Implants</option><option>Clear Aligners</option><option>Zoom Whitening</option><option>Root Canal</option><option>Full Mouth Rehabilitation</option><option>Video Consultation Only</option><option>Not Sure &ndash; Need Advice</option></select></div>
+    <div class="fg"><label>Message (optional)</label><textarea name="message" rows="3" placeholder="Any specific concerns or preferred time"></textarea></div>
+    <button type="submit" class="form-submit"><i class="fas fa-calendar-check"></i> Request Consultation</button>
+  </form>
+</div>
+
+<!-- FABs -->
+<a href="tel:18001177272" class="fab-btn fab-call" aria-label="Call"><i class="fas fa-phone"></i></a>
+<a href="https://wa.me/919810936360" target="_blank" class="fab-btn fab-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="#top" class="fab-btn fab-up" id="fabUp" aria-label="Top"><i class="fas fa-chevron-up"></i></a>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
