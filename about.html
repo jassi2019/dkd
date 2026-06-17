@@ -245,19 +245,42 @@
 <!-- ═══════════════════════════════════
      TOP BAR
 ═══════════════════════════════════ -->
-<!-- ══════ TOP BAR — International Numbers ══════ -->
+<!-- ══════ TOP BAR — International Numbers (delhidental.com style) ══════ -->
 <div class="top-bar">
-  <div class="top-bar-phones">
-    <a href="tel:+61384004931" class="top-bar-phone"><span class="flag">🇦🇺</span><span class="country">Australia</span><span class="num">+61 3 8400 4931</span></a>
-    <a href="tel:+18889812145" class="top-bar-phone"><span class="flag">🇨🇦</span><span class="country">Canada</span><span class="num">+1 888 981 2145</span></a>
-    <a href="tel:18001177272" class="top-bar-phone" style="background:rgba(255,255,255,.06)"><span class="flag">🇮🇳</span><span class="country">India Toll Free</span><span class="num">1800-11-7272</span></a>
-    <a href="tel:+441970450032" class="top-bar-phone"><span class="flag">🇬🇧</span><span class="country">UK</span><span class="num">+44 1970 450032</span></a>
-    <a href="tel:+18889812145" class="top-bar-phone"><span class="flag">🇺🇸</span><span class="country">USA</span><span class="num">+1 888 981 2145</span></a>
-  </div>
-  <div class="top-bar-right">
-    <a href="mailto:info@delhidental.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-    <a href="tel:18001177272" aria-label="Call"><i class="fas fa-phone"></i></a>
-    <a href="https://wa.me/919810936360" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <div class="top-bar-inner">
+    <a href="tel:+61384004931" class="top-bar-phone">
+      <span class="tb-icon"><i class="fas fa-phone-alt"></i></span>
+      <span class="tb-flag">🇦🇺</span>
+      <span class="tb-info"><span class="tb-label">Australia No</span><span class="tb-num">+61384004931</span></span>
+    </a>
+    <a href="tel:+18889812145" class="top-bar-phone">
+      <span class="tb-icon"><i class="fas fa-phone-alt"></i></span>
+      <span class="tb-flag">🇨🇦</span>
+      <span class="tb-info"><span class="tb-label">Canada No</span><span class="tb-num">+18889812145</span></span>
+    </a>
+    <a href="tel:18001177272" class="top-bar-phone tb-highlight">
+      <span class="tb-icon"><i class="fas fa-phone-alt"></i></span>
+      <span class="tb-flag">🇮🇳</span>
+      <span class="tb-info"><span class="tb-label">India Toll Free No</span><span class="tb-num">1800-11-7272</span></span>
+    </a>
+    <a href="tel:+441970450032" class="top-bar-phone">
+      <span class="tb-icon"><i class="fas fa-phone-alt"></i></span>
+      <span class="tb-flag">🇬🇧</span>
+      <span class="tb-info"><span class="tb-label">UK No</span><span class="tb-num">+441970450032</span></span>
+    </a>
+    <a href="tel:+18889812145" class="top-bar-phone">
+      <span class="tb-icon"><i class="fas fa-phone-alt"></i></span>
+      <span class="tb-flag">🇺🇸</span>
+      <span class="tb-info"><span class="tb-label">USA No</span><span class="tb-num">+18889812145</span></span>
+    </a>
+    <a href="mailto:info@delhidental.com" class="top-bar-extra">
+      <span class="tb-icon"><i class="fas fa-envelope"></i></span>
+      <span class="tb-info"><span class="tb-label">Mail Id</span><span class="tb-val">info@delhidental.com</span></span>
+    </a>
+    <a href="https://maps.google.com/?q=Dr+Kathuria+Dentistry+East+of+Kailash" target="_blank" class="top-bar-extra">
+      <span class="tb-icon"><i class="fas fa-map-marker-alt"></i></span>
+      <span class="tb-info"><span class="tb-label">Our Location</span><span class="tb-val">E-143, East of Kailash, New Delhi</span></span>
+    </a>
   </div>
 </div>
 
@@ -266,73 +289,86 @@
 ═══════════════════════════════════ -->
 <nav class="site-nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <div class="logo-mark"><i class="fas fa-tooth"></i></div>
-      <div class="logo-text"><strong>Dr. Kathuria's Dentistry</strong><span>East of Kailash, New Delhi</span></div>
-    </a>
-    <div class="nav-nabh"><div class="nav-nabh-icon"><i class="fas fa-shield-halved"></i></div><div class="nav-nabh-text">NABH<br/>Accredited</div></div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li>
-        <a href="about.html">The Practice <i class="fas fa-chevron-down chevron"></i></a>
-        <div class="nav-dropdown">
-          <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialists</a>
-          <a href="clinic-tour.html"><i class="fas fa-hospital"></i> Clinic Tour Images</a>
-          <a href="technology.html"><i class="fas fa-microchip"></i> Technology</a>
+    <!-- ROW 1: Logo + Toll Free + NABH -->
+    <div class="nav-row-1">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-mark"><i class="fas fa-tooth"></i></div>
+        <div class="logo-text"><strong>Dr. Kathuria's Dentistry</strong><span>East of Kailash, New Delhi</span></div>
+      </a>
+      <div class="nav-right-group">
+        <a href="tel:18001177272" class="nav-tollfree">
+          <span class="tf-icon"><i class="fas fa-phone-alt"></i></span>
+          <span class="tf-text"><span class="tf-label">India Toll Free No</span><span class="tf-num">1800-11-7272</span></span>
+        </a>
+        <div class="nav-nabh"><span>NABH</span>Accredited</div>
+      </div>
+    </div>
+    <!-- ROW 2: Links bar (olive) -->
+    <div class="nav-row-2">
+      <div class="nav-row-2-inner">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li>
+            <a href="about.html">The Practice <i class="fas fa-chevron-down chevron"></i></a>
+            <div class="nav-dropdown">
+              <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialists</a>
+              <a href="clinic-tour.html"><i class="fas fa-hospital"></i> Clinic Tour Images</a>
+              <a href="technology.html"><i class="fas fa-microchip"></i> Technology</a>
+            </div>
+          </li>
+          <li>
+            <a href="services.html">Treatments <i class="fas fa-chevron-down chevron"></i></a>
+            <div class="nav-mega">
+              <div class="mega-group">
+                <h6>Dental Implants</h6>
+                <a href="dental-implants.html"><i class="fas fa-tooth"></i> All Implant Options</a>
+                <a href="single-tooth-implants.html"><i class="fas fa-chevron-right"></i> Single Tooth</a>
+                <a href="all-on-4-dental-implants.html"><i class="fas fa-chevron-right"></i> All-on-4</a>
+                <a href="full-mouth-rehabilitation.html"><i class="fas fa-chevron-right"></i> Full Mouth Rehab</a>
+              </div>
+              <div class="mega-group">
+                <h6>Cosmetic Dentistry</h6>
+                <a href="cosmetic-dentistry.html"><i class="fas fa-star"></i> All Cosmetic</a>
+                <a href="smile-makeover.html"><i class="fas fa-chevron-right"></i> Smile Makeover</a>
+                <a href="teeth-whitening.html"><i class="fas fa-chevron-right"></i> Teeth Whitening</a>
+                <a href="no-prep-veneers.html"><i class="fas fa-chevron-right"></i> Veneers</a>
+              </div>
+              <div class="mega-group">
+                <h6>More Treatments</h6>
+                <a href="orthodontics.html"><i class="fas fa-teeth"></i> Orthodontics</a>
+                <a href="gum-treatment.html"><i class="fas fa-leaf"></i> Gums Treatment</a>
+                <a href="kids-dentistry.html"><i class="fas fa-child"></i> Kids Dentistry</a>
+                <a href="services.html"><i class="fas fa-th-list"></i> View All Treatments</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="awards.html">Credibility <i class="fas fa-chevron-down chevron"></i></a>
+            <div class="nav-dropdown">
+              <a href="awards.html"><i class="fas fa-trophy"></i> Awards &amp; Recognition</a>
+              <a href="testimonials.html"><i class="fas fa-comments"></i> Testimonials</a>
+              <a href="video-testimonials.html"><i class="fas fa-video"></i> Video Testimonials</a>
+              <a href="accreditation.html"><i class="fas fa-certificate"></i> Accreditation</a>
+              <a href="community-outreach.html"><i class="fas fa-hands-helping"></i> Community Outreach</a>
+              <a href="news-events.html"><i class="fas fa-newspaper"></i> News &amp; Events</a>
+            </div>
+          </li>
+          <li>
+            <a href="cases.html">Cases <i class="fas fa-chevron-down chevron"></i></a>
+            <div class="nav-dropdown">
+              <a href="patient-gallery.html"><i class="fas fa-images"></i> Patient Gallery</a>
+              <a href="virtual-smile-makeover.html"><i class="fas fa-magic"></i> Virtual Smile Makeover</a>
+            </div>
+          </li>
+          <li><a href="charges.html">Charges</a></li>
+          <li><a href="smile-analysis.html">Smile Analysis</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="nav-right">
+          <button class="nav-cta" onclick="document.getElementById('floatPanel').classList.add('open')"><i class="fas fa-calendar-check"></i> Book Now</button>
+          <button class="hamburger" id="hamburger" aria-label="Menu"><i class="fas fa-bars"></i></button>
         </div>
-      </li>
-      <li>
-        <a href="services.html">Treatments <i class="fas fa-chevron-down chevron"></i></a>
-        <div class="nav-mega">
-          <div class="mega-group">
-            <h6>Dental Implants</h6>
-            <a href="dental-implants.html"><i class="fas fa-tooth"></i> All Implant Options</a>
-            <a href="single-tooth-implants.html"><i class="fas fa-chevron-right"></i> Single Tooth</a>
-            <a href="all-on-4-dental-implants.html"><i class="fas fa-chevron-right"></i> All-on-4</a>
-            <a href="full-mouth-rehabilitation.html"><i class="fas fa-chevron-right"></i> Full Mouth Rehab</a>
-          </div>
-          <div class="mega-group">
-            <h6>Cosmetic Dentistry</h6>
-            <a href="cosmetic-dentistry.html"><i class="fas fa-star"></i> All Cosmetic</a>
-            <a href="smile-makeover.html"><i class="fas fa-chevron-right"></i> Smile Makeover</a>
-            <a href="teeth-whitening.html"><i class="fas fa-chevron-right"></i> Teeth Whitening</a>
-            <a href="no-prep-veneers.html"><i class="fas fa-chevron-right"></i> Veneers</a>
-          </div>
-          <div class="mega-group">
-            <h6>More Treatments</h6>
-            <a href="orthodontics.html"><i class="fas fa-teeth"></i> Orthodontics</a>
-            <a href="gum-treatment.html"><i class="fas fa-leaf"></i> Gums Treatment</a>
-            <a href="kids-dentistry.html"><i class="fas fa-child"></i> Kids Dentistry</a>
-            <a href="services.html"><i class="fas fa-th-list"></i> View All →</a>
-          </div>
-        </div>
-      </li>
-      <li>
-        <a href="awards.html">Credibility <i class="fas fa-chevron-down chevron"></i></a>
-        <div class="nav-dropdown">
-          <a href="awards.html"><i class="fas fa-trophy"></i> Awards & Recognition</a>
-          <a href="testimonials.html"><i class="fas fa-comments"></i> Testimonials</a>
-          <a href="video-testimonials.html"><i class="fas fa-video"></i> Video Testimonials</a>
-          <a href="accreditation.html"><i class="fas fa-certificate"></i> Accreditation</a>
-          <a href="community-outreach.html"><i class="fas fa-hands-helping"></i> Community Outreach</a>
-          <a href="news-events.html"><i class="fas fa-newspaper"></i> News & Events</a>
-        </div>
-      </li>
-      <li>
-        <a href="cases.html">Cases <i class="fas fa-chevron-down chevron"></i></a>
-        <div class="nav-dropdown">
-          <a href="patient-gallery.html"><i class="fas fa-images"></i> Patient Gallery</a>
-          <a href="virtual-smile-makeover.html"><i class="fas fa-magic"></i> Virtual Smile Makeover</a>
-        </div>
-      </li>
-      <li><a href="charges.html">Charges</a></li>
-      <li><a href="smile-analysis.html">Smile Analysis</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-    </ul>
-    <div class="nav-right">
-      <a href="tel:18001177272" class="nav-phone"><i class="fas fa-phone"></i> 1800-11-7272</a>
-      <button class="nav-cta" onclick="document.getElementById('floatPanel').classList.add('open')"><i class="fas fa-calendar-check"></i> Book Appointment</button>
-      <button class="hamburger" id="hamburger" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      </div>
     </div>
   </div>
 </nav>
