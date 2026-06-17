@@ -80,21 +80,104 @@ ul  { list-style: none; }
 .cursor-glow { display: none; }
 
 /* ═══════════════════════════════════
-   TOP BAR
+   TOP BAR — International Phone Numbers
+   (matching delhidental.com)
 ═══════════════════════════════════ */
 .top-bar {
   background: var(--olive-dark);
-  padding: 8px 5%;
-  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%;
+  display: flex; align-items: center; justify-content: center;
   font-size: .72rem; color: rgba(255,255,255,.85);
+  gap: 0;
+  overflow: hidden;
 }
 .top-bar a { color: rgba(255,255,255,.85); transition: color .2s; }
 .top-bar a:hover { color: var(--gold-light); }
-.top-bar-left { display: flex; align-items: center; gap: 20px; }
-.top-bar-left i { color: var(--gold-light); margin-right: 5px; font-size: .7rem; }
-.top-bar-right { display: flex; align-items: center; gap: 14px; }
-.top-bar-right a { width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,.12); display: flex; align-items: center; justify-content: center; font-size: .65rem; transition: all .2s; }
+.top-bar-phones {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0; flex: 1;
+}
+.top-bar-phone {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 18px;
+  border-right: 1px solid rgba(255,255,255,.12);
+  white-space: nowrap;
+  transition: background .2s;
+  font-size: .72rem;
+  color: rgba(255,255,255,.85);
+  text-decoration: none;
+}
+.top-bar-phone:last-child { border-right: none; }
+.top-bar-phone:hover { background: rgba(255,255,255,.06); color: var(--gold-light); }
+.top-bar-phone .flag { font-size: .9rem; }
+.top-bar-phone .country { font-weight: 700; color: var(--gold-light); font-size: .62rem; text-transform: uppercase; letter-spacing: .5px; }
+.top-bar-phone .num { font-weight: 600; }
+.top-bar-right {
+  display: flex; align-items: center; gap: 6px;
+  padding-left: 16px; border-left: 1px solid rgba(255,255,255,.12);
+  margin-left: auto; flex-shrink: 0;
+}
+.top-bar-right a {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center;
+  font-size: .68rem; transition: all .2s; color: rgba(255,255,255,.7);
+}
 .top-bar-right a:hover { background: var(--gold); color: #fff; }
+
+/* NABH badge in nav */
+.nav-nabh {
+  display: flex; align-items: center; gap: 8px;
+  padding: 5px 14px; border-radius: 6px;
+  background: var(--olive-pale); border: 1px solid rgba(91,123,58,.2);
+  flex-shrink: 0; margin-right: 6px;
+}
+.nav-nabh img { height: 28px; }
+.nav-nabh-icon {
+  width: 32px; height: 32px; border-radius: 6px;
+  background: var(--olive); display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: .8rem;
+}
+.nav-nabh-text { font-size: .55rem; color: var(--olive-dark); font-weight: 700; letter-spacing: .3px; line-height: 1.3; text-transform: uppercase; }
+
+/* Mega dropdown for Treatments */
+.nav-mega {
+  position: absolute;
+  top: calc(100% - 6px);
+  left: 50%; transform: translateX(-50%) translateY(10px);
+  min-width: 700px; padding: 20px;
+  background: #fff; border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 18px 50px rgba(0,0,0,.1);
+  opacity: 0; visibility: hidden;
+  transition: opacity .25s var(--ease), transform .25s var(--ease), visibility .25s;
+  pointer-events: none;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;
+}
+.nav-mega::before {
+  content: ''; position: absolute; top: -7px; left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px; height: 12px; background: #fff;
+  border-top: 1px solid var(--border); border-left: 1px solid var(--border);
+}
+.nav-links > li:hover .nav-mega {
+  opacity: 1; visibility: visible;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+.mega-group h6 {
+  font-size: .65rem; font-weight: 800; color: var(--olive);
+  text-transform: uppercase; letter-spacing: 1.2px;
+  padding: 6px 12px 8px; margin-bottom: 2px;
+  border-bottom: 1px solid var(--border);
+}
+.mega-group a {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 12px; border-radius: 6px;
+  color: var(--dark); font-size: .76rem; font-weight: 500;
+  transition: background .15s, color .15s, padding-left .15s;
+}
+.mega-group a i { color: var(--olive); font-size: .7rem; width: 14px; text-align: center; }
+.mega-group a:hover { background: var(--olive-pale); color: var(--olive-dark); padding-left: 16px; }
 
 /* ═══════════════════════════════════
    NAVIGATION
@@ -108,7 +191,7 @@ ul  { list-style: none; }
   border-bottom: 1px solid var(--border);
   transition: height .3s var(--ease), box-shadow .3s var(--ease), top .3s;
 }
-.has-topbar .site-nav { top: 36px; }
+.has-topbar .site-nav { top: 38px; }
 .site-nav::after {
   content: '';
   position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
@@ -1379,6 +1462,8 @@ section { padding: 100px 5%; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .nav-phone { display: none; }
+  .nav-nabh { display: none; }
+  .nav-mega { display: none; }
   .stats-strip { grid-template-columns: repeat(3,1fr); }
   .stats-strip .stat-box:nth-child(n+4) { display: none; }
 }
