@@ -101,10 +101,17 @@ ul  { list-style: none; }
 }
 .top-bar-phone:last-child { border-right: none; }
 .top-bar-phone:hover { background: rgba(255,255,255,.06); }
-.top-bar-phone .tb-icon { color: var(--gold-light); font-size: .8rem; }
-.top-bar-phone .tb-flag { font-size: 1rem; line-height: 1; }
-.top-bar-phone .tb-label { font-size: .6rem; font-weight: 500; color: rgba(255,255,255,.6); }
-.top-bar-phone .tb-num { font-size: .82rem; font-weight: 700; letter-spacing: .2px; }
+.top-bar-phone .tb-flag {
+  width: 28px; height: 20px; object-fit: cover;
+  border-radius: 3px; flex-shrink: 0;
+  border: 2px solid rgba(255,255,255,.4);
+  box-shadow: 0 1px 4px rgba(0,0,0,.3);
+}
+.top-bar-phone .tb-info { display: flex; flex-direction: column; gap: 1px; }
+.top-bar-phone .tb-label { font-size: .58rem; font-weight: 500; color: rgba(255,255,255,.55); line-height: 1; }
+.top-bar-phone .tb-num { font-size: .82rem; font-weight: 700; letter-spacing: .2px; color: #fff; line-height: 1; }
+.top-bar-phone.tb-highlight { background: rgba(255,255,255,.08); }
+.top-bar-phone.tb-highlight .tb-num { color: var(--gold-light); font-weight: 800; }
 .top-bar-extra {
   display: flex; align-items: center; gap: 8px;
   padding: 0 22px; height: 100%;
@@ -114,9 +121,10 @@ ul  { list-style: none; }
 }
 .top-bar-extra:last-child { border-right: none; }
 .top-bar-extra:hover { background: rgba(255,255,255,.06); }
-.top-bar-extra .tb-icon { color: var(--gold-light); font-size: .8rem; }
-.top-bar-extra .tb-label { font-size: .6rem; font-weight: 500; color: rgba(255,255,255,.6); }
-.top-bar-extra .tb-val { font-size: .78rem; font-weight: 700; }
+.top-bar-extra .tb-eicon { color: var(--gold-light); font-size: 1rem; flex-shrink: 0; }
+.top-bar-extra .tb-info { display: flex; flex-direction: column; gap: 1px; }
+.top-bar-extra .tb-label { font-size: .58rem; font-weight: 500; color: rgba(255,255,255,.55); line-height: 1; }
+.top-bar-extra .tb-val { font-size: .76rem; font-weight: 700; color: #fff; line-height: 1; }
 
 /* ═══════════════════════════════════
    HEADER LAYER 2 — Info bar (white)
