@@ -1351,6 +1351,7 @@ section { padding: 100px 5%; }
 /* FAB */
 .fab-group { position: fixed; bottom: 20px; right: 20px; left: auto; display: flex; flex-direction: column; align-items: center; gap: 12px; z-index: 1000; }
 .fab {
+  position: relative;
   width: 54px; height: 54px; min-width: 54px; flex: 0 0 auto;
   border-radius: 50%; border: none; padding: 0; margin: 0;
   display: inline-flex; align-items: center; justify-content: center;
@@ -1367,13 +1368,26 @@ section { padding: 100px 5%; }
 .fab-call svg { width: 22px; height: 22px; }
 .fab-up svg { width: 18px; height: 18px; }
 .fab-group { box-shadow: none; }
-.fab { box-shadow: 0 4px 14px rgba(0,0,0,.25); }
-.fab-wa { background: #25D366; }
-.fab-call { background: var(--olive); }
-.fab-up { background: var(--gold); opacity: 0; pointer-events: none; transform: translateY(20px); transition: opacity .3s, transform .3s; }
+.fab {
+  border: 3px solid #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,.18), 0 2px 6px rgba(0,0,0,.12);
+}
+.fab-wa  { background: linear-gradient(145deg, #29e36a 0%, #1ebe57 100%); overflow: visible; }
+.fab-call { background: linear-gradient(145deg, #8a9a3f 0%, #6b7a2e 100%); }
+.fab-up  { background: linear-gradient(145deg, #d4b24c 0%, #b8962f 100%); opacity: 0; pointer-events: none; transform: translateY(20px); transition: opacity .3s, transform .3s; }
 .fab-up.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
-.fab:hover { transform: translateY(-3px) scale(1.06); box-shadow: 0 8px 22px rgba(0,0,0,.3); }
-.fab-up:hover { transform: translateY(-3px) scale(1.06); }
+.fab:hover { transform: translateY(-3px) scale(1.07); box-shadow: 0 10px 26px rgba(0,0,0,.28), 0 3px 8px rgba(0,0,0,.16); }
+.fab-up:hover { transform: translateY(-3px) scale(1.07); }
+/* gentle pulse ring on WhatsApp to draw attention */
+.fab-wa::after {
+  content: ""; position: absolute; inset: -3px; border-radius: 50%;
+  border: 2px solid rgba(41,227,106,.6); animation: fabPulse 2.2s ease-out infinite;
+}
+@keyframes fabPulse {
+  0%   { transform: scale(1);   opacity: .7; }
+  70%  { transform: scale(1.4); opacity: 0; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
 
 /* ═══════════════════════════════════
    CASES MARQUEE
