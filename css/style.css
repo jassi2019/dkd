@@ -129,16 +129,17 @@ ul  { list-style: none; }
 .info-strip-inner {
   max-width: 1400px; margin: 0 auto;
   display: flex; align-items: center;
-  padding: 10px 24px; gap: 0;
+  padding: 12px 24px; gap: 0;
 }
 .info-strip-item {
-  display: flex; align-items: center; gap: 10px;
+  display: flex; align-items: center; gap: 12px;
   padding: 0 24px;
   border-right: 1px solid var(--border);
   text-decoration: none; color: var(--dark);
+  flex: 1;
 }
 .info-strip-item:first-child { padding-left: 0; }
-.info-strip-item:last-child { border-right: none; padding-right: 0; }
+.info-strip-item:last-child { border-right: none; }
 .info-strip-icon {
   width: 36px; height: 36px; border-radius: 50%;
   background: var(--olive); color: #fff;
@@ -171,15 +172,14 @@ ul  { list-style: none; }
    Logo + Links + Book + WhatsApp
 ═══════════════════════════════════ */
 .site-nav {
-  position: fixed; top: 0; left: 0; right: 0;
+  position: sticky; top: 0; left: 0; right: 0;
   z-index: 1000;
   background: var(--white);
-  transition: box-shadow .3s var(--ease), top .3s;
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow .3s var(--ease);
 }
-.has-topbar .site-nav { top: 98px; }
 .site-nav.scrolled {
   box-shadow: 0 4px 30px rgba(0,0,0,.06);
-  top: 0;
 }
 .nav-inner {
   max-width: 1400px; margin: 0 auto;
@@ -341,7 +341,7 @@ ul  { list-style: none; }
 
 /* USP strip below nav */
 .usp-strip {
-  background: var(--olive-dark); border-top: 1px solid rgba(255,255,255,.08);
+  background: var(--olive-dark);
 }
 .usp-strip-inner {
   max-width: 1400px; margin: 0 auto;
@@ -422,9 +422,9 @@ ul  { list-style: none; }
   position: relative;
   height: calc(100vh - var(--nav-h));
   min-height: 600px; max-height: 920px;
-  overflow: hidden; margin-top: var(--nav-h);
+  overflow: hidden; margin-top: 0;
 }
-.has-topbar .hero-wrap { margin-top: 210px; }
+.has-topbar .hero-wrap { margin-top: 0; }
 .hs-slide {
   position: absolute; inset: 0;
   opacity: 0; transition: opacity 1.6s var(--ease);
@@ -665,9 +665,8 @@ section { padding: 100px 5%; }
   position: relative; overflow: hidden;
   min-height: 420px; padding: 100px 6% 80px;
   display: flex; align-items: flex-end;
-  margin-top: var(--nav-h);
+  margin-top: 0;
 }
-.has-topbar .page-hero { margin-top: 210px; }
 .page-hero-img {
   position: absolute; inset: 0;
   width: 100%; height: 100%; object-fit: cover; object-position: center;
@@ -1473,9 +1472,6 @@ section { padding: 100px 5%; }
   .info-strip { display: none; }
   .usp-strip { display: none; }
   .nav-wa { display: none; }
-  .has-topbar .site-nav { top: 0; }
-  .has-topbar .hero-wrap { margin-top: 64px; }
-  .has-topbar .page-hero { margin-top: 64px; }
   .page-hero { min-height: 320px; padding: 80px 5% 60px; }
   .testi-card { padding: 28px 22px; }
   .filter-bar { justify-content: center; }
