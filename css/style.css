@@ -631,11 +631,11 @@ section { padding: 100px 5%; }
 .info-bar-item:last-child { border-right: none; }
 .info-bar-item:hover { background: var(--olive-bg); }
 .info-bar-icon {
-  width: 50px; height: 50px; border-radius: 14px;
+  width: 50px; height: 50px; border-radius: 50%;
   background: var(--olive-pale); border: 1px solid rgba(91,123,58,.15);
   display: flex; align-items: center; justify-content: center;
   color: var(--olive); font-size: 1.25rem; flex-shrink: 0;
-  transition: all .3s;
+  transition: all .3s; overflow: hidden;
 }
 .info-bar-item:hover .info-bar-icon { background: var(--olive); color: #fff; transform: scale(1.08); }
 .info-bar-text span { display: block; font-size: .67rem; color: var(--gray-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
@@ -780,9 +780,9 @@ section { padding: 100px 5%; }
 }
 .why-item:hover { transform: translateX(8px); box-shadow: var(--shadow-m); border-color: var(--olive-pale); }
 .why-icon {
-  width: 50px; height: 50px; border-radius: 14px; flex-shrink: 0;
+  width: 50px; height: 50px; border-radius: 50%; flex-shrink: 0;
   background: var(--olive-pale); display: flex; align-items: center; justify-content: center;
-  color: var(--olive); font-size: 1.2rem; transition: all .3s;
+  color: var(--olive); font-size: 1.2rem; transition: all .3s; overflow: hidden;
 }
 .why-item:hover .why-icon { background: var(--olive); color: #fff; }
 .why-item h4 { font-size: .94rem; font-weight: 700; color: var(--ink); margin-bottom: 5px; }
@@ -1006,7 +1006,7 @@ section { padding: 100px 5%; }
 .dr-quals { font-size: .76rem; color: var(--gray); line-height: 1.55; margin-bottom: 14px; }
 .dr-bio { font-size: .83rem; color: #555; line-height: 1.68; margin-bottom: 18px; }
 .dr-social { display: flex; gap: 7px; }
-.dr-soc { width: 34px; height: 34px; border-radius: var(--r-sm); background: var(--olive-pale); color: var(--olive); display: flex; align-items: center; justify-content: center; font-size: .8rem; transition: all .22s; }
+.dr-soc { width: 34px; height: 34px; border-radius: 50%; background: var(--olive-pale); color: var(--olive); display: flex; align-items: center; justify-content: center; font-size: .8rem; transition: all .22s; overflow: hidden; }
 .dr-soc:hover { background: var(--olive); color: #fff; }
 
 /* ═══════════════════════════════════
@@ -1204,10 +1204,10 @@ section { padding: 100px 5%; }
 .ft-brand p { color: rgba(255,255,255,.5); font-size: .82rem; line-height: 1.7; margin-bottom: 20px; }
 .ft-socials { display: flex; gap: 8px; }
 .ft-socials a {
-  width: 36px; height: 36px; border-radius: 10px;
+  width: 36px; height: 36px; border-radius: 50%;
   background: rgba(255,255,255,.12); color: rgba(255,255,255,.8);
   display: flex; align-items: center; justify-content: center;
-  font-size: .9rem; transition: all .22s;
+  font-size: .9rem; transition: all .22s; overflow: hidden;
 }
 .ft-socials a:hover { background: var(--gold); color: #fff; }
 .ft-col h4 { color: var(--white); font-size: .82rem; font-weight: 700; margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase; }
@@ -1220,9 +1220,9 @@ section { padding: 100px 5%; }
 .ft-col a i { color: var(--olive); font-size: .65rem; width: 14px; }
 .ft-contact-item { display: flex; gap: 12px; margin-bottom: 16px; }
 .ft-contact-icon {
-  width: 36px; height: 36px; border-radius: 10px;
+  width: 36px; height: 36px; border-radius: 50%;
   background: rgba(91,123,58,.15); display: flex; align-items: center; justify-content: center;
-  color: var(--olive-light); font-size: .85rem; flex-shrink: 0;
+  color: var(--olive-light); font-size: .85rem; flex-shrink: 0; overflow: hidden;
 }
 .ft-contact-text span { display: block; color: rgba(255,255,255,.35); font-size: .65rem; text-transform: uppercase; letter-spacing: .8px; }
 .ft-contact-text a, .ft-contact-text p { color: rgba(255,255,255,.72); font-size: .82rem; }
@@ -1397,10 +1397,10 @@ section { padding: 100px 5%; }
 .contact-info-item a:hover { color: var(--gold-light); }
 .contact-socials { display: flex; gap: 10px; margin-top: 30px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.1); }
 .contact-socials a {
-  width: 38px; height: 38px; border-radius: 10px;
+  width: 38px; height: 38px; border-radius: 50%;
   background: rgba(255,255,255,.08); color: rgba(255,255,255,.6);
   display: flex; align-items: center; justify-content: center;
-  font-size: .9rem; transition: all .2s;
+  font-size: .9rem; transition: all .2s; overflow: hidden;
 }
 .contact-socials a:hover { background: var(--gold); color: #fff; }
 
