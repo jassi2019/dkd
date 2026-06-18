@@ -1359,6 +1359,9 @@ section { padding: 100px 5%; }
   box-shadow: var(--shadow-m); transition: all .3s;
 }
 .fab i { line-height: 1; display: block; }
+.fab svg { width: 24px; height: 24px; display: block; }
+.fab-call svg { width: 22px; height: 22px; }
+.fab-up svg { width: 20px; height: 20px; }
 .fab-wa { background: #25D366; }
 .fab-call { background: var(--olive); }
 .fab-up { background: var(--gold); opacity: 0; pointer-events: none; transform: translateY(20px); transition: all .3s; }
