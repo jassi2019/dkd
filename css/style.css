@@ -1351,22 +1351,29 @@ section { padding: 100px 5%; }
 /* FAB */
 .fab-group { position: fixed; bottom: 20px; right: 20px; left: auto; display: flex; flex-direction: column; align-items: center; gap: 12px; z-index: 1000; }
 .fab {
-  width: 50px; height: 50px; min-width: 50px; flex: 0 0 auto;
+  width: 54px; height: 54px; min-width: 54px; flex: 0 0 auto;
   border-radius: 50%; border: none; padding: 0; margin: 0;
-  display: flex; align-items: center; justify-content: center;
+  display: inline-flex; align-items: center; justify-content: center;
   color: #fff; font-size: 1.2rem; line-height: 1; text-align: center;
-  text-decoration: none; cursor: pointer;
-  box-shadow: var(--shadow-m); transition: all .3s;
+  text-decoration: none; cursor: pointer; overflow: hidden;
+  box-shadow: var(--shadow-m); transition: transform .25s ease, box-shadow .25s ease;
 }
-.fab i { line-height: 1; display: block; }
-.fab svg { width: 24px; height: 24px; display: block; }
+.fab i,
+.fab svg {
+  position: static; margin: 0; padding: 0; top: auto; left: auto;
+  display: block; flex: 0 0 auto;
+}
+.fab svg { width: 24px; height: 24px; fill: currentColor; }
 .fab-call svg { width: 22px; height: 22px; }
-.fab-up svg { width: 20px; height: 20px; }
+.fab-up svg { width: 18px; height: 18px; }
+.fab-group { box-shadow: none; }
+.fab { box-shadow: 0 4px 14px rgba(0,0,0,.25); }
 .fab-wa { background: #25D366; }
 .fab-call { background: var(--olive); }
-.fab-up { background: var(--gold); opacity: 0; pointer-events: none; transform: translateY(20px); transition: all .3s; }
+.fab-up { background: var(--gold); opacity: 0; pointer-events: none; transform: translateY(20px); transition: opacity .3s, transform .3s; }
 .fab-up.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
-.fab:hover { transform: scale(1.1); }
+.fab:hover { transform: translateY(-3px) scale(1.06); box-shadow: 0 8px 22px rgba(0,0,0,.3); }
+.fab-up:hover { transform: translateY(-3px) scale(1.06); }
 
 /* ═══════════════════════════════════
    CASES MARQUEE
