@@ -26,9 +26,13 @@
 
     @media(max-width:960px){
       .google-grid{grid-template-columns:1fr}
-      .doc-grid{grid-template-columns:1fr;max-width:480px}
+      .doc-grid{grid-template-columns:1fr !important;max-width:500px;margin:0 auto !important}
       .testi-grid-top{grid-template-columns:1fr !important}
       .testi-grid-bottom{grid-template-columns:1fr !important}
+    }
+    @media(max-width:600px){
+      .doc-grid > div{flex-direction:column !important}
+      .doc-grid > div > div:first-child{width:100% !important;min-height:220px !important}
     }
     @media(max-width:700px){
       .countries-wrap{gap:8px}
@@ -845,55 +849,46 @@
 </section>
 
 <!-- ══════════════════ MEET YOUR DOCTORS ══════════════════ -->
-<section class="bg-cream reveal">
-  <div class="container">
-    <div class="sec-h center">
-      <span class="sec-chip">Meet Your Doctors</span>
-      <h2>Led by <em>Expert Specialists</em></h2>
-      <div class="sec-divider"></div>
-      <p>Our founding doctors bring decades of international training and experience to deliver exceptional dental outcomes.</p>
+<section class="reveal" style="position:relative;background:var(--ink);overflow:hidden;padding:80px 5%">
+  <!-- Blurred BG -->
+  <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=60') center/cover no-repeat;opacity:.15;filter:blur(4px)"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,18,32,.92),rgba(63,90,36,.7))"></div>
+
+  <div class="container" style="position:relative;z-index:2">
+    <div class="sec-h center light">
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);color:#fff;margin-bottom:40px">Meet Your <em style="color:var(--gold-light)">Doctor</em></h2>
     </div>
 
-    <div class="doc-grid">
-      <div class="doctor-card reveal">
-        <div class="dr-img">
-          <img src="https://images.unsplash.com/photo-1594824476967-48c8b964f137?w=500&q=80" alt="Dr. Sween Kathuria"/>
-          <div class="dr-avail"><span class="dot"></span> Available Today</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:50px;max-width:1100px;margin:0 auto" class="doc-grid">
+      <!-- Dr. Sween -->
+      <div style="display:flex;align-items:center;gap:0;background:var(--white);border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.3)" class="reveal">
+        <div style="width:220px;min-height:280px;flex-shrink:0;overflow:hidden;background:#f0f0f0">
+          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80" alt="Dr. Sween Kathuria" style="width:100%;height:100%;object-fit:cover;object-position:center top">
         </div>
-        <div class="dr-body">
-          <h4>Dr. Sween Kathuria</h4>
-          <p class="dr-title">Endodontist &amp; Cosmetic Dentist</p>
-          <p class="dr-quals">B.D.S., M.D.S., F.P.F.A. (USA)</p>
-          <p class="dr-bio">Expert in painless single-sitting root canals, smile makeovers &amp; aesthetic restorations. Pioneer of microscope-assisted endodontics in Delhi with over 18 years of clinical excellence.</p>
-          <div class="dr-social">
-            <a href="#" class="dr-soc"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="dr-soc"><i class="fab fa-instagram"></i></a>
-            <a href="mailto:info@delhidental.com" class="dr-soc"><i class="fas fa-envelope"></i></a>
-          </div>
+        <div style="padding:30px 28px;flex:1">
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px">Dr. Sween Kathuria</h3>
+          <p style="color:var(--gold-dark);font-size:.78rem;font-weight:700;margin-bottom:12px">B.D.S., M.D.S., F.P.F.A. (USA)</p>
+          <p style="font-size:.82rem;color:var(--gray);line-height:1.6;margin-bottom:18px">Endodontist &amp; Cosmetic Dentist</p>
+          <a href="staff.html" class="btn btn-gold btn-sm" style="border-radius:4px;text-transform:uppercase;letter-spacing:.8px;font-size:.7rem">Know More About Doctor</a>
         </div>
       </div>
 
-      <div class="doctor-card reveal">
-        <div class="dr-img">
-          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=500&q=80" alt="Dr. Puneet Kathuria"/>
-          <div class="dr-avail"><span class="dot"></span> Available Today</div>
+      <!-- Dr. Puneet -->
+      <div style="display:flex;align-items:center;gap:0;background:var(--white);border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.3)" class="reveal">
+        <div style="width:220px;min-height:280px;flex-shrink:0;overflow:hidden;background:#f0f0f0">
+          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80" alt="Dr. Puneet Kathuria" style="width:100%;height:100%;object-fit:cover;object-position:center top">
         </div>
-        <div class="dr-body">
-          <h4>Dr. Puneet Kathuria</h4>
-          <p class="dr-title">Prosthodontist &amp; Oral Implantologist</p>
-          <p class="dr-quals">B.D.S., M.D.S., F.I.C.O.I. (USA)</p>
-          <p class="dr-bio">Leading implant specialist with 18+ years of experience. Expert in full mouth rehabilitation, All-on-4 implants, Nobel Biocare guided surgery &amp; dental tourism cases worldwide.</p>
-          <div class="dr-social">
-            <a href="#" class="dr-soc"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="dr-soc"><i class="fab fa-instagram"></i></a>
-            <a href="mailto:info@delhidental.com" class="dr-soc"><i class="fas fa-envelope"></i></a>
-          </div>
+        <div style="padding:30px 28px;flex:1">
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px">Dr. Puneet Kathuria</h3>
+          <p style="color:var(--gold-dark);font-size:.78rem;font-weight:700;margin-bottom:12px">B.D.S., M.D.S., F.I.C.O.I. (USA)</p>
+          <p style="font-size:.82rem;color:var(--gray);line-height:1.6;margin-bottom:18px">Prosthodontist &amp; Oral Implantologist</p>
+          <a href="staff.html" class="btn btn-gold btn-sm" style="border-radius:4px;text-transform:uppercase;letter-spacing:.8px;font-size:.7rem">Know More About Doctor</a>
         </div>
       </div>
     </div>
 
     <div style="text-align:center;margin-top:40px">
-      <a href="staff.html" class="btn btn-outline-olive btn-pill"><i class="fas fa-user-doctor"></i> Meet the Full Team</a>
+      <a href="staff.html" class="btn btn-outline btn-pill btn-lg" style="border-color:var(--gold);color:var(--gold-light)"><i class="fas fa-user-doctor"></i> Know Our Team</a>
     </div>
   </div>
 </section>
