@@ -27,6 +27,8 @@
     @media(max-width:960px){
       .google-grid{grid-template-columns:1fr}
       .doc-grid{grid-template-columns:1fr;max-width:480px}
+      .testi-grid-top{grid-template-columns:1fr !important}
+      .testi-grid-bottom{grid-template-columns:1fr !important}
     }
     @media(max-width:700px){
       .countries-wrap{gap:8px}
@@ -853,40 +855,38 @@
     </div>
 
     <div class="doc-grid">
-      <!-- Dr. Sween Kathuria -->
       <div class="doctor-card reveal">
         <div class="dr-img">
-          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&q=80" alt="Dr. Sween Kathuria"/>
+          <img src="https://images.unsplash.com/photo-1594824476967-48c8b964f137?w=500&q=80" alt="Dr. Sween Kathuria"/>
           <div class="dr-avail"><span class="dot"></span> Available Today</div>
         </div>
         <div class="dr-body">
           <h4>Dr. Sween Kathuria</h4>
           <p class="dr-title">Endodontist &amp; Cosmetic Dentist</p>
           <p class="dr-quals">B.D.S., M.D.S., F.P.F.A. (USA)</p>
-          <p class="dr-bio">Expert in painless root canals, smile makeovers &amp; aesthetic restorations. Over 18 years of clinical excellence.</p>
+          <p class="dr-bio">Expert in painless single-sitting root canals, smile makeovers &amp; aesthetic restorations. Pioneer of microscope-assisted endodontics in Delhi with over 18 years of clinical excellence.</p>
           <div class="dr-social">
-            <a href="#" class="dr-soc" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="dr-soc" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="dr-soc" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="#" class="dr-soc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="dr-soc"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:info@delhidental.com" class="dr-soc"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
       </div>
 
-      <!-- Dr. Puneet Kathuria -->
       <div class="doctor-card reveal">
         <div class="dr-img">
-          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&q=80" alt="Dr. Puneet Kathuria"/>
+          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=500&q=80" alt="Dr. Puneet Kathuria"/>
           <div class="dr-avail"><span class="dot"></span> Available Today</div>
         </div>
         <div class="dr-body">
           <h4>Dr. Puneet Kathuria</h4>
           <p class="dr-title">Prosthodontist &amp; Oral Implantologist</p>
           <p class="dr-quals">B.D.S., M.D.S., F.I.C.O.I. (USA)</p>
-          <p class="dr-bio">Leading implant specialist. Expert in full mouth rehabilitation, All-on-4 &amp; dental tourism cases.</p>
+          <p class="dr-bio">Leading implant specialist with 18+ years of experience. Expert in full mouth rehabilitation, All-on-4 implants, Nobel Biocare guided surgery &amp; dental tourism cases worldwide.</p>
           <div class="dr-social">
-            <a href="#" class="dr-soc" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="dr-soc" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="dr-soc" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="#" class="dr-soc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="dr-soc"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:info@delhidental.com" class="dr-soc"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
       </div>
@@ -898,94 +898,105 @@
   </div>
 </section>
 
-<!-- ══════════════════ TESTIMONIALS CAROUSEL ══════════════════ -->
-<section class="reveal">
+<!-- ══════════════════ TESTIMONIALS — IMPRESSIVE GRID ══════════════════ -->
+<section class="reveal" style="background:linear-gradient(135deg,var(--olive-dark) 0%,#2a3d1a 100%);color:#fff">
   <div class="container">
-    <div class="sec-h center">
-      <span class="sec-chip">Patient Stories</span>
+    <div class="sec-h center light">
+      <span class="sec-chip light">Patient Stories</span>
       <h2>What Our Patients <em>Say</em></h2>
-      <div class="sec-divider"></div>
-      <p>Hear from patients who traveled from around the world for their smile transformation at our clinic.</p>
+      <div class="sec-divider" style="background:linear-gradient(90deg,var(--gold),var(--gold-light))"></div>
+      <p>Real reviews from international patients who trusted us with their smiles.</p>
     </div>
 
-    <div class="testi-outer">
-      <div class="testi-track" id="testiTrack">
-        <!-- Testimonial 1 -->
-        <div class="testi-slide">
-          <div class="testi-card">
-            <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-            <p class="testi-text">"I traveled from Canada for veneers and crowns at Dr. Kathuria's Dentistry. The results exceeded all my expectations. The team was professional, the clinic was immaculate, and the quality of work was truly world-class. I couldn't be happier with my new smile!"</p>
-            <div class="testi-author">
-              <div class="testi-av">BY</div>
-              <div>
-                <div class="testi-name">Bill Yakimec</div>
-                <div class="testi-from">Veneers &amp; Crowns</div>
-                <div class="testi-country"><i class="fas fa-location-dot"></i> <img src="https://flagcdn.com/24x18/ca.png" alt="ca" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Canada</div>
-              </div>
+    <!-- Video Testimonial Highlight -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-bottom:50px" class="testi-grid-top">
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:36px;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;width:4px;height:100%;background:var(--gold)"></div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
+          <i class="fas fa-star" style="color:var(--gold)"></i><i class="fas fa-star" style="color:var(--gold)"></i><i class="fas fa-star" style="color:var(--gold)"></i><i class="fas fa-star" style="color:var(--gold)"></i><i class="fas fa-star" style="color:var(--gold)"></i>
+          <span style="color:rgba(255,255,255,.4);font-size:.75rem;margin-left:8px">Verified Patient</span>
+        </div>
+        <p style="font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:rgba(255,255,255,.9);line-height:1.8;margin-bottom:24px">"My experience with Dr. Sween Kathuria was exceptional. I underwent veneers, crowns, and fillings, and the results exceeded expectations. The clinic's attention to detail and Dr. Sween's expertise made the entire process smooth and comfortable."</p>
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1rem">BY</div>
+          <div>
+            <div style="font-weight:700;font-size:.95rem">Bill Yakimec</div>
+            <div style="font-size:.78rem;color:rgba(255,255,255,.5)">Veneers, Crowns &amp; Fillings</div>
+            <div style="display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.08);padding:3px 10px;border-radius:99px;margin-top:4px;font-size:.7rem;font-weight:600">
+              <img src="https://flagcdn.com/20x15/ca.png" alt="CA" style="width:16px;height:12px;border-radius:2px"> Canada
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Testimonial 2 -->
-        <div class="testi-slide">
-          <div class="testi-card">
-            <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-            <p class="testi-text">"Had my implants and veneers done here. The level of care and expertise at this clinic is remarkable. Dr. Puneet explained every step clearly, and the results speak for themselves. I saved a fortune compared to US prices and got superior quality. Highly recommended!"</p>
-            <div class="testi-author">
-              <div class="testi-av">MM</div>
-              <div>
-                <div class="testi-name">Michael Matson</div>
-                <div class="testi-from">Implants &amp; Veneers</div>
-                <div class="testi-country"><i class="fas fa-location-dot"></i> <img src="https://flagcdn.com/24x18/us.png" alt="us" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> USA</div>
-              </div>
-            </div>
-          </div>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:36px;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;width:4px;height:100%;background:var(--gold)"></div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
+          <i class="fas fa-star" style="color:var(--gold)"></i><i class="fas fa-star" style="color:var(--gold)"></i><i class="fas fa-star" style="color:var(--gold)"></i><i class="fas fa-star" style="color:var(--gold)"></i><i class="fas fa-star" style="color:var(--gold)"></i>
+          <span style="color:rgba(255,255,255,.4);font-size:.75rem;margin-left:8px">Verified Patient</span>
         </div>
-
-        <!-- Testimonial 3 -->
-        <div class="testi-slide">
-          <div class="testi-card">
-            <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-            <p class="testi-text">"Completely painless treatment under excellent hygiene conditions. I was nervous about getting dental work done abroad, but Dr. Kathuria's clinic put all my worries to rest. The NABH accreditation is well deserved. Will definitely return for future treatments."</p>
-            <div class="testi-author">
-              <div class="testi-av">DM</div>
-              <div>
-                <div class="testi-name">Donald Mclean</div>
-                <div class="testi-from">Dental Treatment</div>
-                <div class="testi-country"><i class="fas fa-location-dot"></i> <img src="https://flagcdn.com/24x18/gb.png" alt="gb" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> United Kingdom</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 4 -->
-        <div class="testi-slide">
-          <div class="testi-card">
-            <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-            <p class="testi-text">"This is the best dental care I have ever received, anywhere in the world. The entire team from reception to the doctors made me feel welcome and comfortable. The technology they use is cutting-edge, and the results are absolutely stunning. Thank you, Dr. Kathuria's!"</p>
-            <div class="testi-author">
-              <div class="testi-av">KS</div>
-              <div>
-                <div class="testi-name">Kyle Steller</div>
-                <div class="testi-from">Complete Dental Care</div>
-                <div class="testi-country"><i class="fas fa-location-dot"></i> <img src="https://flagcdn.com/24x18/us.png" alt="us" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> USA</div>
-              </div>
+        <p style="font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:rgba(255,255,255,.9);line-height:1.8;margin-bottom:24px">"My experience with Dr. Sween Kathuria was exceptional. I underwent implants and veneers, and results were truly life-changing. The clinic uses the latest technology and the team is incredibly skilled. Worth every penny of the trip from USA."</p>
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--olive),var(--olive-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1rem">MJ</div>
+          <div>
+            <div style="font-weight:700;font-size:.95rem">Michael Matson</div>
+            <div style="font-size:.78rem;color:rgba(255,255,255,.5)">Implants &amp; Veneers</div>
+            <div style="display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.08);padding:3px 10px;border-radius:99px;margin-top:4px;font-size:.7rem;font-weight:600">
+              <img src="https://flagcdn.com/20x15/us.png" alt="US" style="width:16px;height:12px;border-radius:2px"> USA
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Nav -->
-    <div class="testi-nav">
-      <button class="testi-btn" id="testiPrev" aria-label="Previous testimonial"><i class="fas fa-arrow-left"></i></button>
-      <div class="testi-pips">
-        <button class="testi-pip on" aria-label="Testimonial 1"></button>
-        <button class="testi-pip" aria-label="Testimonial 2"></button>
-        <button class="testi-pip" aria-label="Testimonial 3"></button>
-        <button class="testi-pip" aria-label="Testimonial 4"></button>
+    <!-- More Testimonials Row -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px" class="testi-grid-bottom">
+      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px">
+        <div style="color:var(--gold);font-size:.8rem;margin-bottom:12px"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p style="font-size:.88rem;color:rgba(255,255,255,.8);line-height:1.75;margin-bottom:18px;font-style:italic">"All my treatment from start to finish was painless and carried out under excellent hygiene conditions. The NABH accreditation is well deserved."</p>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:38px;height:38px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.8rem">DM</div>
+          <div><div style="font-weight:700;font-size:.85rem">Donald Mclean</div><div style="font-size:.7rem;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:4px"><img src="https://flagcdn.com/16x12/gb.png" alt="GB" style="width:14px;border-radius:1px"> United Kingdom</div></div>
+        </div>
       </div>
-      <button class="testi-btn" id="testiNext" aria-label="Next testimonial"><i class="fas fa-arrow-right"></i></button>
+
+      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px">
+        <div style="color:var(--gold);font-size:.8rem;margin-bottom:12px"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p style="font-size:.88rem;color:rgba(255,255,255,.8);line-height:1.75;margin-bottom:18px;font-style:italic">"Best dental care I've ever received by far. Dr. Kathuria couldn't have been a better dentist. The clinic is world-class and the results are incredible."</p>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:38px;height:38px;border-radius:50%;background:var(--olive);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.8rem">KS</div>
+          <div><div style="font-weight:700;font-size:.85rem">Kyle Steller</div><div style="font-size:.7rem;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:4px"><img src="https://flagcdn.com/16x12/us.png" alt="US" style="width:14px;border-radius:1px"> USA</div></div>
+        </div>
+      </div>
+
+      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px">
+        <div style="color:var(--gold);font-size:.8rem;margin-bottom:12px"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p style="font-size:.88rem;color:rgba(255,255,255,.8);line-height:1.75;margin-bottom:18px;font-style:italic">"I'd highly recommend this dental practice. Very professional and efficient. Coming from the UK, the dental work cost me a fraction of what I'd pay back home."</p>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.8rem">TM</div>
+          <div><div style="font-weight:700;font-size:.85rem">Thomas Macauley</div><div style="font-size:.7rem;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:4px"><img src="https://flagcdn.com/16x12/gb.png" alt="GB" style="width:14px;border-radius:1px"> United Kingdom</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marquee of country flags -->
+    <div style="margin-top:40px;text-align:center">
+      <p style="font-size:.75rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">Trusted by patients from</p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap">
+        <img src="https://flagcdn.com/32x24/gb.png" alt="UK" style="height:20px;border-radius:3px;opacity:.7">
+        <img src="https://flagcdn.com/32x24/us.png" alt="US" style="height:20px;border-radius:3px;opacity:.7">
+        <img src="https://flagcdn.com/32x24/ca.png" alt="CA" style="height:20px;border-radius:3px;opacity:.7">
+        <img src="https://flagcdn.com/32x24/au.png" alt="AU" style="height:20px;border-radius:3px;opacity:.7">
+        <img src="https://flagcdn.com/32x24/ae.png" alt="AE" style="height:20px;border-radius:3px;opacity:.7">
+        <img src="https://flagcdn.com/32x24/sa.png" alt="SA" style="height:20px;border-radius:3px;opacity:.7">
+        <img src="https://flagcdn.com/32x24/de.png" alt="DE" style="height:20px;border-radius:3px;opacity:.7">
+        <img src="https://flagcdn.com/32x24/fr.png" alt="FR" style="height:20px;border-radius:3px;opacity:.7">
+        <img src="https://flagcdn.com/32x24/ke.png" alt="KE" style="height:20px;border-radius:3px;opacity:.7">
+        <img src="https://flagcdn.com/32x24/ng.png" alt="NG" style="height:20px;border-radius:3px;opacity:.7">
+        <img src="https://flagcdn.com/32x24/sg.png" alt="SG" style="height:20px;border-radius:3px;opacity:.7">
+        <img src="https://flagcdn.com/32x24/jp.png" alt="JP" style="height:20px;border-radius:3px;opacity:.7">
+        <span style="color:rgba(255,255,255,.4);font-size:.8rem;font-weight:600">+ 40 countries</span>
+      </div>
     </div>
   </div>
 </section>
