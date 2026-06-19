@@ -19,13 +19,31 @@ body {
 }
 img, video, iframe { max-width: 100%; }
 img { display: block; max-width: 100%; }
-/* Fix: all circle elements clip content inside */
-[style*="border-radius: 50%"],
-.info-strip-icon, .nabh-circle, .logo-mark, .testi-av, .rv-av, .dr-avail,
+/* Fix: force all circle icon containers to clip + constrain inner icons */
+.info-strip-icon, .nabh-circle, .logo-mark, .testi-av, .rv-av,
 .step-num, .why-icon, .ft-contact-icon, .contact-socials a, .ft-socials a,
-.fab, .side-strip a, .usp-google .g-icon, .check-item .ci,
+.fab, .usp-google .g-icon, .check-item .ci,
 .staff-card-footer .phone-icon, .dr-soc, .nav-nabh,
-.top-bar-right a, .contact-info-item .icon-wrap { overflow: hidden; }
+.top-bar-right a, .contact-info-item .icon-wrap, .info-bar-icon {
+  overflow: hidden;
+  position: relative;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+/* Constrain FA icons inside circle containers */
+.info-strip-icon i, .why-icon i, .ft-contact-icon i,
+.contact-socials a i, .ft-socials a i, .top-bar-right a i,
+.info-bar-icon i, .contact-info-item .icon-wrap i,
+.staff-card-footer .phone-icon i, .dr-soc i, .fab i,
+.step-num i, .logo-mark i, .side-strip a i {
+  font-size: inherit;
+  line-height: 1;
+  width: auto; height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 a   { text-decoration: none; color: inherit; }
 ul  { list-style: none; }
 
