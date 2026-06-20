@@ -68,7 +68,7 @@
   </div>
 </div>
 
-<!-- ══════ LAYER 1: Phone Bar ══════ -->
+<!-- ══════ ROW 1: Phone Numbers + Mail + Location ══════ -->
 <div class="top-bar">
   <div class="top-bar-inner">
     <a href="tel:+61384004931" class="top-bar-phone">
@@ -100,29 +100,14 @@
       <span class="tb-icon"><i class="fas fa-envelope"></i></span>
       <span class="tb-info"><span class="tb-label">Mail Us</span><span class="tb-val">dentistdelhi@gmail.com</span></span>
     </a>
+    <a href="https://maps.google.com/?q=Dr+Kathuria+Dentistry+East+of+Kailash" target="_blank" class="top-bar-extra">
+      <span class="tb-icon" style="background:var(--gold)"><i class="fas fa-map-marker-alt"></i></span>
+      <span class="tb-info"><span class="tb-label">Our Location</span><span class="tb-val">E-143, East of Kailash, New Delhi</span></span>
+    </a>
   </div>
 </div>
 
-<!-- ══════ LAYER 2: Info Strip ══════ -->
-<div class="info-strip">
-  <div class="info-strip-inner">
-    <a href="https://maps.google.com/?q=Dr+Kathuria+Dentistry+East+of+Kailash" target="_blank" class="info-strip-item">
-      <div class="info-strip-icon"><i class="fas fa-map-marker-alt"></i></div>
-      <div class="info-strip-text"><span class="is-label">Our Location</span><span class="is-val">E-143, East of Kailash, New Delhi, <img src="https://flagcdn.com/24x18/in.png" alt="in" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> India</span></div>
-    </a>
-    <a href="tel:18001177272" class="info-strip-item">
-      <div class="info-strip-icon" style="background:var(--gold)"><i class="fas fa-phone-alt"></i></div>
-      <div class="info-strip-text"><span class="is-label"><img src="https://flagcdn.com/24x18/in.png" alt="in" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> India Toll Free No.</span><span class="is-val">1800-11-7272</span></div>
-    </a>
-    <div class="info-strip-item">
-      <div class="info-strip-icon"><i class="fas fa-clock"></i></div>
-      <div class="info-strip-text"><span class="is-label">Mon - Sat: 10:00 AM - 7:00 PM</span><span class="is-val">Sunday: Closed</span></div>
-    </div>
-    <div class="info-strip-nabh">
-      <div class="nabh-circle"><span>NABH</span>Accredited</div>
-      <div class="nabh-text">Quality You<br/><strong>Can Trust</strong></div>
-    </div>
-  </div>
+
 </div>
 
 <nav class="site-nav">
@@ -133,11 +118,14 @@
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li>
-        <a href="about.html">About Us</a>
+      <li><a href="about.html">The Practice <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialists</a>
+          <a href="clinic-tour.html"><i class="fas fa-hospital"></i> Clinic Tour Images</a>
+          <a href="technology.html"><i class="fas fa-microchip"></i> Technology</a>
+        </div>
       </li>
-      <li>
-        <a href="services.html">Treatments <i class="fas fa-chevron-down chevron"></i></a>
+      <li><a href="services.html">Treatments <i class="fas fa-chevron-down chevron"></i></a>
         <div class="nav-mega">
           <div class="mega-group">
             <h6>Dental Implants</h6>
@@ -162,14 +150,24 @@
           </div>
         </div>
       </li>
-      <li><a href="smile-analysis.html">Smile Gallery</a></li>
-      <li><a href="cases.html">Success Stories</a></li>
+      <li><a href="awards.html">Credibility <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="awards.html"><i class="fas fa-trophy"></i> Awards</a>
+          <a href="testimonials.html"><i class="fas fa-comments"></i> Testimonials</a>
+          <a href="accreditation.html"><i class="fas fa-certificate"></i> Accreditation</a>
+        </div>
+      </li>
+      <li><a href="cases.html">Cases</a></li>
       <li><a href="charges.html">Charges</a></li>
+      <li><a href="smile-analysis.html">Smile Analysis</a></li>
       <li><a href="contact.html">Contact Us</a></li>
     </ul>
     <div class="nav-right">
-      <button class="nav-cta" onclick="document.getElementById('floatPanel').classList.add('open')"><i class="fas fa-calendar-check"></i> Book Appointment</button>
-      <a href="https://wa.me/919810936360" target="_blank" class="nav-wa"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+      <a href="tel:18001177272" class="nav-tollfree">
+        <span class="tf-label">India Toll Free No</span>
+        <span class="tf-num">1800-11-7272</span>
+      </a>
+      <div class="nav-nabh"><span>NABH</span>Accredited</div>
       <button class="hamburger" id="hamburger" aria-label="Menu"><i class="fas fa-bars"></i></button>
     </div>
   </div>
