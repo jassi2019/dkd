@@ -532,7 +532,13 @@
       </select>
       <input type="file" name="report" accept="image/*,.pdf">
       <textarea name="message" placeholder="Message" rows="3"></textarea>
-      <div class="book-captcha"></div>
+      <div class="book-captcha">
+        <label class="captcha-box">
+          <input type="checkbox" name="not_robot" required>
+          <span class="captcha-check"></span>
+          <span class="captcha-text">I'm not a robot</span>
+        </label>
+      </div>
       <button type="submit" class="book-submit">SUBMIT</button>
     </form>
   </div>
