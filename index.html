@@ -259,16 +259,35 @@
 </section>
 
 <!-- ══════════════════ ABOUT SECTION ══════════════════ -->
+<!-- SVG Tooth Clip Path -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <clipPath id="toothClip" clipPathUnits="objectBoundingBox">
+      <path d="M 0.5 0 C 0.38 0, 0.28 0.04, 0.22 0.12 C 0.16 0.04, 0.12 0, 0.0 0.0 C 0.0 0.02, 0.02 0.08, 0.05 0.18 C 0.0 0.28, 0.02 0.42, 0.1 0.55 C 0.16 0.65, 0.22 0.78, 0.28 0.88 C 0.33 0.95, 0.42 1, 0.5 1 C 0.58 1, 0.67 0.95, 0.72 0.88 C 0.78 0.78, 0.84 0.65, 0.9 0.55 C 0.98 0.42, 1.0 0.28, 0.95 0.18 C 0.98 0.08, 1.0 0.02, 1.0 0.0 C 0.88 0, 0.84 0.04, 0.78 0.12 C 0.72 0.04, 0.62 0, 0.5 0 Z"/>
+    </clipPath>
+  </defs>
+</svg>
+
 <section class="about-section reveal">
   <div class="container">
     <div class="about-grid">
-      <!-- Left: Blob Images with sparkles -->
+      <!-- Left: Tooth-shaped Images with sparkles -->
       <div class="about-images reveal-left">
-        <div class="about-blob about-blob-1">
+        <div class="about-tooth about-tooth-1">
           <img src="images/dr-sween.jpg" alt="Dr. Sween Kathuria">
+          <div class="about-tooth-popup">
+            <h4>Dr. Sween Kathuria</h4>
+            <p>B.D.S., M.D.S., F.P.F.A. (USA)</p>
+            <span>Endodontist & Cosmetic Dentist</span>
+          </div>
         </div>
-        <div class="about-blob about-blob-2">
+        <div class="about-tooth about-tooth-2">
           <img src="images/dr-puneet.jpg" alt="Dr. Puneet Kathuria">
+          <div class="about-tooth-popup">
+            <h4>Dr. Puneet Kathuria</h4>
+            <p>B.D.S., M.D.S., F.I.C.O.I. (USA)</p>
+            <span>Prosthodontist & Implantologist</span>
+          </div>
         </div>
         <!-- Sparkle decorations -->
         <svg class="about-sparkle s1" width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 0L16.5 11.5L28 14L16.5 16.5L14 28L11.5 16.5L0 14L11.5 11.5L14 0Z" fill="#2563EB"/></svg>
@@ -298,7 +317,7 @@
           <li><i class="fas fa-check-circle"></i> Award-Winning Experts in Dental Care</li>
           <li><i class="fas fa-check-circle"></i> Dedicated Experts Behind Every Smile</li>
         </ul>
-        <a href="#contact" class="about-btn">Learn More</a>
+        <a href="staff.html" class="about-btn"><i class="fas fa-user-doctor"></i> Know Our Team</a>
       </div>
     </div>
   </div>

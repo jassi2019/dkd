@@ -729,18 +729,36 @@ section { padding: 100px 5%; }
 .about-section { background: #f0f4f8; padding: 80px 5%; }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1100px; margin: 0 auto; }
 
-/* Left: Blob images */
-.about-images { position: relative; width: 100%; min-height: 420px; }
-.about-blob { overflow: hidden; position: absolute; box-shadow: 0 10px 30px rgba(0,0,0,.12); }
-.about-blob img { width: 100%; height: 100%; object-fit: cover; }
-.about-blob-1 {
-  width: 280px; height: 320px; top: 0; right: 20px;
-  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+/* Left: Tooth-shaped images */
+.about-images { position: relative; width: 100%; min-height: 440px; }
+.about-tooth {
+  position: absolute; overflow: hidden; cursor: pointer;
+  clip-path: url(#toothClip);
+  -webkit-clip-path: url(#toothClip);
+  background: #d5dfe9;
+  transition: transform .4s ease, filter .4s ease;
 }
-.about-blob-2 {
-  width: 200px; height: 220px; bottom: 10px; left: 10px;
-  border-radius: 50% 50% 50% 50% / 60% 40% 60% 40%;
+.about-tooth img { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform .5s ease, filter .5s ease; }
+.about-tooth:hover img { transform: scale(1.08); }
+.about-tooth:hover { filter: drop-shadow(0 8px 20px rgba(37,99,235,.25)); }
+.about-tooth-1 { width: 280px; height: 340px; top: 0; right: 10px; z-index: 2; }
+.about-tooth-2 { width: 190px; height: 230px; bottom: 10px; left: 20px; z-index: 1; }
+
+/* Hover popup on tooth images */
+.about-tooth-popup {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(0deg, rgba(13,31,60,.95) 0%, rgba(13,31,60,.75) 60%, transparent 100%);
+  padding: 50% 14px 12px; color: #fff;
+  opacity: 0; transition: opacity .4s ease;
+  pointer-events: none;
 }
+.about-tooth:hover .about-tooth-popup { opacity: 1; }
+.about-tooth-popup h4 {
+  font-family: 'Playfair Display', serif; font-size: .9rem;
+  font-weight: 700; margin-bottom: 2px;
+}
+.about-tooth-popup p { font-size: .65rem; color: var(--gold-light); margin-bottom: 2px; }
+.about-tooth-popup span { font-size: .62rem; color: rgba(255,255,255,.6); }
 
 /* Sparkle decorations */
 .about-sparkle { position: absolute; animation: aboutSparkle 3s ease-in-out infinite; }
@@ -1657,9 +1675,9 @@ section { padding: 100px 5%; }
 @media (max-width: 960px) {
   .two-col { grid-template-columns: 1fr; gap: 40px; }
   .about-grid { grid-template-columns: 1fr; gap: 30px; }
-  .about-images { min-height: 340px; max-width: 400px; margin: 0 auto; }
-  .about-blob-1 { width: 220px; height: 260px; }
-  .about-blob-2 { width: 160px; height: 180px; }
+  .about-images { min-height: 320px; max-width: 380px; margin: 0 auto; }
+  .about-tooth-1 { width: 220px; height: 270px; }
+  .about-tooth-2 { width: 150px; height: 185px; }
   .srv-grid-3 { grid-template-columns: repeat(2,1fr); }
   .srv-grid-4 { grid-template-columns: repeat(2,1fr); }
   .steps { grid-template-columns: repeat(2,1fr); }
