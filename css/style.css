@@ -350,13 +350,14 @@ ul  { list-style: none; }
   border-right: 1px solid rgba(255,255,255,.08);
 }
 .usp-item:last-child { border-right: none; }
-.usp-item i { color: var(--gold-light); font-size: 1.1rem; }
-.usp-item .usp-text { color: rgba(255,255,255,.9); font-size: .78rem; font-weight: 600; line-height: 1.2; }
-.usp-item .usp-text span { display: block; font-size: .6rem; color: rgba(255,255,255,.5); font-weight: 400; }
-.usp-item .usp-google { display: flex; align-items: center; gap: 6px; }
-.usp-item .usp-google .g-icon { width: 24px; height: 24px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: .75rem; color: #4285F4; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.15); }
-.usp-item .usp-google .g-stars { color: var(--gold-light); font-size: .7rem; }
-.usp-item .usp-google .g-text { font-size: .65rem; color: rgba(255,255,255,.6); }
+.usp-item i { color: var(--gold-light); font-size: 1.5rem; }
+.usp-item .usp-text { color: rgba(255,255,255,.9); font-size: .85rem; font-weight: 600; line-height: 1.2; }
+.usp-item .usp-text span { display: block; font-size: .7rem; color: rgba(255,255,255,.55); font-weight: 400; }
+.usp-item .usp-google { display: flex; align-items: center; gap: 8px; }
+.usp-item .usp-google .g-icon { width: 30px; height: 30px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: .85rem; color: #4285F4; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.15); }
+.usp-item .usp-google .g-icon-img { height: 24px; width: 24px; }
+.usp-item .usp-google .g-stars { color: var(--gold-light); font-size: 1rem; }
+.usp-item .usp-google .g-text { font-size: .78rem; color: rgba(255,255,255,.7); }
 .chevron {
   font-size: .48rem; opacity: .55;
   transition: transform .25s;
