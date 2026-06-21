@@ -788,7 +788,7 @@ section { padding: 100px 5%; }
 .doc-card:hover { filter: drop-shadow(0 16px 35px rgba(37,99,235,.2)); transform: translateY(-8px); }
 
 .doc-card-img {
-  position: relative; height: 340px; overflow: hidden;
+  position: relative; height: 380px; overflow: hidden;
   background: linear-gradient(180deg, #d5dfe9 0%, #eef2f7 100%);
 }
 .doc-card-img::before {
