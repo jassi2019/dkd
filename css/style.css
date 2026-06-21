@@ -767,7 +767,7 @@ section { padding: 100px 5%; }
 }
 .doc-section-bg::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(13,31,60,.7), rgba(13,31,60,.85));
+  background: rgba(13,31,60,.75);
 }
 .doc-section .container { position: relative; z-index: 2; }
 .doc-section-title {
@@ -802,7 +802,7 @@ section { padding: 100px 5%; }
 .doc-card-info h3 {
   font-family: 'Playfair Display', serif; font-size: 1.35rem;
   font-weight: 800; color: #fff; letter-spacing: .5px;
-  margin-bottom: 8px; text-transform: uppercase;
+  margin-bottom: 8px; text-transform: uppercase; white-space: nowrap;
 }
 .doc-qual {
   color: var(--gold-light); font-size: .85rem; font-weight: 600;
@@ -810,11 +810,11 @@ section { padding: 100px 5%; }
 }
 
 .doc-toggle-btn {
-  background: var(--gold); border: none; color: #fff;
-  padding: 12px 28px; font-size: .75rem;
+  background: var(--gold); border: 2px solid var(--gold); color: #fff;
+  padding: 10px 22px; font-size: .7rem;
   font-weight: 700; cursor: pointer; text-transform: uppercase;
   letter-spacing: 1px; transition: all .3s;
-  display: inline-flex; align-items: center; gap: 8px;
+  display: inline-flex; align-items: center; gap: 6px;
 }
 .doc-toggle-btn:hover { background: var(--gold-dark); }
 .doc-toggle-btn.active { background: var(--olive); }
