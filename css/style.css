@@ -754,75 +754,70 @@ section { padding: 100px 5%; }
 .about-detail strong { color: var(--olive-dark); }
 .about-btns { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
 
-/* ═══ Meet Your Doctor — Unique Expandable Cards ═══ */
+/* ═══ Meet Your Doctor — delhidental.com style ═══ */
 .doc-section {
-  background: linear-gradient(135deg, var(--ink) 0%, #1a2a1e 50%, var(--olive-dark) 100%);
-  padding: 80px 5%; position: relative; overflow: hidden;
+  position: relative; padding: 80px 5%; overflow: hidden;
 }
-.doc-section::before {
-  content: ''; position: absolute; top: -50%; right: -20%;
-  width: 600px; height: 600px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(198,169,77,.08), transparent 70%);
-  pointer-events: none;
+.doc-section-bg {
+  position: absolute; inset: 0; z-index: 0;
 }
+.doc-section-bg img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: blur(3px) brightness(.35); transform: scale(1.05);
+}
+.doc-section-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(13,31,60,.7), rgba(13,31,60,.85));
+}
+.doc-section .container { position: relative; z-index: 2; }
 .doc-section-title {
   font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem);
   color: #fff; margin-bottom: 50px; text-align: center;
+  font-weight: 800; text-transform: uppercase; letter-spacing: 2px;
 }
-.doc-section-title em { color: var(--gold-light); font-style: italic; }
+.doc-section-title em { color: #fff; font-style: normal; }
 
 .doc-cards {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 50px;
   max-width: 1100px; margin: 0 auto;
 }
 
 .doc-card {
-  background: #fff; border-radius: 20px; overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,.25);
-  transition: transform .4s var(--ease), box-shadow .4s;
+  display: flex; align-items: center; gap: 0;
+  background: transparent; transition: transform .4s;
 }
-.doc-card:hover { transform: translateY(-8px); box-shadow: 0 30px 70px rgba(0,0,0,.35); }
+.doc-card:hover { transform: translateY(-4px); }
 
 .doc-card-img {
-  position: relative; overflow: hidden; height: 320px;
-  background: #f5f5f5;
+  width: 280px; min-height: 300px; flex-shrink: 0;
+  overflow: hidden; background: #fff; border: 4px solid rgba(255,255,255,.15);
 }
 .doc-card-img img {
   width: 100%; height: 100%; object-fit: cover;
   object-position: center top;
-  transition: transform .5s var(--ease);
 }
-.doc-card:hover .doc-card-img img { transform: scale(1.05); }
-.doc-card-overlay {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  background: linear-gradient(transparent, rgba(11,18,32,.85));
-  padding: 40px 24px 16px; display: flex; align-items: flex-end;
-}
-.doc-specialty {
-  color: var(--gold-light); font-size: .8rem; font-weight: 600;
-  letter-spacing: .5px; text-transform: uppercase;
-}
+.doc-card-overlay { display: none; }
 
-.doc-card-info { padding: 28px; }
+.doc-card-info { padding: 0 0 0 28px; }
 .doc-card-info h3 {
-  font-family: 'Playfair Display', serif; font-size: 1.3rem;
-  font-weight: 800; color: var(--ink); letter-spacing: .5px;
-  margin-bottom: 6px;
+  font-family: 'Playfair Display', serif; font-size: 1.35rem;
+  font-weight: 800; color: #fff; letter-spacing: .5px;
+  margin-bottom: 8px; text-transform: uppercase;
 }
 .doc-qual {
-  color: var(--gold-dark); font-size: .82rem; font-weight: 700;
-  margin-bottom: 16px;
+  color: var(--gold-light); font-size: .85rem; font-weight: 600;
+  margin-bottom: 20px;
 }
 
 .doc-toggle-btn {
-  background: none; border: 2px solid var(--gold); color: var(--gold-dark);
-  padding: 10px 22px; border-radius: 30px; font-size: .78rem;
+  background: var(--gold); border: none; color: #fff;
+  padding: 12px 28px; font-size: .75rem;
   font-weight: 700; cursor: pointer; text-transform: uppercase;
-  letter-spacing: .8px; transition: all .3s;
+  letter-spacing: 1px; transition: all .3s;
   display: inline-flex; align-items: center; gap: 8px;
 }
-.doc-toggle-btn:hover { background: var(--gold); color: #fff; }
-.doc-toggle-btn.active { background: var(--olive); border-color: var(--olive); color: #fff; }
+.doc-toggle-btn:hover { background: var(--gold-dark); }
+.doc-toggle-btn.active { background: var(--olive); }
 .doc-toggle-btn.active i::before { content: '\f068'; }
 
 .doc-expand {
@@ -833,19 +828,29 @@ section { padding: 100px 5%; }
   max-height: 500px; padding-top: 20px;
 }
 .doc-expand p {
-  font-size: .88rem; color: var(--gray); line-height: 1.7; margin-bottom: 14px;
+  font-size: .85rem; color: rgba(255,255,255,.75); line-height: 1.7; margin-bottom: 14px;
 }
-.doc-expand ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.doc-expand ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
 .doc-expand ul li {
-  font-size: .8rem; color: var(--ink); display: flex; align-items: flex-start; gap: 8px;
+  font-size: .78rem; color: rgba(255,255,255,.85); display: flex; align-items: flex-start; gap: 8px;
 }
-.doc-expand ul li i { color: var(--olive); font-size: .7rem; margin-top: 3px; flex-shrink: 0; }
+.doc-expand ul li i { color: var(--gold-light); font-size: .65rem; margin-top: 3px; flex-shrink: 0; }
 
-.doc-team-link { text-align: center; margin-top: 45px; }
+.doc-team-link { text-align: center; margin-top: 50px; }
+.doc-team-link .btn {
+  background: var(--gold); border: none; color: #fff;
+  padding: 14px 40px; font-size: .8rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.5px;
+}
+.doc-team-link .btn:hover { background: var(--gold-dark); }
 
-@media (max-width: 768px) {
-  .doc-cards { grid-template-columns: 1fr; max-width: 500px; }
-  .doc-expand ul { grid-template-columns: 1fr; }
+@media (max-width: 960px) {
+  .doc-cards { grid-template-columns: 1fr; max-width: 550px; }
+}
+@media (max-width: 600px) {
+  .doc-card { flex-direction: column; text-align: center; }
+  .doc-card-img { width: 100%; min-height: 250px; }
+  .doc-card-info { padding: 20px 0 0; }
 }
 
 .img-stack { position: relative; padding-bottom: 44px; padding-right: 44px; }
