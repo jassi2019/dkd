@@ -9,6 +9,20 @@ window.addEventListener('load', () => {
   if (loader) setTimeout(() => loader.classList.add('hidden'), 500);
 });
 
+/* ── DOCTOR EXPAND TOGGLE ── */
+function toggleDrInfo(btn) {
+  const expand = btn.nextElementSibling;
+  const isOpen = expand.classList.contains('open');
+  // Close all first
+  document.querySelectorAll('.doc-expand').forEach(e => e.classList.remove('open'));
+  document.querySelectorAll('.doc-toggle-btn').forEach(b => b.classList.remove('active'));
+  // Open this one if it was closed
+  if (!isOpen) {
+    expand.classList.add('open');
+    btn.classList.add('active');
+  }
+}
+
 /* ── STICKY NAV ── */
 const siteNav = document.querySelector('.site-nav');
 if (siteNav) {
