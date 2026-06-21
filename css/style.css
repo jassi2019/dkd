@@ -778,18 +778,17 @@ section { padding: 100px 5%; }
 }
 
 .doc-card {
-  flex: 1; max-width: 360px; background: transparent;
-  overflow: visible;
-  filter: drop-shadow(0 12px 30px rgba(0,0,0,.1));
-  transition: transform .4s var(--ease), filter .4s;
+  flex: 1; max-width: 360px; background: #fff;
+  border-radius: 24px; overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,.08);
+  transition: transform .4s var(--ease), box-shadow .4s;
   position: relative;
 }
-.doc-card:hover { filter: drop-shadow(0 16px 35px rgba(37,99,235,.2)); transform: translateY(-8px); }
+.doc-card:hover { box-shadow: 0 20px 50px rgba(37,99,235,.2), 0 0 0 2px rgba(37,99,235,.15); transform: translateY(-8px); }
 
 .doc-card-img {
-  position: relative; height: 420px; overflow: hidden;
+  position: relative; height: 300px; overflow: hidden;
   background: linear-gradient(180deg, #d5dfe9 0%, #eef2f7 100%);
-  clip-path: url(#toothClip);
 }
 .doc-card-img::before {
   content: ''; position: absolute; inset: 0; z-index: 2;
@@ -815,13 +814,12 @@ section { padding: 100px 5%; }
 
 /* Name badge at bottom of image */
 .doc-card-name {
-  position: relative; z-index: 4; margin-top: -30px;
-  background: rgba(11,18,32,.9);
+  position: absolute; bottom: 12px; left: 12px; right: 12px; z-index: 4;
+  background: rgba(11,18,32,.82); backdrop-filter: blur(6px);
   border-radius: 14px; padding: 12px 16px;
   display: flex; align-items: center; gap: 12px;
   color: #fff; text-decoration: none; cursor: pointer;
-  transition: background .3s, transform .4s;
-  margin-left: 12px; margin-right: 12px;
+  transition: background .3s;
 }
 .doc-card-name:hover { background: rgba(11,18,32,.92); }
 .doc-name-arrow {
