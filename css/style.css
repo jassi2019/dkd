@@ -929,18 +929,18 @@ section { padding: 100px 5%; }
 }
 .srv-card:hover { transform: translateY(-10px); }
 
-/* Tooth-shaped image */
+/* Tooth-shaped image — molar with 2 roots at top, round body below */
 .srv-img {
   position: relative; width: 200px; height: 260px; overflow: hidden;
   clip-path: polygon(
-    25% 0%, 35% 8%, 50% 12%, 65% 8%, 75% 0%,
-    95% 5%, 100% 18%, 98% 35%,
-    95% 50%, 88% 65%, 82% 78%,
-    78% 88%, 72% 95%, 62% 100%,
-    50% 100%,
-    38% 100%, 28% 95%, 22% 88%,
-    18% 78%, 12% 65%, 5% 50%,
-    2% 35%, 0% 18%, 5% 5%
+    20% 0%, 20% 14%, 28% 22%, 38% 24%, 44% 20%, 50% 14%,
+    56% 20%, 62% 24%, 72% 22%, 80% 14%, 80% 0%,
+    95% 4%, 100% 16%, 100% 34%,
+    98% 50%, 92% 64%, 84% 76%,
+    74% 88%, 62% 96%, 50% 100%,
+    38% 96%, 26% 88%, 16% 76%,
+    8% 64%, 2% 50%, 0% 34%,
+    0% 16%, 5% 4%
   );
   filter: drop-shadow(0 10px 20px rgba(0,0,0,.15));
   transition: filter .4s ease, transform .4s ease;
