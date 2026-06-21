@@ -771,9 +771,9 @@ section { padding: 100px 5%; }
 }
 .doc-section .container { position: relative; z-index: 2; }
 .doc-section-title {
-  font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem);
+  font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4.5vw, 3.2rem);
   color: #fff; margin-bottom: 50px; text-align: center;
-  font-weight: 800; text-transform: uppercase; letter-spacing: 2px;
+  font-weight: 900; text-transform: uppercase; letter-spacing: 3px;
 }
 .doc-section-title em { color: #fff; font-style: normal; }
 
