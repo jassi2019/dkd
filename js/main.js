@@ -4,10 +4,12 @@
 ═══════════════════════════════════════ */
 
 /* ── PAGE LOADER ── */
-window.addEventListener('load', () => {
+function hideLoader() {
   const loader = document.getElementById('page-loader');
-  if (loader) setTimeout(() => loader.classList.add('hidden'), 500);
-});
+  if (loader) loader.classList.add('hidden');
+}
+window.addEventListener('load', () => setTimeout(hideLoader, 400));
+setTimeout(hideLoader, 3000); /* fallback: hide after 3s no matter what */
 
 /* ── DOCTOR CARD — MOBILE TAP TOGGLE ── */
 document.querySelectorAll('.doc-card').forEach(card => {
