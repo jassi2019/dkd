@@ -9,19 +9,17 @@ window.addEventListener('load', () => {
   if (loader) setTimeout(() => loader.classList.add('hidden'), 500);
 });
 
-/* ── DOCTOR EXPAND TOGGLE ── */
-function toggleDrInfo(btn) {
-  const expand = btn.nextElementSibling;
-  const isOpen = expand.classList.contains('open');
-  // Close all first
-  document.querySelectorAll('.doc-expand').forEach(e => e.classList.remove('open'));
-  document.querySelectorAll('.doc-toggle-btn').forEach(b => b.classList.remove('active'));
-  // Open this one if it was closed
-  if (!isOpen) {
-    expand.classList.add('open');
-    btn.classList.add('active');
-  }
-}
+/* ── DOCTOR CARD — MOBILE TAP TOGGLE ── */
+document.querySelectorAll('.doc-card').forEach(card => {
+  card.addEventListener('click', e => {
+    if (window.innerWidth > 700) return; // desktop uses hover
+    if (e.target.closest('.dhp-link')) return; // let profile link work
+    e.preventDefault();
+    const isActive = card.classList.contains('popup-active');
+    document.querySelectorAll('.doc-card').forEach(c => c.classList.remove('popup-active'));
+    if (!isActive) card.classList.add('popup-active');
+  });
+});
 
 /* ── STICKY NAV ── */
 const siteNav = document.querySelector('.site-nav');

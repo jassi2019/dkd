@@ -782,8 +782,9 @@ section { padding: 100px 5%; }
   border-radius: 24px; overflow: hidden;
   box-shadow: 0 12px 40px rgba(0,0,0,.08);
   transition: transform .4s var(--ease), box-shadow .4s;
+  position: relative;
 }
-.doc-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,.14); }
+.doc-card:hover { box-shadow: 0 20px 50px rgba(0,0,0,.14); }
 
 .doc-card-img {
   position: relative; height: 300px; overflow: hidden;
@@ -820,35 +821,39 @@ section { padding: 100px 5%; }
   font-size: .68rem; color: rgba(255,255,255,.6); display: block; margin-top: 2px;
 }
 
-/* Hover popup on doctor card */
+/* Hover popup — slides up from bottom like reference image */
 .doc-hover-popup {
-  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(11,18,32,.92); backdrop-filter: blur(8px);
-  padding: 30px 24px; display: flex; flex-direction: column;
-  justify-content: center; color: #fff;
-  opacity: 0; visibility: hidden;
-  transition: opacity .35s, visibility .35s;
-  z-index: 5;
+  position: absolute; left: 0; right: 0; bottom: 0; top: 0;
+  background: linear-gradient(135deg, #0D1F3C 0%, #1a3a5c 100%);
+  padding: 32px 24px; color: #fff;
+  display: flex; flex-direction: column; justify-content: center;
+  transform: translateY(100%);
+  transition: transform .45s cubic-bezier(.4,0,.2,1);
+  z-index: 5; border-radius: 24px;
 }
-.doc-card-img:hover .doc-hover-popup { opacity: 1; visibility: visible; }
+.doc-card:hover .doc-hover-popup,
+.doc-card.popup-active .doc-hover-popup { transform: translateY(0); }
 .doc-hover-popup h4 {
-  font-family: 'Playfair Display', serif; font-size: 1.3rem;
-  font-weight: 800; margin-bottom: 6px; color: #fff;
+  font-family: 'Playfair Display', serif; font-size: 1.15rem;
+  font-weight: 800; margin-bottom: 4px; color: #fff;
 }
-.dhp-qual { color: var(--gold-light); font-size: .8rem; font-weight: 600; margin-bottom: 4px; }
-.dhp-role { color: rgba(255,255,255,.6); font-size: .78rem; margin-bottom: 16px; }
-.doc-hover-popup ul { list-style: none; padding: 0; margin: 0 0 18px; display: flex; flex-direction: column; gap: 7px; }
-.doc-hover-popup ul li { font-size: .78rem; color: rgba(255,255,255,.85); display: flex; align-items: flex-start; gap: 8px; }
-.doc-hover-popup ul li i { color: var(--gold-light); font-size: .6rem; margin-top: 4px; flex-shrink: 0; }
+.dhp-qual { color: var(--gold-light); font-size: .75rem; font-weight: 600; margin-bottom: 3px; }
+.dhp-role { color: rgba(255,255,255,.55); font-size: .72rem; margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,.12); padding-bottom: 10px; }
+.doc-hover-popup ul { list-style: none; padding: 0; margin: 0 0 14px; display: flex; flex-direction: column; gap: 5px; }
+.doc-hover-popup ul li { font-size: .74rem; color: rgba(255,255,255,.85); display: flex; align-items: flex-start; gap: 7px; }
+.doc-hover-popup ul li i { color: var(--gold-light); font-size: .55rem; margin-top: 4px; flex-shrink: 0; }
 .dhp-link {
   display: inline-flex; align-items: center; gap: 6px;
-  color: var(--gold-light); font-size: .78rem; font-weight: 700;
+  background: var(--gold); color: #fff; padding: 8px 18px;
+  border-radius: 20px; font-size: .7rem; font-weight: 700;
   text-decoration: none; text-transform: uppercase; letter-spacing: .5px;
-  transition: color .3s;
+  transition: background .3s;
 }
-.dhp-link:hover { color: #fff; }
+.dhp-link:hover { background: #fff; color: var(--ink); }
 
 .doc-card-info { display: none; }
+
+/* Card overflow hidden for slide effect */
 
 .doc-bottom-text {
   text-align: center; max-width: 550px; margin: 35px auto 0;
