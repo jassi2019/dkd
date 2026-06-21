@@ -726,91 +726,33 @@ section { padding: 100px 5%; }
 .two-col img { width: 100%; border-radius: var(--r-lg); }
 
 /* ═══ About Section — Video + Text Layout ═══ */
-.about-section { background: #f0f4f8; padding: 80px 5%; }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1100px; margin: 0 auto; }
+.about-section { background: #E8EFF6; padding: 60px 5%; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
 
-/* Left: Tooth-shaped images */
-.about-images { position: relative; width: 100%; min-height: 440px; }
-.about-tooth {
-  position: absolute; overflow: hidden; cursor: pointer;
-  clip-path: url(#toothClip);
-  -webkit-clip-path: url(#toothClip);
-  background: #d5dfe9;
-  transition: transform .4s ease, filter .4s ease;
-}
-.about-tooth img { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform .5s ease, filter .5s ease; }
-.about-tooth:hover img { transform: scale(1.08); }
-.about-tooth:hover { filter: drop-shadow(0 8px 20px rgba(37,99,235,.25)); }
-.about-tooth-1 { width: 280px; height: 340px; top: 0; right: 10px; z-index: 2; }
-.about-tooth-2 { width: 190px; height: 230px; bottom: 10px; left: 20px; z-index: 1; }
-
-/* Hover popup on tooth images */
-.about-tooth-popup {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  background: linear-gradient(0deg, rgba(13,31,60,.95) 0%, rgba(13,31,60,.75) 60%, transparent 100%);
-  padding: 50% 14px 12px; color: #fff;
-  opacity: 0; transition: opacity .4s ease;
-  pointer-events: none;
-}
-.about-tooth:hover .about-tooth-popup { opacity: 1; }
-.about-tooth-popup h4 {
-  font-family: 'Playfair Display', serif; font-size: .9rem;
-  font-weight: 700; margin-bottom: 2px;
-}
-.about-tooth-popup p { font-size: .65rem; color: var(--gold-light); margin-bottom: 2px; }
-.about-tooth-popup span { font-size: .62rem; color: rgba(255,255,255,.6); }
-
-/* Sparkle decorations */
-.about-sparkle { position: absolute; animation: aboutSparkle 3s ease-in-out infinite; }
-.about-sparkle.s1 { top: 10px; left: 60px; }
-.about-sparkle.s2 { top: 60px; right: 10px; animation-delay: .5s; }
-.about-sparkle.s3 { bottom: 100px; left: 40px; animation-delay: 1s; }
-@keyframes aboutSparkle {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: .5; transform: scale(.7); }
-}
-
-/* Contact badge */
-.about-contact-badge {
-  position: absolute; bottom: 30px; left: 180px;
-  width: 80px; height: 80px; border-radius: 50%;
-  background: #0D1F3C; display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 6px 20px rgba(0,0,0,.25);
-}
-.acb-ring {
-  position: absolute; inset: 0; animation: spinBadge 10s linear infinite;
-}
-.acb-icon { color: #fff; font-size: 1.2rem; z-index: 2; position: absolute; }
-@keyframes spinBadge { to { transform: rotate(360deg); } }
+/* Video embed */
+.about-video { position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,.15); }
+.about-video iframe { width: 100%; aspect-ratio: 16/9; display: block; }
 
 /* Text side */
-.about-chip {
-  display: inline-block; font-size: .7rem; font-weight: 700;
-  letter-spacing: 2px; text-transform: uppercase; color: #555;
-  margin-bottom: 12px;
-}
 .about-text {}
 .about-heading {
-  font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.4rem);
-  color: var(--ink); font-weight: 700; line-height: 1.25; margin-bottom: 18px;
+  font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.2vw, 2rem);
+  color: var(--gray); font-weight: 400; line-height: 1.3; margin-bottom: 14px;
+  white-space: nowrap;
 }
-.about-h-blue { color: #2563EB; font-weight: 800; }
+.about-subhead {
+  font-family: 'Playfair Display', serif; font-size: 1.5rem;
+  color: var(--ink); font-weight: 800; margin-bottom: 12px;
+}
 .about-desc {
-  font-size: .92rem; color: #666; font-style: italic;
-  line-height: 1.8; margin-bottom: 20px;
+  font-size: 1.05rem; color: var(--gold-dark); font-style: italic;
+  line-height: 1.7; margin-bottom: 16px;
 }
-.about-checks { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-direction: column; gap: 10px; }
-.about-checks li {
-  display: flex; align-items: center; gap: 10px;
-  font-size: .9rem; color: #333; font-weight: 500;
+.about-detail {
+  font-size: .9rem; color: var(--gray); line-height: 1.8; margin-bottom: 24px;
 }
-.about-checks li i { color: #2563EB; font-size: 1.1rem; flex-shrink: 0; }
-.about-btn {
-  display: inline-block; background: #2563EB; color: #fff;
-  padding: 12px 32px; border-radius: 8px; font-size: .85rem;
-  font-weight: 700; text-decoration: none; transition: background .3s, transform .3s;
-}
-.about-btn:hover { background: #1d4ed8; transform: translateY(-2px); }
+.about-detail strong { color: var(--olive-dark); }
+.about-btns { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
 
 /* ═══ Meet Your Doctor — Modern Card Style ═══ */
 .doc-section {
@@ -1675,9 +1617,6 @@ section { padding: 100px 5%; }
 @media (max-width: 960px) {
   .two-col { grid-template-columns: 1fr; gap: 40px; }
   .about-grid { grid-template-columns: 1fr; gap: 30px; }
-  .about-images { min-height: 320px; max-width: 380px; margin: 0 auto; }
-  .about-tooth-1 { width: 220px; height: 270px; }
-  .about-tooth-2 { width: 150px; height: 185px; }
   .srv-grid-3 { grid-template-columns: repeat(2,1fr); }
   .srv-grid-4 { grid-template-columns: repeat(2,1fr); }
   .steps { grid-template-columns: repeat(2,1fr); }
