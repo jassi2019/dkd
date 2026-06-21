@@ -533,11 +533,20 @@
       <input type="file" name="report" accept="image/*,.pdf">
       <textarea name="message" placeholder="Message" rows="3"></textarea>
       <div class="book-captcha">
-        <label class="captcha-box">
-          <input type="checkbox" name="not_robot" required>
-          <span class="captcha-check"></span>
-          <span class="captcha-text">I'm not a robot</span>
-        </label>
+        <div class="recaptcha-widget">
+          <label class="captcha-box">
+            <input type="checkbox" name="not_robot" required>
+            <span class="captcha-check"></span>
+            <span class="captcha-text">I'm not a robot</span>
+          </label>
+          <div class="recaptcha-brand">
+            <svg width="32" height="32" viewBox="0 0 64 64"><path d="M32 2a30 30 0 1 0 0 60 30 30 0 0 0 0-60zm0 10a20 20 0 0 1 14 6l-8 8a10 10 0 0 0-6-2 10 10 0 1 0 10 10h-10v-8h20a20 20 0 1 1-20-14z" fill="#4285F4"/></svg>
+            <div class="recaptcha-label">
+              <span>reCAPTCHA</span>
+              <small>Privacy - Terms</small>
+            </div>
+          </div>
+        </div>
       </div>
       <button type="submit" class="book-submit">SUBMIT</button>
     </form>
