@@ -783,7 +783,7 @@ section { padding: 100px 5%; }
   filter: drop-shadow(0 12px 30px rgba(0,0,0,.1));
   transition: transform .4s var(--ease), filter .4s;
   position: relative;
-  clip-path: url(#toothCard);
+  border-radius: 24px;
 }
 .doc-card:hover { filter: drop-shadow(0 16px 35px rgba(37,99,235,.2)); transform: translateY(-8px); }
 
