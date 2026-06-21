@@ -824,27 +824,42 @@ section { padding: 100px 5%; }
   transition: transform .4s var(--ease), box-shadow .4s;
   position: relative;
 }
-.doc-card:hover { box-shadow: 0 20px 50px rgba(0,0,0,.14); }
+.doc-card:hover { box-shadow: 0 20px 50px rgba(37,99,235,.2), 0 0 0 2px rgba(37,99,235,.15); transform: translateY(-8px); }
 
 .doc-card-img {
   position: relative; height: 300px; overflow: hidden;
   background: linear-gradient(180deg, #d5dfe9 0%, #eef2f7 100%);
 }
+.doc-card-img::before {
+  content: ''; position: absolute; inset: 0; z-index: 2;
+  background: linear-gradient(135deg, rgba(37,99,235,.6) 0%, rgba(13,31,60,.7) 100%);
+  opacity: 0; transition: opacity .5s ease;
+}
+.doc-card:hover .doc-card-img::before { opacity: 1; }
+.doc-card-img::after {
+  content: ''; position: absolute; inset: 0; z-index: 3;
+  border: 2px solid rgba(255,255,255,.3);
+  border-radius: 0; margin: 15px;
+  opacity: 0; transform: scale(1.1);
+  transition: opacity .4s ease .1s, transform .4s ease .1s;
+}
+.doc-card:hover .doc-card-img::after { opacity: 1; transform: scale(1); }
 .doc-card-img img {
   width: 100%; height: 100%; object-fit: cover;
   object-position: center top;
-  transition: transform .5s var(--ease);
+  filter: grayscale(20%);
+  transition: transform .6s ease, filter .6s ease;
 }
-.doc-card:hover .doc-card-img img { transform: scale(1.04); }
+.doc-card:hover .doc-card-img img { transform: scale(1.12); filter: grayscale(0%); }
 
 /* Name badge at bottom of image */
 .doc-card-name {
-  position: absolute; bottom: 12px; left: 12px; right: 12px;
+  position: absolute; bottom: 12px; left: 12px; right: 12px; z-index: 4;
   background: rgba(11,18,32,.82); backdrop-filter: blur(6px);
   border-radius: 14px; padding: 12px 16px;
   display: flex; align-items: center; gap: 12px;
   color: #fff; text-decoration: none; cursor: pointer;
-  transition: background .3s;
+  transition: background .3s, transform .4s;
 }
 .doc-card-name:hover { background: rgba(11,18,32,.92); }
 .doc-name-arrow {
