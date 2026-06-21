@@ -802,14 +802,17 @@ section { padding: 100px 5%; }
   background: rgba(11,18,32,.82); backdrop-filter: blur(6px);
   border-radius: 14px; padding: 12px 16px;
   display: flex; align-items: center; gap: 12px;
-  color: #fff;
+  color: #fff; text-decoration: none; cursor: pointer;
+  transition: background .3s;
 }
-.doc-name-icon {
-  width: 34px; height: 34px; border-radius: 50%;
+.doc-card-name:hover { background: rgba(11,18,32,.92); }
+.doc-name-arrow {
+  width: 30px; height: 30px; border-radius: 50%;
   background: var(--gold); display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0; overflow: hidden; color: #fff;
+  flex-shrink: 0; color: #fff; font-size: .7rem;
+  transition: transform .3s, background .3s; margin-left: auto;
 }
-.doc-name-icon i { font-size: 14px; line-height: 1; }
+.doc-card-name:hover .doc-name-arrow { transform: translateX(4px); background: #fff; color: var(--gold); }
 .doc-card-name strong {
   font-size: .88rem; font-weight: 700; display: block; line-height: 1.2;
 }
