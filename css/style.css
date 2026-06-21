@@ -918,39 +918,74 @@ section { padding: 100px 5%; }
 /* ═══════════════════════════════════
    SERVICE CARDS
 ═══════════════════════════════════ */
-.srv-grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
-.srv-grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+.srv-grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 30px; }
+.srv-grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
 
 .srv-card {
-  border-radius: var(--r-lg); overflow: hidden;
-  background: var(--white);
-  box-shadow: var(--shadow);
+  overflow: visible; background: transparent;
   transition: all .4s var(--ease);
-  display: flex; flex-direction: column;
-  border: 1px solid var(--border);
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; position: relative;
 }
-.srv-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-l); border-color: var(--olive-pale); }
-.srv-img { position: relative; height: 220px; overflow: hidden; }
+.srv-card:hover { transform: translateY(-10px); }
+
+/* Tooth-shaped image */
+.srv-img {
+  position: relative; width: 200px; height: 240px; overflow: hidden;
+  border-radius: 45% 45% 50% 50% / 35% 35% 65% 65%;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+  transition: box-shadow .4s ease, transform .4s ease;
+}
+.srv-card:hover .srv-img {
+  box-shadow: 0 15px 40px rgba(37,99,235,.2);
+  transform: scale(1.04);
+}
 .srv-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
-.srv-card:hover .srv-img img { transform: scale(1.08); }
-.srv-img-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,26,26,.6) 0%, transparent 50%); }
+.srv-card:hover .srv-img img { transform: scale(1.1); }
+.srv-img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(13,31,60,.7) 0%, transparent 60%);
+  transition: opacity .4s;
+}
+.srv-card:hover .srv-img-overlay { opacity: .8; }
 .srv-badge {
-  position: absolute; top: 14px; left: 14px;
-  background: var(--olive); color: #fff;
-  font-size: .62rem; font-weight: 800; padding: 5px 12px; border-radius: 4px;
-  text-transform: uppercase; letter-spacing: .8px;
+  position: absolute; top: 14px; left: 50%; transform: translateX(-50%);
+  background: var(--gold); color: #fff;
+  font-size: .58rem; font-weight: 800; padding: 4px 12px; border-radius: 20px;
+  text-transform: uppercase; letter-spacing: .8px; z-index: 2; white-space: nowrap;
 }
-.srv-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
-.srv-body h4 { font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; font-family: 'Playfair Display', serif; }
-.srv-body p  { font-size: .83rem; color: var(--gray); line-height: 1.68; flex: 1; }
+
+/* Tooth icon at bottom of image */
+.srv-img::after {
+  content: '\f5c9'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
+  position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+  width: 36px; height: 36px; border-radius: 50%;
+  background: #fff; color: var(--gold); font-size: .85rem;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,.15); z-index: 2;
+  transition: transform .3s, background .3s;
+}
+.srv-card:hover .srv-img::after {
+  transform: translateX(-50%) scale(1.15);
+  background: var(--gold); color: #fff;
+}
+
+.srv-body { padding: 18px 8px 0; flex: 1; display: flex; flex-direction: column; }
+.srv-body h4 { font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 6px; font-family: 'Playfair Display', serif; }
+.srv-body p  { font-size: .8rem; color: var(--gray); line-height: 1.65; flex: 1; }
 .srv-foot {
-  display: flex; align-items: center; justify-content: space-between;
-  margin-top: 18px; padding-top: 14px;
-  border-top: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  margin-top: 14px;
 }
-.srv-foot strong { color: var(--olive); font-size: 1rem; font-weight: 800; }
-.srv-foot a { font-size: .76rem; color: var(--gold-dark); font-weight: 700; display: flex; align-items: center; gap: 5px; transition: all .22s; }
-.srv-foot a:hover { color: var(--olive); gap: 9px; }
+.srv-foot strong { display: none; }
+.srv-foot a {
+  font-size: .76rem; color: #fff; font-weight: 700;
+  display: inline-flex; align-items: center; gap: 5px;
+  background: linear-gradient(135deg, #0D1F3C, #1a3a5c);
+  padding: 8px 20px; border-radius: 20px;
+  transition: all .3s;
+}
+.srv-foot a:hover { background: var(--gold); gap: 9px; }
 
 /* ═══════════════════════════════════
    WHY CHOOSE US
