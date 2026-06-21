@@ -251,45 +251,6 @@
   </div>
 </section>
 
-<!-- ══════════════════ ABOUT SECTION ══════════════════ -->
-<section class="bg-cream reveal">
-  <div class="container">
-    <div class="two-col">
-      <!-- Left: Image stack -->
-      <div class="img-stack reveal-left">
-        <img class="img-main" src="https://images.unsplash.com/photo-1629909615957-be38d3397a24?w=800&q=80" alt="Dr. Kathuria's Dentistry clinic"/>
-        <div class="img-float">
-          <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&q=80" alt="Dental treatment in progress"/>
-        </div>
-        <div class="img-badge">
-          <span class="num">18+</span>
-          <p>Years</p>
-        </div>
-      </div>
-
-      <!-- Right: Text -->
-      <div class="reveal-right">
-        <div class="sec-h">
-          <span class="sec-chip">About Us</span>
-          <h2>Welcome to Dr. Kathuria's <em>Dentistry</em></h2>
-          <div class="sec-divider"></div>
-          <p>One of India's most trusted multispeciality dental clinics, located in the heart of South Delhi &mdash; East of Kailash, New Delhi. Our NABH Accredited, ISO Certified clinic combines cutting-edge technology with compassionate care.</p>
-        </div>
-        <p style="color:var(--gray);font-size:.9rem;line-height:1.8;margin-bottom:24px">
-          Founded by Dr. Sween Kathuria and Dr. Puneet Kathuria, our clinic has served over 15,000 patients from 40+ countries worldwide. Whether you need a routine check-up, advanced cosmetic procedures, or a complete smile makeover &mdash; our team of specialists delivers world-class results.
-        </p>
-        <div class="checks">
-          <div class="check-item"><span class="ci"><i class="fas fa-check"></i></span> NABH Accredited Dental Facility</div>
-          <div class="check-item"><span class="ci"><i class="fas fa-check"></i></span> ISO 9001:2015 Certified</div>
-          <div class="check-item"><span class="ci"><i class="fas fa-check"></i></span> 18+ Years of Clinical Excellence</div>
-          <div class="check-item"><span class="ci"><i class="fas fa-check"></i></span> 40+ Countries Worldwide</div>
-        </div>
-        <a href="about.html" class="btn btn-primary" style="margin-top:20px"><i class="fas fa-arrow-right"></i> Learn More About Us</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ══════════════════ WHY CHOOSE US ══════════════════ -->
 <section class="bg-cream reveal">
   <div class="container">
@@ -352,6 +313,45 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ ABOUT SECTION ══════════════════ -->
+<section class="bg-cream reveal">
+  <div class="container">
+    <div class="two-col">
+      <!-- Left: Image stack -->
+      <div class="img-stack reveal-left">
+        <img class="img-main" src="https://images.unsplash.com/photo-1629909615957-be38d3397a24?w=800&q=80" alt="Dr. Kathuria's Dentistry clinic"/>
+        <div class="img-float">
+          <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&q=80" alt="Dental treatment in progress"/>
+        </div>
+        <div class="img-badge">
+          <span class="num">18+</span>
+          <p>Years</p>
+        </div>
+      </div>
+
+      <!-- Right: Text -->
+      <div class="reveal-right">
+        <div class="sec-h">
+          <span class="sec-chip">About Us</span>
+          <h2>Welcome to Dr. Kathuria's <em>Dentistry</em></h2>
+          <div class="sec-divider"></div>
+          <p>One of India's most trusted multispeciality dental clinics, located in the heart of South Delhi &mdash; East of Kailash, New Delhi. Our NABH Accredited, ISO Certified clinic combines cutting-edge technology with compassionate care.</p>
+        </div>
+        <p style="color:var(--gray);font-size:.9rem;line-height:1.8;margin-bottom:24px">
+          Founded by Dr. Sween Kathuria and Dr. Puneet Kathuria, our clinic has served over 15,000 patients from 40+ countries worldwide. Whether you need a routine check-up, advanced cosmetic procedures, or a complete smile makeover &mdash; our team of specialists delivers world-class results.
+        </p>
+        <div class="checks">
+          <div class="check-item"><span class="ci"><i class="fas fa-check"></i></span> NABH Accredited Dental Facility</div>
+          <div class="check-item"><span class="ci"><i class="fas fa-check"></i></span> ISO 9001:2015 Certified</div>
+          <div class="check-item"><span class="ci"><i class="fas fa-check"></i></span> 18+ Years of Clinical Excellence</div>
+          <div class="check-item"><span class="ci"><i class="fas fa-check"></i></span> 40+ Countries Worldwide</div>
+        </div>
+        <a href="about.html" class="btn btn-primary" style="margin-top:20px"><i class="fas fa-arrow-right"></i> Learn More About Us</a>
       </div>
     </div>
   </div>
@@ -564,6 +564,40 @@
     <div style="text-align:center;margin-top:48px">
       <a href="services.html" class="btn btn-outline-olive btn-pill"><i class="fas fa-th-list"></i> View All 50+ Treatments</a>
     </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════ APPOINTMENT FORM ══════════════════ -->
+<section class="reveal" style="background:var(--cream);padding:60px 5%">
+  <div class="container" style="max-width:900px">
+    <div class="sec-h center">
+      <span class="sec-chip">Book Appointment</span>
+      <h2>Schedule Your <em>Visit</em></h2>
+      <div class="sec-divider"></div>
+      <p>Fill in your details and our team will get back to you within 24 hours.</p>
+    </div>
+    <form class="appt-form" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px" data-netlify="true" name="appointment">
+      <input type="text" name="name" placeholder="Your Full Name" required style="padding:14px 18px;border:1px solid var(--border);border-radius:8px;font-size:.9rem;font-family:inherit">
+      <input type="tel" name="phone" placeholder="Phone / WhatsApp Number" required style="padding:14px 18px;border:1px solid var(--border);border-radius:8px;font-size:.9rem;font-family:inherit">
+      <input type="email" name="email" placeholder="Email Address" style="padding:14px 18px;border:1px solid var(--border);border-radius:8px;font-size:.9rem;font-family:inherit">
+      <select name="country" style="padding:14px 18px;border:1px solid var(--border);border-radius:8px;font-size:.9rem;font-family:inherit;color:var(--gray)">
+        <option value="">Select Country</option>
+        <option>India</option><option>USA</option><option>UK</option><option>Canada</option><option>Australia</option><option>UAE</option><option>Other</option>
+      </select>
+      <select name="treatment" style="padding:14px 18px;border:1px solid var(--border);border-radius:8px;font-size:.9rem;font-family:inherit;color:var(--gray)">
+        <option value="">Select Treatment</option>
+        <option>Dental Implants</option><option>Smile Makeover</option><option>Teeth Whitening</option><option>Veneers</option><option>Root Canal</option><option>Braces / Aligners</option><option>Gum Treatment</option><option>Kids Dentistry</option><option>Other</option>
+      </select>
+      <select name="time" style="padding:14px 18px;border:1px solid var(--border);border-radius:8px;font-size:.9rem;font-family:inherit;color:var(--gray)">
+        <option value="">Preferred Time</option>
+        <option>Morning (10AM-12PM)</option><option>Afternoon (12PM-3PM)</option><option>Evening (3PM-7PM)</option>
+      </select>
+      <textarea name="message" placeholder="Your Message (optional)" rows="3" style="padding:14px 18px;border:1px solid var(--border);border-radius:8px;font-size:.9rem;font-family:inherit;grid-column:1/-1;resize:vertical"></textarea>
+      <div style="grid-column:1/-1;text-align:center">
+        <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-calendar-check"></i> Book Appointment</button>
+      </div>
+    </form>
   </div>
 </section>
 
@@ -845,109 +879,6 @@
         <div class="step-num">4</div>
         <h4>Beautiful Smile</h4>
         <p>Walk out with a confident, radiant smile. We provide detailed aftercare and follow-up support for lasting results.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════ TESTIMONIALS — IMPRESSIVE GRID ══════════════════ -->
-<section class="reveal" style="background:linear-gradient(135deg,var(--olive-dark) 0%,#2a3d1a 100%);color:#fff">
-  <div class="container">
-    <div class="sec-h center light">
-      <span class="sec-chip light">Patient Stories</span>
-      <h2>What Our Patients <em>Say</em></h2>
-      <div class="sec-divider" style="background:linear-gradient(90deg,var(--gold),var(--gold-light))"></div>
-      <p>Real reviews from international patients who trusted us with their smiles.</p>
-    </div>
-
-    <!-- Video Testimonial Highlight -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-bottom:50px" class="testi-grid-top">
-      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:36px;position:relative;overflow:hidden">
-        <div style="position:absolute;top:0;left:0;width:4px;height:100%;background:var(--gold)"></div>
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
-          <i class="fas fa-star" style="color:var(--gold)"></i><i class="fas fa-star" style="color:var(--gold)"></i><i class="fas fa-star" style="color:var(--gold)"></i><i class="fas fa-star" style="color:var(--gold)"></i><i class="fas fa-star" style="color:var(--gold)"></i>
-          <span style="color:rgba(255,255,255,.4);font-size:.75rem;margin-left:8px">Verified Patient</span>
-        </div>
-        <p style="font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:rgba(255,255,255,.9);line-height:1.8;margin-bottom:24px">"My experience with Dr. Sween Kathuria was exceptional. I underwent veneers, crowns, and fillings, and the results exceeded expectations. The clinic's attention to detail and Dr. Sween's expertise made the entire process smooth and comfortable."</p>
-        <div style="display:flex;align-items:center;gap:14px">
-          <div style="width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1rem">BY</div>
-          <div>
-            <div style="font-weight:700;font-size:.95rem">Bill Yakimec</div>
-            <div style="font-size:.78rem;color:rgba(255,255,255,.5)">Veneers, Crowns &amp; Fillings</div>
-            <div style="display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.08);padding:3px 10px;border-radius:99px;margin-top:4px;font-size:.7rem;font-weight:600">
-              <img src="https://flagcdn.com/20x15/ca.png" alt="CA" style="width:16px;height:12px;border-radius:2px"> Canada
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:36px;position:relative;overflow:hidden">
-        <div style="position:absolute;top:0;left:0;width:4px;height:100%;background:var(--gold)"></div>
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
-          <i class="fas fa-star" style="color:var(--gold)"></i><i class="fas fa-star" style="color:var(--gold)"></i><i class="fas fa-star" style="color:var(--gold)"></i><i class="fas fa-star" style="color:var(--gold)"></i><i class="fas fa-star" style="color:var(--gold)"></i>
-          <span style="color:rgba(255,255,255,.4);font-size:.75rem;margin-left:8px">Verified Patient</span>
-        </div>
-        <p style="font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:rgba(255,255,255,.9);line-height:1.8;margin-bottom:24px">"My experience with Dr. Sween Kathuria was exceptional. I underwent implants and veneers, and results were truly life-changing. The clinic uses the latest technology and the team is incredibly skilled. Worth every penny of the trip from USA."</p>
-        <div style="display:flex;align-items:center;gap:14px">
-          <div style="width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--olive),var(--olive-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1rem">MJ</div>
-          <div>
-            <div style="font-weight:700;font-size:.95rem">Michael Matson</div>
-            <div style="font-size:.78rem;color:rgba(255,255,255,.5)">Implants &amp; Veneers</div>
-            <div style="display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.08);padding:3px 10px;border-radius:99px;margin-top:4px;font-size:.7rem;font-weight:600">
-              <img src="https://flagcdn.com/20x15/us.png" alt="US" style="width:16px;height:12px;border-radius:2px"> USA
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- More Testimonials Row -->
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px" class="testi-grid-bottom">
-      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px">
-        <div style="color:var(--gold);font-size:.8rem;margin-bottom:12px"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p style="font-size:.88rem;color:rgba(255,255,255,.8);line-height:1.75;margin-bottom:18px;font-style:italic">"All my treatment from start to finish was painless and carried out under excellent hygiene conditions. The NABH accreditation is well deserved."</p>
-        <div style="display:flex;align-items:center;gap:10px">
-          <div style="width:38px;height:38px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.8rem">DM</div>
-          <div><div style="font-weight:700;font-size:.85rem">Donald Mclean</div><div style="font-size:.7rem;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:4px"><img src="https://flagcdn.com/16x12/gb.png" alt="GB" style="width:14px;border-radius:1px"> United Kingdom</div></div>
-        </div>
-      </div>
-
-      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px">
-        <div style="color:var(--gold);font-size:.8rem;margin-bottom:12px"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p style="font-size:.88rem;color:rgba(255,255,255,.8);line-height:1.75;margin-bottom:18px;font-style:italic">"Best dental care I've ever received by far. Dr. Kathuria couldn't have been a better dentist. The clinic is world-class and the results are incredible."</p>
-        <div style="display:flex;align-items:center;gap:10px">
-          <div style="width:38px;height:38px;border-radius:50%;background:var(--olive);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.8rem">KS</div>
-          <div><div style="font-weight:700;font-size:.85rem">Kyle Steller</div><div style="font-size:.7rem;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:4px"><img src="https://flagcdn.com/16x12/us.png" alt="US" style="width:14px;border-radius:1px"> USA</div></div>
-        </div>
-      </div>
-
-      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px">
-        <div style="color:var(--gold);font-size:.8rem;margin-bottom:12px"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p style="font-size:.88rem;color:rgba(255,255,255,.8);line-height:1.75;margin-bottom:18px;font-style:italic">"I'd highly recommend this dental practice. Very professional and efficient. Coming from the UK, the dental work cost me a fraction of what I'd pay back home."</p>
-        <div style="display:flex;align-items:center;gap:10px">
-          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.8rem">TM</div>
-          <div><div style="font-weight:700;font-size:.85rem">Thomas Macauley</div><div style="font-size:.7rem;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:4px"><img src="https://flagcdn.com/16x12/gb.png" alt="GB" style="width:14px;border-radius:1px"> United Kingdom</div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Marquee of country flags -->
-    <div style="margin-top:40px;text-align:center">
-      <p style="font-size:.75rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">Trusted by patients from</p>
-      <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap">
-        <img src="https://flagcdn.com/32x24/gb.png" alt="UK" style="height:20px;border-radius:3px;opacity:.7">
-        <img src="https://flagcdn.com/32x24/us.png" alt="US" style="height:20px;border-radius:3px;opacity:.7">
-        <img src="https://flagcdn.com/32x24/ca.png" alt="CA" style="height:20px;border-radius:3px;opacity:.7">
-        <img src="https://flagcdn.com/32x24/au.png" alt="AU" style="height:20px;border-radius:3px;opacity:.7">
-        <img src="https://flagcdn.com/32x24/ae.png" alt="AE" style="height:20px;border-radius:3px;opacity:.7">
-        <img src="https://flagcdn.com/32x24/sa.png" alt="SA" style="height:20px;border-radius:3px;opacity:.7">
-        <img src="https://flagcdn.com/32x24/de.png" alt="DE" style="height:20px;border-radius:3px;opacity:.7">
-        <img src="https://flagcdn.com/32x24/fr.png" alt="FR" style="height:20px;border-radius:3px;opacity:.7">
-        <img src="https://flagcdn.com/32x24/ke.png" alt="KE" style="height:20px;border-radius:3px;opacity:.7">
-        <img src="https://flagcdn.com/32x24/ng.png" alt="NG" style="height:20px;border-radius:3px;opacity:.7">
-        <img src="https://flagcdn.com/32x24/sg.png" alt="SG" style="height:20px;border-radius:3px;opacity:.7">
-        <img src="https://flagcdn.com/32x24/jp.png" alt="JP" style="height:20px;border-radius:3px;opacity:.7">
-        <span style="color:rgba(255,255,255,.4);font-size:.8rem;font-weight:600">+ 40 countries</span>
       </div>
     </div>
   </div>
