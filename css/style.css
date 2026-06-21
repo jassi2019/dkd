@@ -726,7 +726,7 @@ section { padding: 100px 5%; }
 .two-col img { width: 100%; border-radius: var(--r-lg); }
 
 /* ═══ About Section — Video + Text Layout ═══ */
-.about-section { background: #fff; padding: 60px 5%; }
+.about-section { background: #E8EFF6; padding: 60px 5%; }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
 
 /* Video embed */
