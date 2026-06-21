@@ -929,21 +929,19 @@ section { padding: 100px 5%; }
 }
 .srv-card:hover { transform: translateY(-10px); }
 
-/* Tooth-shaped image — molar with 2 roots at top, round body below */
+/* Unique shield/crest shape for treatment cards */
 .srv-img {
-  position: relative; width: 200px; height: 260px; overflow: hidden;
+  position: relative; width: 210px; height: 250px; overflow: hidden;
   clip-path: polygon(
-    20% 0%, 20% 14%, 28% 22%, 38% 24%, 44% 20%, 50% 14%,
-    56% 20%, 62% 24%, 72% 22%, 80% 14%, 80% 0%,
-    95% 4%, 100% 16%, 100% 34%,
-    98% 50%, 92% 64%, 84% 76%,
-    74% 88%, 62% 96%, 50% 100%,
-    38% 96%, 26% 88%, 16% 76%,
-    8% 64%, 2% 50%, 0% 34%,
-    0% 16%, 5% 4%
+    50% 0%, 90% 8%, 100% 20%,
+    100% 55%, 92% 72%, 78% 86%,
+    62% 95%, 50% 100%,
+    38% 95%, 22% 86%, 8% 72%,
+    0% 55%, 0% 20%, 10% 8%
   );
   filter: drop-shadow(0 10px 20px rgba(0,0,0,.15));
   transition: filter .4s ease, transform .4s ease;
+  border: none;
 }
 .srv-card:hover .srv-img {
   filter: drop-shadow(0 15px 30px rgba(37,99,235,.25));
