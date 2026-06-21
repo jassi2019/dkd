@@ -134,7 +134,7 @@ ul  { list-style: none; }
 }
 .top-bar-phone .tb-icon {
   display: flex; align-items: center; justify-content: center;
-  font-size: .85rem; flex-shrink: 0; color: var(--olive);
+  font-size: .95rem; flex-shrink: 0; color: var(--gold);
 }
 .top-bar-phone .tb-info { display: flex; flex-direction: column; gap: 1px; }
 .top-bar-phone .tb-label { font-size: .56rem; font-weight: 600; color: var(--olive); line-height: 1; }
