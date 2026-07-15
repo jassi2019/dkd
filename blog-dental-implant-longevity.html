@@ -303,6 +303,12 @@
       <div class="blog-meta-item"><i class="fas fa-clock"></i> 8 min read</div>
     </div>
 
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc-box" id="toc-box">
+      <h4><i class="fas fa-list"></i> Table of Contents</h4>
+      <ol id="toc-list-main"></ol>
+    </div>
+
     <div class="blog-body" id="blog-body">
 
       <h2>The Short Answer: Dental Implants Can Last a Lifetime</h2>
@@ -425,12 +431,6 @@
 
     <!-- RIGHT: Sticky Sidebar -->
     <div class="blog-sidebar">
-      <!-- TOC -->
-      <div class="sidebar-card sidebar-toc">
-        <h4><i class="fas fa-list" style="margin-right:8px;color:var(--gold)"></i> Table of Contents</h4>
-        <ol id="toc-list"></ol>
-      </div>
-
       <!-- Contact Form -->
       <div class="sidebar-card">
         <h4><i class="fas fa-calendar-check" style="margin-right:8px;color:var(--gold)"></i> Book Free Consultation</h4>
@@ -559,7 +559,7 @@
 <script>
 (function(){
   var body = document.getElementById('blog-body');
-  var tocList = document.getElementById('toc-list');
+  var tocList = document.getElementById('toc-list-main');
   if(!body || !tocList) return;
   var headings = body.querySelectorAll('h2, h3');
   var counter = 0;
