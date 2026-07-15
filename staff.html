@@ -7,14 +7,299 @@
   <meta name="description" content="Meet the specialist doctors at Dr. Kathuria's Dentistry, East of Kailash, Delhi. Our team of endodontists, prosthodontists, orthodontists, periodontists, and oral surgeons delivers world-class dental care."/>
   <link rel="stylesheet" href="css/style.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* ── STAFF PAGE — MEDICA-STYLE INSTAGRAM CARDS ── */
+
+    /* ── FOUNDERS — PREMIUM SPLIT HERO ── */
+    .founders { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
+    .founder-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 480px;
+      background: #fff;
+      overflow: hidden;
+    }
+    .founder-card:first-child { border-radius: 20px 20px 0 0; }
+    .founder-card:last-child { border-radius: 0 0 20px 20px; }
+    .founder-card:nth-child(even) { direction: rtl; }
+    .founder-card:nth-child(even) > * { direction: ltr; }
+    .founder-card + .founder-card { border-top: 3px solid var(--gold, #B8963E); }
+
+    .founder-img {
+      background: linear-gradient(135deg, #d4ddc8, #c5d4b8);
+      position: relative;
+      overflow: hidden;
+    }
+    .founder-img img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .founder-badge {
+      position: absolute; top: 16px; left: 16px;
+      background: var(--gold, #B8963E); color: #fff;
+      font-size: .65rem; font-weight: 700; padding: 6px 14px;
+      border-radius: 99px; letter-spacing: 1px; text-transform: uppercase;
+      display: flex; align-items: center; gap: 5px;
+    }
+
+    .founder-info {
+      padding: 48px 44px;
+      display: flex; flex-direction: column; justify-content: center;
+      background: var(--olive-dark, #3F5A24);
+      color: #fff;
+      position: relative;
+    }
+    .founder-info::before {
+      content: ''; position: absolute; top: 40px; left: 44px;
+      width: 40px; height: 3px; background: var(--gold, #B8963E); border-radius: 2px;
+    }
+    .founder-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      margin-top: 20px; margin-bottom: 4px; line-height: 1.2;
+    }
+    .founder-role { color: var(--gold-light, #D4B865); font-weight: 600; font-size: .92rem; margin-bottom: 4px; }
+    .founder-quals { color: rgba(255,255,255,.5); font-size: .82rem; margin-bottom: 18px; }
+    .founder-bio { color: rgba(255,255,255,.7); font-size: .88rem; line-height: 1.7; margin-bottom: 22px; }
+    .founder-stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; margin-bottom: 24px; }
+    .f-stat {
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 10px; padding: 12px; text-align: center;
+    }
+    .f-stat strong { display: block; font-size: 1.2rem; color: var(--gold-light, #D4B865); font-family: 'Playfair Display', serif; }
+    .f-stat span { font-size: .65rem; color: rgba(255,255,255,.5); text-transform: uppercase; letter-spacing: .5px; font-weight: 600; }
+    .founder-cta { display: flex; gap: 10px; flex-wrap: wrap; }
+    .founder-cta .btn { font-size: .82rem; }
+
+    @media (max-width: 960px) {
+      .founder-card { grid-template-columns: 1fr; min-height: auto; }
+      .founder-card:nth-child(even) { direction: ltr; }
+      .founder-img { height: 350px; }
+      .founder-info { padding: 36px 28px; }
+      .founder-info::before { left: 28px; }
+    }
+    @media (max-width: 600px) {
+      .founder-img { height: 280px; }
+      .founder-info { padding: 28px 20px; }
+      .founder-info::before { left: 20px; }
+      .founder-stats { grid-template-columns: 1fr 1fr; gap: 8px; }
+    }
+
+    /* ── Doctor Cards Grid ── */
+    .dr-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .dr-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,.06);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .dr-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.1);
+    }
+
+    /* Card Header — Logo bar */
+    .dr-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-bottom: 1px solid rgba(0,0,0,.04);
+    }
+    .dr-card-logo-img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: contain;
+    }
+    .dr-card-clinic {
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--olive-dark, #3F5A24);
+      line-height: 1.2;
+    }
+    .dr-card-clinic span {
+      font-weight: 400;
+      color: #999;
+      font-size: .65rem;
+      display: block;
+    }
+
+    /* Card Photo + Name overlay */
+    .dr-card-visual {
+      position: relative;
+      background: linear-gradient(135deg, #d4ddc8, #c5d4b8);
+    }
+    .dr-card-photo {
+      height: 280px;
+      overflow: hidden;
+    }
+    .dr-card-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform .4s;
+    }
+    .dr-card:hover .dr-card-photo img {
+      transform: scale(1.05);
+    }
+    .dr-card-namebar {
+      background: var(--olive-dark, #3F5A24);
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .dr-card-namebar h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: #fff;
+      font-weight: 700;
+      margin: 0;
+    }
+    .dr-card-namebar .dr-specialty {
+      font-size: .7rem;
+      color: rgba(255,255,255,.65);
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      margin-top: 2px;
+    }
+    .dr-card-namebar .dr-flag {
+      width: 24px;
+      height: 18px;
+      border-radius: 2px;
+    }
+
+    /* Card Bio */
+    .dr-card-bio {
+      padding: 18px;
+    }
+    .dr-card-quals {
+      display: inline-block;
+      background: rgba(184,150,62,.08);
+      color: var(--gold, #B8963E);
+      font-size: .68rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 99px;
+      margin-bottom: 12px;
+    }
+    .dr-card-bio p {
+      font-size: .82rem;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+    .dr-card-bio p:last-of-type { margin-bottom: 0; }
+
+    /* Card Footer — Appointment */
+    .dr-card-footer {
+      background: var(--gold, #B8963E);
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .dr-card-footer span {
+      font-size: .68rem;
+      color: rgba(255,255,255,.8);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+    .dr-card-footer strong {
+      display: block;
+      font-size: 1rem;
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .dr-card-footer a {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: .9rem;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .dr-card-footer a:hover {
+      background: rgba(255,255,255,.4);
+    }
+
+    /* Card Bottom Social Bar */
+    .dr-card-social {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 18px;
+      border-top: 1px solid rgba(0,0,0,.04);
+      font-size: .65rem;
+      color: #aaa;
+    }
+    .dr-card-social .dr-social-icons {
+      display: flex;
+      gap: 8px;
+    }
+    .dr-card-social .dr-social-icons a {
+      width: 28px !important;
+      height: 28px !important;
+      max-width: 28px;
+      max-height: 28px;
+      border-radius: 50% !important;
+      background: var(--olive-dark, #3F5A24);
+      color: #fff;
+      font-size: .75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: background .2s;
+      flex: 0 0 28px;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+    .dr-card-social .dr-social-icons a:hover { background: var(--gold, #B8963E); }
+
+    /* ── CTA STRIP ── */
+    .staff-cta {
+      background: var(--olive-dark, #3F5A24);
+      text-align: center;
+      color: #fff;
+    }
+    .staff-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      margin-bottom: 12px;
+    }
+    .staff-cta h2 em { color: var(--gold-light, #D4B86A); font-style: italic; }
+    .staff-cta p { color: rgba(255,255,255,.65); margin-bottom: 32px; max-width: 550px; margin-left: auto; margin-right: auto; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) {
+      .dr-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 700px) {
+      .dr-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+    }
+  </style>
 </head>
 <body class="has-topbar">
 
 <!-- PAGE LOADER -->
-<div id="page-loader"><div class="loader-inner"><div class="tooth">&#x1f9b7;</div><p>Loading...</p></div></div>
-<div class="cursor-glow"></div>
+<div id="page-loader"><div class="loader-inner"><i class="fas fa-tooth tooth"></i><p>Loading</p></div></div>
 
-<!-- ══════ ROW 1: Phone Numbers + Mail + Location ══════ -->
+<!-- ══════ TOP BAR ══════ -->
 <div class="top-bar">
   <div class="top-bar-inner">
     <a href="tel:+61384004931" class="top-bar-phone">
@@ -53,59 +338,104 @@
   </div>
 </div>
 
-
-</div>
-
 <nav class="site-nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      
-      <img src="https://www.delhidental.com/wp-content/uploads/2017/09/Dr.Kathurias-Dentistry-Logo-e1641815051747.jpg" alt="Dr. Kathurias Dentistry Logo" class="logo-img">
+      <img src="https://www.delhidental.com/wp-content/uploads/2017/09/Dr.Kathurias-Dentistry-Logo-e1641815051747.jpg" alt="Dr. Kathuria's Dentistry Logo" class="logo-img">
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">The Practice <i class="fas fa-chevron-down chevron"></i></a>
+      <li><a href="#">The Practice <i class="fas fa-chevron-down chevron"></i></a>
         <div class="nav-dropdown">
-          <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialists</a>
+          <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialist</a>
           <a href="clinic-tour.html"><i class="fas fa-hospital"></i> Clinic Tour Images</a>
           <a href="technology.html"><i class="fas fa-microchip"></i> Technology</a>
+          <a href="articles.html"><i class="fas fa-newspaper"></i> Articles</a>
         </div>
       </li>
       <li><a href="services.html">Treatments <i class="fas fa-chevron-down chevron"></i></a>
         <div class="nav-mega">
           <div class="mega-group">
-            <h6>Dental Implants</h6>
-            <a href="dental-implants.html"><i class="fas fa-tooth"></i> All Implant Options</a>
-            <a href="single-tooth-implants.html"><i class="fas fa-chevron-right"></i> Single Tooth</a>
-            <a href="all-on-4-dental-implants.html"><i class="fas fa-chevron-right"></i> All-on-4</a>
-            <a href="full-mouth-rehabilitation.html"><i class="fas fa-chevron-right"></i> Full Mouth Rehab</a>
+            <h6><a href="dental-implants.html" style="color:inherit;text-decoration:none">Dental Implants</a></h6>
+            <a href="single-tooth-implants.html"><i class="fas fa-chevron-right"></i> Single Tooth Implant</a>
+            <a href="multiple-tooth-implants.html"><i class="fas fa-chevron-right"></i> Multiple Teeth Implants</a>
+            <a href="full-mouth-rehabilitation.html"><i class="fas fa-chevron-right"></i> All Teeth Implants</a>
+            <a href="all-on-4-dental-implants.html"><i class="fas fa-chevron-right"></i> All-on-4 Technology</a>
+            <a href="nobel-guide-surgery.html"><i class="fas fa-chevron-right"></i> Nobel Guide Computer Guided Surgery</a>
           </div>
           <div class="mega-group">
-            <h6>Cosmetic Dentistry</h6>
-            <a href="cosmetic-dentistry.html"><i class="fas fa-star"></i> All Cosmetic</a>
+            <h6><a href="cosmetic-dentistry.html" style="color:inherit;text-decoration:none">Cosmetic Dentistry</a></h6>
             <a href="smile-makeover.html"><i class="fas fa-chevron-right"></i> Smile Makeover</a>
+            <a href="gap-closure.html"><i class="fas fa-chevron-right"></i> Gap Closure</a>
+            <a href="no-prep-veneers.html"><i class="fas fa-chevron-right"></i> No Prep/Prepless Veneers</a>
+            <a href="crooked-tooth-treatment.html"><i class="fas fa-chevron-right"></i> Crooked Tooth Correction</a>
             <a href="teeth-whitening.html"><i class="fas fa-chevron-right"></i> Teeth Whitening</a>
-            <a href="no-prep-veneers.html"><i class="fas fa-chevron-right"></i> Veneers</a>
+            <a href="jetting-out-teeth-correction.html"><i class="fas fa-chevron-right"></i> Jetting Out Teeth Correction</a>
+            <a href="mottling-of-teeth-correction.html"><i class="fas fa-chevron-right"></i> Mottling of Teeth Correction</a>
+            <a href="cosmetic-contouring.html"><i class="fas fa-chevron-right"></i> Cosmetic Contouring</a>
+            <a href="root-canal-treatment.html"><i class="fas fa-chevron-right"></i> Root Canal Treatment</a>
+            <a href="cosmetic-tooth-colored-fillings.html"><i class="fas fa-chevron-right"></i> Cosmetic Tooth Colored Fillings</a>
+            <a href="tooth-crystal.html"><i class="fas fa-chevron-right"></i> Tooth Crystal</a>
+            <a href="inlays-onlays.html"><i class="fas fa-chevron-right"></i> Inlays &amp; Onlays</a>
           </div>
           <div class="mega-group">
-            <h6>More Treatments</h6>
-            <a href="orthodontics.html"><i class="fas fa-teeth"></i> Orthodontics</a>
-            <a href="gum-treatment.html"><i class="fas fa-leaf"></i> Gums Treatment</a>
-            <a href="kids-dentistry.html"><i class="fas fa-child"></i> Kids Dentistry</a>
-            <a href="services.html"><i class="fas fa-th-list"></i> View All Treatments</a>
+            <h6><a href="gum-treatment.html" style="color:inherit;text-decoration:none">Gums Treatment</a></h6>
+            <a href="laser-gummy-smile-correction.html"><i class="fas fa-chevron-right"></i> Laser Gummy Smile Correction</a>
+            <a href="full-mouth-scaling.html"><i class="fas fa-chevron-right"></i> Full Mouth Scaling &amp; Polishing</a>
+            <a href="deep-cleaning.html"><i class="fas fa-chevron-right"></i> Deep Cleaning</a>
+            <a href="gums-surgery.html"><i class="fas fa-chevron-right"></i> Gums Surgery</a>
+            <a href="socket-preservation.html"><i class="fas fa-chevron-right"></i> Socket Preservation Therapy</a>
+            <a href="bad-breath-treatment.html"><i class="fas fa-chevron-right"></i> Bad Breath Treatment</a>
+            <a href="laser-gums-depigmentation.html"><i class="fas fa-chevron-right"></i> Laser Gums De Pigmentation</a>
+            <a href="mobile-teeth-solution.html"><i class="fas fa-chevron-right"></i> Mobile Teeth Solution with Splinting</a>
+          </div>
+          <div class="mega-group">
+            <h6><a href="kids-dentistry.html" style="color:inherit;text-decoration:none">Kids Dentistry</a></h6>
+            <a href="fluoride-fillings.html"><i class="fas fa-chevron-right"></i> Fluoride Fillings</a>
+            <a href="kids-root-canal.html"><i class="fas fa-chevron-right"></i> Kids Root Canal Treatment</a>
+            <a href="fluoride-applications.html"><i class="fas fa-chevron-right"></i> Fluoride Applications</a>
+          </div>
+          <div class="mega-group">
+            <h6><a href="maxillofacial-surgery.html" style="color:inherit;text-decoration:none">Maxillofacial Surgery</a></h6>
+            <a href="surgical-extractions.html"><i class="fas fa-chevron-right"></i> Simple &amp; Surgical Tooth Extractions</a>
+            <a href="sinus-lift-surgery.html"><i class="fas fa-chevron-right"></i> Sinus Lift Surgery</a>
+          </div>
+          <div class="mega-group">
+            <h6><a href="orthodontics.html" style="color:inherit;text-decoration:none">Orthodontics Treatment</a></h6>
+            <a href="braces.html"><i class="fas fa-chevron-right"></i> Braces (Metallic or Ceramic)</a>
+            <a href="lingual-braces.html"><i class="fas fa-chevron-right"></i> Lingual Braces</a>
+            <a href="clear-aligners.html"><i class="fas fa-chevron-right"></i> Clear Aligners (Invisible Braces)</a>
+          </div>
+          <div class="mega-group">
+            <h6>More</h6>
+            <a href="digital-xrays.html"><i class="fas fa-chevron-right"></i> Digital RVG X-rays</a>
+            <a href="panoramic-xray.html"><i class="fas fa-chevron-right"></i> Panoramic X-Ray</a>
+            <a href="crowns-bridge.html"><i class="fas fa-chevron-right"></i> Crowns &amp; Bridges</a>
+            <a href="microscopic-dentistry.html"><i class="fas fa-chevron-right"></i> Microscopic Dentistry</a>
+            <a href="oral-cancer-detection.html"><i class="fas fa-chevron-right"></i> Oral Cancer Detection</a>
           </div>
         </div>
       </li>
-      <li><a href="awards.html">Credibility <i class="fas fa-chevron-down chevron"></i></a>
+      <li><a href="#">Credibility <i class="fas fa-chevron-down chevron"></i></a>
         <div class="nav-dropdown">
-          <a href="awards.html"><i class="fas fa-trophy"></i> Awards</a>
+          <a href="awards.html"><i class="fas fa-trophy"></i> Awards &amp; Recognitions</a>
           <a href="testimonials.html"><i class="fas fa-comments"></i> Testimonials</a>
+          <a href="video-testimonials.html"><i class="fas fa-video"></i> Video Testimonials</a>
           <a href="accreditation.html"><i class="fas fa-certificate"></i> Accreditation</a>
+          <a href="community-outreach.html"><i class="fas fa-hands-helping"></i> Community Outreach</a>
+          <a href="campaigns.html"><i class="fas fa-bullhorn"></i> Campaigns</a>
+          <a href="news-events.html"><i class="fas fa-newspaper"></i> News &amp; Events</a>
         </div>
       </li>
-      <li><a href="cases.html">Cases</a></li>
+      <li><a href="#">Cases <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="cases.html"><i class="fas fa-images"></i> Patient Gallery</a>
+          <a href="virtual-smile-makeover.html"><i class="fas fa-wand-magic-sparkles"></i> Virtual Smile Makeover</a>
+        </div>
+      </li>
       <li><a href="charges.html">Charges</a></li>
       <li><a href="smile-analysis.html">Smile Analysis</a></li>
+      <li><a href="articles.html">Articles</a></li>
       <li><a href="contact.html">Contact Us</a></li>
     </ul>
     <div class="nav-right">
@@ -128,7 +458,7 @@
     <div class="usp-item"><i class="fas fa-shield-virus"></i><div class="usp-text">Sterile &amp; Safe<span>Environment</span></div></div>
     <div class="usp-item"><i class="fas fa-smile-beam"></i><div class="usp-text">15,000+<span>Happy Smiles</span></div></div>
     <div class="usp-item">
-      <div class="usp-google"><span class="g-icon">G</span><span class="g-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span><span class="g-text">4.9/5 Based on 500+ Reviews</span></div>
+      <div class="usp-google"><svg class="g-icon-img" style="height:20px;width:20px;" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59a14.5 14.5 0 0 1 0-9.18l-7.98-6.19a24.0 24.0 0 0 0 0 21.56l7.98-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span class="g-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span><span class="g-text">4.9/5 Based on 500+ Reviews</span></div>
     </div>
   </div>
 </div>
@@ -136,30 +466,30 @@
 <!-- ═══ MOBILE NAV ═══ -->
 <div class="mobile-nav" id="mobileNav">
   <a href="index.html"><i class="fas fa-home"></i> Home</a>
-  <a href="staff.html"><i class="fas fa-user-md"></i> Team of Specialists</a>
-  <a href="about.html#clinic-tour"><i class="fas fa-hospital"></i> Clinic Tour</a>
-  <a href="about.html#technology"><i class="fas fa-microchip"></i> Technology</a>
-  <a href="services.html"><i class="fas fa-tooth"></i> Treatments</a>
-  <a href="awards.html"><i class="fas fa-trophy"></i> Credibility</a>
-  <a href="cases.html"><i class="fas fa-images"></i> Cases</a>
+  <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialist</a>
+  <a href="clinic-tour.html"><i class="fas fa-hospital"></i> Clinic Tour Images</a>
+  <a href="technology.html"><i class="fas fa-microchip"></i> Technology</a>
+  <a href="services.html"><i class="fas fa-teeth"></i> All Treatments</a>
+  <a href="awards.html"><i class="fas fa-trophy"></i> Awards &amp; Recognitions</a>
+  <a href="testimonials.html"><i class="fas fa-comments"></i> Testimonials</a>
+  <a href="cases.html"><i class="fas fa-images"></i> Patient Gallery</a>
   <a href="charges.html"><i class="fas fa-indian-rupee-sign"></i> Charges</a>
-  <a href="smile-analysis.html"><i class="fas fa-smile-beam"></i> Smile Analysis</a>
+  <a href="smile-analysis.html"><i class="fas fa-face-smile-beam"></i> Smile Analysis</a>
+  <a href="articles.html"><i class="fas fa-newspaper"></i> Articles</a>
   <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
-  <a class="mobile-cta" href="contact.html"><i class="fas fa-calendar-check"></i> Book Consultation</a>
+  <a href="tel:1800117272" class="mobile-cta"><i class="fas fa-calendar-check"></i> Book Appointment</a>
 </div>
 
 
-<!-- ═══════════════════════════════════════════════════
+<!-- ═══════════════════════════════════════
      PAGE HERO
-═══════════════════════════════════════════════════ -->
+═══════════════════════════════════════ -->
 <div class="page-hero">
   <img class="page-hero-img" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80" alt="Dr. Kathuria's Dentistry — Meet Our Specialists"/>
   <div class="page-hero-overlay" style="background:linear-gradient(135deg, var(--olive-dark) 0%, rgba(63,90,36,.85) 50%, rgba(91,123,58,.6) 100%)"></div>
   <div class="page-hero-content">
     <div class="breadcrumb">
       <a href="index.html">Home</a>
-      <span class="sep"><i class="fas fa-chevron-right" style="font-size:.5rem"></i></span>
-      <span>The Practice</span>
       <span class="sep"><i class="fas fa-chevron-right" style="font-size:.5rem"></i></span>
       <span style="color:var(--gold-light);font-weight:600">Team of Specialists</span>
     </div>
@@ -169,207 +499,271 @@
 </div>
 
 
-<!-- ═══════════════════════════════════════════════════
-     STAFF GRID — MEDICA HOSPITAL STYLE CARDS
-═══════════════════════════════════════════════════ -->
-<section class="bg-cream">
-  <div class="container reveal">
-    <div class="sec-h center">
-      <span class="sec-chip"><i class="fas fa-user-md"></i> Our Doctors</span>
-      <h2>World-Class <em>Dental Specialists</em></h2>
+<!-- ═══════════════════════════════════════
+     FOUNDERS — PREMIUM HERO SECTION
+═══════════════════════════════════════ -->
+<section style="padding:60px 5%;background:#fff">
+  <div class="container">
+    <div class="sec-h center reveal">
+      <span class="sec-chip gold"><i class="fas fa-crown"></i> Founders</span>
+      <h2>Meet the <em>Founders</em></h2>
       <div class="sec-divider"></div>
-      <p>Each doctor at Dr. Kathuria's Dentistry brings deep specialisation, international credentials, and thousands of successful cases.</p>
     </div>
 
-    <div class="staff-grid">
-
-      <!-- ── Doctor 1: Dr. Sween Kathuria ── -->
-      <div class="staff-card reveal">
-        <div class="staff-card-top">
-          <div class="staff-card-logo">
-            <div class="staff-card-logo-text"><strong>Dr. Kathuria's</strong>Dentistry</div>
-          </div>
-          <div class="staff-card-name">
-            <h3>Dr. Sween Kathuria</h3>
-            <p>Endodontist &amp; Cosmetic Dentist</p>
-          </div>
-          <div class="staff-card-photo">
-            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80" alt="Dr. Sween Kathuria"/>
-          </div>
+    <div class="founders reveal">
+      <!-- Dr. Sween -->
+      <div class="founder-card">
+        <div class="founder-img">
+          <img src="images/staff-sween.jpg" alt="Dr. Sween Kathuria"/>
+          <div class="founder-badge"><i class="fas fa-crown"></i> Co-Founder</div>
         </div>
-        <div class="staff-card-body">
-          <div class="staff-card-quals">B.D.S., M.D.S., F.P.F.A. (<img src="https://flagcdn.com/24x18/us.png" alt="us" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> USA)</div>
-          <div class="staff-card-desc">
-            <p>Over 18 years of clinical experience in endodontics and cosmetic dentistry. Specializes in single-sitting root canal treatments, smile makeovers, and aesthetic restorations. Pioneer of microscope-assisted endodontics in Delhi.</p>
+        <div class="founder-info">
+          <h2>Dr. Sween Kathuria</h2>
+          <p class="founder-role">Endodontist &amp; Cosmetic Dentist</p>
+          <p class="founder-quals">B.D.S., M.D.S., F.P.F.A. (USA)</p>
+          <p class="founder-bio">Over 21 years of clinical excellence. Key Opinion Leader for major dental brands. Specializes in single-sitting root canals, smile makeovers, and aesthetic restorations using microscope-assisted techniques.</p>
+          <div class="founder-stats">
+            <div class="f-stat"><strong>12,000+</strong><span>Root Canals</span></div>
+            <div class="f-stat"><strong>7,000+</strong><span>Smile Makeovers</span></div>
+            <div class="f-stat"><strong>18,000+</strong><span>Porcelain Veneers</span></div>
+            <div class="f-stat"><strong>21+</strong><span>Years Experience</span></div>
           </div>
-        </div>
-        <div class="staff-card-footer">
-          <div>
-            <span>For Appointments Call Us On</span><br/>
-            <strong>1800-11-7272</strong>
+          <div class="founder-cta">
+            <a href="contact.html" class="btn btn-gold btn-pill"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+            <a href="tel:18001177272" class="btn btn-outline btn-pill" style="color:#fff;border-color:rgba(255,255,255,.3)"><i class="fas fa-phone"></i> 1800-11-7272</a>
           </div>
-          <a href="tel:18001177272" class="phone-icon"><i class="fas fa-phone-alt"></i></a>
         </div>
       </div>
 
-      <!-- ── Doctor 2: Dr. Puneet Kathuria ── -->
-      <div class="staff-card reveal">
-        <div class="staff-card-top">
-          <div class="staff-card-logo">
-            <div class="staff-card-logo-text"><strong>Dr. Kathuria's</strong>Dentistry</div>
-          </div>
-          <div class="staff-card-name">
-            <h3>Dr. Puneet Kathuria</h3>
-            <p>Prosthodontist &amp; Oral Implantologist</p>
-          </div>
-          <div class="staff-card-photo">
-            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&q=80" alt="Dr. Puneet Kathuria"/>
-          </div>
+      <!-- Dr. Puneet -->
+      <div class="founder-card">
+        <div class="founder-img">
+          <img src="images/staff-puneet.jpg" alt="Dr. Puneet Kathuria"/>
+          <div class="founder-badge"><i class="fas fa-crown"></i> Co-Founder</div>
         </div>
-        <div class="staff-card-body">
-          <div class="staff-card-quals">B.D.S., M.D.S., F.I.C.O.I. (<img src="https://flagcdn.com/24x18/us.png" alt="us" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> USA)</div>
-          <div class="staff-card-desc">
-            <p>Leading implantologist with 18+ years of experience. Expert in full mouth rehabilitation, All-on-4 implants, and Nobel Biocare guided surgery. Trained at NYU and Columbia University.</p>
+        <div class="founder-info">
+          <h2>Dr. Puneet Kathuria</h2>
+          <p class="founder-role">Prosthodontist &amp; Oral Implantologist</p>
+          <p class="founder-quals">B.D.S., M.D.S., F.I.C.O.I. (USA)</p>
+          <p class="founder-bio">Leading implantologist with 20+ years experience. Fellow of International Congress of Oral Implantologists. Placed 10,000+ implants for patients from 40+ countries. Speaker &amp; Mentor for Nobel Biocare worldwide.</p>
+          <div class="founder-stats">
+            <div class="f-stat"><strong>10,000+</strong><span>Implants Placed</span></div>
+            <div class="f-stat"><strong>40+</strong><span>Countries Served</span></div>
+            <div class="f-stat"><strong>200+</strong><span>Presentations</span></div>
+            <div class="f-stat"><strong>20+</strong><span>Years Experience</span></div>
           </div>
-        </div>
-        <div class="staff-card-footer">
-          <div>
-            <span>For Appointments Call Us On</span><br/>
-            <strong>1800-11-7272</strong>
+          <div class="founder-cta">
+            <a href="contact.html" class="btn btn-gold btn-pill"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+            <a href="tel:18001177272" class="btn btn-outline btn-pill" style="color:#fff;border-color:rgba(255,255,255,.3)"><i class="fas fa-phone"></i> 1800-11-7272</a>
           </div>
-          <a href="tel:18001177272" class="phone-icon"><i class="fas fa-phone-alt"></i></a>
         </div>
       </div>
-
-      <!-- ── Doctor 3: Dr. Priya Sharma ── -->
-      <div class="staff-card reveal">
-        <div class="staff-card-top">
-          <div class="staff-card-logo">
-            <div class="staff-card-logo-text"><strong>Dr. Kathuria's</strong>Dentistry</div>
-          </div>
-          <div class="staff-card-name">
-            <h3>Dr. Priya Sharma</h3>
-            <p>Orthodontist</p>
-          </div>
-          <div class="staff-card-photo">
-            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964f137?w=400&q=80" alt="Dr. Priya Sharma"/>
-          </div>
-        </div>
-        <div class="staff-card-body">
-          <div class="staff-card-quals">B.D.S., M.D.S. (Orthodontics)</div>
-          <div class="staff-card-desc">
-            <p>Specialist in clear aligners, ceramic braces, and lingual braces. Focuses on creating beautiful smiles using latest digital treatment planning. Over 2000+ successful orthodontic cases.</p>
-          </div>
-        </div>
-        <div class="staff-card-footer">
-          <div>
-            <span>For Appointments Call Us On</span><br/>
-            <strong>1800-11-7272</strong>
-          </div>
-          <a href="tel:18001177272" class="phone-icon"><i class="fas fa-phone-alt"></i></a>
-        </div>
-      </div>
-
-      <!-- ── Doctor 4: Dr. Raghav Mehra ── -->
-      <div class="staff-card reveal">
-        <div class="staff-card-top">
-          <div class="staff-card-logo">
-            <div class="staff-card-logo-text"><strong>Dr. Kathuria's</strong>Dentistry</div>
-          </div>
-          <div class="staff-card-name">
-            <h3>Dr. Raghav Mehra</h3>
-            <p>Periodontist &amp; Laser Specialist</p>
-          </div>
-          <div class="staff-card-photo">
-            <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400&q=80" alt="Dr. Raghav Mehra"/>
-          </div>
-        </div>
-        <div class="staff-card-body">
-          <div class="staff-card-quals">B.D.S., M.D.S. (Periodontics)</div>
-          <div class="staff-card-desc">
-            <p>Expert in laser gum treatment, gummy smile correction, and gum surgeries. Uses cutting-edge laser technology for painless procedures.</p>
-          </div>
-        </div>
-        <div class="staff-card-footer">
-          <div>
-            <span>For Appointments Call Us On</span><br/>
-            <strong>1800-11-7272</strong>
-          </div>
-          <a href="tel:18001177272" class="phone-icon"><i class="fas fa-phone-alt"></i></a>
-        </div>
-      </div>
-
-      <!-- ── Doctor 5: Dr. Anjali Verma ── -->
-      <div class="staff-card reveal">
-        <div class="staff-card-top">
-          <div class="staff-card-logo">
-            <div class="staff-card-logo-text"><strong>Dr. Kathuria's</strong>Dentistry</div>
-          </div>
-          <div class="staff-card-name">
-            <h3>Dr. Anjali Verma</h3>
-            <p>Pediatric Dentist</p>
-          </div>
-          <div class="staff-card-photo">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80" alt="Dr. Anjali Verma"/>
-          </div>
-        </div>
-        <div class="staff-card-body">
-          <div class="staff-card-quals">B.D.S., M.D.S. (Pedodontics)</div>
-          <div class="staff-card-desc">
-            <p>Dedicated pediatric dentist with a gentle approach. Specializes in child-friendly dental care, preventive treatments, and early orthodontic intervention.</p>
-          </div>
-        </div>
-        <div class="staff-card-footer">
-          <div>
-            <span>For Appointments Call Us On</span><br/>
-            <strong>1800-11-7272</strong>
-          </div>
-          <a href="tel:18001177272" class="phone-icon"><i class="fas fa-phone-alt"></i></a>
-        </div>
-      </div>
-
-      <!-- ── Doctor 6: Dr. Arjun Singh ── -->
-      <div class="staff-card reveal">
-        <div class="staff-card-top">
-          <div class="staff-card-logo">
-            <div class="staff-card-logo-text"><strong>Dr. Kathuria's</strong>Dentistry</div>
-          </div>
-          <div class="staff-card-name">
-            <h3>Dr. Arjun Singh</h3>
-            <p>Oral &amp; Maxillofacial Surgeon</p>
-          </div>
-          <div class="staff-card-photo">
-            <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&q=80" alt="Dr. Arjun Singh"/>
-          </div>
-        </div>
-        <div class="staff-card-body">
-          <div class="staff-card-quals">B.D.S., M.D.S. (Oral Surgery)</div>
-          <div class="staff-card-desc">
-            <p>Skilled oral surgeon specializing in complex extractions, dental implant surgery, sinus lifts, and bone grafting. Over 5000+ successful surgical procedures.</p>
-          </div>
-        </div>
-        <div class="staff-card-footer">
-          <div>
-            <span>For Appointments Call Us On</span><br/>
-            <strong>1800-11-7272</strong>
-          </div>
-          <a href="tel:18001177272" class="phone-icon"><i class="fas fa-phone-alt"></i></a>
-        </div>
-      </div>
-
-    </div><!-- /.staff-grid -->
-  </div><!-- /.container -->
+    </div>
+  </div>
 </section>
 
 
-<!-- ═══════════════════════════════════════════════════
-     CTA SECTION — SCHEDULE A CONSULTATION
-═══════════════════════════════════════════════════ -->
-<section class="bg-olive" style="text-align:center;">
+<!-- ═══════════════════════════════════════
+     SPECIALIST TEAM — MEDICA INSTAGRAM CARDS
+═══════════════════════════════════════ -->
+<section class="bg-cream">
+  <div class="container">
+    <div class="sec-h center reveal">
+      <span class="sec-chip"><i class="fas fa-user-doctor"></i> Our Specialists</span>
+      <h2>Specialist <em>Team</em></h2>
+      <div class="sec-divider"></div>
+      <p>Each doctor brings deep specialisation, international credentials, and a commitment to clinical excellence.</p>
+    </div>
+
+    <div class="dr-grid">
+
+      <!-- Dr. Rahul Paul -->
+      <div class="dr-card reveal">
+        <div class="dr-card-visual">
+          <div class="dr-card-photo"><img src="images/staff-rahul.jpg" alt="Dr. Rahul Paul"/></div>
+          <div class="dr-card-namebar">
+            <div><h3>Dr. Rahul Paul</h3><span class="dr-specialty">Orthodontist — Braces Specialist</span></div>
+          </div>
+        </div>
+        <div class="dr-card-bio">
+          <span class="dr-card-quals">B.D.S., M.D.S.</span>
+          <p>18+ years in orthodontics. Professor &amp; Head of Orthodontics, Principal at Indraprastha Dental College. Trained in Damon System and ODS Clear Aligners.</p>
+        </div>
+        <div class="dr-card-footer">
+          <div><span>For Appointments Call Us On</span><strong>1800-11-7272</strong></div>
+          <a href="tel:18001177272"><i class="fas fa-phone"></i></a>
+        </div>
+        <div class="dr-card-social">
+          <span>drkathuriasdentistry</span>
+          <div class="dr-social-icons">
+            <a href="https://www.instagram.com/drkathuriasdentistry" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/DrKathuriasDentistry" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dr. Vijayant Phogat -->
+      <div class="dr-card reveal">
+        <div class="dr-card-visual">
+          <div class="dr-card-photo"><img src="images/staff-vijayant.jpg" alt="Dr. Vijayant Phogat"/></div>
+          <div class="dr-card-namebar">
+            <div><h3>Dr. Vijayant Phogat</h3><span class="dr-specialty">Endodontist</span></div>
+          </div>
+        </div>
+        <div class="dr-card-bio">
+          <span class="dr-card-quals">B.D.S., M.D.S.</span>
+          <p>Masters from Guru Nanak Dev Dental College. Certified in broken file retrieval. Conducts endodontic problem-solving courses across India.</p>
+        </div>
+        <div class="dr-card-footer">
+          <div><span>For Appointments Call Us On</span><strong>1800-11-7272</strong></div>
+          <a href="tel:18001177272"><i class="fas fa-phone"></i></a>
+        </div>
+        <div class="dr-card-social">
+          <span>drkathuriasdentistry</span>
+          <div class="dr-social-icons">
+            <a href="https://www.instagram.com/drkathuriasdentistry" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/DrKathuriasDentistry" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dr. Shipra Jaiswal -->
+      <div class="dr-card reveal">
+        <div class="dr-card-visual">
+          <div class="dr-card-photo"><img src="images/staff-shipra.jpg" alt="Dr. Shipra Jaiswal"/></div>
+          <div class="dr-card-namebar">
+            <div><h3>Dr. Shipra Jaiswal</h3><span class="dr-specialty">Periodontist — Gums Specialist</span></div>
+          </div>
+        </div>
+        <div class="dr-card-bio">
+          <span class="dr-card-quals">B.D.S., M.D.S.</span>
+          <p>Former resident at Hindurao Hospital. Specializes in deep cleaning, flap surgeries, bone grafts, and laser gum procedures.</p>
+        </div>
+        <div class="dr-card-footer">
+          <div><span>For Appointments Call Us On</span><strong>1800-11-7272</strong></div>
+          <a href="tel:18001177272"><i class="fas fa-phone"></i></a>
+        </div>
+        <div class="dr-card-social">
+          <span>drkathuriasdentistry</span>
+          <div class="dr-social-icons">
+            <a href="https://www.instagram.com/drkathuriasdentistry" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/DrKathuriasDentistry" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dr. Anuj Shankar Tiwari -->
+      <div class="dr-card reveal">
+        <div class="dr-card-visual">
+          <div class="dr-card-photo"><img src="images/staff-anuj.jpg" alt="Dr. Anuj Shankar Tiwari"/></div>
+          <div class="dr-card-namebar">
+            <div><h3>Dr. Anuj Shankar Tiwari</h3><span class="dr-specialty">Oral &amp; Maxillofacial Surgeon</span></div>
+          </div>
+        </div>
+        <div class="dr-card-bio">
+          <span class="dr-card-quals">B.D.S., M.D.S.</span>
+          <p>MDS from NIMS Jaipur. ACLS &amp; BLS certified. Specializes in surgical extractions and facial trauma management.</p>
+        </div>
+        <div class="dr-card-footer">
+          <div><span>For Appointments Call Us On</span><strong>1800-11-7272</strong></div>
+          <a href="tel:18001177272"><i class="fas fa-phone"></i></a>
+        </div>
+        <div class="dr-card-social">
+          <span>drkathuriasdentistry</span>
+          <div class="dr-social-icons">
+            <a href="https://www.instagram.com/drkathuriasdentistry" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/DrKathuriasDentistry" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dr. Neha Gaur -->
+      <div class="dr-card reveal">
+        <div class="dr-card-visual">
+          <div class="dr-card-photo"><img src="images/staff-neha.png" alt="Dr. Neha Gaur"/></div>
+          <div class="dr-card-namebar">
+            <div><h3>Dr. Neha Gaur</h3><span class="dr-specialty">Prosthodontist</span></div>
+          </div>
+        </div>
+        <div class="dr-card-bio">
+          <span class="dr-card-quals">B.D.S., M.D.S.</span>
+          <p>Gold medalist and university topper. Implant training in South Korea. Specializes in veneers, prosthetics, and full mouth rehabilitation.</p>
+        </div>
+        <div class="dr-card-footer">
+          <div><span>For Appointments Call Us On</span><strong>1800-11-7272</strong></div>
+          <a href="tel:18001177272"><i class="fas fa-phone"></i></a>
+        </div>
+        <div class="dr-card-social">
+          <span>drkathuriasdentistry</span>
+          <div class="dr-social-icons">
+            <a href="https://www.instagram.com/drkathuriasdentistry" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/DrKathuriasDentistry" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dr. Saloni Gupta -->
+      <div class="dr-card reveal">
+        <div class="dr-card-visual">
+          <div class="dr-card-photo"><img src="images/staff-saloni.jpg" alt="Dr. Saloni Gupta"/></div>
+          <div class="dr-card-namebar">
+            <div><h3>Dr. Saloni Gupta</h3><span class="dr-specialty">Oral &amp; Maxillofacial Surgeon</span></div>
+          </div>
+        </div>
+        <div class="dr-card-bio">
+          <span class="dr-card-quals">B.D.S., M.D.S.</span>
+          <p>AOMSI Fellowship in Orthognathic Surgery. ABMSS Fellowship in Cleft Lip/Palate. Senior Lecturer at Indraprastha Dental College.</p>
+        </div>
+        <div class="dr-card-footer">
+          <div><span>For Appointments Call Us On</span><strong>1800-11-7272</strong></div>
+          <a href="tel:18001177272"><i class="fas fa-phone"></i></a>
+        </div>
+        <div class="dr-card-social">
+          <span>drkathuriasdentistry</span>
+          <div class="dr-social-icons">
+            <a href="https://www.instagram.com/drkathuriasdentistry" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/DrKathuriasDentistry" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dr. Geetika Agrawal -->
+      <div class="dr-card reveal">
+        <div class="dr-card-visual">
+          <div class="dr-card-photo"><img src="images/staff-geetika.png" alt="Dr. Geetika Agrawal"/></div>
+          <div class="dr-card-namebar">
+            <div><h3>Dr. Geetika Agrawal</h3><span class="dr-specialty">General Surgeon &amp; Cosmetic Doctor</span></div>
+          </div>
+        </div>
+        <div class="dr-card-bio">
+          <span class="dr-card-quals">MBBS, MS (Surgery), Masters in Facial Aesthetics</span>
+          <p>Fellowship in Cosmetics &amp; Facial Aesthetics (London, UK). Performs Botox, lip fillers, and aesthetic procedures that complement dental treatments.</p>
+        </div>
+        <div class="dr-card-footer">
+          <div><span>For Appointments Call Us On</span><strong>1800-11-7272</strong></div>
+          <a href="tel:18001177272"><i class="fas fa-phone"></i></a>
+        </div>
+        <div class="dr-card-social">
+          <span>drkathuriasdentistry</span>
+          <div class="dr-social-icons">
+            <a href="https://www.instagram.com/drkathuriasdentistry" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/DrKathuriasDentistry" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     CTA SECTION
+═══════════════════════════════════════ -->
+<section class="staff-cta">
   <div class="container reveal">
-    <span class="sec-chip light"><i class="fas fa-calendar-check"></i> Consultation</span>
-    <h2 style="font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3rem); color:var(--white); margin-bottom:16px; font-weight:700;">Schedule a <em style="color:var(--gold-light);font-style:italic;">Consultation</em></h2>
-    <p style="color:rgba(255,255,255,.7); font-size:1rem; max-width:600px; margin:0 auto 36px; line-height:1.78;">Whether you need a routine check-up or a complete smile makeover, our specialists are here to help. Book your visit today.</p>
+    <h2>Schedule a <em>Consultation</em></h2>
+    <p>Whether you need a routine check-up or a complete smile makeover, our specialists are here to help. Book your visit today.</p>
     <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
       <a class="btn btn-gold btn-lg btn-pill" href="contact.html"><i class="fas fa-calendar-check"></i> Book Appointment</a>
       <a class="btn btn-outline btn-lg btn-pill" href="https://wa.me/919810936360" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
@@ -378,143 +772,75 @@
 </section>
 
 
-<!-- ═══════════════════════════════════════════════════
+<!-- ═══════════════════════════════════════
      FOOTER
-═══════════════════════════════════════════════════ -->
+═══════════════════════════════════════ -->
 <footer class="site-footer">
-  <div class="container">
-    <div class="ft-grid">
-      <!-- Brand -->
-      <div class="ft-brand">
-        <div class="ft-logo">
-          <div class="ft-logo-mark"><i class="fas fa-tooth"></i></div>
-          <div class="ft-logo-text"><strong>Dr. Kathuria's Dentistry</strong><span>Est. 2006 &middot; East of Kailash</span></div>
-        </div>
-        <p>NABH Accredited &amp; ISO Certified dental clinic trusted by 15,000+ patients from 44 countries. Delivering world-class smile transformations since 2006.</p>
-        <div class="ft-socials">
-          <a href="https://www.facebook.com/DrKathuriaDentistry" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/drkathuriasdentistry" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.youtube.com/@dentalclinicindelhi" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          <a href="https://twitter.com/Kathuriadentist" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="https://wa.me/919810936360" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        </div>
+  <div class="ft-grid">
+    <div class="ft-brand">
+      <div class="ft-logo">
+        <img class="ft-logo-mark-img" src="https://www.delhidental.com/wp-content/uploads/2017/09/Dr.Kathurias-Dentistry-Logo-e1641815051747.jpg" alt="Dr. Kathuria's Dentistry">
+        <div class="ft-logo-text"><strong>Dr. Kathuria's Dentistry</strong><span>Premium Dental Care</span></div>
       </div>
-      <!-- Quick Links -->
-      <div class="ft-col">
-        <h4>Quick Links</h4>
-        <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
-        <a href="staff.html"><i class="fas fa-chevron-right"></i> Our Doctors</a>
-        <a href="about.html#clinic-tour"><i class="fas fa-chevron-right"></i> Clinic Tour</a>
-        <a href="cases.html"><i class="fas fa-chevron-right"></i> Before &amp; After</a>
-        <a href="charges.html"><i class="fas fa-chevron-right"></i> Charges</a>
-        <a href="smile-analysis.html"><i class="fas fa-chevron-right"></i> Smile Analysis</a>
-      </div>
-      <!-- Treatments -->
-      <div class="ft-col">
-        <h4>Treatments</h4>
-        <a href="services.html#cosmetic"><i class="fas fa-chevron-right"></i> Smile Makeover</a>
-        <a href="services.html#implants"><i class="fas fa-chevron-right"></i> Dental Implants</a>
-        <a href="services.html#aligners"><i class="fas fa-chevron-right"></i> Clear Aligners</a>
-        <a href="services.html#whitening"><i class="fas fa-chevron-right"></i> Zoom Whitening</a>
-        <a href="services.html#rct"><i class="fas fa-chevron-right"></i> Root Canal</a>
-        <a href="services.html#gums"><i class="fas fa-chevron-right"></i> Gum Laser</a>
-      </div>
-      <!-- Contact -->
-      <div class="ft-col">
-        <h4>Contact</h4>
-        <div class="ft-contact-item">
-          <div class="ft-contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-          <div class="ft-contact-text">
-            <span>Address</span>
-            <p>E-143, East of Kailash, New Delhi</p>
-          </div>
-        </div>
-        <div class="ft-contact-item">
-          <div class="ft-contact-icon"><i class="fas fa-phone-alt"></i></div>
-          <div class="ft-contact-text">
-            <span><img src="https://flagcdn.com/24x18/in.png" alt="in" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> India Toll Free</span>
-            <a href="tel:18001177272">1800-11-7272</a>
-          </div>
-        </div>
-        <div class="ft-contact-item">
-          <div class="ft-contact-icon"><i class="fab fa-whatsapp"></i></div>
-          <div class="ft-contact-text">
-            <span>WhatsApp</span>
-            <a href="https://wa.me/919810936360" target="_blank">+91 98109 36360</a>
-          </div>
-        </div>
-        <div class="ft-contact-item">
-          <div class="ft-contact-icon"><i class="fas fa-envelope"></i></div>
-          <div class="ft-contact-text">
-            <span>Email</span>
-            <a href="mailto:info@delhidental.com">info@delhidental.com</a>
-          </div>
-        </div>
+      <p>NABH accredited, ISO certified multi-speciality dental clinic in East of Kailash, New Delhi. Trusted by over 15,000 patients from 44+ countries for world-class dental treatments.</p>
+      <div class="ft-socials">
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
       </div>
     </div>
-    <div class="ft-bottom">
-      <span>&copy; 2026 Dr. Kathuria's Dentistry &ndash; U and K Oral Wellness LLP. All rights reserved.</span>
-      <span>Designed with care for beautiful smiles.</span>
+    <div class="ft-col">
+      <h4>Quick Links</h4>
+      <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+      <a href="staff.html"><i class="fas fa-chevron-right"></i> Our Doctors</a>
+      <a href="cases.html"><i class="fas fa-chevron-right"></i> Smile Gallery</a>
+      <a href="awards.html"><i class="fas fa-chevron-right"></i> Awards &amp; Accreditation</a>
+      <a href="charges.html"><i class="fas fa-chevron-right"></i> Treatment Charges</a>
+      <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a>
+    
+      <a href="dental-tourism.html"><i class="fas fa-chevron-right"></i> Dental Tourism</a></div>
+    <div class="ft-col">
+      <h4>Treatments</h4>
+      <a href="services.html#cosmetic"><i class="fas fa-chevron-right"></i> Smile Makeover</a>
+      <a href="services.html#implants"><i class="fas fa-chevron-right"></i> Dental Implants</a>
+      <a href="services.html#cosmetic"><i class="fas fa-chevron-right"></i> Teeth Whitening</a>
+      <a href="services.html#orthodontics"><i class="fas fa-chevron-right"></i> Clear Aligners</a>
+      <a href="services.html#gums"><i class="fas fa-chevron-right"></i> Gum Treatment</a>
+      <a href="services.html#kids"><i class="fas fa-chevron-right"></i> Kids Dentistry</a>
     </div>
+    <div class="ft-col">
+      <h4>Contact Info</h4>
+      <div class="ft-contact-item">
+        <div class="ft-contact-icon"><i class="fas fa-location-dot"></i></div>
+        <div class="ft-contact-text"><span>Address</span><p>B-7, East of Kailash, New Delhi 110065, India</p></div>
+      </div>
+      <div class="ft-contact-item">
+        <div class="ft-contact-icon"><i class="fas fa-phone"></i></div>
+        <div class="ft-contact-text"><span>Phone</span><a href="tel:1800117272">1800-11-7272 (Toll Free)</a><br/><a href="tel:+919810936360">+91 98109 36360</a></div>
+      </div>
+      <div class="ft-contact-item">
+        <div class="ft-contact-icon"><i class="fas fa-envelope"></i></div>
+        <div class="ft-contact-text"><span>Email</span><a href="mailto:info@delhidental.com">info@delhidental.com</a></div>
+      </div>
+      <div class="ft-contact-item">
+        <div class="ft-contact-icon"><i class="fas fa-clock"></i></div>
+        <div class="ft-contact-text"><span>Hours</span><p>Mon &ndash; Sat: 9:30 AM &ndash; 7:00 PM</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span>&copy; 2024 Dr. Kathuria's Dentistry. All rights reserved.</span>
+    <span><a href="#">Privacy Policy</a> &bull; <a href="#">Terms of Service</a></span>
   </div>
 </footer>
 
-
-<!-- ═══ FLOATING APPOINTMENT PANEL ═══ -->
-<button class="float-book-btn" id="floatBookBtn">BOOK APPOINTMENT</button>
-<div class="float-panel" id="floatPanel">
-  <button class="fp-close" id="fpClose"><i class="fas fa-times"></i></button>
-  <h3>Book Consultation</h3>
-  <p>Fill in your details &mdash; we'll call back within 2 hours.</p>
-  <form class="smart-form" method="POST" name="appointment">
-    <input type="hidden" name="form-name" value="appointment"/>
-    <p class="hidden" style="display:none"><label>Don't fill: <input name="bot-field"/></label></p>
-    <div class="fg-row">
-      <div class="fg"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required/></div>
-      <div class="fg"><label>Country</label><input type="text" name="country" placeholder="Your country"/></div>
-    </div>
-    <div class="fg"><label>WhatsApp / Phone</label><input type="tel" name="phone" placeholder="+91 or international" required/></div>
-    <div class="fg"><label>Email</label><input type="email" name="email" placeholder="your@email.com"/></div>
-    <div class="fg">
-      <label>Treatment</label>
-      <select name="treatment">
-        <option value="">Select treatment...</option>
-        <option>Smile Makeover / Veneers</option>
-        <option>Dental Implants</option>
-        <option>Clear Aligners</option>
-        <option>Zoom Whitening</option>
-        <option>Root Canal</option>
-        <option>Full Mouth Rehabilitation</option>
-        <option>Video Consultation Only</option>
-        <option>Not Sure &ndash; Need Advice</option>
-      </select>
-    </div>
-    <div class="fg"><label>Message (optional)</label><textarea name="message" rows="3" placeholder="Any specific concerns or preferred time"></textarea></div>
-    <button type="submit" class="form-submit"><i class="fas fa-calendar-check"></i> Request Consultation</button>
-  </form>
-</div>
-
-
 <!-- ═══ FABs ═══ -->
 <div class="fab-group">
-  <a href="https://wa.me/919810936360" target="_blank" class="fab fab-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-  <a href="tel:18001177272" class="fab fab-call" aria-label="Call"><i class="fas fa-phone-alt"></i></a>
-  <button class="fab fab-up" id="fabUp" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
-</div>
-
-<!-- ═══ SIDE STRIP ═══ -->
-<div class="side-strip">
-  <a href="tel:18001177272" aria-label="Call"><i class="fas fa-phone-alt"></i></a>
-  <a href="https://wa.me/919810936360" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-  <a href="https://www.instagram.com/drkathuriasdentistry" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-</div>
-
-<!-- ═══ LIGHTBOX ═══ -->
-<div class="lightbox" id="lightbox">
-  <div class="lb-inner">
-    <button class="lb-close" id="lbClose"><i class="fas fa-times"></i></button>
-    <img id="lbImg" src="" alt=""/>
-  </div>
+  <a href="https://wa.me/919810936360" target="_blank" class="fab fab-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp" style="font-size:1.4rem"></i></a>
+  <a href="tel:1800117272" class="fab fab-call" aria-label="Call"><svg viewBox="0 0 512 512" width="22" height="22" fill="currentColor"><path d="M497.4 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.7 370.7 0 0 1 130.6 204.1l60.6-49.6a23.9 23.9 0 0 0 6.9-28l-48-112A24.2 24.2 0 0 0 122.6.6l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.3 24.3 0 0 0-14-27.6z"/></svg></a>
+  <button class="fab fab-up" id="fabUp" aria-label="Scroll to top"><svg viewBox="0 0 448 512" width="20" height="20" fill="currentColor"><path d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"/></svg></button>
 </div>
 
 <!-- ═══ TOAST ═══ -->

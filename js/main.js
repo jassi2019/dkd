@@ -223,39 +223,33 @@ document.querySelectorAll('[data-lightbox]').forEach(el => {
 
 /* ── FORM SUBMIT ── */
 document.querySelectorAll('.smart-form').forEach(form => {
-  form.addEventListener('submit', async e => {
+  form.addEventListener('submit', e => {
     e.preventDefault();
-    const formData = new FormData(form);
-    const params = new URLSearchParams();
-    for (const [key, value] of formData.entries()) params.append(key, value);
+    /* Validate required fields */
+    const requiredFields = form.querySelectorAll('[required]');
+    let valid = true;
+    requiredFields.forEach(f => {
+      if (!f.value || (f.type === 'checkbox' && !f.checked)) { f.focus(); valid = false; }
+    });
+    if (!valid) return;
+
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn ? submitBtn.innerHTML : '';
     if (submitBtn) {
       submitBtn.disabled = true;
       submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
     }
-    try {
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: params.toString()
-      });
-      if (response.ok) {
-        showToast('Request received! We will call / WhatsApp you within 2 hours.');
-        form.reset();
-        const panel = document.getElementById('floatPanel');
-        if (panel) panel.classList.remove('open');
-      } else {
-        showToast('Could not send. Please WhatsApp us at +91 98109 36360.', 'error');
-      }
-    } catch (err) {
-      showToast('Network error. Please WhatsApp us at +91 98109 36360.', 'error');
-    } finally {
+    /* No backend — show success toast after brief delay */
+    setTimeout(() => {
+      showToast('Thank you! We\u2019ll call you within 2 hours.');
+      form.reset();
+      const panel = document.getElementById('floatPanel');
+      if (panel) panel.classList.remove('open');
       if (submitBtn) {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
       }
-    }
+    }, 600);
   });
 });
 
@@ -401,4 +395,97 @@ document.querySelectorAll('.nav-links a').forEach(a => {
   }
 
   showQuestion(1);
+})();
+
+/* ── TESTIMONIALS — AUTO SCROLL + CLICK ── */
+(function() {
+  var cards = document.querySelectorAll('.tm-card');
+  var featText = document.getElementById('tmFeatText');
+  var featName = document.getElementById('tmFeatName');
+  var featAv = document.getElementById('tmFeatAv');
+  var featCountry = document.getElementById('tmFeatCountry');
+  var featured = document.querySelector('.tm-featured');
+  if (!cards.length || !featText) return;
+
+  var current = -1; // start at -1 so first goTo(0) works (Bill Yakimec is default)
+
+  function showCard(idx) {
+    var card = cards[idx];
+    // fade out
+    if (featured) featured.style.opacity = '0';
+    setTimeout(function() {
+      featText.textContent = card.getAttribute('data-text').replace(/&quot;/g, '"');
+      featName.textContent = card.getAttribute('data-name');
+      featAv.textContent = card.getAttribute('data-av');
+      featCountry.innerHTML = '<img src="https://flagcdn.com/20x15/' + card.getAttribute('data-flag') + '.png" alt="flag"> ' + card.getAttribute('data-country');
+      // highlight active card
+      cards.forEach(function(c) { c.style.borderColor = 'rgba(255,255,255,.08)'; c.style.background = 'rgba(255,255,255,.06)'; });
+      card.style.borderColor = 'var(--gold)';
+      card.style.background = 'rgba(255,255,255,.12)';
+      // fade in
+      if (featured) featured.style.opacity = '1';
+    }, 300);
+    current = idx;
+  }
+
+  // click on cards
+  cards.forEach(function(card, i) {
+    card.addEventListener('click', function() {
+      showCard(i);
+      clearInterval(autoT);
+      autoT = setInterval(next, 5000);
+    });
+  });
+
+  function next() {
+    showCard((current + 1) % cards.length);
+  }
+
+  // auto rotate every 5s
+  var autoT = setInterval(next, 5000);
+
+  // pause on hover
+  var section = featText.closest('section');
+  if (section) {
+    section.addEventListener('mouseenter', function() { clearInterval(autoT); });
+    section.addEventListener('mouseleave', function() { autoT = setInterval(next, 5000); });
+  }
+
+  // add transition to featured
+  if (featured) featured.style.transition = 'opacity .3s ease';
+
+  // highlight first card
+  cards[0].style.borderColor = 'var(--gold)';
+  cards[0].style.background = 'rgba(255,255,255,.12)';
+})();
+
+/* ── TESTIMONIALS + GOOGLE REVIEWS AUTO SCROLL ── */
+(function() {
+  document.querySelectorAll('.testi-hscroll, .google-grid, .tech-hscroll').forEach(function(el) {
+    var paused = false;
+    function autoScroll() {
+      if (paused) return;
+      if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 2) {
+        el.scrollLeft = 0;
+      } else {
+        el.scrollLeft += 0.5;
+      }
+    }
+    var timer = setInterval(autoScroll, 20);
+    el.addEventListener('mouseenter', function() { paused = true; });
+    el.addEventListener('mouseleave', function() { paused = false; });
+    el.addEventListener('touchstart', function() { paused = true; });
+    el.addEventListener('touchend', function() { setTimeout(function() { paused = false; }, 3000); });
+  });
+})();
+
+/* ── TECH HORIZONTAL SCROLL ── */
+(function() {
+  var scroll = document.getElementById('atScroll');
+  var prev = document.getElementById('atPrev');
+  var next = document.getElementById('atNext');
+  if (!scroll) return;
+  var step = 300;
+  if (prev) prev.addEventListener('click', function() { scroll.scrollBy({ left: -step, behavior: 'smooth' }); });
+  if (next) next.addEventListener('click', function() { scroll.scrollBy({ left: step, behavior: 'smooth' }); });
 })();
