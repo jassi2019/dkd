@@ -68,10 +68,11 @@
       .blog-layout{grid-template-columns:1fr 280px;gap:28px}
     }
     @media(max-width:768px){
-      .blog-layout{grid-template-columns:1fr !important;gap:24px}
-      .blog-sidebar{position:static;order:2}
+      .blog-layout{display:block !important;padding:0 4% !important}
+      .blog-sidebar{position:static;margin-top:32px}
       .sidebar-card{max-width:100%}
-      .blog-main{text-align:left;max-width:100%}
+      .blog-main{max-width:100%;overflow-x:hidden}
+      .blog-body{word-wrap:break-word;overflow-wrap:break-word}
     }
     @media(max-width:700px){
       .blog-title{font-size:1.5rem}
