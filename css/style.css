@@ -1572,6 +1572,41 @@ h2.section-title.text-center + p.section-sub { text-align: center; margin-left: 
 }
 
 /* ═══════════════════════════════════
+   INTERNATIONAL PHONE STRIP + MAP
+═══════════════════════════════════ */
+.intl-phones-section { background: var(--white); position: relative; overflow: hidden; }
+.intl-phones-section::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--olive), var(--gold), var(--olive));
+}
+.intl-phones-grid { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+.intl-phone-pill {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: var(--olive-bg); border: 1px solid rgba(91,123,58,.15);
+  border-radius: 50px; padding: 12px 24px 12px 16px;
+  transition: all .32s; text-decoration: none;
+}
+.intl-phone-pill:hover {
+  transform: translateY(-3px); box-shadow: 0 8px 28px rgba(91,123,58,.15);
+  border-color: var(--olive); background: var(--olive-pale);
+}
+.intl-phone-flag { font-size: 1.4rem; line-height: 1; }
+.intl-phone-info span {
+  display: block; font-size: .6rem; color: var(--gray-light);
+  text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-bottom: 2px;
+}
+.intl-phone-info strong { font-size: .9rem; color: var(--ink); font-weight: 700; }
+.intl-phone-pill:hover .intl-phone-info strong { color: var(--olive-dark); }
+.map-section { padding: 0 !important; }
+.map-full { width: 100%; height: 380px; border: 0; display: block; }
+@media(max-width:700px) {
+  .intl-phones-grid { gap: 10px; }
+  .intl-phone-pill { padding: 10px 16px 10px 12px; gap: 8px; }
+  .intl-phone-info strong { font-size: .8rem; }
+  .map-full { height: 280px; }
+}
+
+/* ═══════════════════════════════════
    FLOATING APPOINTMENT PANEL
 ═══════════════════════════════════ */
 .float-book-btn {
