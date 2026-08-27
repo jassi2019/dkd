@@ -2084,10 +2084,43 @@ h2.section-title.text-center + p.section-sub { text-align: center; margin-left: 
   .ft-grid { grid-template-columns: 1fr; gap: 30px; }
   .ft-bottom { flex-direction: column; gap: 8px; text-align: center; }
   .side-strip { display: none; }
-  .top-bar { display: none; }
   .usp-strip { display: none; }
   .nav-tollfree { display: none; }
   .nav-nabh { display: none; }
+
+  /* Mobile top-bar: show only toll-free + address */
+  .top-bar {
+    display: block;
+    border-bottom: 1px solid var(--olive);
+  }
+  .top-bar-inner {
+    flex-wrap: nowrap;
+    overflow: hidden;
+    height: 38px;
+  }
+  /* Hide all phone items on mobile */
+  .top-bar-phone { display: none !important; }
+  /* Hide all extra items on mobile */
+  .top-bar-extra { display: none !important; }
+  /* Show only toll-free India number */
+  .top-bar-phone.tb-highlight {
+    display: flex !important;
+    flex: 1;
+    border-right: 1px solid var(--border);
+    padding: 6px 12px;
+  }
+  .top-bar-phone.tb-highlight .tb-flag { display: none; }
+  .top-bar-phone.tb-highlight .tb-label { font-size: .5rem; }
+  .top-bar-phone.tb-highlight .tb-num { font-size: .85rem; }
+  /* Show address */
+  .top-bar-extra.tb-addr {
+    display: flex !important;
+    flex: 1.4;
+    padding: 6px 10px;
+  }
+  .top-bar-extra.tb-addr .tb-icon { width: 20px; height: 20px; font-size: .55rem; flex-shrink: 0; }
+  .top-bar-extra.tb-addr .tb-label { font-size: .5rem; }
+  .top-bar-extra.tb-addr .tb-val { font-size: .72rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .page-hero { min-height: 320px; padding: 80px 5% 60px; }
   .testi-card { padding: 28px 22px; }
   .filter-bar { justify-content: center; }
