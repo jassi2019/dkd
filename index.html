@@ -579,36 +579,44 @@
 
   <style>
     .tx-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      max-width: 1100px;
-      margin: 0 auto;
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-bottom: 4px;
+      cursor: grab;
     }
+    .tx-grid::-webkit-scrollbar { display: none; }
+    .tx-grid:active { cursor: grabbing; }
     .tx-card {
       position: relative;
       display: block;
       text-decoration: none;
       border-radius: 14px;
       overflow: hidden;
-      aspect-ratio: 4/3;
+      flex: 0 0 260px;
+      height: 320px;
+      scroll-snap-align: start;
       background-image: var(--tx-img);
       background-size: cover;
       background-position: center;
+      transition: transform .3s;
     }
+    .tx-card:hover { transform: translateY(-4px); }
     .tx-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(10,25,5,.85) 0%, rgba(10,25,5,.2) 55%, transparent 100%);
+      background: linear-gradient(to top, rgba(10,25,5,.88) 0%, rgba(10,25,5,.15) 60%, transparent 100%);
       transition: background .35s;
     }
     .tx-card:hover .tx-overlay {
-      background: linear-gradient(to top, rgba(63,90,36,.92) 0%, rgba(63,90,36,.5) 60%, rgba(63,90,36,.15) 100%);
+      background: linear-gradient(to top, rgba(63,90,36,.92) 0%, rgba(63,90,36,.4) 65%, rgba(63,90,36,.1) 100%);
     }
     .tx-body {
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      padding: 20px 18px;
-      color: #fff;
+      padding: 18px 16px;
     }
     .tx-body h4 {
       font-family: 'Playfair Display', serif;
@@ -622,18 +630,14 @@
       display: inline-flex;
       align-items: center;
       gap: 5px;
-      font-size: .75rem;
+      font-size: .73rem;
       font-weight: 600;
       color: var(--gold-light);
       opacity: 0;
-      transform: translateY(6px);
+      transform: translateY(5px);
       transition: all .3s;
     }
-    .tx-card:hover .tx-body span {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    /* Gold top border on hover */
+    .tx-card:hover .tx-body span { opacity: 1; transform: translateY(0); }
     .tx-card::after {
       content: '';
       position: absolute;
@@ -644,9 +648,10 @@
       transition: transform .35s;
     }
     .tx-card:hover::after { transform: scaleX(1); }
-
-    @media(max-width:960px){ .tx-grid{ grid-template-columns: repeat(2,1fr); } }
-    @media(max-width:560px){ .tx-grid{ grid-template-columns: repeat(2,1fr); gap:12px; } .tx-body h4{ font-size:.88rem; } }
+    @media(max-width:700px){
+      .tx-card { flex: 0 0 200px; height: 260px; }
+      .tx-body h4 { font-size: .88rem; }
+    }
   </style>
 </section>
 
