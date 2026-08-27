@@ -461,10 +461,11 @@ ul  { list-style: none; }
 .hero-wrap {
   position: relative;
   width: 100%;
-  /* 1800:726 ratio — exact banner aspect ratio */
-  padding-bottom: 40.33%;
+  height: calc(100vw * 0.4033); /* 1800:726 ratio */
+  max-height: 780px;
+  min-height: 400px;
   overflow: hidden;
-  background: #fff;
+  background: #1a1a1a;
 }
 .hs-slide {
   position: absolute; inset: 0;
@@ -2115,24 +2116,30 @@ h2.section-title.text-center + p.section-sub { text-align: center; margin-left: 
 @media (max-width: 700px) {
   section { padding: 60px 5%; }
   .sec-h { margin-bottom: 36px; }
-  /* Mobile hero — keep aspect ratio, stack bar */
-  .hero-wrap { padding-bottom: 40.33%; }
-  .hs-float-card {
-    flex-direction: row; flex-wrap: wrap;
-    align-items: center; gap: 6px;
-    padding: 8px 4% 10px;
+  /* Mobile hero — proper height, cover fit */
+  .hero-wrap {
+    height: 58vw;
+    min-height: 220px;
+    max-height: 340px;
   }
-  .hs-float-top { flex-direction: row; align-items: center; gap: 8px; width: 100%; }
-  .hs-float-badge { font-size: .52rem; padding: 3px 8px; }
-  .hs-float-stats > div { padding-right: 10px; margin-right: 10px; }
-  .hs-float-stats strong { font-size: .85rem; }
-  .hs-float-stats span { font-size: .52rem; }
-  .hs-float-btns { width: 100%; gap: 6px; }
-  .hs-float-btns .btn { flex: 1; justify-content: center; font-size: .7rem; padding: 7px 8px; }
-  .hs-call-btn { flex: 1; justify-content: center; font-size: .72rem; padding: 7px 8px; }
-  .hs-dots { bottom: 56px; right: 4%; gap: 4px; }
-  .hs-dot { width: 20px; height: 2px; }
-  .hs-dot.on { width: 32px; }
+  .hs-img { object-fit: cover; object-position: center center; }
+
+  /* Float bar — single compact row */
+  .hs-float-badge { display: none; }
+  .hs-float-top { display: none; }
+  .hs-float-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 4%;
+  }
+  .hs-float-btns { gap: 8px; flex-shrink: 0; }
+  .hs-float-btns .btn { font-size: .7rem; padding: 7px 12px; white-space: nowrap; }
+  .hs-call-btn { font-size: .7rem; padding: 7px 10px; }
+  .hs-dots { bottom: 46px; right: 4%; gap: 4px; }
+  .hs-dot { width: 16px; height: 2px; }
+  .hs-dot.on { width: 26px; }
   .srv-grid-3, .srv-grid-4 { grid-template-columns: 1fr; }
   .srv-grid { grid-template-columns: 1fr; }
   .staff-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
