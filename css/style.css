@@ -2088,40 +2088,52 @@ h2.section-title.text-center + p.section-sub { text-align: center; margin-left: 
   .nav-tollfree { display: none; }
   .nav-nabh { display: none; }
 
-  /* Mobile top-bar: horizontally scrollable strip showing all numbers + address */
+  /* Mobile top-bar: auto-scrolling marquee strip */
   .top-bar {
     display: block;
     border-bottom: 1px solid var(--olive);
+    overflow: hidden;
   }
   .top-bar-inner {
     flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow: hidden;
     height: 40px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    display: block;
   }
-  .top-bar-inner::-webkit-scrollbar { display: none; }
+  .top-bar-track {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    animation: topBarScroll 22s linear infinite;
+  }
+  .top-bar-track:hover { animation-play-state: paused; }
+  @keyframes topBarScroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
   /* Show all phone items on mobile — compact */
   .top-bar-phone {
     display: flex !important;
     flex-shrink: 0;
-    padding: 5px 10px;
+    padding: 5px 12px;
     border-right: 1px solid var(--border);
     gap: 5px;
+    align-items: center;
   }
   .top-bar-phone .tb-flag { width: 18px; height: 12px; }
   .top-bar-phone .tb-icon { font-size: .75rem; }
   .top-bar-phone .tb-label { font-size: .45rem; }
   .top-bar-phone .tb-num { font-size: .75rem; }
-  /* Hide all extra items except address */
+  /* Hide email extra */
   .top-bar-extra { display: none !important; }
   /* Show address */
   .top-bar-extra.tb-addr {
     display: flex !important;
     flex-shrink: 0;
-    padding: 5px 10px;
+    padding: 5px 12px;
+    border-right: 1px solid var(--border);
     gap: 5px;
+    align-items: center;
   }
   .top-bar-extra.tb-addr .tb-icon { width: 18px; height: 18px; font-size: .5rem; flex-shrink: 0; }
   .top-bar-extra.tb-addr .tb-label { font-size: .45rem; }

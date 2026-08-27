@@ -302,6 +302,7 @@
 <!-- ══════ TOP BAR ══════ -->
 <div class="top-bar">
   <div class="top-bar-inner">
+  <div class="top-bar-track">
     <a href="tel:+61384004931" class="top-bar-phone">
       <span class="tb-icon"><i class="fas fa-phone"></i></span>
       <img src="https://flagcdn.com/w40/au.png" alt="AU" class="tb-flag">
@@ -335,7 +336,16 @@
       <span class="tb-icon" style="background:var(--gold)"><i class="fas fa-map-marker-alt"></i></span>
       <span class="tb-info"><span class="tb-label">Our Location</span><span class="tb-val">E-143, East of Kailash, New Delhi</span></span>
     </a>
-  </div>
+    </div><!-- /top-bar-track --><script>
+(function(){
+  if(window.innerWidth > 700) return;
+  var track = document.querySelector('.top-bar-track');
+  if(!track) return;
+  var clone = track.cloneNode(true);
+  track.parentNode.appendChild(clone);
+})();
+</script>
+</div>
 </div>
 
 <nav class="site-nav">
