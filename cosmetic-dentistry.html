@@ -31,6 +31,7 @@
 <!-- ══════ ROW 1: Phone Numbers + Mail + Location ══════ -->
 <div class="top-bar">
   <div class="top-bar-inner">
+  <div class="top-bar-track">
     <a href="tel:+61384004931" class="top-bar-phone">
       <span class="tb-icon"><i class="fas fa-phone"></i></span>
       <img src="https://flagcdn.com/w40/au.png" alt="AU" class="tb-flag">
@@ -60,7 +61,7 @@
       <span class="tb-icon"><i class="fas fa-envelope"></i></span>
       <span class="tb-info"><span class="tb-label">Mail Us</span><span class="tb-val">dentistdelhi@gmail.com</span></span>
     </a>
-    <a href="https://maps.google.com/?q=Dr+Kathuria+Dentistry+East+of+Kailash" target="_blank" class="top-bar-extra">
+    <a href="https://maps.google.com/?q=Dr+Kathuria+Dentistry+East+of+Kailash" target="_blank" class="top-bar-extra tb-addr">
       <span class="tb-icon" style="background:var(--gold)"><i class="fas fa-map-marker-alt"></i></span>
       <span class="tb-info"><span class="tb-label">Our Location</span><span class="tb-val">E-143, East of Kailash, New Delhi</span></span>
     </a>
@@ -78,48 +79,97 @@
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">The Practice <i class="fas fa-chevron-down chevron"></i></a>
+      <li><a href="#">The Practice <i class="fas fa-chevron-down chevron"></i></a>
         <div class="nav-dropdown">
-          <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialists</a>
+          <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialist</a>
           <a href="clinic-tour.html"><i class="fas fa-hospital"></i> Clinic Tour Images</a>
           <a href="technology.html"><i class="fas fa-microchip"></i> Technology</a>
+          <a href="articles.html"><i class="fas fa-newspaper"></i> Articles</a>
         </div>
       </li>
       <li><a href="services.html">Treatments <i class="fas fa-chevron-down chevron"></i></a>
         <div class="nav-mega">
           <div class="mega-group">
-            <h6>Dental Implants</h6>
-            <a href="dental-implants.html"><i class="fas fa-tooth"></i> All Implant Options</a>
-            <a href="single-tooth-implants.html"><i class="fas fa-chevron-right"></i> Single Tooth</a>
-            <a href="all-on-4-dental-implants.html"><i class="fas fa-chevron-right"></i> All-on-4</a>
-            <a href="full-mouth-rehabilitation.html"><i class="fas fa-chevron-right"></i> Full Mouth Rehab</a>
+            <h6><a href="dental-implants.html" style="color:inherit;text-decoration:none">Dental Implants</a></h6>
+            <a href="single-tooth-implants.html"><i class="fas fa-chevron-right"></i> Single Tooth Implant</a>
+            <a href="multiple-tooth-implants.html"><i class="fas fa-chevron-right"></i> Multiple Teeth Implants</a>
+            <a href="full-mouth-rehabilitation.html"><i class="fas fa-chevron-right"></i> All Teeth Implants</a>
+            <a href="all-on-4-dental-implants.html"><i class="fas fa-chevron-right"></i> All-on-4 Technology</a>
+            <a href="nobel-guide-surgery.html"><i class="fas fa-chevron-right"></i> Nobel Guide Computer Guided Surgery</a>
           </div>
           <div class="mega-group">
-            <h6>Cosmetic Dentistry</h6>
-            <a href="cosmetic-dentistry.html"><i class="fas fa-star"></i> All Cosmetic</a>
+            <h6><a href="cosmetic-dentistry.html" style="color:inherit;text-decoration:none">Cosmetic Dentistry</a></h6>
             <a href="smile-makeover.html"><i class="fas fa-chevron-right"></i> Smile Makeover</a>
+            <a href="gap-closure.html"><i class="fas fa-chevron-right"></i> Gap Closure</a>
+            <a href="no-prep-veneers.html"><i class="fas fa-chevron-right"></i> No Prep/Prepless Veneers</a>
+            <a href="crooked-tooth-treatment.html"><i class="fas fa-chevron-right"></i> Crooked Tooth Correction</a>
             <a href="teeth-whitening.html"><i class="fas fa-chevron-right"></i> Teeth Whitening</a>
-            <a href="no-prep-veneers.html"><i class="fas fa-chevron-right"></i> Veneers</a>
+            <a href="jetting-out-teeth-correction.html"><i class="fas fa-chevron-right"></i> Jetting Out Teeth Correction</a>
+            <a href="mottling-of-teeth-correction.html"><i class="fas fa-chevron-right"></i> Mottling of Teeth Correction</a>
+            <a href="cosmetic-contouring.html"><i class="fas fa-chevron-right"></i> Cosmetic Contouring</a>
+            <a href="root-canal-treatment.html"><i class="fas fa-chevron-right"></i> Root Canal Treatment</a>
+            <a href="cosmetic-tooth-colored-fillings.html"><i class="fas fa-chevron-right"></i> Cosmetic Tooth Colored Fillings</a>
+            <a href="tooth-crystal.html"><i class="fas fa-chevron-right"></i> Tooth Crystal</a>
+            <a href="inlays-onlays.html"><i class="fas fa-chevron-right"></i> Inlays &amp; Onlays</a>
           </div>
           <div class="mega-group">
-            <h6>More Treatments</h6>
-            <a href="orthodontics.html"><i class="fas fa-teeth"></i> Orthodontics</a>
-            <a href="gum-treatment.html"><i class="fas fa-leaf"></i> Gums Treatment</a>
-            <a href="kids-dentistry.html"><i class="fas fa-child"></i> Kids Dentistry</a>
-            <a href="services.html"><i class="fas fa-th-list"></i> View All Treatments</a>
+            <h6><a href="gum-treatment.html" style="color:inherit;text-decoration:none">Gums Treatment</a></h6>
+            <a href="laser-gummy-smile-correction.html"><i class="fas fa-chevron-right"></i> Laser Gummy Smile Correction</a>
+            <a href="full-mouth-scaling.html"><i class="fas fa-chevron-right"></i> Full Mouth Scaling &amp; Polishing</a>
+            <a href="deep-cleaning.html"><i class="fas fa-chevron-right"></i> Deep Cleaning</a>
+            <a href="gums-surgery.html"><i class="fas fa-chevron-right"></i> Gums Surgery</a>
+            <a href="socket-preservation.html"><i class="fas fa-chevron-right"></i> Socket Preservation Therapy</a>
+            <a href="bad-breath-treatment.html"><i class="fas fa-chevron-right"></i> Bad Breath Treatment</a>
+            <a href="laser-gums-depigmentation.html"><i class="fas fa-chevron-right"></i> Laser Gums De Pigmentation</a>
+            <a href="mobile-teeth-solution.html"><i class="fas fa-chevron-right"></i> Mobile Teeth Solution with Splinting</a>
+          </div>
+          <div class="mega-group">
+            <h6><a href="kids-dentistry.html" style="color:inherit;text-decoration:none">Kids Dentistry</a></h6>
+            <a href="fluoride-fillings.html"><i class="fas fa-chevron-right"></i> Fluoride Fillings</a>
+            <a href="kids-root-canal.html"><i class="fas fa-chevron-right"></i> Kids Root Canal Treatment</a>
+            <a href="fluoride-applications.html"><i class="fas fa-chevron-right"></i> Fluoride Applications</a>
+          </div>
+          <div class="mega-group">
+            <h6><a href="maxillofacial-surgery.html" style="color:inherit;text-decoration:none">Maxillofacial Surgery</a></h6>
+            <a href="surgical-extractions.html"><i class="fas fa-chevron-right"></i> Simple &amp; Surgical Tooth Extractions</a>
+            <a href="sinus-lift-surgery.html"><i class="fas fa-chevron-right"></i> Sinus Lift Surgery</a>
+          </div>
+          <div class="mega-group">
+            <h6><a href="orthodontics.html" style="color:inherit;text-decoration:none">Orthodontics Treatment</a></h6>
+            <a href="braces.html"><i class="fas fa-chevron-right"></i> Braces (Metallic or Ceramic)</a>
+            <a href="lingual-braces.html"><i class="fas fa-chevron-right"></i> Lingual Braces</a>
+            <a href="clear-aligners.html"><i class="fas fa-chevron-right"></i> Clear Aligners (Invisible Braces)</a>
+          </div>
+          <div class="mega-group">
+            <h6>More</h6>
+            <a href="digital-xrays.html"><i class="fas fa-chevron-right"></i> Digital RVG X-rays</a>
+            <a href="panoramic-xray.html"><i class="fas fa-chevron-right"></i> Panoramic X-Ray</a>
+            <a href="crowns-bridge.html"><i class="fas fa-chevron-right"></i> Crowns &amp; Bridges</a>
+            <a href="microscopic-dentistry.html"><i class="fas fa-chevron-right"></i> Microscopic Dentistry</a>
+            <a href="oral-cancer-detection.html"><i class="fas fa-chevron-right"></i> Oral Cancer Detection</a>
           </div>
         </div>
       </li>
-      <li><a href="awards.html">Credibility <i class="fas fa-chevron-down chevron"></i></a>
+      <li><a href="#">Credibility <i class="fas fa-chevron-down chevron"></i></a>
         <div class="nav-dropdown">
-          <a href="awards.html"><i class="fas fa-trophy"></i> Awards</a>
+          <a href="awards.html"><i class="fas fa-trophy"></i> Awards &amp; Recognitions</a>
           <a href="testimonials.html"><i class="fas fa-comments"></i> Testimonials</a>
+          <a href="video-testimonials.html"><i class="fas fa-video"></i> Video Testimonials</a>
           <a href="accreditation.html"><i class="fas fa-certificate"></i> Accreditation</a>
+          <a href="community-outreach.html"><i class="fas fa-hands-helping"></i> Community Outreach</a>
+          <a href="campaigns.html"><i class="fas fa-bullhorn"></i> Campaigns</a>
+          <a href="news-events.html"><i class="fas fa-newspaper"></i> News &amp; Events</a>
         </div>
       </li>
-      <li><a href="cases.html">Cases</a></li>
+      <li><a href="#">Cases <i class="fas fa-chevron-down chevron"></i></a>
+        <div class="nav-dropdown">
+          <a href="cases.html"><i class="fas fa-images"></i> Patient Gallery</a>
+          <a href="virtual-smile-makeover.html"><i class="fas fa-wand-magic-sparkles"></i> Virtual Smile Makeover</a>
+        </div>
+      </li>
       <li><a href="charges.html">Charges</a></li>
       <li><a href="smile-analysis.html">Smile Analysis</a></li>
+      <li><a href="articles.html">Articles</a></li>
       <li><a href="contact.html">Contact Us</a></li>
     </ul>
     <div class="nav-right">
@@ -142,7 +192,7 @@
     <div class="usp-item"><i class="fas fa-shield-virus"></i><div class="usp-text">Sterile &amp; Safe<span>Environment</span></div></div>
     <div class="usp-item"><i class="fas fa-smile-beam"></i><div class="usp-text">15,000+<span>Happy Smiles</span></div></div>
     <div class="usp-item">
-      <div class="usp-google"><span class="g-icon">G</span><span class="g-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span><span class="g-text">4.9/5 Based on 500+ Reviews</span></div>
+      <div class="usp-google"><svg class="g-icon-img" style="height:20px;width:20px;" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59a14.5 14.5 0 0 1 0-9.18l-7.98-6.19a24.0 24.0 0 0 0 0 21.56l7.98-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span class="g-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span><span class="g-text">4.9/5 Based on 500+ Reviews</span></div>
     </div>
   </div>
 </div>
@@ -150,19 +200,19 @@
 <!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobileNav">
   <a href="index.html"><i class="fas fa-home"></i> Home</a>
-  <a href="about.html"><i class="fas fa-hospital"></i> The Practice</a>
-  <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialists</a>
+  <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialist</a>
+  <a href="clinic-tour.html"><i class="fas fa-hospital"></i> Clinic Tour Images</a>
+  <a href="technology.html"><i class="fas fa-microchip"></i> Technology</a>
   <a href="services.html"><i class="fas fa-teeth"></i> All Treatments</a>
-  <a href="cosmetic-dentistry.html"><i class="fas fa-sparkles"></i> Cosmetic Dentistry</a>
-  <a href="dental-implants.html"><i class="fas fa-teeth-open"></i> Dental Implants</a>
-  <a href="awards.html"><i class="fas fa-trophy"></i> Credibility</a>
-  <a href="cases.html"><i class="fas fa-images"></i> Cases</a>
+  <a href="awards.html"><i class="fas fa-trophy"></i> Awards &amp; Recognitions</a>
+  <a href="testimonials.html"><i class="fas fa-comments"></i> Testimonials</a>
+  <a href="cases.html"><i class="fas fa-images"></i> Patient Gallery</a>
   <a href="charges.html"><i class="fas fa-indian-rupee-sign"></i> Charges</a>
   <a href="smile-analysis.html"><i class="fas fa-face-smile-beam"></i> Smile Analysis</a>
+  <a href="articles.html"><i class="fas fa-newspaper"></i> Articles</a>
   <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
   <a href="tel:1800117272" class="mobile-cta"><i class="fas fa-calendar-check"></i> Book Appointment</a>
 </div>
-
 <!-- PAGE HERO -->
 <section class="page-hero">
   <img class="page-hero-img" src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1920&q=80" alt="Cosmetic Dentistry at Dr. Kathuria's Dentistry Delhi"/>
@@ -190,15 +240,15 @@
       </div>
       <div>
         <span class="sec-chip">Our Expertise</span>
-        <h2 class="sec-h">Transforming Smiles, <em>Changing Lives</em></h2>
-        <p>At Dr. Kathuria's Dentistry, our cosmetic dentistry department combines artistry with advanced dental science to deliver stunning, natural-looking results. Whether you seek a complete smile transformation or a minor enhancement, our team of internationally trained specialists uses the latest materials and digital planning tools to ensure every smile we create is uniquely crafted for you.</p>
-        <p>With over 15,000 patients treated from 44 countries, we have the experience and technology to handle even the most complex cosmetic cases with precision and care.</p>
-        <ul class="checks">
-          <li><i class="fas fa-check"></i> NABH accredited clinic with world-class infrastructure</li>
-          <li><i class="fas fa-check"></i> International quality veneers, crowns &amp; whitening systems</li>
-          <li><i class="fas fa-check"></i> Digital smile design for predictable outcomes</li>
-          <li><i class="fas fa-check"></i> Same-day transformations available for select procedures</li>
-        </ul>
+        <h2 class="sec-h">Enhance Your Smile with Premier Dental and <em>Cosmetic Dentistry</em> at the Best Cosmetic Dental Clinic in Delhi</h2>
+        <p>A bright smile holds the incredible power to change one's day. It is often referred to as a raw expression of contentment, happiness, and love. And, it is also responsible for forming a positive facial expression. It is for these reasons that deep down, one wishes their smile to be naturally more attractive, reflecting the brilliance of cosmetic in dentistry.</p>
+        <p>Therefore, if you are looking forward to getting your teeth corrected and enhancing your smile with cosmetic dentistry in Delhi, Dr. Kathuria's Dentistry, a renowned cosmetic dental clinic in Delhi, would love to assist you. We are equipped to provide you with the smile you have always desired. Get in touch with our team today!</p>
+        <h3>Why Visit Dr. Kathuria's Dentistry for Cosmetic Dentistry Procedures?</h3>
+        <p>We at Dr. Kathuria's Dentistry pride ourselves on attaining mastery in the art of smile makeovers, standing out as the best cosmetic dentist in Delhi from the past 23 years. Latest smile simulation software along with an experienced team of artistic minds led by one of the top cosmetic dentist in delhi Dr. Sween Kathuriya, we ensure our conceptualization of smile designs blend naturally with the appearance of your face, and make you look gorgeous. Our state-of-the-art technology and materials, coupled with the latest smile simulation software, offer a personalized and superior dental and cosmetic dentistry experience, setting us apart as a leading cosmetic dentist near you.</p>
+        <p>As the premier choice for cosmetic dentistry treatment in Delhi, we assure our patients of personalized care that focuses on eliminating their dental problems. We understand the importance of a makeover for you, taking into account your appearance, personality, and specific requirements to determine the ideal aesthetic look of your smile. Our patient-centric approach ensures that functionality and aesthetics are considered in providing dental treatments, making us your ideal celebarity cosmetic dental clinic in Delhi.</p>
+        <h3>Exclusive Cosmetic Dentistry Services Tailored for You</h3>
+        <p>At Dr. Kathuria's Dentistry, we offer an array of cosmetic dentistry treatments, from smile makeovers and gap closures to teeth whitening and cosmetic tooth-colored fillings. Each procedure is tailored to meet the individual needs of our patients, affirming our position as the top choice for cosmetic in dentistry and smile makeover in South Delhi.</p>
+        <p>Get the perfect smile with the best dental cosmetic surgeon in Delhi. Connect with us to schedule an appointment for your treatment today!</p>
       </div>
     </div>
   </div>
@@ -344,6 +394,130 @@
   </div>
 </section>
 
+
+<!-- FACTORS THAT INFLUENCE SMILE DESIGN -->
+<section class="section reveal">
+  <div class="container">
+    <div style="text-align:center;max-width:680px;margin:0 auto 36px">
+      <span class="sec-chip">Smile Design</span>
+      <h2 class="sec-h">Factors That Influence Our <em>Smile Design</em> Procedures</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px">
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px 24px;transition:all .35s" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 12px 36px rgba(0,0,0,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--ink);margin-bottom:10px"><i class="fas fa-face-smile" style="color:var(--gold);margin-right:8px"></i> Facial Shape</h3>
+        <p style="color:var(--gray);font-size:.88rem;line-height:1.7">Cosmetic procedures are designed and customised as per the shape of a person's face. A long face may require accentuating the width in order to make it appear more oval.</p>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px 24px;transition:all .35s" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 12px 36px rgba(0,0,0,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--ink);margin-bottom:10px"><i class="fas fa-image" style="color:var(--gold);margin-right:8px"></i> Image Aspirations</h3>
+        <p style="color:var(--gray);font-size:.88rem;line-height:1.7">How do you wish to appear to others or yourself in the mirror? Do you wish to have a sophisticated smile or one which displays boldness and energy? We perform cosmetic dental procedures that suit your face, personality, appearance and requirements.</p>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px 24px;transition:all .35s" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 12px 36px rgba(0,0,0,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--ink);margin-bottom:10px"><i class="fas fa-calendar" style="color:var(--gold);margin-right:8px"></i> Age</h3>
+        <p style="color:var(--gray);font-size:.88rem;line-height:1.7">Cosmetic procedures also depend on age. While whiter teeth will make you appear younger, a subdued colour or a flattering smile shall make you look more mature in age.</p>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px 24px;transition:all .35s" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 12px 36px rgba(0,0,0,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--ink);margin-bottom:10px"><i class="fas fa-clock" style="color:var(--gold);margin-right:8px"></i> Time Constraint</h3>
+        <p style="color:var(--gray);font-size:.88rem;line-height:1.7">The time involved in procedures of cosmetic dentistry varies from a single visit to a couple of months or even years. While some treatments can be completed in an hour, others may take more time.</p>
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--gray);font-size:.92rem;line-height:1.7;max-width:700px;margin:28px auto 0">At Dr. Kathuria's Dentistry, we customize our cosmetic dental treatments as per the requirements of our patients and are the top smile makeover in South Delhi.</p>
+  </div>
+</section>
+
+<!-- SMILE TRANSFORMATIONS -->
+<section class="section reveal" style="background:var(--olive-dark)">
+  <div class="container" style="max-width:900px">
+    <div style="text-align:center;margin-bottom:32px">
+      <span style="display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px"><span style="display:inline-block;width:24px;height:2px;background:var(--gold)"></span> Smile Transformations</span>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3vw,2rem);color:#fff">Revolutionize Your Smile with the Best Cosmetic Dentistry <em style="color:var(--gold-light);font-style:italic">Procedures</em> in Delhi</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px 24px">
+      <a href="smile-makeover.html" style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);font-size:.92rem;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);transition:color .2s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,.85)'"><i class="fas fa-chevron-right" style="color:var(--gold);font-size:.6rem"></i> Smile Makeover</a>
+      <a href="gap-closure.html" style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);font-size:.92rem;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);transition:color .2s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,.85)'"><i class="fas fa-chevron-right" style="color:var(--gold);font-size:.6rem"></i> Gap Closure</a>
+      <a href="no-prep-veneers.html" style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);font-size:.92rem;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);transition:color .2s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,.85)'"><i class="fas fa-chevron-right" style="color:var(--gold);font-size:.6rem"></i> Prepless Porcelain Veneers</a>
+      <a href="crooked-tooth-correction.html" style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);font-size:.92rem;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);transition:color .2s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,.85)'"><i class="fas fa-chevron-right" style="color:var(--gold);font-size:.6rem"></i> Crooked Tooth Correction</a>
+      <a href="teeth-whitening.html" style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);font-size:.92rem;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);transition:color .2s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,.85)'"><i class="fas fa-chevron-right" style="color:var(--gold);font-size:.6rem"></i> Zoom Teeth Whitening</a>
+      <a href="jetting-out-teeth-correction.html" style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);font-size:.92rem;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);transition:color .2s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,.85)'"><i class="fas fa-chevron-right" style="color:var(--gold);font-size:.6rem"></i> Jetting out teeth correction</a>
+      <a href="mottling-of-teeth-correction.html" style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);font-size:.92rem;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);transition:color .2s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,.85)'"><i class="fas fa-chevron-right" style="color:var(--gold);font-size:.6rem"></i> Teeth mottling due to flourosis correction</a>
+      <a href="cosmetic-contouring.html" style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);font-size:.92rem;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);transition:color .2s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,.85)'"><i class="fas fa-chevron-right" style="color:var(--gold);font-size:.6rem"></i> Cosmetic Contouring</a>
+      <a href="root-canal-treatment.html" style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);font-size:.92rem;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);transition:color .2s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,.85)'"><i class="fas fa-chevron-right" style="color:var(--gold);font-size:.6rem"></i> Root Canal Treatment</a>
+      <a href="cosmetic-tooth-colored-fillings.html" style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);font-size:.92rem;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);transition:color .2s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,.85)'"><i class="fas fa-chevron-right" style="color:var(--gold);font-size:.6rem"></i> Cosmetic Tooth Colored Fillings</a>
+      <a href="inlays-onlays.html" style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);font-size:.92rem;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);transition:color .2s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,.85)'"><i class="fas fa-chevron-right" style="color:var(--gold);font-size:.6rem"></i> Ceramic fillings - inlay, onlay</a>
+      <a href="tooth-crystal.html" style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);font-size:.92rem;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);transition:color .2s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,.85)'"><i class="fas fa-chevron-right" style="color:var(--gold);font-size:.6rem"></i> Tooth Crystal</a>
+    </div>
+    <p style="text-align:center;color:rgba(255,255,255,.6);font-size:.9rem;line-height:1.7;max-width:700px;margin:28px auto 0">Our treatments in cosmetic dentistry will modify the size, shape, and alignment of your teeth, fill attractive gaps, correct or enhance bites, and brighten your smile, among other transformations.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section reveal" style="background:var(--cream)">
+  <div class="container" style="max-width:800px">
+    <div style="text-align:center;margin-bottom:40px">
+      <span class="sec-chip">Got Questions?</span>
+      <h2 class="sec-h">Common <em>FAQs</em></h2>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>What are the causes behind the discolouration of teeth?</span><i class="fas fa-chevron-down"></i></div>
+      <div class="faq-a"><p>There are various causes that can discolour teeth internally and externally. While drinking beverages like wine, tea or coffee and chewing tobacco can cause external staining, consumption of excessive fluoride during tooth formation, medical treatments can stain teeth internally.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Are there any side effects of bleaching?</span><i class="fas fa-chevron-down"></i></div>
+      <div class="faq-a"><p>Although bleaching is a safe procedure, you may experience a few short-lived side effects such as tingling sensations or sensitivity. However, it does not last for too long. In the worst-case scenario, mild sensitivity may be a maximum of 24 hours but can be countered by the use of a medicated mouthwash, toothpaste or anti-inflammatory tablet.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Does cosmetic contouring hurt?</span><i class="fas fa-chevron-down"></i></div>
+      <div class="faq-a"><p>No, cosmetic contouring is painless, does not require anaesthesia and has no recovery time after the treatment is completed.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" style="background:var(--white)">
+  <div class="container" style="max-width:900px">
+    <div style="text-align:center;margin-bottom:36px">
+      <span class="sec-chip">Our Reviews</span>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3vw,2rem);color:var(--ink)">Patient <em style="color:var(--olive);font-style:italic">Testimonials</em></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+      <div style="background:var(--cream);border-radius:14px;padding:28px;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.05)">
+        <div style="color:var(--gold);font-size:.75rem;margin-bottom:12px"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p style="color:#555;font-size:.88rem;line-height:1.7;font-style:italic;margin-bottom:16px">"I was really happy with the professionalism of the dentist and attention to the detail. Thanks Dr. Sween Kathuria for a nice work including Crowns & whitening."</p>
+        <div style="display:flex;align-items:center;gap:10px"><div style="width:40px;height:40px;border-radius:50%;background:var(--olive);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.75rem">BG</div><div><strong style="font-size:.85rem;color:var(--dark)">Bradleigh Gough</strong><span style="display:flex;align-items:center;gap:4px;color:#999;font-size:.72rem"><img src="https://flagcdn.com/16x12/gb.png" alt="UK" style="border-radius:2px"> United Kingdom</span></div></div>
+      </div>
+      <div style="background:var(--cream);border-radius:14px;padding:28px;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.05)">
+        <div style="color:var(--gold);font-size:.75rem;margin-bottom:12px"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p style="color:#555;font-size:.88rem;line-height:1.7;font-style:italic;margin-bottom:16px">"Everything went smooth and quickly doctors work well around my short schedule. Thank you Dr. Sween Kathuria for my new smile."</p>
+        <div style="display:flex;align-items:center;gap:10px"><div style="width:40px;height:40px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.75rem">SM</div><div><strong style="font-size:.85rem;color:var(--dark)">Sabine Montagnon</strong><span style="display:flex;align-items:center;gap:4px;color:#999;font-size:.72rem"><img src="https://flagcdn.com/16x12/ca.png" alt="CA" style="border-radius:2px"> Canada</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE & AFTER -->
+<section class="treatment-cases-section" style="background:var(--olive-dark);padding:60px 0;overflow:hidden">
+  <div class="container" style="padding:0 5%">
+    <div style="text-align:center;margin-bottom:36px">
+      <span style="display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px"><span style="display:inline-block;width:24px;height:2px;background:var(--gold)"></span> Real Results</span>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.2rem);color:#fff;line-height:1.2">Before &amp; After <em style="color:var(--gold-light);font-style:italic">Cases</em></h2>
+      <p style="color:rgba(255,255,255,.6);font-size:.9rem;margin-top:10px">Real patient transformations at Dr. Kathuria's Dentistry</p>
+    </div>
+  </div>
+  <div class="ba-scroll" style="overflow-x:auto;padding:0 5% 16px;scrollbar-width:none;-ms-overflow-style:none" data-treatment="cosmetic-dentistry">
+    <div style="display:flex;gap:24px;min-width:max-content">
+      <div class="ba-card" style="min-width:400px;max-width:400px;border-radius:16px;overflow:hidden;flex-shrink:0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);padding:20px;text-align:center">
+        <div style="width:100%;height:280px;border-radius:12px;background:rgba(255,255,255,.05);display:flex;flex-direction:column;align-items:center;justify-content:center;border:2px dashed rgba(255,255,255,.15)">
+          <i class="fas fa-camera" style="font-size:2.5rem;color:var(--gold);margin-bottom:14px;opacity:.6"></i>
+          <p style="color:rgba(255,255,255,.5);font-size:.85rem;line-height:1.5">Case photos coming soon</p>
+          <p style="color:rgba(255,255,255,.3);font-size:.72rem;margin-top:6px">Cosmetic Dentistry</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:28px">
+    <a href="cases.html" style="display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:.85rem;font-weight:600;text-decoration:none;border:1px solid var(--gold);padding:10px 24px;border-radius:50px;transition:all .3s"><i class="fas fa-images"></i> View All Cases</a>
+  </div>
+</section>
+
 <!-- CTA BANNER -->
 <section class="cta-banner reveal">
   <div class="container">
@@ -358,12 +532,48 @@
   </div>
 </section>
 
+
+<!-- INTERNATIONAL PHONE NUMBERS -->
+<section class="intl-phones-section" style="padding:50px 5%">
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:28px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <i class="fas fa-phone-volume" style="font-size:2rem;color:var(--gold)"></i>
+        <div><strong style="font-size:1.1rem;color:var(--ink)">Dial Local Number</strong><br><span style="font-size:.82rem;color:var(--gray)">in your Country</span></div>
+      </div>
+    </div>
+    <div class="intl-phones-grid">
+      <a href="tel:+18889812145" class="intl-phone-pill">
+        <span class="intl-phone-flag"><img src="https://flagcdn.com/32x24/us.png" alt="USA" style="border-radius:3px"></span>
+        <div class="intl-phone-info"><span>USA</span><strong>+1 888 981 2145</strong></div>
+      </a>
+      <a href="tel:+441970450032" class="intl-phone-pill">
+        <span class="intl-phone-flag"><img src="https://flagcdn.com/32x24/gb.png" alt="UK" style="border-radius:3px"></span>
+        <div class="intl-phone-info"><span>UK</span><strong>+44 1970 450032</strong></div>
+      </a>
+      <a href="tel:+61384004931" class="intl-phone-pill">
+        <span class="intl-phone-flag"><img src="https://flagcdn.com/32x24/au.png" alt="Australia" style="border-radius:3px"></span>
+        <div class="intl-phone-info"><span>Australia</span><strong>+61 3840 04931</strong></div>
+      </a>
+      <a href="tel:+18889812145" class="intl-phone-pill">
+        <span class="intl-phone-flag"><img src="https://flagcdn.com/32x24/ca.png" alt="Canada" style="border-radius:3px"></span>
+        <div class="intl-phone-info"><span>Canada</span><strong>+1 888 981 2145</strong></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- GOOGLE MAP -->
+<section class="map-section">
+  <iframe class="map-full" src="https://www.google.com/maps?q=Dr.+Kathuria%27s+Dentistry,+E-143,+East+of+Kailash,+New+Delhi&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="ft-grid">
     <div class="ft-brand">
       <div class="ft-logo">
-        <div class="ft-logo-mark"><i class="fas fa-tooth"></i></div>
+        <img class="ft-logo-mark-img" src="https://www.delhidental.com/wp-content/uploads/2017/09/Dr.Kathurias-Dentistry-Logo-e1641815051747.jpg" alt="Dr. Kathuria's Dentistry">
         <div class="ft-logo-text"><strong>Dr. Kathuria's Dentistry</strong><span>Premium Dental Care</span></div>
       </div>
       <p>NABH accredited, ISO certified multi-speciality dental clinic in East of Kailash, New Delhi. Trusted by over 15,000 patients from 44+ countries.</p>
