@@ -478,16 +478,10 @@ ul  { list-style: none; }
   color: transparent; font-size: 0;
 }
 .hs-slide.active .hs-img { transform: scale(1); }
-/* Overlay: dark only on left where text sits, transparent on right so image shows */
+/* Overlay: removed — images show fully clean */
 .hs-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(20,35,10,.82) 0%,
-    rgba(20,35,10,.65) 35%,
-    rgba(20,35,10,.25) 60%,
-    rgba(0,0,0,0) 100%
-  ) !important;
+  background: transparent !important;
 }
 .hs-content {
   position: relative; z-index: 2;
