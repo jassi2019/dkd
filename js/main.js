@@ -81,29 +81,25 @@ document.querySelectorAll('.stat-num').forEach(el => counterObs.observe(el));
 
 /* ── BANNER SLIDER ── */
 (function() {
-  const slides = document.querySelectorAll('.hs-slide');
-  const dots   = document.querySelectorAll('.hs-dot');
-  const prev   = document.getElementById('hsPrev');
-  const next   = document.getElementById('hsNext');
-  if (!slides.length) return;
+  const imgs = document.querySelectorAll('.hs-track .hs-img');
+  const dots = document.querySelectorAll('.hs-dot');
+  if (!imgs.length) return;
   let cur = 0, timer;
 
   function goTo(n) {
-    slides[cur].classList.remove('active');
+    imgs[cur].classList.remove('active');
     dots[cur]?.classList.remove('on');
-    cur = (n + slides.length) % slides.length;
-    slides[cur].classList.add('active');
+    cur = (n + imgs.length) % imgs.length;
+    imgs[cur].classList.add('active');
     dots[cur]?.classList.add('on');
     resetTimer();
   }
 
   function resetTimer() {
     clearInterval(timer);
-    timer = setInterval(() => goTo(cur + 1), 6000);
+    timer = setInterval(() => goTo(cur + 1), 5000);
   }
 
-  if (prev) prev.onclick = () => goTo(cur - 1);
-  if (next) next.onclick = () => goTo(cur + 1);
   dots.forEach((d, i) => d.onclick = () => goTo(i));
   resetTimer();
 })();
