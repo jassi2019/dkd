@@ -2092,52 +2092,55 @@ h2.section-title.text-center + p.section-sub { text-align: center; margin-left: 
   .top-bar {
     display: block;
     border-bottom: 1px solid var(--olive);
-    overflow: hidden;
+    overflow: clip;
   }
   .top-bar-inner {
-    flex-wrap: nowrap;
-    overflow: hidden;
+    overflow: visible;
     height: 40px;
     display: block;
+    white-space: nowrap;
   }
   .top-bar-track {
-    display: flex;
+    display: inline-flex;
     flex-wrap: nowrap;
-    width: max-content;
-    animation: topBarScroll 22s linear infinite;
+    white-space: nowrap;
+    animation: topBarScroll 28s linear infinite;
+    will-change: transform;
   }
-  .top-bar-track:hover { animation-play-state: paused; }
+  .top-bar-track:active { animation-play-state: paused; }
   @keyframes topBarScroll {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
   /* Show all phone items on mobile — compact */
   .top-bar-phone {
-    display: flex !important;
+    display: inline-flex !important;
     flex-shrink: 0;
-    padding: 5px 12px;
+    min-width: max-content;
+    padding: 5px 14px;
     border-right: 1px solid var(--border);
-    gap: 5px;
+    gap: 6px;
     align-items: center;
   }
-  .top-bar-phone .tb-flag { width: 18px; height: 12px; }
-  .top-bar-phone .tb-icon { font-size: .75rem; }
-  .top-bar-phone .tb-label { font-size: .45rem; }
-  .top-bar-phone .tb-num { font-size: .75rem; }
+  .top-bar-phone .tb-flag { width: 18px; height: 12px; flex-shrink: 0; }
+  .top-bar-phone .tb-icon { font-size: .75rem; flex-shrink: 0; }
+  .top-bar-phone .tb-label { font-size: .45rem; white-space: nowrap; }
+  .top-bar-phone .tb-num { font-size: .78rem; white-space: nowrap; font-weight: 800; }
   /* Hide email extra */
   .top-bar-extra { display: none !important; }
   /* Show address */
   .top-bar-extra.tb-addr {
-    display: flex !important;
+    display: inline-flex !important;
     flex-shrink: 0;
-    padding: 5px 12px;
+    min-width: max-content;
+    padding: 5px 14px;
     border-right: 1px solid var(--border);
-    gap: 5px;
+    gap: 6px;
     align-items: center;
   }
   .top-bar-extra.tb-addr .tb-icon { width: 18px; height: 18px; font-size: .5rem; flex-shrink: 0; }
-  .top-bar-extra.tb-addr .tb-label { font-size: .45rem; }
-  .top-bar-extra.tb-addr .tb-val { font-size: .72rem; white-space: nowrap; }
+  .top-bar-extra.tb-addr .tb-label { font-size: .45rem; white-space: nowrap; }
+  .top-bar-extra.tb-addr .tb-val { font-size: .72rem; white-space: nowrap; font-weight: 700; }
   .page-hero { min-height: 320px; padding: 80px 5% 60px; }
   .testi-card { padding: 28px 22px; }
   .filter-bar { justify-content: center; }
