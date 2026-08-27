@@ -161,6 +161,9 @@ ul  { list-style: none; }
 .top-bar-extra .tb-label { font-size: .56rem; font-weight: 600; color: var(--olive); line-height: 1; }
 .top-bar-extra .tb-val { font-size: .78rem; font-weight: 700; color: var(--ink); line-height: 1; }
 
+/* top-bar-track: on desktop, transparent flex wrapper */
+.top-bar-track { display: contents; }
+
 /* Info strip — removed (merged into 2-row header) */
 
 /* Toll-free in nav row 2 */
