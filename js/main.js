@@ -485,3 +485,15 @@ document.querySelectorAll('.nav-links a').forEach(a => {
   if (prev) prev.addEventListener('click', function() { scroll.scrollBy({ left: -step, behavior: 'smooth' }); });
   if (next) next.addEventListener('click', function() { scroll.scrollBy({ left: step, behavior: 'smooth' }); });
 })();
+
+/* ── MOBILE NAV ACCORDION ── */
+document.querySelectorAll('.mob-acc-head').forEach(function(head){
+  head.addEventListener('click', function(){
+    var acc = head.parentElement;
+    // Close others
+    document.querySelectorAll('.mob-accordion.open').forEach(function(o){
+      if(o !== acc) o.classList.remove('open');
+    });
+    acc.classList.toggle('open');
+  });
+});

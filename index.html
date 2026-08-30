@@ -2,11 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
+  <link rel="icon" type="image/png" href="https://www.delhidental.com/wp-content/uploads/2017/09/Dr.Kathurias-Dentistry-Logo-e1641815051747.jpg"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Dr. Kathuria's Dentistry | Best Dental Clinic Delhi — East of Kailash</title>
   <meta name="description" content="NABH Accredited dental clinic in East of Kailash, Delhi. Trusted by 15,000+ patients from 44 countries. Smile makeover, implants, aligners, veneers &amp; more."/>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap"/></noscript>
   <link rel="stylesheet" href="css/style.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'"/>
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/></noscript>
   <style>
     /* ── HOME-SPECIFIC OVERRIDES ── */
     .cta-banner{background:var(--olive-dark);text-align:center;color:var(--white);position:relative;overflow:hidden}
@@ -17,18 +24,21 @@
     .cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 
     .countries-wrap{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:32px}
-    .country-pill{display:inline-flex;align-items:center;gap:6px;background:var(--white);border:1px solid var(--border);border-radius:99px;padding:8px 18px;font-size:.8rem;font-weight:600;color:var(--dark);transition:all .25s;box-shadow:var(--shadow-xs)}
+    .country-pill{display:inline-flex;align-items:center;gap:6px;background:var(--white);border:1px solid var(--border);border-radius:99px;padding:8px 18px;font-size:.8rem;font-weight:600;color:var(--dark);transition:all .25s;box-shadow:var(--shadow-xs);text-decoration:none}
     .country-pill:hover{border-color:var(--olive);background:var(--olive-pale);transform:translateY(-3px);box-shadow:var(--shadow)}
 
-    /* ── GOOGLE REVIEWS HORIZONTAL SCROLL ── */
-    .google-grid{display:flex !important;flex-wrap:nowrap !important;gap:18px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:8px}
-    .google-grid::-webkit-scrollbar{display:none}
+    /* ── GOOGLE REVIEWS AUTO SCROLL ── */
+    .google-grid{overflow:hidden;width:100%;display:flex}
+    .gr-track{display:flex;flex-shrink:0;gap:18px;animation:grScroll 28s linear infinite;will-change:transform;padding:8px 0 12px}
+    .google-grid:hover .gr-track{animation-play-state:paused}
+    @keyframes grScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
     .gr-card{min-width:300px;max-width:300px;flex-shrink:0;background:#fff;border:1px solid var(--border);border-radius:14px;padding:22px;box-shadow:0 2px 12px rgba(0,0,0,.05)}
     .gr-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
     .gr-av{width:38px;height:38px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem;flex-shrink:0}
     .gr-top strong{display:block;font-size:.85rem;color:var(--dark)}
     .gr-top span{font-size:.7rem;color:#999;display:block}
-    .gr-stars{color:var(--gold);font-size:.78rem;margin-bottom:10px;display:flex;gap:2px}
+    .gr-stars{color:#34a853;font-size:.78rem;margin-bottom:10px;display:flex;gap:2px}
+    .gr-stars i{color:#34a853 !important}
     .gr-card>p{font-size:.82rem;color:#555;line-height:1.65;margin-bottom:14px}
     .gr-foot{display:flex;align-items:center;gap:5px;font-size:.7rem;color:#999}
     .gr-badge{background:var(--olive-pale);color:var(--olive);font-size:.6rem;font-weight:700;padding:2px 8px;border-radius:3px;margin-left:auto}
@@ -90,9 +100,9 @@
     @media(max-width:600px){.tm-grid{grid-template-columns:1fr}.tm-featured>p{font-size:.95rem}}
 
     /* ── TELEDENTISTRY SPLIT ── */
-    .tele-split{display:grid;grid-template-columns:1fr 1fr;min-height:480px;overflow:hidden;border-radius:20px;box-shadow:0 12px 40px rgba(0,0,0,.1)}
+    .tele-split{display:grid;grid-template-columns:1.2fr 1fr;min-height:560px;overflow:hidden;border-radius:20px;box-shadow:0 12px 40px rgba(0,0,0,.1)}
     .tele-img{position:relative;overflow:hidden;background:#f0f2f5}
-    .tele-img img{width:100%;height:100%;object-fit:contain;object-position:center;padding:16px}
+    .tele-img img{width:100%;height:100%;object-fit:cover;object-position:center;padding:0}
     .tele-img::after{display:none}
     .tele-badge{position:absolute;top:16px;left:16px;background:var(--olive-dark,#2B3A1A);padding:7px 16px;border-radius:99px;font-size:.7rem;font-weight:700;color:#fff;display:flex;align-items:center;gap:6px;z-index:2}
     .tele-badge i{color:#22c55e;font-size:.65rem}
@@ -106,8 +116,8 @@
     .tele-feat{display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.8);font-size:.85rem}
     .tele-feat i{color:#D4B865;font-size:.75rem;width:20px;text-align:center}
     .tele-btns{display:flex;gap:12px;flex-wrap:wrap}
-    @media(max-width:960px){.tele-split{grid-template-columns:1fr;border-radius:16px}.tele-img{height:300px}.tele-content{padding:36px 28px}}
-    @media(max-width:600px){.tele-img{height:220px}.tele-content{padding:28px 20px}.tele-btns{flex-direction:column}}
+    @media(max-width:960px){.tele-split{grid-template-columns:1fr;border-radius:16px}.tele-img{height:420px}.tele-content{padding:36px 28px}}
+    @media(max-width:600px){.tele-img{height:320px}.tele-content{padding:28px 20px}.tele-btns{flex-direction:column}}
 
     /* ── TECH IMAGE CARDS HORIZONTAL SCROLL ── */
     .tech-hscroll::-webkit-scrollbar{display:none}
@@ -168,8 +178,11 @@
     @media(max-width:700px){.insta-grid{grid-template-columns:repeat(2,1fr);gap:12px}}
 
     /* ── CELEBRITY SMILES ── */
-    .celeb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto}
-    .celeb-card{background:var(--white);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s}
+    .celeb-grid{display:flex;overflow:hidden;width:100%}
+    .celeb-track{display:flex;flex-shrink:0;gap:24px;animation:celebScroll 30s linear infinite;will-change:transform;padding:8px 0 12px}
+    .celeb-grid:hover .celeb-track{animation-play-state:paused}
+    @keyframes celebScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    .celeb-card{background:var(--white);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s;flex:0 0 280px}
     .celeb-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
     .celeb-card-img{height:260px;overflow:hidden}
     .celeb-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
@@ -177,21 +190,25 @@
     .celeb-card-body{padding:20px;text-align:center}
     .celeb-card-body h4{font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:4px;color:var(--dark)}
     .celeb-card-body span{font-size:.82rem;color:var(--muted)}
-    @media(max-width:700px){.celeb-grid{grid-template-columns:1fr;max-width:400px}}
 
     /* ── CHARGES PREVIEW ── */
     .charges-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:0 auto}
-    .charge-card{position:relative;border-radius:16px;padding:36px 20px 28px;text-align:center;overflow:hidden;border:1px solid rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s}
+    .charge-card{position:relative;border-radius:16px;padding:36px 20px 28px;text-align:center;overflow:hidden;border:1px solid rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;background:#fff}
     .charge-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,.1)}
     .charge-card-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.08;transition:opacity .3s}
     .charge-card:hover .charge-card-bg{opacity:.15}
     .charge-card-content{position:relative;z-index:2}
     .charge-card .charge-icon{width:52px;height:52px;border-radius:50%;background:var(--olive-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;color:var(--olive);font-size:1.3rem}
-    .charge-card h4{font-size:1rem;margin-bottom:6px;color:var(--dark)}
+    .charge-card h4{font-size:1rem;margin-bottom:6px;color:var(--dark);font-weight:700}
     .charge-card .charge-price{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--gold);margin-bottom:2px}
     .charge-card .charge-from{font-size:.78rem;color:var(--muted)}
-    @media(max-width:700px){.charges-grid{grid-template-columns:1fr 1fr;gap:14px}}
-    @media(max-width:420px){.charges-grid{grid-template-columns:1fr}}
+    @media(max-width:700px){
+      .charges-grid-wrap{overflow:hidden;width:100%;display:flex;margin:0 -5%;padding:0}
+      .charges-grid{display:flex;flex-wrap:nowrap;gap:14px;flex-shrink:0;padding:8px 5% 12px;animation:chScroll 22s linear infinite;will-change:transform}
+      .charges-grid-wrap:hover .charges-grid{animation-play-state:paused}
+      @keyframes chScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+      .charge-card{flex:0 0 72vw;scroll-snap-align:start}
+    }
 
     /* ── CLINIC IMAGES ── */
     .clinic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1100px;margin:0 auto}
@@ -221,27 +238,27 @@
   <div class="top-bar-track">
     <a href="tel:+61384004931" class="top-bar-phone">
       <span class="tb-icon"><i class="fas fa-phone"></i></span>
-      <img src="https://flagcdn.com/w40/au.png" alt="AU" class="tb-flag">
+      <img loading="lazy" src="https://flagcdn.com/w40/au.png" alt="AU" class="tb-flag">
       <span class="tb-info"><span class="tb-label">Australia No</span><span class="tb-num">+61 3840 04931</span></span>
     </a>
     <a href="tel:+18889812145" class="top-bar-phone">
       <span class="tb-icon"><i class="fas fa-phone"></i></span>
-      <img src="https://flagcdn.com/w40/ca.png" alt="CA" class="tb-flag">
+      <img loading="lazy" src="https://flagcdn.com/w40/ca.png" alt="CA" class="tb-flag">
       <span class="tb-info"><span class="tb-label">Canada No</span><span class="tb-num">+1 888 981 2145</span></span>
     </a>
     <a href="tel:18001177272" class="top-bar-phone tb-highlight">
       <span class="tb-icon"><i class="fas fa-phone"></i></span>
-      <img src="https://flagcdn.com/w40/in.png" alt="IN" class="tb-flag">
+      <img loading="lazy" src="https://flagcdn.com/w40/in.png" alt="IN" class="tb-flag">
       <span class="tb-info"><span class="tb-label">India Toll Free No</span><span class="tb-num">1800-11-7272</span></span>
     </a>
     <a href="tel:+441970450032" class="top-bar-phone">
       <span class="tb-icon"><i class="fas fa-phone"></i></span>
-      <img src="https://flagcdn.com/w40/gb.png" alt="GB" class="tb-flag">
+      <img loading="lazy" src="https://flagcdn.com/w40/gb.png" alt="GB" class="tb-flag">
       <span class="tb-info"><span class="tb-label">UK No</span><span class="tb-num">+44 1970 450032</span></span>
     </a>
     <a href="tel:+18889812145" class="top-bar-phone">
       <span class="tb-icon"><i class="fas fa-phone"></i></span>
-      <img src="https://flagcdn.com/w40/us.png" alt="US" class="tb-flag">
+      <img loading="lazy" src="https://flagcdn.com/w40/us.png" alt="US" class="tb-flag">
       <span class="tb-info"><span class="tb-label">USA No</span><span class="tb-num">+1 888 981 2145</span></span>
     </a>
     <a href="mailto:dentistdelhi@gmail.com" class="top-bar-extra">
@@ -270,7 +287,7 @@
 <nav class="site-nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="https://www.delhidental.com/wp-content/uploads/2017/09/Dr.Kathurias-Dentistry-Logo-e1641815051747.jpg" alt="Dr. Kathuria's Dentistry Logo" class="logo-img">
+      <img loading="lazy" src="https://www.delhidental.com/wp-content/uploads/2017/09/Dr.Kathurias-Dentistry-Logo-e1641815051747.jpg" alt="Dr. Kathuria's Dentistry Logo" class="logo-img">
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -282,7 +299,7 @@
           <a href="articles.html"><i class="fas fa-newspaper"></i> Articles</a>
         </div>
       </li>
-      <li><a href="services.html">Treatments <i class="fas fa-chevron-down chevron"></i></a>
+      <li><a href="treatments.html">Treatments <i class="fas fa-chevron-down chevron"></i></a>
         <div class="nav-mega">
           <div class="mega-group">
             <h6><a href="dental-implants.html" style="color:inherit;text-decoration:none">Dental Implants</a></h6>
@@ -372,7 +389,7 @@
         <span class="tf-icon"><i class="fas fa-phone"></i></span>
         <span class="tf-text"><span class="tf-label">India Toll Free No</span><span class="tf-num">1800-11-7272</span></span>
       </a>
-      <div class="nav-nabh"><img src="https://www.delhidental.com/wp-content/uploads/2017/09/NABH-Logo-2.png" alt="NABH Accredited"></div>
+      <div class="nav-nabh"><img loading="lazy" src="https://www.delhidental.com/wp-content/uploads/2017/09/NABH-Logo-2.png" alt="NABH Accredited"></div>
       <button class="hamburger" id="hamburger" aria-label="Menu"><i class="fas fa-bars"></i></button>
     </div>
   </div>
@@ -395,16 +412,43 @@
 <!-- ══════════════════ MOBILE NAV ══════════════════ -->
 <div class="mobile-nav" id="mobileNav">
   <a href="index.html"><i class="fas fa-home"></i> Home</a>
-  <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialist</a>
-  <a href="clinic-tour.html"><i class="fas fa-hospital"></i> Clinic Tour Images</a>
-  <a href="technology.html"><i class="fas fa-microchip"></i> Technology</a>
-  <a href="services.html"><i class="fas fa-teeth"></i> All Treatments</a>
-  <a href="awards.html"><i class="fas fa-trophy"></i> Awards &amp; Recognitions</a>
-  <a href="testimonials.html"><i class="fas fa-comments"></i> Testimonials</a>
-  <a href="cases.html"><i class="fas fa-images"></i> Patient Gallery</a>
-  <a href="charges.html"><i class="fas fa-indian-rupee-sign"></i> Charges</a>
-  <a href="smile-analysis.html"><i class="fas fa-face-smile-beam"></i> Smile Analysis</a>
-  <a href="articles.html"><i class="fas fa-newspaper"></i> Articles</a>
+
+  <div class="mob-accordion">
+    <div class="mob-acc-head"><i class="fas fa-building"></i> About Us <i class="fas fa-chevron-down mob-acc-arrow"></i></div>
+    <div class="mob-acc-body">
+      <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialist</a>
+      <a href="clinic-tour.html"><i class="fas fa-hospital"></i> Clinic Tour Images</a>
+      <a href="technology.html"><i class="fas fa-microchip"></i> Technology</a>
+      <a href="awards.html"><i class="fas fa-trophy"></i> Awards &amp; Recognitions</a>
+    </div>
+  </div>
+
+  <div class="mob-accordion">
+    <div class="mob-acc-head"><i class="fas fa-teeth"></i> Treatments <i class="fas fa-chevron-down mob-acc-arrow"></i></div>
+    <div class="mob-acc-body">
+      <a href="treatments.html"><i class="fas fa-list"></i> All Treatments</a>
+      <a href="smile-makeover.html"><i class="fas fa-star"></i> Smile Makeover</a>
+      <a href="single-tooth-implants.html"><i class="fas fa-tooth"></i> Dental Implants</a>
+      <a href="clear-aligners.html"><i class="fas fa-align-center"></i> Clear Aligners</a>
+      <a href="teeth-whitening.html"><i class="fas fa-bolt"></i> Teeth Whitening</a>
+      <a href="root-canal-treatment.html"><i class="fas fa-syringe"></i> Root Canal</a>
+      <a href="crowns-bridge.html"><i class="fas fa-crown"></i> Crowns &amp; Bridges</a>
+      <a href="laser-gummy-smile-correction.html"><i class="fas fa-wand-magic-sparkles"></i> Gummy Smile</a>
+      <a href="gums-surgery.html"><i class="fas fa-heart-pulse"></i> Gum Surgery</a>
+    </div>
+  </div>
+
+  <div class="mob-accordion">
+    <div class="mob-acc-head"><i class="fas fa-users"></i> Patient Resources <i class="fas fa-chevron-down mob-acc-arrow"></i></div>
+    <div class="mob-acc-body">
+      <a href="testimonials.html"><i class="fas fa-comments"></i> Testimonials</a>
+      <a href="cases.html"><i class="fas fa-images"></i> Patient Gallery</a>
+      <a href="charges.html"><i class="fas fa-indian-rupee-sign"></i> Charges</a>
+      <a href="smile-analysis.html"><i class="fas fa-face-smile-beam"></i> Smile Analysis</a>
+      <a href="articles.html"><i class="fas fa-newspaper"></i> Articles</a>
+    </div>
+  </div>
+
   <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
   <a href="tel:1800117272" class="mobile-cta"><i class="fas fa-calendar-check"></i> Book Appointment</a>
 </div>
@@ -414,16 +458,16 @@
 
   <!-- Image track — natural flow, no crop ever -->
   <div class="hs-track">
-    <img class="hs-img active" src="https://www.delhidental.com/wp-content/uploads/2024/10/Website-Banner-1800-x-726-pxjj.png" alt="Dr. Kathuria's Dentistry"/>
-    <img class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2026/02/next-seasonfdfsdf.png" alt=""/>
-    <img class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2024/04/1-2.png" alt=""/>
-    <img class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2025/02/lip.jpg" alt=""/>
-    <img class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2019/02/3.png" alt=""/>
-    <img class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2020/10/5.png" alt=""/>
-    <img class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2024/08/4.png" alt=""/>
-    <img class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2017/09/7-1.png" alt=""/>
-    <img class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2025/02/baja.jpg" alt=""/>
-    <img class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2024/08/6-1.png" alt=""/>
+    <img loading="lazy" class="hs-img active" src="https://www.delhidental.com/wp-content/uploads/2024/10/Website-Banner-1800-x-726-pxjj.png" alt="Dr. Kathuria's Dentistry"/>
+    <img loading="lazy" class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2026/02/next-seasonfdfsdf.png" alt=""/>
+    <img loading="lazy" class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2024/04/1-2.png" alt=""/>
+    <img loading="lazy" class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2025/02/lip.jpg" alt=""/>
+    <img loading="lazy" class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2019/02/3.png" alt=""/>
+    <img loading="lazy" class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2020/10/5.png" alt=""/>
+    <img loading="lazy" class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2024/08/4.png" alt=""/>
+    <img loading="lazy" class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2017/09/7-1.png" alt=""/>
+    <img loading="lazy" class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2025/02/baja.jpg" alt=""/>
+    <img loading="lazy" class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2024/08/6-1.png" alt=""/>
   </div>
 
   <!-- Bottom bar — overlaid on image -->
@@ -456,9 +500,9 @@
 <section style="background:#fff;padding:50px 5%">
   <div class="container" style="max-width:1100px;text-align:center">
     <!-- Desktop image -->
-    <img src="images/whychoose.jpg" alt="Why Choose Dr. Kathuria's Dentistry" class="wcu-desktop" style="width:100%;max-width:960px;height:auto;display:block;margin:0 auto;border-radius:12px;">
+    <img loading="lazy" src="images/whychoose.jpg" alt="Why Choose Dr. Kathuria's Dentistry" class="wcu-desktop" style="width:100%;max-width:960px;height:auto;display:block;margin:0 auto;border-radius:12px;">
     <!-- Mobile image -->
-    <img src="images/whychoosemobile.jpg" alt="Why Choose Dr. Kathuria's Dentistry" class="wcu-mobile" style="width:100%;height:auto;display:none;margin:0 auto;border-radius:12px;">
+    <img loading="lazy" src="images/whychoosemobile.jpg" alt="Why Choose Dr. Kathuria's Dentistry" class="wcu-mobile" style="width:100%;height:auto;display:none;margin:0 auto;border-radius:12px;">
   </div>
 </section>
 <style>
@@ -467,6 +511,52 @@
   .wcu-mobile  { display:block !important; }
 }
 </style>
+
+<!-- ══════════════════ MEET YOUR DOCTOR ══════════════════ -->
+<section style="position:relative;background:var(--olive-dark);padding:70px 5%;overflow:hidden">
+  <!-- Background team image with overlay -->
+  <div style="position:absolute;inset:0;background-image:url('images/team-bg.jpg');background-size:cover;background-position:center;opacity:.18"></div>
+  <div style="position:relative;z-index:2;max-width:1100px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:50px">
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#fff;letter-spacing:2px;text-transform:uppercase">Meet Your <em style="font-style:italic;color:var(--gold)">Doctor</em></h2>
+      <div style="width:60px;height:3px;background:var(--gold);margin:16px auto 0"></div>
+    </div>
+
+    <div class="doc-grid">
+
+      <!-- Dr. Sween Kathuria -->
+      <div style="display:flex;align-items:center;gap:28px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:28px;backdrop-filter:blur(6px)">
+        <div style="flex-shrink:0;width:180px;height:220px;border-radius:12px;overflow:hidden;border:3px solid var(--gold)">
+          <img loading="lazy" src="https://www.delhidental.com/wp-content/uploads/2017/09/sween-kathuria-new1.jpg" alt="Dr. Sween Kathuria" style="width:100%;height:100%;object-fit:cover;object-position:top"/>
+        </div>
+        <div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;color:#fff;margin-bottom:6px">DR. SWEEN <span style="color:var(--gold)">KATHURIA</span></h3>
+          <p style="color:var(--gold);font-size:.82rem;font-weight:600;margin-bottom:16px">B.D.S., M.D.S., F.P.F.A. (USA)</p>
+          <p style="color:rgba(255,255,255,.7);font-size:.82rem;line-height:1.6;margin-bottom:20px">Specialist in Smile Makeovers, Aesthetic Dentistry & Cosmetic Procedures. Fellowship from the prestigious Pan Pacific Federation of Aesthetic Dentistry, USA.</p>
+          <a href="team.html" class="btn btn-gold btn-pill" style="font-size:.78rem;padding:10px 22px;text-transform:uppercase;letter-spacing:1px">Know More About Doctor</a>
+        </div>
+      </div>
+
+      <!-- Dr. Puneet Kathuria -->
+      <div style="display:flex;align-items:center;gap:28px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:28px;backdrop-filter:blur(6px)">
+        <div style="flex-shrink:0;width:180px;height:220px;border-radius:12px;overflow:hidden;border:3px solid var(--gold)">
+          <img loading="lazy" src="https://www.delhidental.com/wp-content/uploads/2017/09/puneet-kathuria-new.jpg" alt="Dr. Puneet Kathuria" style="width:100%;height:100%;object-fit:cover;object-position:top"/>
+        </div>
+        <div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;color:#fff;margin-bottom:6px">DR. PUNEET <span style="color:var(--gold)">KATHURIA</span></h3>
+          <p style="color:var(--gold);font-size:.82rem;font-weight:600;margin-bottom:16px">B.D.S., M.D.S., F.I.C.O.I. (USA)</p>
+          <p style="color:rgba(255,255,255,.7);font-size:.82rem;line-height:1.6;margin-bottom:20px">Specialist in Dental Implants, Full Mouth Rehabilitation & Oral Surgery. Fellowship from the International Congress of Oral Implantologists, USA.</p>
+          <a href="team.html" class="btn btn-gold btn-pill" style="font-size:.78rem;padding:10px 22px;text-transform:uppercase;letter-spacing:1px">Know More About Doctor</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:40px">
+      <a href="team.html" class="btn btn-outline btn-pill" style="color:#fff;border-color:rgba(255,255,255,.4);font-size:.85rem;padding:12px 32px;text-transform:uppercase;letter-spacing:1px">Know Our Team</a>
+    </div>
+  </div>
+</section>
 
 <!-- ══════════════════ 2. BEFORE/AFTER CASES ══════════════════ -->
 <section class="cases-section reveal">
@@ -480,31 +570,31 @@
 
   <div class="cases-marquee-wrap">
     <div class="cases-row row-1">
-      <div class="case-card"><img src="images/cases/case-01.jpeg" alt="Case 1"/></div>
-      <div class="case-card"><img src="images/cases/case-02.jpeg" alt="Case 2"/></div>
-      <div class="case-card"><img src="images/cases/case-03.jpeg" alt="Case 3"/></div>
-      <div class="case-card"><img src="images/cases/case-04.jpeg" alt="Case 4"/></div>
-      <div class="case-card"><img src="images/cases/case-05.jpeg" alt="Case 5"/></div>
-      <div class="case-card"><img src="images/cases/case-06.jpeg" alt="Case 6"/></div>
-      <div class="case-card"><img src="images/cases/case-07.jpeg" alt="Case 7"/></div>
-      <div class="case-card"><img src="images/cases/case-08.jpeg" alt="Case 8"/></div>
-      <div class="case-card"><img src="images/cases/case-09.jpeg" alt="Case 9"/></div>
-      <div class="case-card"><img src="images/cases/case-10.jpeg" alt="Case 10"/></div>
-      <div class="case-card"><img src="images/cases/case-11.jpeg" alt="Case 11"/></div>
-      <div class="case-card"><img src="images/cases/case-12.jpeg" alt="Case 12"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-01.jpeg" alt="Case 1"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-02.jpeg" alt="Case 2"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-03.jpeg" alt="Case 3"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-04.jpeg" alt="Case 4"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-05.jpeg" alt="Case 5"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-06.jpeg" alt="Case 6"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-07.jpeg" alt="Case 7"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-08.jpeg" alt="Case 8"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-09.jpeg" alt="Case 9"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-10.jpeg" alt="Case 10"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-11.jpeg" alt="Case 11"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-12.jpeg" alt="Case 12"/></div>
       <!-- Duplicate for seamless loop -->
-      <div class="case-card"><img src="images/cases/case-01.jpeg" alt="Case 1"/></div>
-      <div class="case-card"><img src="images/cases/case-02.jpeg" alt="Case 2"/></div>
-      <div class="case-card"><img src="images/cases/case-03.jpeg" alt="Case 3"/></div>
-      <div class="case-card"><img src="images/cases/case-04.jpeg" alt="Case 4"/></div>
-      <div class="case-card"><img src="images/cases/case-05.jpeg" alt="Case 5"/></div>
-      <div class="case-card"><img src="images/cases/case-06.jpeg" alt="Case 6"/></div>
-      <div class="case-card"><img src="images/cases/case-07.jpeg" alt="Case 7"/></div>
-      <div class="case-card"><img src="images/cases/case-08.jpeg" alt="Case 8"/></div>
-      <div class="case-card"><img src="images/cases/case-09.jpeg" alt="Case 9"/></div>
-      <div class="case-card"><img src="images/cases/case-10.jpeg" alt="Case 10"/></div>
-      <div class="case-card"><img src="images/cases/case-11.jpeg" alt="Case 11"/></div>
-      <div class="case-card"><img src="images/cases/case-12.jpeg" alt="Case 12"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-01.jpeg" alt="Case 1"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-02.jpeg" alt="Case 2"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-03.jpeg" alt="Case 3"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-04.jpeg" alt="Case 4"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-05.jpeg" alt="Case 5"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-06.jpeg" alt="Case 6"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-07.jpeg" alt="Case 7"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-08.jpeg" alt="Case 8"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-09.jpeg" alt="Case 9"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-10.jpeg" alt="Case 10"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-11.jpeg" alt="Case 11"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-12.jpeg" alt="Case 12"/></div>
     </div>
   </div>
 
@@ -514,7 +604,7 @@
 </section>
 
 <!-- ══════════════════ SERVICES / TREATMENTS ══════════════════ -->
-<section id="treatments-section" style="padding:70px 5%;background:var(--cream)">
+<section id="treatments-section" style="padding:70px 0 70px;background:var(--cream)">
   <div class="container">
     <div class="sec-h center">
       <span class="sec-chip">What We Offer</span>
@@ -522,8 +612,10 @@
       <div class="sec-divider" style="margin-left:auto;margin-right:auto"></div>
       <p>Comprehensive dental care delivered with precision, compassion, and the latest technology.</p>
     </div>
+  </div>
 
-    <div class="tx-grid">
+    <div class="tx-grid" style="margin-top:32px">
+     <div class="tx-track">
 
       <a href="gap-closure.html" class="tx-card" style="--tx-img:url('https://www.delhidental.com/wp-content/themes/delhidental/images/wide01.jpg')">
         <div class="tx-overlay"></div>
@@ -570,26 +662,40 @@
         <div class="tx-body"><h4>Bone Grafting &amp; Gum Surgery</h4><span>Learn More <i class="fas fa-arrow-right"></i></span></div>
       </a>
 
-    </div>
+     </div><!-- end tx-track (first set) -->
+    </div><!-- end tx-grid -->
+    <script>
+      (function(){
+        var track = document.querySelector('.tx-track');
+        if(!track) return;
+        var clone = track.cloneNode(true);
+        track.parentNode.appendChild(clone);
+      })();
+    </script>
 
-    <div style="text-align:center;margin-top:40px">
-      <a href="services.html" class="btn btn-olive btn-pill"><i class="fas fa-th-large"></i> View All Treatments</a>
+    <div style="text-align:center;margin-top:40px;padding:0 5%">
+      <a href="treatments.html" class="btn btn-olive btn-pill"><i class="fas fa-th-large"></i> View All Treatments</a>
     </div>
-  </div>
 
   <style>
     .tx-grid {
+      overflow: hidden;
+      width: 100%;
       display: flex;
-      gap: 16px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      padding-bottom: 4px;
-      cursor: grab;
     }
-    .tx-grid::-webkit-scrollbar { display: none; }
-    .tx-grid:active { cursor: grabbing; }
+    .tx-track {
+      display: flex;
+      flex-shrink: 0;
+      gap: 16px;
+      animation: txScroll 32s linear infinite;
+      will-change: transform;
+      padding: 8px 8px 12px;
+    }
+    .tx-grid:hover .tx-track { animation-play-state: paused; }
+    @keyframes txScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
     .tx-card {
       position: relative;
       display: block;
@@ -598,7 +704,6 @@
       overflow: hidden;
       flex: 0 0 260px;
       height: 320px;
-      scroll-snap-align: start;
       background-image: var(--tx-img);
       background-size: cover;
       background-position: center;
@@ -675,98 +780,98 @@
       <div class="th-card">
         <div class="th-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p>"The best dental experience I've ever had. Dr. Puneet placed 4 implants and the precision was remarkable. I chose Delhi over local options and saved 70%."</p>
-        <div class="th-author"><div class="th-av">BY</div><div><strong>Bill Yakimec</strong><span><img src="https://flagcdn.com/16x12/ca.png" alt="CA"> Canada</span></div></div>
+        <div class="th-author"><div class="th-av">BY</div><div><strong>Bill Yakimec</strong><span><img loading="lazy" src="https://flagcdn.com/16x12/ca.png" alt="CA"> Canada</span></div></div>
       </div>
 
       <div class="th-card">
         <div class="th-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p>"Dr. Sween did a complete smile makeover with porcelain veneers. The transformation was stunning. The clinic is so modern and hygienic."</p>
-        <div class="th-author"><div class="th-av">KS</div><div><strong>Kristien Smekens</strong><span><img src="https://flagcdn.com/16x12/ca.png" alt="CA"> Canada</span></div></div>
+        <div class="th-author"><div class="th-av">KS</div><div><strong>Kristien Smekens</strong><span><img loading="lazy" src="https://flagcdn.com/16x12/ca.png" alt="CA"> Canada</span></div></div>
       </div>
 
       <div class="th-card">
         <div class="th-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p>"Flew from the US for full mouth rehabilitation. The treatment plan was thorough, the technology is cutting-edge, and results exceeded my expectations."</p>
-        <div class="th-author"><div class="th-av">MM</div><div><strong>Michael Jone Matson</strong><span><img src="https://flagcdn.com/16x12/us.png" alt="US"> USA</span></div></div>
+        <div class="th-author"><div class="th-av">MM</div><div><strong>Michael Jone Matson</strong><span><img loading="lazy" src="https://flagcdn.com/16x12/us.png" alt="US"> USA</span></div></div>
       </div>
 
       <div class="th-card">
         <div class="th-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p>"From Switzerland, I did extensive research before choosing Dr. Kathuria's. The Zoom whitening and veneers gave me the perfect smile."</p>
-        <div class="th-author"><div class="th-av">PJ</div><div><strong>Pierre Jenni</strong><span><img src="https://flagcdn.com/16x12/ch.png" alt="CH"> Switzerland</span></div></div>
+        <div class="th-author"><div class="th-av">PJ</div><div><strong>Pierre Jenni</strong><span><img loading="lazy" src="https://flagcdn.com/16x12/ch.png" alt="CH"> Switzerland</span></div></div>
       </div>
 
       <div class="th-card">
         <div class="th-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p>"My dental implants were done painlessly. The staff was so caring and the clinic ambiance is like a 5-star hotel. Dr. Puneet is truly an expert!"</p>
-        <div class="th-author"><div class="th-av">MP</div><div><strong>Marlene Powell</strong><span><img src="https://flagcdn.com/16x12/us.png" alt="US"> USA</span></div></div>
+        <div class="th-author"><div class="th-av">MP</div><div><strong>Marlene Powell</strong><span><img loading="lazy" src="https://flagcdn.com/16x12/us.png" alt="US"> USA</span></div></div>
       </div>
 
       <div class="th-card">
         <div class="th-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p>"Travelled from the UK for smile makeover. The entire process from consultation to result was seamless. NABH accredited — quality difference!"</p>
-        <div class="th-author"><div class="th-av">DM</div><div><strong>Donald McLean</strong><span><img src="https://flagcdn.com/16x12/gb.png" alt="UK"> UK</span></div></div>
+        <div class="th-author"><div class="th-av">DM</div><div><strong>Donald McLean</strong><span><img loading="lazy" src="https://flagcdn.com/16x12/gb.png" alt="UK"> UK</span></div></div>
       </div>
 
       <div class="th-card">
         <div class="th-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p>"We flew from Australia for dental implants and smile makeover. World-class treatment at a fraction of Australian prices!"</p>
-        <div class="th-author"><div class="th-av">ID</div><div><strong>Ify and Tu Duley</strong><span><img src="https://flagcdn.com/16x12/au.png" alt="AU"> Australia</span></div></div>
+        <div class="th-author"><div class="th-av">ID</div><div><strong>Ify and Tu Duley</strong><span><img loading="lazy" src="https://flagcdn.com/16x12/au.png" alt="AU"> Australia</span></div></div>
       </div>
 
       <div class="th-card">
         <div class="th-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p>"Best dental clinic in Delhi. Got my entire family treated here — implants, aligners, and whitening. The doctors genuinely care about results."</p>
-        <div class="th-author"><div class="th-av">BS</div><div><strong>Balajee Singh</strong><span><img src="https://flagcdn.com/16x12/in.png" alt="IN"> India</span></div></div>
+        <div class="th-author"><div class="th-av">BS</div><div><strong>Balajee Singh</strong><span><img loading="lazy" src="https://flagcdn.com/16x12/in.png" alt="IN"> India</span></div></div>
       </div>
 
       <!-- Duplicate 8 cards for seamless loop -->
       <div class="th-card">
         <div class="th-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p>"The best dental experience I've ever had. Dr. Puneet placed 4 implants and the precision was remarkable. I chose Delhi over local options and saved 70%."</p>
-        <div class="th-author"><div class="th-av">BY</div><div><strong>Bill Yakimec</strong><span><img src="https://flagcdn.com/16x12/ca.png" alt="CA"> Canada</span></div></div>
+        <div class="th-author"><div class="th-av">BY</div><div><strong>Bill Yakimec</strong><span><img loading="lazy" src="https://flagcdn.com/16x12/ca.png" alt="CA"> Canada</span></div></div>
       </div>
 
       <div class="th-card">
         <div class="th-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p>"Dr. Sween did a complete smile makeover with porcelain veneers. The transformation was stunning. The clinic is so modern and hygienic."</p>
-        <div class="th-author"><div class="th-av">KS</div><div><strong>Kristien Smekens</strong><span><img src="https://flagcdn.com/16x12/ca.png" alt="CA"> Canada</span></div></div>
+        <div class="th-author"><div class="th-av">KS</div><div><strong>Kristien Smekens</strong><span><img loading="lazy" src="https://flagcdn.com/16x12/ca.png" alt="CA"> Canada</span></div></div>
       </div>
 
       <div class="th-card">
         <div class="th-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p>"Flew from the US for full mouth rehabilitation. The treatment plan was thorough, the technology is cutting-edge, and results exceeded my expectations."</p>
-        <div class="th-author"><div class="th-av">MM</div><div><strong>Michael Jone Matson</strong><span><img src="https://flagcdn.com/16x12/us.png" alt="US"> USA</span></div></div>
+        <div class="th-author"><div class="th-av">MM</div><div><strong>Michael Jone Matson</strong><span><img loading="lazy" src="https://flagcdn.com/16x12/us.png" alt="US"> USA</span></div></div>
       </div>
 
       <div class="th-card">
         <div class="th-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p>"From Switzerland, I did extensive research before choosing Dr. Kathuria's. The Zoom whitening and veneers gave me the perfect smile."</p>
-        <div class="th-author"><div class="th-av">PJ</div><div><strong>Pierre Jenni</strong><span><img src="https://flagcdn.com/16x12/ch.png" alt="CH"> Switzerland</span></div></div>
+        <div class="th-author"><div class="th-av">PJ</div><div><strong>Pierre Jenni</strong><span><img loading="lazy" src="https://flagcdn.com/16x12/ch.png" alt="CH"> Switzerland</span></div></div>
       </div>
 
       <div class="th-card">
         <div class="th-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p>"My dental implants were done painlessly. The staff was so caring and the clinic ambiance is like a 5-star hotel. Dr. Puneet is truly an expert!"</p>
-        <div class="th-author"><div class="th-av">MP</div><div><strong>Marlene Powell</strong><span><img src="https://flagcdn.com/16x12/us.png" alt="US"> USA</span></div></div>
+        <div class="th-author"><div class="th-av">MP</div><div><strong>Marlene Powell</strong><span><img loading="lazy" src="https://flagcdn.com/16x12/us.png" alt="US"> USA</span></div></div>
       </div>
 
       <div class="th-card">
         <div class="th-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p>"Travelled from the UK for smile makeover. The entire process from consultation to result was seamless. NABH accredited — quality difference!"</p>
-        <div class="th-author"><div class="th-av">DM</div><div><strong>Donald McLean</strong><span><img src="https://flagcdn.com/16x12/gb.png" alt="UK"> UK</span></div></div>
+        <div class="th-author"><div class="th-av">DM</div><div><strong>Donald McLean</strong><span><img loading="lazy" src="https://flagcdn.com/16x12/gb.png" alt="UK"> UK</span></div></div>
       </div>
 
       <div class="th-card">
         <div class="th-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p>"We flew from Australia for dental implants and smile makeover. World-class treatment at a fraction of Australian prices!"</p>
-        <div class="th-author"><div class="th-av">ID</div><div><strong>Ify and Tu Duley</strong><span><img src="https://flagcdn.com/16x12/au.png" alt="AU"> Australia</span></div></div>
+        <div class="th-author"><div class="th-av">ID</div><div><strong>Ify and Tu Duley</strong><span><img loading="lazy" src="https://flagcdn.com/16x12/au.png" alt="AU"> Australia</span></div></div>
       </div>
 
       <div class="th-card">
         <div class="th-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p>"Best dental clinic in Delhi. Got my entire family treated here — implants, aligners, and whitening. The doctors genuinely care about results."</p>
-        <div class="th-author"><div class="th-av">BS</div><div><strong>Balajee Singh</strong><span><img src="https://flagcdn.com/16x12/in.png" alt="IN"> India</span></div></div>
+        <div class="th-author"><div class="th-av">BS</div><div><strong>Balajee Singh</strong><span><img loading="lazy" src="https://flagcdn.com/16x12/in.png" alt="IN"> India</span></div></div>
       </div>
 
     </div>
@@ -785,7 +890,8 @@
     </div>
   </div>
 
-  <div class="google-grid" style="padding:0 5%">
+  <div class="google-grid">
+   <div class="gr-track" style="padding-left:5%">
     <div class="gr-card">
       <div class="gr-top"><div class="gr-av" style="background:linear-gradient(135deg,#4285F4,#34a853)">AK</div><div><strong>Ananya Krishnan</strong><span>3 weeks ago</span></div></div>
       <div class="gr-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
@@ -827,34 +933,127 @@
       <p>Had a painless root canal treatment here. Was very anxious but Dr. Sween made the entire process so comfortable. Modern equipment and caring staff. Will visit again.</p>
       <div class="gr-foot"><svg style="width:16px;height:16px" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59a14.5 14.5 0 0 1 0-9.18l-7.98-6.19a24 24 0 0 0 0 21.56l7.98-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google <span class="gr-badge"><i class="fas fa-check"></i> Verified</span></div>
     </div>
-  </div>
+   </div><!-- end gr-track -->
+  </div><!-- end google-grid -->
+  <script>
+    (function(){
+      var t=document.querySelector('.gr-track');
+      if(!t) return;
+      t.parentNode.appendChild(t.cloneNode(true));
+    })();
+  </script>
 </section>
 
-<!-- ══════════════════ 5. TELEDENTISTRY / VIDEO CONSULTATION ══════════════════ -->
-<section class="reveal" style="padding:60px 5%;background:#F5F7FA">
-  <div class="container" style="max-width:1100px">
-    <div class="tele-split">
-      <div class="tele-img">
-        <img src="images/teledentistry.png" alt="Teledentistry Video Consultation"/>
-        <div class="tele-badge"><i class="fas fa-circle"></i> Live Consultations Available</div>
+<!-- ══════════════════ 5. CELEBRITY SMILES ══════════════════ -->
+<section style="background:linear-gradient(160deg,var(--olive-dark) 0%,var(--olive) 100%);padding:70px 0;position:relative;overflow:hidden">
+  <!-- Gold sparkle dots -->
+  <div style="position:absolute;top:60px;right:8%;width:6px;height:6px;border-radius:50%;background:var(--gold);opacity:.4"></div>
+  <div style="position:absolute;top:120px;right:15%;width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:.25"></div>
+  <div style="position:absolute;bottom:80px;left:10%;width:5px;height:5px;border-radius:50%;background:var(--gold);opacity:.3"></div>
+
+  <div class="container" style="padding:0 5%">
+    <div style="text-align:center;margin-bottom:44px">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold),var(--gold-light,#D4B865));padding:8px 22px;border-radius:99px;margin-bottom:18px">
+        <i class="fas fa-crown" style="color:#fff;font-size:.7rem"></i>
+        <span style="color:#fff;font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase">Celebrity Smiles</span>
       </div>
-      <div class="tele-content">
-        <div class="tele-chip"><i class="fas fa-video"></i> Now Available</div>
-        <h2>Teledentistry For Your <em>Urgent Dental Needs</em></h2>
-        <p>Get a professional dental assessment from the comfort of your home. Our specialists evaluate your teeth over video and schedule in-person visits as needed.</p>
-        <div class="tele-features">
-          <div class="tele-feat"><i class="fas fa-check"></i> Video assessment by specialist dentists</div>
-          <div class="tele-feat"><i class="fas fa-check"></i> Get treatment plan before visiting clinic</div>
-          <div class="tele-feat"><i class="fas fa-check"></i> Available for international patients worldwide</div>
-          <div class="tele-feat"><i class="fas fa-check"></i> Quick appointment scheduling after assessment</div>
-        </div>
-        <div class="tele-btns">
-          <a href="contact.html" class="btn btn-gold btn-pill"><i class="fas fa-calendar-check"></i> Book Online Slot</a>
-          <a href="https://wa.me/919810936360" target="_blank" class="btn btn-outline btn-pill" style="color:#fff;border-color:rgba(255,255,255,.3)"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        </div>
-      </div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);color:#fff;line-height:1.2;margin-bottom:14px">Smile Care Partners for<br><em style="color:var(--gold);font-style:italic">Femina Miss India 2024</em></h2>
+      <p style="color:rgba(255,255,255,.45);max-width:600px;margin:0 auto;line-height:1.7;font-size:.92rem">Official smile care partners for beauty pageants, IPL teams, and top personalities. We craft world-class smiles that shine on every stage.</p>
     </div>
   </div>
+
+  <!-- Horizontal scroll -->
+  <div class="cs-scroll" style="overflow:hidden;width:100%;display:flex">
+    <div class="cs-track" style="display:flex;flex-shrink:0;gap:20px;padding:8px 5% 12px;animation:csScroll 28s linear infinite;will-change:transform">
+<style>.cs-scroll:hover .cs-track{animation-play-state:paused}@keyframes csScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}</style>
+
+      <div class="cs-card">
+        <div class="cs-card-img">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&q=80" alt="Miss India Finalist"/>
+          <div class="cs-card-overlay">
+            <span class="cs-tag">Smile Makeover</span>
+          </div>
+        </div>
+        <div class="cs-card-info">
+          <h4>Miss India Finalist</h4>
+          <span>Porcelain Veneers &bull; Whitening</span>
+        </div>
+      </div>
+
+      <div class="cs-card">
+        <div class="cs-card-img">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80" alt="IPL Team Member"/>
+          <div class="cs-card-overlay">
+            <span class="cs-tag">Veneers</span>
+          </div>
+        </div>
+        <div class="cs-card-info">
+          <h4>IPL Team Member</h4>
+          <span>E-Max Porcelain Veneers</span>
+        </div>
+      </div>
+
+      <div class="cs-card">
+        <div class="cs-card-img">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&q=80" alt="TV Personality"/>
+          <div class="cs-card-overlay">
+            <span class="cs-tag">Whitening</span>
+          </div>
+        </div>
+        <div class="cs-card-info">
+          <h4>TV Personality</h4>
+          <span>Zoom Advanced Whitening</span>
+        </div>
+      </div>
+
+      <div class="cs-card">
+        <div class="cs-card-img">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&q=80" alt="Film Producer"/>
+          <div class="cs-card-overlay">
+            <span class="cs-tag">Full Makeover</span>
+          </div>
+        </div>
+        <div class="cs-card-info">
+          <h4>Film Producer</h4>
+          <span>Complete Smile Redesign</span>
+        </div>
+      </div>
+
+      <div class="cs-card">
+        <div class="cs-card-img">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&q=80" alt="Fashion Influencer"/>
+          <div class="cs-card-overlay">
+            <span class="cs-tag">E-Max Veneers</span>
+          </div>
+        </div>
+        <div class="cs-card-info">
+          <h4>Fashion Influencer</h4>
+          <span>No-Prep Veneers</span>
+        </div>
+      </div>
+
+      <div class="cs-card">
+        <div class="cs-card-img">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&q=80" alt="Sports Celebrity"/>
+          <div class="cs-card-overlay">
+            <span class="cs-tag">Implants</span>
+          </div>
+        </div>
+        <div class="cs-card-info">
+          <h4>Sports Celebrity</h4>
+          <span>Dental Implants &bull; Crowns</span>
+        </div>
+      </div>
+
+    </div><!-- end cs-track -->
+  </div><!-- end cs-scroll -->
+  <script>
+    (function(){
+      var t=document.querySelector('.cs-track');
+      if(!t) return;
+      t.parentNode.appendChild(t.cloneNode(true));
+    })();
+  </script>
 </section>
 
 <!-- ══════════════════ 6. INSTAGRAM FEED ══════════════════ -->
@@ -876,10 +1075,10 @@
     <div id="instaWidget" style="max-width:700px;margin:0 auto">
       <!-- Placeholder 2x2 grid until widget is connected -->
       <div class="insta-grid" style="grid-template-columns:repeat(2,1fr) !important;gap:14px">
-        <a href="https://www.instagram.com/drkathuriasdentistry/" target="_blank" rel="noopener" class="insta-card"><img src="images/cases/case-01.jpeg" alt="Latest post"/><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
-        <a href="https://www.instagram.com/drkathuriasdentistry/" target="_blank" rel="noopener" class="insta-card"><img src="images/cases/case-03.jpeg" alt="Latest post"/><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
-        <a href="https://www.instagram.com/drkathuriasdentistry/" target="_blank" rel="noopener" class="insta-card"><img src="images/cases/case-06.jpeg" alt="Latest post"/><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
-        <a href="https://www.instagram.com/drkathuriasdentistry/" target="_blank" rel="noopener" class="insta-card"><img src="images/cases/case-09.jpeg" alt="Latest post"/><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
+        <a href="https://www.instagram.com/drkathuriasdentistry/" target="_blank" rel="noopener" class="insta-card"><img loading="lazy" src="images/cases/case-01.jpeg" alt="Latest post"/><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
+        <a href="https://www.instagram.com/drkathuriasdentistry/" target="_blank" rel="noopener" class="insta-card"><img loading="lazy" src="images/cases/case-03.jpeg" alt="Latest post"/><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
+        <a href="https://www.instagram.com/drkathuriasdentistry/" target="_blank" rel="noopener" class="insta-card"><img loading="lazy" src="images/cases/case-06.jpeg" alt="Latest post"/><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
+        <a href="https://www.instagram.com/drkathuriasdentistry/" target="_blank" rel="noopener" class="insta-card"><img loading="lazy" src="images/cases/case-09.jpeg" alt="Latest post"/><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
       </div>
     </div>
   </div>
@@ -901,37 +1100,37 @@
     <div style="display:flex;gap:18px;min-width:max-content">
 
       <div class="tc-img-card">
-        <div class="tc-img"><img src="https://images.unsplash.com/photo-1629909615957-be38d48fbbe4?w=500&q=80" alt="CEREC Scanner"/></div>
+        <div class="tc-img"><img loading="lazy" src="https://images.unsplash.com/photo-1629909615957-be38d48fbbe4?w=500&q=80" alt="CEREC Scanner"/></div>
         <div class="tc-info"><h4>CEREC Chairside Scanners</h4><p>Same-day digital impressions &amp; ceramic restorations</p></div>
       </div>
 
       <div class="tc-img-card">
-        <div class="tc-img"><img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=500&q=80" alt="DTX Implant Studio"/></div>
+        <div class="tc-img"><img loading="lazy" src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=500&q=80" alt="DTX Implant Studio"/></div>
         <div class="tc-info"><h4>DTX Implant Studio</h4><p>3D CBCT guided implant planning &amp; surgery</p></div>
       </div>
 
       <div class="tc-img-card">
-        <div class="tc-img"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=500&q=80" alt="Endomotors"/></div>
+        <div class="tc-img"><img loading="lazy" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=500&q=80" alt="Endomotors"/></div>
         <div class="tc-info"><h4>Latest Endomotors</h4><p>Painless single sitting root canal treatment</p></div>
       </div>
 
       <div class="tc-img-card">
-        <div class="tc-img"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=500&q=80" alt="Piezons"/></div>
+        <div class="tc-img"><img loading="lazy" src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=500&q=80" alt="Piezons"/></div>
         <div class="tc-info"><h4>Piezons</h4><p>Ultrasonic deep cleaning &amp; gum surgery</p></div>
       </div>
 
       <div class="tc-img-card">
-        <div class="tc-img"><img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=500&q=80" alt="Zoom Whitening"/></div>
+        <div class="tc-img"><img loading="lazy" src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=500&q=80" alt="Zoom Whitening"/></div>
         <div class="tc-info"><h4>Zoom Advanced Whitening</h4><p>Up to 8 shades whiter in one visit</p></div>
       </div>
 
       <div class="tc-img-card">
-        <div class="tc-img"><img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=500&q=80" alt="IVO Smile Simulation"/></div>
+        <div class="tc-img"><img loading="lazy" src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=500&q=80" alt="IVO Smile Simulation"/></div>
         <div class="tc-info"><h4>IVO Smile Simulation</h4><p>See your new smile before treatment</p></div>
       </div>
 
       <div class="tc-img-card">
-        <div class="tc-img"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=500&q=80" alt="Panoramic X-Ray"/></div>
+        <div class="tc-img"><img loading="lazy" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=500&q=80" alt="Panoramic X-Ray"/></div>
         <div class="tc-info"><h4>Panoramic X-Ray</h4><p>In-clinic digital panoramic &amp; CBCT imaging</p></div>
       </div>
 
@@ -939,106 +1138,29 @@
   </div>
 </section>
 
-<!-- ══════════════════ 8. CELEBRITY SMILES ══════════════════ -->
-<section style="background:linear-gradient(160deg,var(--olive-dark) 0%,var(--olive) 100%);padding:70px 0;position:relative;overflow:hidden">
-  <!-- Gold sparkle dots -->
-  <div style="position:absolute;top:60px;right:8%;width:6px;height:6px;border-radius:50%;background:var(--gold);opacity:.4"></div>
-  <div style="position:absolute;top:120px;right:15%;width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:.25"></div>
-  <div style="position:absolute;bottom:80px;left:10%;width:5px;height:5px;border-radius:50%;background:var(--gold);opacity:.3"></div>
-
-  <div class="container" style="padding:0 5%">
-    <div style="text-align:center;margin-bottom:44px">
-      <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold),var(--gold-light,#D4B865));padding:8px 22px;border-radius:99px;margin-bottom:18px">
-        <i class="fas fa-crown" style="color:#fff;font-size:.7rem"></i>
-        <span style="color:#fff;font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase">Celebrity Smiles</span>
+<!-- ══════════════════ 8. TELEDENTISTRY / VIDEO CONSULTATION ══════════════════ -->
+<section class="reveal" style="padding:60px 5%;background:#F5F7FA">
+  <div class="container" style="max-width:1100px">
+    <div class="tele-split">
+      <div class="tele-img">
+        <img loading="lazy" src="images/teledentistry.png" alt="Teledentistry Video Consultation"/>
+        <div class="tele-badge"><i class="fas fa-circle"></i> Live Consultations Available</div>
       </div>
-      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);color:#fff;line-height:1.2;margin-bottom:14px">Smile Care Partners for<br><em style="color:var(--gold);font-style:italic">Femina Miss India 2024</em></h2>
-      <p style="color:rgba(255,255,255,.45);max-width:600px;margin:0 auto;line-height:1.7;font-size:.92rem">Official smile care partners for beauty pageants, IPL teams, and top personalities. We craft world-class smiles that shine on every stage.</p>
-    </div>
-  </div>
-
-  <!-- Horizontal scroll -->
-  <div style="overflow-x:auto;padding:0 5% 10px;scrollbar-width:none;-ms-overflow-style:none" class="cs-scroll">
-    <div style="display:flex;gap:20px;min-width:max-content">
-
-      <div class="cs-card">
-        <div class="cs-card-img">
-          <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&q=80" alt="Miss India Finalist"/>
-          <div class="cs-card-overlay">
-            <span class="cs-tag">Smile Makeover</span>
-          </div>
+      <div class="tele-content">
+        <div class="tele-chip"><i class="fas fa-video"></i> Now Available</div>
+        <h2>Teledentistry For Your <em>Urgent Dental Needs</em></h2>
+        <p>Get a professional dental assessment from the comfort of your home. Our specialists evaluate your teeth over video and schedule in-person visits as needed.</p>
+        <div class="tele-features">
+          <div class="tele-feat"><i class="fas fa-check"></i> Video assessment by specialist dentists</div>
+          <div class="tele-feat"><i class="fas fa-check"></i> Get treatment plan before visiting clinic</div>
+          <div class="tele-feat"><i class="fas fa-check"></i> Available for international patients worldwide</div>
+          <div class="tele-feat"><i class="fas fa-check"></i> Quick appointment scheduling after assessment</div>
         </div>
-        <div class="cs-card-info">
-          <h4>Miss India Finalist</h4>
-          <span>Porcelain Veneers &bull; Whitening</span>
+        <div class="tele-btns">
+          <a href="contact.html" class="btn btn-gold btn-pill"><i class="fas fa-calendar-check"></i> Book Online Slot</a>
+          <a href="https://wa.me/919810936360" target="_blank" class="btn btn-outline btn-pill" style="color:#fff;border-color:rgba(255,255,255,.3)"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
       </div>
-
-      <div class="cs-card">
-        <div class="cs-card-img">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80" alt="IPL Team Member"/>
-          <div class="cs-card-overlay">
-            <span class="cs-tag">Veneers</span>
-          </div>
-        </div>
-        <div class="cs-card-info">
-          <h4>IPL Team Member</h4>
-          <span>E-Max Porcelain Veneers</span>
-        </div>
-      </div>
-
-      <div class="cs-card">
-        <div class="cs-card-img">
-          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&q=80" alt="TV Personality"/>
-          <div class="cs-card-overlay">
-            <span class="cs-tag">Whitening</span>
-          </div>
-        </div>
-        <div class="cs-card-info">
-          <h4>TV Personality</h4>
-          <span>Zoom Advanced Whitening</span>
-        </div>
-      </div>
-
-      <div class="cs-card">
-        <div class="cs-card-img">
-          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&q=80" alt="Film Producer"/>
-          <div class="cs-card-overlay">
-            <span class="cs-tag">Full Makeover</span>
-          </div>
-        </div>
-        <div class="cs-card-info">
-          <h4>Film Producer</h4>
-          <span>Complete Smile Redesign</span>
-        </div>
-      </div>
-
-      <div class="cs-card">
-        <div class="cs-card-img">
-          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&q=80" alt="Fashion Influencer"/>
-          <div class="cs-card-overlay">
-            <span class="cs-tag">E-Max Veneers</span>
-          </div>
-        </div>
-        <div class="cs-card-info">
-          <h4>Fashion Influencer</h4>
-          <span>No-Prep Veneers</span>
-        </div>
-      </div>
-
-      <div class="cs-card">
-        <div class="cs-card-img">
-          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&q=80" alt="Sports Celebrity"/>
-          <div class="cs-card-overlay">
-            <span class="cs-tag">Implants</span>
-          </div>
-        </div>
-        <div class="cs-card-info">
-          <h4>Sports Celebrity</h4>
-          <span>Dental Implants &bull; Crowns</span>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -1054,31 +1176,31 @@
     </div>
 
     <div class="countries-wrap">
-      <span class="country-pill"><img src="https://flagcdn.com/24x18/gb.png" alt="gb"> United Kingdom</span>
-      <span class="country-pill"><img src="https://flagcdn.com/24x18/us.png" alt="us"> United States</span>
-      <span class="country-pill"><img src="https://flagcdn.com/24x18/au.png" alt="au"> Australia</span>
-      <span class="country-pill"><img src="https://flagcdn.com/24x18/ca.png" alt="ca"> Canada</span>
-      <span class="country-pill"><img src="https://flagcdn.com/24x18/ae.png" alt="ae"> UAE</span>
-      <span class="country-pill"><img src="https://flagcdn.com/24x18/sa.png" alt="sa"> Saudi Arabia</span>
-      <span class="country-pill"><img src="https://flagcdn.com/24x18/ke.png" alt="ke"> Kenya</span>
-      <span class="country-pill"><img src="https://flagcdn.com/24x18/ng.png" alt="ng"> Nigeria</span>
-      <span class="country-pill"><img src="https://flagcdn.com/24x18/de.png" alt="de"> Germany</span>
-      <span class="country-pill"><img src="https://flagcdn.com/24x18/fr.png" alt="fr"> France</span>
-      <span class="country-pill"><img src="https://flagcdn.com/24x18/it.png" alt="it"> Italy</span>
-      <span class="country-pill"><img src="https://flagcdn.com/24x18/my.png" alt="my"> Malaysia</span>
-      <span class="country-pill"><img src="https://flagcdn.com/24x18/sg.png" alt="sg"> Singapore</span>
-      <span class="country-pill"><img src="https://flagcdn.com/24x18/th.png" alt="th"> Thailand</span>
-      <span class="country-pill"><img src="https://flagcdn.com/24x18/ru.png" alt="ru"> Russia</span>
-      <span class="country-pill"><img src="https://flagcdn.com/24x18/jp.png" alt="jp"> Japan</span>
-      <span class="country-pill"><img src="https://flagcdn.com/24x18/kr.png" alt="kr"> South Korea</span>
-      <span class="country-pill"><img src="https://flagcdn.com/24x18/za.png" alt="za"> South Africa</span>
-      <span class="country-pill"><img src="https://flagcdn.com/24x18/bd.png" alt="bd"> Bangladesh</span>
-      <span class="country-pill"><img src="https://flagcdn.com/24x18/np.png" alt="np"> Nepal</span>
-      <span class="country-pill"><img src="https://flagcdn.com/24x18/af.png" alt="af"> Afghanistan</span>
-      <span class="country-pill"><img src="https://flagcdn.com/24x18/mv.png" alt="mv"> Maldives</span>
-      <span class="country-pill"><img src="https://flagcdn.com/24x18/om.png" alt="om"> Oman</span>
-      <span class="country-pill"><img src="https://flagcdn.com/24x18/qa.png" alt="qa"> Qatar</span>
-      <span class="country-pill">+ 20 more</span>
+      <a href="testimonials.html#gb" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/gb.png" alt="gb"> United Kingdom</a>
+      <a href="testimonials.html#us" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/us.png" alt="us"> United States</a>
+      <a href="testimonials.html#au" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/au.png" alt="au"> Australia</a>
+      <a href="testimonials.html#ca" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/ca.png" alt="ca"> Canada</a>
+      <a href="testimonials.html#ae" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/ae.png" alt="ae"> UAE</a>
+      <a href="testimonials.html#sa" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/sa.png" alt="sa"> Saudi Arabia</a>
+      <a href="testimonials.html#ke" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/ke.png" alt="ke"> Kenya</a>
+      <a href="testimonials.html#ng" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/ng.png" alt="ng"> Nigeria</a>
+      <a href="testimonials.html#de" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/de.png" alt="de"> Germany</a>
+      <a href="testimonials.html#fr" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/fr.png" alt="fr"> France</a>
+      <a href="testimonials.html#it" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/it.png" alt="it"> Italy</a>
+      <a href="testimonials.html#my" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/my.png" alt="my"> Malaysia</a>
+      <a href="testimonials.html#sg" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/sg.png" alt="sg"> Singapore</a>
+      <a href="testimonials.html#th" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/th.png" alt="th"> Thailand</a>
+      <a href="testimonials.html#ru" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/ru.png" alt="ru"> Russia</a>
+      <a href="testimonials.html#jp" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/jp.png" alt="jp"> Japan</a>
+      <a href="testimonials.html#kr" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/kr.png" alt="kr"> South Korea</a>
+      <a href="testimonials.html#za" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/za.png" alt="za"> South Africa</a>
+      <a href="testimonials.html#bd" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/bd.png" alt="bd"> Bangladesh</a>
+      <a href="testimonials.html#np" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/np.png" alt="np"> Nepal</a>
+      <a href="testimonials.html#af" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/af.png" alt="af"> Afghanistan</a>
+      <a href="testimonials.html#mv" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/mv.png" alt="mv"> Maldives</a>
+      <a href="testimonials.html#om" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/om.png" alt="om"> Oman</a>
+      <a href="testimonials.html#qa" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/qa.png" alt="qa"> Qatar</a>
+      <a href="testimonials.html" class="country-pill">+ 20 more</a>
     </div>
   </div>
 </section>
@@ -1093,6 +1215,7 @@
       <p>Affordable world-class dental care. No hidden costs, no surprises. Here are starting prices for our most popular treatments.</p>
     </div>
 
+    <div class="charges-grid-wrap">
     <div class="charges-grid">
       <div class="charge-card reveal">
         <div class="charge-card-bg" style="background-image:url('images/treatments/wide03.jpg')"></div>
@@ -1149,6 +1272,14 @@
         </div>
       </div>
     </div>
+    </div><!-- end charges-grid-wrap -->
+    <script>
+      (function(){
+        var g=document.querySelector('.charges-grid');
+        if(!g||window.innerWidth>700) return;
+        g.parentNode.appendChild(g.cloneNode(true));
+      })();
+    </script>
 
     <div style="text-align:center;margin-top:40px">
       <a href="charges.html" class="btn btn-gold btn-pill"><i class="fas fa-indian-rupee-sign"></i> View Full Price List</a>
@@ -1168,27 +1299,27 @@
 
     <div class="clinic-grid">
       <div class="clinic-img reveal" data-lightbox="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80">
-        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80" alt="Dental clinic reception area"/>
+        <img loading="lazy" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80" alt="Dental clinic reception area"/>
         <div class="clinic-zoom"><i class="fas fa-search-plus"></i></div>
       </div>
       <div class="clinic-img reveal" data-lightbox="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&q=80">
-        <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&q=80" alt="Modern dental operatory"/>
+        <img loading="lazy" src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&q=80" alt="Modern dental operatory"/>
         <div class="clinic-zoom"><i class="fas fa-search-plus"></i></div>
       </div>
       <div class="clinic-img reveal" data-lightbox="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80">
-        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80" alt="Dental clinic waiting area"/>
+        <img loading="lazy" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80" alt="Dental clinic waiting area"/>
         <div class="clinic-zoom"><i class="fas fa-search-plus"></i></div>
       </div>
       <div class="clinic-img reveal" data-lightbox="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80">
-        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80" alt="Treatment in progress"/>
+        <img loading="lazy" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80" alt="Treatment in progress"/>
         <div class="clinic-zoom"><i class="fas fa-search-plus"></i></div>
       </div>
       <div class="clinic-img reveal" data-lightbox="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80">
-        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80" alt="Dental equipment suite"/>
+        <img loading="lazy" src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80" alt="Dental equipment suite"/>
         <div class="clinic-zoom"><i class="fas fa-search-plus"></i></div>
       </div>
       <div class="clinic-img reveal" data-lightbox="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80">
-        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80" alt="Sterilization room"/>
+        <img loading="lazy" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80" alt="Sterilization room"/>
         <div class="clinic-zoom"><i class="fas fa-search-plus"></i></div>
       </div>
     </div>
@@ -1214,7 +1345,7 @@
       <!-- Blog 1: Dental Implant Cost -->
       <a href="blog-dental-implant-cost.html" class="blog-card" style="text-decoration:none;background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--border);transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.04)">
         <div style="height:200px;overflow:hidden;position:relative">
-          <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80" alt="Dental Implant Cost in India" style="width:100%;height:100%;object-fit:cover;transition:transform .4s"/>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80" alt="Dental Implant Cost in India" style="width:100%;height:100%;object-fit:cover;transition:transform .4s"/>
           <span style="position:absolute;top:14px;left:14px;background:var(--olive);color:#fff;font-size:.65rem;font-weight:700;padding:5px 14px;border-radius:99px;letter-spacing:.5px;text-transform:uppercase">Implants</span>
         </div>
         <div style="padding:22px 20px 24px">
@@ -1227,7 +1358,7 @@
       <!-- Blog 2: Dental Implant Longevity -->
       <a href="blog-dental-implant-longevity.html" class="blog-card" style="text-decoration:none;background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--border);transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.04)">
         <div style="height:200px;overflow:hidden;position:relative">
-          <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80" alt="How Long Do Dental Implants Last" style="width:100%;height:100%;object-fit:cover;transition:transform .4s"/>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80" alt="How Long Do Dental Implants Last" style="width:100%;height:100%;object-fit:cover;transition:transform .4s"/>
           <span style="position:absolute;top:14px;left:14px;background:var(--gold);color:#fff;font-size:.65rem;font-weight:700;padding:5px 14px;border-radius:99px;letter-spacing:.5px;text-transform:uppercase">Guides</span>
         </div>
         <div style="padding:22px 20px 24px">
@@ -1240,7 +1371,7 @@
       <!-- Blog 3: Pediatric Dentist -->
       <a href="blog-pediatric-dentist.html" class="blog-card" style="text-decoration:none;background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--border);transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.04)">
         <div style="height:200px;overflow:hidden;position:relative">
-          <img src="https://images.unsplash.com/photo-1629909615957-be38d48fbbe4?w=600&q=80" alt="Pediatric Dentist Near You" style="width:100%;height:100%;object-fit:cover;transition:transform .4s"/>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1629909615957-be38d48fbbe4?w=600&q=80" alt="Pediatric Dentist Near You" style="width:100%;height:100%;object-fit:cover;transition:transform .4s"/>
           <span style="position:absolute;top:14px;left:14px;background:var(--olive-dark);color:#fff;font-size:.65rem;font-weight:700;padding:5px 14px;border-radius:99px;letter-spacing:.5px;text-transform:uppercase">Kids Dental</span>
         </div>
         <div style="padding:22px 20px 24px">
@@ -1320,7 +1451,7 @@
     <!-- Brand column -->
     <div class="ft-brand">
       <div class="ft-logo">
-        <img class="ft-logo-mark-img" src="https://www.delhidental.com/wp-content/uploads/2017/09/Dr.Kathurias-Dentistry-Logo-e1641815051747.jpg" alt="Dr. Kathuria's Dentistry">
+        <img loading="lazy" class="ft-logo-mark-img" src="https://www.delhidental.com/wp-content/uploads/2017/09/Dr.Kathurias-Dentistry-Logo-e1641815051747.jpg" alt="Dr. Kathuria's Dentistry">
         <div class="ft-logo-text">
           <strong>Dr. Kathuria's Dentistry</strong>
           <span>Premium Dental Care</span>
@@ -1368,7 +1499,7 @@
         <div class="ft-contact-icon"><i class="fas fa-location-dot"></i></div>
         <div class="ft-contact-text">
           <span>Address</span>
-          <p>E-143, East of Kailash, New Delhi, <img src="https://flagcdn.com/24x18/in.png" alt="in" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> India</p>
+          <p>E-143, East of Kailash, New Delhi, <img loading="lazy" src="https://flagcdn.com/24x18/in.png" alt="in" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> India</p>
         </div>
       </div>
       <div class="ft-contact-item">
@@ -1465,7 +1596,7 @@
 <div class="lightbox" id="lightbox">
   <div class="lb-inner">
     <button class="lb-close" id="lbClose" aria-label="Close lightbox"><i class="fas fa-times"></i></button>
-    <img id="lbImg" src="" alt="Lightbox preview"/>
+    <img loading="lazy" id="lbImg" src="" alt="Lightbox preview"/>
   </div>
 </div>
 

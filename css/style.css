@@ -3,7 +3,7 @@
    White · Gold · Olive Green — Clean, Premium, Modern
 ═══════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* Fonts loaded via <link> in HTML for better performance */
 
 /* ── RESET ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -443,6 +443,30 @@ ul  { list-style: none; }
   border-color: var(--olive-pale);
 }
 .mobile-nav a i { color: var(--olive); width: 22px; font-size: 1rem; }
+.mob-section-label {
+  font-size: .68rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold); padding: 18px 18px 6px;
+  border-top: 1px solid var(--olive-pale); margin-top: 8px;
+}
+.mob-accordion { border-top: 1px solid var(--olive-pale); margin-top: 6px; }
+.mob-acc-head {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 18px; font-size: .92rem; font-weight: 700;
+  color: var(--dark); cursor: pointer; border-radius: 12px;
+  transition: all .22s; -webkit-user-select: none; user-select: none;
+}
+.mob-acc-head:hover, .mob-acc-head:active { background: var(--olive-pale); color: var(--olive-dark); }
+.mob-acc-head i:first-child { color: var(--olive); width: 22px; font-size: 1rem; }
+.mob-acc-arrow { margin-left: auto; font-size: .6rem; color: var(--gold); transition: transform .3s; }
+.mob-accordion.open .mob-acc-arrow { transform: rotate(180deg); }
+.mob-acc-body {
+  max-height: 0; overflow: hidden; transition: max-height .35s ease;
+  padding-left: 16px;
+}
+.mob-accordion.open .mob-acc-body { max-height: 600px; }
+.mob-acc-body a {
+  padding: 12px 18px; font-size: .85rem;
+}
 .mobile-cta {
   background: linear-gradient(135deg, var(--gold), var(--gold-dark)) !important;
   color: #fff !important; border: none !important;
