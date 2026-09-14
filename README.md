@@ -8,7 +8,7 @@ Premium dental clinic website for **Dr. Kathuria's Dentistry**, East of Kailash,
 
 ## Tech Stack
 
-- **HTML5** — Semantic markup, 80+ pages
+- **HTML5** — Semantic markup, 90+ pages
 - **CSS3** — Custom properties, Grid, Flexbox, animations, scroll reveal, responsive design
 - **Vanilla JavaScript** — No frameworks, no dependencies
 - **Font Awesome 6.5** — Icons
@@ -56,13 +56,25 @@ dkd/
 ├── blog-dental-implant-longevity.html  # Blog: How Long Do Implants Last
 ├── blog-pediatric-dentist.html   # Blog: Finding a Pediatric Dentist
 │
+├── # ── COUNTRY TESTIMONIAL PAGES (10 pages) ──
+├── usa-testimonials.html         # USA patient reviews (16 reviews)
+├── uk-testimonials.html          # UK patient reviews (16 reviews)
+├── canada-testimonials.html      # Canada patient reviews (15 reviews)
+├── australia-testimonials.html   # Australia patient reviews (16 reviews)
+├── new-zealand-testimonials.html # New Zealand patient reviews (8 reviews)
+├── europe-testimonials.html      # Europe patient reviews (11 reviews)
+├── asia-testimonials.html        # Asia patient reviews (7 reviews)
+├── india-testimonials.html       # India patient reviews (14 reviews)
+├── africa-testimonials.html      # Africa patient reviews (12 reviews)
+├── embassy-testimonials.html     # Embassy patient reviews (4 reviews)
+│
 ├── # ── OTHER PAGES ──
 ├── about.html                    # About the clinic
 ├── staff.html                    # Team (Medica-style Instagram cards)
 ├── cases.html                    # Before & After gallery (masonry + marquee)
 ├── contact.html                  # Contact page
 ├── dental-tourism.html           # Dental Tourism (international patients)
-├── testimonials.html             # Patient testimonials
+├── testimonials.html             # Patient testimonials (country selector)
 ├── video-testimonials.html       # Video testimonials
 ├── awards.html                   # Awards & recognition
 ├── charges.html                  # Treatment pricing
@@ -76,26 +88,37 @@ dkd/
 ## Key Features
 
 ### Homepage Sections
-- Hero slider with auto-rotation
-- USP strip (experience, technology, Google rating)
-- Auto-scrolling before & after cases marquee
-- Services/treatments grid (8 categories)
-- Patient testimonials (auto-scroll horizontal)
-- Google Reviews (horizontal scroll)
-- Stats counter (15K+ patients, 44+ countries)
-- Latest blog articles section
-- Appointment booking form
-- Full footer with international phone numbers
+- Hero swipe slider with touch support & auto-rotation (6 custom banners 1920x1080)
+- Why Choose Us infographic
+- Meet Your Doctor section (Dr. Sween & Dr. Puneet Kathuria)
+- Auto-scrolling before & after cases marquee (21 Instagram case photos)
+- Treatments horizontal auto-scroll (9 treatment cards)
+- Celebrity Smiles section (Kuldeep Yadav, Krushna Abhishek, Nita Mehta, Prashant Bhushan, Aashi Bagga)
+- Google Reviews bounce-scroll (right-to-left)
+- Transparent pricing cards (dark olive design, clickable)
+- Countries served (44+ flags linking to country testimonial pages)
+- Latest Technologies horizontal scroll
+- Teledentistry video consultation section
+- Instagram Feed section
+- Latest blog articles
+- Full footer with 4 phone numbers, social links, Click Semrus branding
 
 ### Treatment Pages (53 pages)
 - Page hero with dark gradient overlay
 - Two-column intro (image stack + text)
 - Process steps (4-step cards with hover effects)
 - Pricing section with gold-bordered cards
+- Auto-scroll patient testimonials section (10 international reviews on every page)
 - FAQ accordion (click to expand/collapse)
-- Before & After cases section (placeholder ready for photos)
+- Before & After cases section
 - CTA banner with consultation buttons
 - Each category page links to sub-treatment pages
+
+### Country Testimonial Pages (10 pages)
+- Separate page per region: USA, UK, Canada, Australia, NZ, Europe, Asia, India, Africa, Embassy
+- 119 total patient reviews with real photos from original delhidental.com
+- Patient photo, name, country flag, treatment type, star rating, verified badge
+- Clean SEO-friendly URLs (e.g. /usa-testimonials)
 
 ### Staff Page
 - Founders section (premium split-hero layout for Dr. Sween & Dr. Puneet)
@@ -166,8 +189,12 @@ dkd/
 - **USA/Canada:** +1 888 981 2145
 - **UK:** +44 1970 450032
 - **Australia:** +61 3840 04931
-- **Email:** info@delhidental.com
+- **Email:** dentistdelhi@gmail.com
+
+## Designed & Developed by
+
+[Click Semrus](https://clicksemrus.com)
 
 ## License
 
-All rights reserved. © Dr. Kathuria's Dentistry — U and K Oral Wellness LLP.
+All rights reserved. © 2026 U and K Oral Wellness LLP — Dr. Kathuria's Dentistry.
