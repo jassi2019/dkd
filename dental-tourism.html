@@ -109,21 +109,20 @@
       margin-top: 4px;
     }
 
-    /* ── TREATMENT DAY TIMELINE ── */
-    .treatment-timeline{max-width:700px;margin:0 auto;position:relative;padding-left:40px}
-    .treatment-timeline::before{content:'';position:absolute;top:0;bottom:0;left:19px;width:3px;background:linear-gradient(180deg,var(--olive),var(--gold));border-radius:4px}
-    .tl-step{position:relative;margin-bottom:36px;padding:24px 28px;background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);transition:all .4s var(--ease)}
-    .tl-step:last-child{margin-bottom:0}
-    .tl-step:hover{transform:translateX(6px);box-shadow:var(--shadow-l);border-color:var(--olive-pale)}
-    .tl-dot{position:absolute;left:-31px;top:28px;width:22px;height:22px;border-radius:50%;background:var(--olive);border:3px solid var(--white);box-shadow:0 0 0 3px var(--olive),0 4px 12px rgba(91,123,58,.3);display:flex;align-items:center;justify-content:center}
-    .tl-dot i{font-size:.52rem;color:var(--white)}
-    .tl-step-num{display:inline-block;font-family:'Playfair Display',serif;font-size:.72rem;font-weight:700;color:var(--gold-dark);background:var(--gold-pale);padding:3px 10px;border-radius:99px;margin-bottom:8px;letter-spacing:.5px}
-    .tl-step h4{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:6px}
-    .tl-step p{font-size:.82rem;color:var(--gray);line-height:1.72}
-    .tl-step .tl-time{font-size:.7rem;color:var(--olive);font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-top:8px}
+    /* ── TREATMENT DAY STEPS (row) ── */
+    .treatment-timeline{display:flex;gap:16px;max-width:1100px;margin:0 auto;position:relative;padding:0}
+    .treatment-timeline::before{content:'';position:absolute;top:32px;left:5%;right:5%;height:3px;background:linear-gradient(90deg,var(--olive),var(--gold));border-radius:4px;z-index:0}
+    .tl-step{flex:1;text-align:center;padding:20px 16px;background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);transition:all .4s var(--ease);position:relative;z-index:1;margin-top:24px}
+    .tl-step:hover{transform:translateY(-6px);box-shadow:var(--shadow-l);border-color:var(--olive-pale)}
+    .tl-dot{width:44px;height:44px;border-radius:50%;background:var(--olive);border:3px solid var(--white);box-shadow:0 0 0 3px var(--olive),0 4px 12px rgba(91,123,58,.3);display:flex;align-items:center;justify-content:center;margin:-42px auto 14px}
+    .tl-dot i{font-size:.7rem;color:var(--white)}
+    .tl-step-num{display:inline-block;font-family:'Playfair Display',serif;font-size:.68rem;font-weight:700;color:var(--gold-dark);background:var(--gold-pale);padding:3px 10px;border-radius:99px;margin-bottom:8px;letter-spacing:.5px}
+    .tl-step h4{font-family:'Playfair Display',serif;font-size:.92rem;font-weight:700;color:var(--ink);margin-bottom:6px}
+    .tl-step p{font-size:.78rem;color:var(--gray);line-height:1.65}
+    .tl-step .tl-time{font-size:.65rem;color:var(--olive);font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-top:10px}
 
-    @media(max-width:960px){.tourism-services,.testi-tourism{grid-template-columns:1fr 1fr}.process-steps{grid-template-columns:repeat(3,1fr)}.process-steps::before{display:none}.dt-video-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:600px){.tourism-services,.testi-tourism{grid-template-columns:1fr}.process-steps{grid-template-columns:1fr 1fr}.dt-video-grid{grid-template-columns:1fr;max-width:400px}.treatment-timeline{padding-left:36px}.tl-dot{left:-27px}}
+    @media(max-width:960px){.tourism-services,.testi-tourism{grid-template-columns:1fr 1fr}.process-steps{grid-template-columns:repeat(3,1fr)}.process-steps::before{display:none}.dt-video-grid{grid-template-columns:1fr 1fr}.treatment-timeline{flex-wrap:wrap;gap:20px}.treatment-timeline::before{display:none}.tl-step{flex:1 1 calc(50% - 20px);min-width:200px;margin-top:0}.tl-dot{margin:-12px auto 14px}}
+    @media(max-width:600px){.tourism-services,.testi-tourism{grid-template-columns:1fr}.process-steps{grid-template-columns:1fr 1fr}.dt-video-grid{grid-template-columns:1fr;max-width:400px}.tl-step{flex:1 1 100%}}
   </style>
 </head>
 <body class="has-topbar">
@@ -308,16 +307,127 @@
 <!-- ══════════════════ MOBILE NAV ══════════════════ -->
 <div class="mobile-nav" id="mobileNav">
   <a href="index.html"><i class="fas fa-home"></i> Home</a>
-  <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialist</a>
-  <a href="clinic-tour.html"><i class="fas fa-hospital"></i> Clinic Tour Images</a>
-  <a href="technology.html"><i class="fas fa-microchip"></i> Technology</a>
-  <a href="treatments.html"><i class="fas fa-teeth"></i> All Treatments</a>
-  <a href="awards.html"><i class="fas fa-trophy"></i> Awards &amp; Recognitions</a>
-  <a href="testimonials.html"><i class="fas fa-comments"></i> Testimonials</a>
-  <a href="cases.html"><i class="fas fa-images"></i> Patient Gallery</a>
+
+  <div class="mob-accordion">
+    <div class="mob-acc-head"><i class="fas fa-building"></i> The Practice <span class="mob-acc-arrow"></span></div>
+    <div class="mob-acc-body">
+      <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialist</a>
+      <a href="clinic-tour.html"><i class="fas fa-hospital"></i> Clinic Tour Images</a>
+      <a href="technology.html"><i class="fas fa-microchip"></i> Technology</a>
+      <a href="articles.html"><i class="fas fa-newspaper"></i> Articles</a>
+    </div>
+  </div>
+
+  <div class="mob-accordion">
+    <div class="mob-acc-head"><i class="fas fa-teeth"></i> Treatments <span class="mob-acc-arrow"></span></div>
+    <div class="mob-acc-body">
+
+      <div class="mob-sub-accordion">
+        <div class="mob-sub-head">Dental Implants <span class="mob-acc-arrow"></span></div>
+        <div class="mob-sub-body">
+          <a href="single-tooth-implants.html">Single Tooth Implant</a>
+          <a href="multiple-tooth-implants.html">Multiple Teeth Implants</a>
+          <a href="full-mouth-rehabilitation.html">All Teeth Implants</a>
+          <a href="all-on-4-dental-implants.html">All-on-4 Technology</a>
+          <a href="nobel-guide-surgery.html">Nobel Guide Surgery</a>
+        </div>
+      </div>
+
+      <div class="mob-sub-accordion">
+        <div class="mob-sub-head">Cosmetic Dentistry <span class="mob-acc-arrow"></span></div>
+        <div class="mob-sub-body">
+          <a href="smile-makeover.html">Smile Makeover</a>
+          <a href="gap-closure.html">Gap Closure</a>
+          <a href="no-prep-veneers.html">No Prep Veneers</a>
+          <a href="crooked-tooth-correction.html">Crooked Tooth Correction</a>
+          <a href="teeth-whitening.html">Teeth Whitening</a>
+          <a href="jetting-out-teeth-correction.html">Jetting Out Teeth</a>
+          <a href="mottling-of-teeth-correction.html">Mottling of Teeth</a>
+          <a href="cosmetic-contouring.html">Cosmetic Contouring</a>
+          <a href="root-canal-treatment.html">Root Canal Treatment</a>
+          <a href="cosmetic-fillings.html">Cosmetic Fillings</a>
+          <a href="tooth-crystal.html">Tooth Crystal</a>
+          <a href="inlays-onlays.html">Inlays &amp; Onlays</a>
+        </div>
+      </div>
+
+      <div class="mob-sub-accordion">
+        <div class="mob-sub-head">Gums Treatment <span class="mob-acc-arrow"></span></div>
+        <div class="mob-sub-body">
+          <a href="laser-gummy-smile-correction.html">Laser Gummy Smile</a>
+          <a href="scaling-polishing.html">Scaling &amp; Polishing</a>
+          <a href="deep-cleaning.html">Deep Cleaning</a>
+          <a href="gums-surgery.html">Gums Surgery</a>
+          <a href="socket-preservation.html">Socket Preservation</a>
+          <a href="bad-breath-treatment.html">Bad Breath Treatment</a>
+          <a href="laser-gums-depigmentation.html">Laser Gums Depigmentation</a>
+          <a href="mobile-teeth-solution.html">Mobile Teeth Solution</a>
+        </div>
+      </div>
+
+      <div class="mob-sub-accordion">
+        <div class="mob-sub-head">Kids Dentistry <span class="mob-acc-arrow"></span></div>
+        <div class="mob-sub-body">
+          <a href="fluoride-fillings.html">Fluoride Fillings</a>
+          <a href="kids-root-canal.html">Kids Root Canal</a>
+          <a href="fluoride-applications.html">Fluoride Applications</a>
+        </div>
+      </div>
+
+      <div class="mob-sub-accordion">
+        <div class="mob-sub-head">Maxillofacial Surgery <span class="mob-acc-arrow"></span></div>
+        <div class="mob-sub-body">
+          <a href="surgical-extractions.html">Surgical Extractions</a>
+          <a href="sinus-lift-surgery.html">Sinus Lift Surgery</a>
+        </div>
+      </div>
+
+      <div class="mob-sub-accordion">
+        <div class="mob-sub-head">Orthodontics <span class="mob-acc-arrow"></span></div>
+        <div class="mob-sub-body">
+          <a href="braces.html">Braces</a>
+          <a href="lingual-braces.html">Lingual Braces</a>
+          <a href="clear-aligners.html">Clear Aligners</a>
+        </div>
+      </div>
+
+      <div class="mob-sub-accordion">
+        <div class="mob-sub-head">Dental Radiology <span class="mob-acc-arrow"></span></div>
+        <div class="mob-sub-body">
+          <a href="digital-rvg-xrays.html">Digital RVG X-rays</a>
+          <a href="digital-panoramic-xray.html">Panoramic X-Ray</a>
+        </div>
+      </div>
+
+      <a href="crowns-bridge.html">Crowns &amp; Bridges</a>
+      <a href="microscopic-dentistry.html">Microscopic Dentistry</a>
+      <a href="oral-cancer-detection.html">Oral Cancer Detection</a>
+    </div>
+  </div>
+
+  <div class="mob-accordion">
+    <div class="mob-acc-head"><i class="fas fa-award"></i> Credibility <span class="mob-acc-arrow"></span></div>
+    <div class="mob-acc-body">
+      <a href="awards.html"><i class="fas fa-trophy"></i> Awards &amp; Recognitions</a>
+      <a href="testimonials.html"><i class="fas fa-comments"></i> Testimonials</a>
+      <a href="video-testimonials.html"><i class="fas fa-video"></i> Video Testimonials</a>
+      <a href="accreditation.html"><i class="fas fa-certificate"></i> Accreditation</a>
+      <a href="community-outreach.html"><i class="fas fa-hands-helping"></i> Community Outreach</a>
+      <a href="campaigns.html"><i class="fas fa-bullhorn"></i> Campaigns</a>
+      <a href="news-events.html"><i class="fas fa-calendar-alt"></i> News &amp; Events</a>
+    </div>
+  </div>
+
+  <div class="mob-accordion">
+    <div class="mob-acc-head"><i class="fas fa-images"></i> Cases <span class="mob-acc-arrow"></span></div>
+    <div class="mob-acc-body">
+      <a href="cases.html"><i class="fas fa-camera"></i> Patient Gallery</a>
+      <a href="virtual-smile-makeover.html"><i class="fas fa-wand-magic-sparkles"></i> Virtual Smile Makeover</a>
+    </div>
+  </div>
+
   <a href="charges.html"><i class="fas fa-indian-rupee-sign"></i> Charges</a>
   <a href="smile-analysis.html"><i class="fas fa-face-smile-beam"></i> Smile Analysis</a>
-  <a href="articles.html"><i class="fas fa-newspaper"></i> Articles</a>
   <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
   <a href="tel:1800117272" class="mobile-cta"><i class="fas fa-calendar-check"></i> Book Appointment</a>
 </div>
@@ -502,28 +612,28 @@
     </div>
 
     <div class="countries-wrap reveal">
-      <span class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/us.png" alt="us" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> USA</span>
-      <span class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/gb.png" alt="gb" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> United Kingdom</span>
-      <span class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/ca.png" alt="ca" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Canada</span>
-      <span class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/au.png" alt="au" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Australia</span>
-      <span class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/de.png" alt="de" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Germany</span>
-      <span class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/ae.png" alt="ae" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> UAE</span>
-      <span class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/sa.png" alt="sa" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Saudi Arabia</span>
-      <span class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/ke.png" alt="ke" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Kenya</span>
-      <span class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/ng.png" alt="ng" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Nigeria</span>
-      <span class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/za.png" alt="za" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> South Africa</span>
-      <span class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/jp.png" alt="jp" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Japan</span>
-      <span class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/sg.png" alt="sg" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Singapore</span>
-      <span class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/nz.png" alt="nz" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> New Zealand</span>
-      <span class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/fr.png" alt="fr" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> France</span>
-      <span class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/it.png" alt="it" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Italy</span>
-      <span class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/ru.png" alt="ru" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Russia</span>
-      <span class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/bd.png" alt="bd" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Bangladesh</span>
-      <span class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/np.png" alt="np" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Nepal</span>
-      <span class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/af.png" alt="af" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Afghanistan</span>
-      <span class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/om.png" alt="om" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Oman</span>
-      <span class="country-pill">Kuwait</span>
-      <span class="country-pill">Ethiopia</span>
+      <a href="testimonials.html?country=us" class="country-pill" style="text-decoration:none"><img loading="lazy" src="https://flagcdn.com/24x18/us.png" alt="us" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> USA</a>
+      <a href="testimonials.html?country=gb" class="country-pill" style="text-decoration:none"><img loading="lazy" src="https://flagcdn.com/24x18/gb.png" alt="gb" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> United Kingdom</a>
+      <a href="testimonials.html?country=ca" class="country-pill" style="text-decoration:none"><img loading="lazy" src="https://flagcdn.com/24x18/ca.png" alt="ca" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Canada</a>
+      <a href="testimonials.html?country=au" class="country-pill" style="text-decoration:none"><img loading="lazy" src="https://flagcdn.com/24x18/au.png" alt="au" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Australia</a>
+      <a href="testimonials.html?country=de" class="country-pill" style="text-decoration:none"><img loading="lazy" src="https://flagcdn.com/24x18/de.png" alt="de" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Germany</a>
+      <a href="testimonials.html?country=ae" class="country-pill" style="text-decoration:none"><img loading="lazy" src="https://flagcdn.com/24x18/ae.png" alt="ae" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> UAE</a>
+      <a href="testimonials.html" class="country-pill" style="text-decoration:none"><img loading="lazy" src="https://flagcdn.com/24x18/sa.png" alt="sa" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Saudi Arabia</a>
+      <a href="testimonials.html" class="country-pill" style="text-decoration:none"><img loading="lazy" src="https://flagcdn.com/24x18/ke.png" alt="ke" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Kenya</a>
+      <a href="testimonials.html" class="country-pill" style="text-decoration:none"><img loading="lazy" src="https://flagcdn.com/24x18/ng.png" alt="ng" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Nigeria</a>
+      <a href="testimonials.html?country=za" class="country-pill" style="text-decoration:none"><img loading="lazy" src="https://flagcdn.com/24x18/za.png" alt="za" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> South Africa</a>
+      <a href="testimonials.html" class="country-pill" style="text-decoration:none"><img loading="lazy" src="https://flagcdn.com/24x18/jp.png" alt="jp" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Japan</a>
+      <a href="testimonials.html?country=sg" class="country-pill" style="text-decoration:none"><img loading="lazy" src="https://flagcdn.com/24x18/sg.png" alt="sg" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Singapore</a>
+      <a href="testimonials.html" class="country-pill" style="text-decoration:none"><img loading="lazy" src="https://flagcdn.com/24x18/nz.png" alt="nz" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> New Zealand</a>
+      <a href="testimonials.html?country=fr" class="country-pill" style="text-decoration:none"><img loading="lazy" src="https://flagcdn.com/24x18/fr.png" alt="fr" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> France</a>
+      <a href="testimonials.html?country=it" class="country-pill" style="text-decoration:none"><img loading="lazy" src="https://flagcdn.com/24x18/it.png" alt="it" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Italy</a>
+      <a href="testimonials.html" class="country-pill" style="text-decoration:none"><img loading="lazy" src="https://flagcdn.com/24x18/ru.png" alt="ru" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Russia</a>
+      <a href="testimonials.html" class="country-pill" style="text-decoration:none"><img loading="lazy" src="https://flagcdn.com/24x18/bd.png" alt="bd" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Bangladesh</a>
+      <a href="testimonials.html" class="country-pill" style="text-decoration:none"><img loading="lazy" src="https://flagcdn.com/24x18/np.png" alt="np" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Nepal</a>
+      <a href="testimonials.html" class="country-pill" style="text-decoration:none"><img loading="lazy" src="https://flagcdn.com/24x18/af.png" alt="af" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Afghanistan</a>
+      <a href="testimonials.html" class="country-pill" style="text-decoration:none"><img loading="lazy" src="https://flagcdn.com/24x18/om.png" alt="om" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Oman</a>
+      <a href="testimonials.html" class="country-pill" style="text-decoration:none"><img loading="lazy" src="https://flagcdn.com/24x18/kw.png" alt="kw" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Kuwait</a>
+      <a href="testimonials.html" class="country-pill" style="text-decoration:none"><img loading="lazy" src="https://flagcdn.com/24x18/et.png" alt="et" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> Ethiopia</a>
     </div>
   </div>
 </section>
@@ -782,50 +892,45 @@
     <div class="ft-brand">
       <div class="ft-logo">
         <img loading="lazy" class="ft-logo-mark-img" src="https://www.delhidental.com/wp-content/uploads/2017/09/Dr.Kathurias-Dentistry-Logo-e1641815051747.jpg" alt="Dr. Kathuria's Dentistry">
-        <div class="ft-logo-text">
-          <strong>Dr. Kathuria's Dentistry</strong>
-          <span>Premium Dental Care</span>
-        </div>
+        <div class="ft-logo-text"><strong>Dr. Kathuria's Dentistry</strong><span>Premium Dental Care</span></div>
       </div>
-      <p>NABH accredited, ISO certified multi-speciality dental clinic in East of Kailash, New Delhi. Trusted by over 15,000 patients from 40+ countries for world-class dental treatments.</p>
+      <p>NABH accredited, ISO certified multi-speciality dental clinic in East of Kailash, New Delhi. Trusted by over 15,000 patients from 44+ countries for world-class dental treatments.</p>
       <div class="ft-socials">
-        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.facebook.com/DrKathuriasDentistry/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/drkathuriasdentistry/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/user/dentalclinicindelhi" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/company/dr-kathuria/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://in.pinterest.com/kathuriasdental/" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
       </div>
     </div>
     <div class="ft-col">
-      <h4>Quick Links</h4>
+      <h4>Useful Links</h4>
       <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
-      <a href="staff.html"><i class="fas fa-chevron-right"></i> Our Doctors</a>
-      <a href="cases.html"><i class="fas fa-chevron-right"></i> Smile Gallery</a>
-      <a href="awards.html"><i class="fas fa-chevron-right"></i> Awards &amp; Accreditation</a>
-      <a href="charges.html"><i class="fas fa-chevron-right"></i> Treatment Charges</a>
-      <a href="smile-analysis.html"><i class="fas fa-chevron-right"></i> Smile Analysis</a>
-      <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a>
+      <a href="articles.html"><i class="fas fa-chevron-right"></i> Articles</a>
+      <a href="teledentistry.html"><i class="fas fa-chevron-right"></i> Teledentistry</a>
+      <a href="career.html"><i class="fas fa-chevron-right"></i> Career</a>
       <a href="dental-tourism.html"><i class="fas fa-chevron-right"></i> Dental Tourism</a>
+      <a href="family-privilege-card.html"><i class="fas fa-chevron-right"></i> Family Privilege Card</a>
+      <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a>
     </div>
     <div class="ft-col">
       <h4>Treatments</h4>
-      <a href="services.html#cosmetic"><i class="fas fa-chevron-right"></i> Smile Makeover</a>
-      <a href="services.html#implants"><i class="fas fa-chevron-right"></i> Dental Implants</a>
-      <a href="services.html#cosmetic"><i class="fas fa-chevron-right"></i> Teeth Whitening</a>
-      <a href="services.html#orthodontics"><i class="fas fa-chevron-right"></i> Clear Aligners</a>
-      <a href="services.html#gums"><i class="fas fa-chevron-right"></i> Gum Treatment</a>
-      <a href="services.html#kids"><i class="fas fa-chevron-right"></i> Kids Dentistry</a>
-      <a href="services.html"><i class="fas fa-chevron-right"></i> All Treatments</a>
+      <a href="dental-implants.html"><i class="fas fa-chevron-right"></i> Dental Implants</a>
+      <a href="smile-makeover.html"><i class="fas fa-chevron-right"></i> Smile Makeover</a>
+      <a href="teeth-whitening.html"><i class="fas fa-chevron-right"></i> Teeth Whitening</a>
+      <a href="clear-aligners.html"><i class="fas fa-chevron-right"></i> Clear Aligners</a>
+      <a href="root-canal-treatment.html"><i class="fas fa-chevron-right"></i> Root Canal Treatment</a>
+      <a href="gum-treatment.html"><i class="fas fa-chevron-right"></i> Gum Treatment</a>
     </div>
     <div class="ft-col">
       <h4>Contact Info</h4>
       <div class="ft-contact-item">
         <div class="ft-contact-icon"><i class="fas fa-location-dot"></i></div>
-        <div class="ft-contact-text"><span>Address</span><p>E-143, East of Kailash, New Delhi, <img loading="lazy" src="https://flagcdn.com/24x18/in.png" alt="in" style="display:inline-block;vertical-align:middle;width:20px;height:15px;margin-right:2px;border-radius:2px"> India</p></div>
+        <div class="ft-contact-text"><span>Address</span><p>E-143, East of Kailash, New Delhi, India</p></div>
       </div>
       <div class="ft-contact-item">
         <div class="ft-contact-icon"><i class="fas fa-phone"></i></div>
-        <div class="ft-contact-text"><span>Phone</span><a href="tel:1800117272">1800-11-7272 (Toll Free)</a><br/><a href="tel:+919811026060">+91-9811026060</a></div>
+        <div class="ft-contact-text"><span>Phone</span><div class="ft-phone-grid"><a href="tel:18001177272">1800-11-7272 <small>(Toll Free)</small></a><a href="tel:+919811026060">+91-9811026060</a><a href="tel:+919811776073">+91-9811776073</a><a href="tel:+911126280184">+91-11-26280184</a></div></div>
       </div>
       <div class="ft-contact-item">
         <div class="ft-contact-icon"><i class="fas fa-envelope"></i></div>
@@ -838,8 +943,12 @@
     </div>
   </div>
   <div class="ft-bottom">
-    <span>&copy; 2026 Dr. Kathuria's Dentistry. All rights reserved.</span>
+    <span>&copy; 2026 U and K Oral Wellness LLP &mdash; Dr. Kathuria's Dentistry. All rights reserved.</span>
     <span><a href="#">Privacy Policy</a> &bull; <a href="#">Terms of Service</a> &bull; <a href="#">Sitemap</a></span>
+  </div>
+
+  <div class="ft-credit">
+    Designed &amp; Developed by <a href="https://clicksemrus.com" target="_blank" rel="noopener">Click Semrus</a>
   </div>
 </footer>
 

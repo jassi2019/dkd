@@ -29,9 +29,9 @@
 
     /* ── GOOGLE REVIEWS AUTO SCROLL ── */
     .google-grid{overflow:hidden;width:100%;display:flex}
-    .gr-track{display:flex;flex-shrink:0;gap:18px;animation:grScroll 28s linear infinite;will-change:transform;padding:8px 0 12px}
+    .gr-track{display:flex;flex-shrink:0;gap:18px;animation:grScroll 24s linear infinite alternate;will-change:transform;padding:8px 5% 12px}
     .google-grid:hover .gr-track{animation-play-state:paused}
-    @keyframes grScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    @keyframes grScroll{0%{transform:translateX(0)}100%{transform:translateX(calc(-100% + 100vw))}}
     .gr-card{min-width:300px;max-width:300px;flex-shrink:0;background:#fff;border:1px solid var(--border);border-radius:14px;padding:22px;box-shadow:0 2px 12px rgba(0,0,0,.05)}
     .gr-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
     .gr-av{width:38px;height:38px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem;flex-shrink:0}
@@ -43,7 +43,7 @@
     .gr-foot{display:flex;align-items:center;gap:5px;font-size:.7rem;color:#999}
     .gr-badge{background:var(--olive-pale);color:var(--olive);font-size:.6rem;font-weight:700;padding:2px 8px;border-radius:3px;margin-left:auto}
 
-    .doc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;max-width:900px;margin:0 auto}
+    .doc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;max-width:1000px;margin:0 auto;justify-items:center}
 
     @media(max-width:960px){
       .google-grid .rv-card{min-width:280px;max-width:280px}
@@ -193,15 +193,17 @@
 
     /* ── CHARGES PREVIEW ── */
     .charges-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:0 auto}
-    .charge-card{position:relative;border-radius:16px;padding:36px 20px 28px;text-align:center;overflow:hidden;border:1px solid rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;background:#fff}
-    .charge-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,.1)}
-    .charge-card-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.08;transition:opacity .3s}
-    .charge-card:hover .charge-card-bg{opacity:.15}
-    .charge-card-content{position:relative;z-index:2}
-    .charge-card .charge-icon{width:52px;height:52px;border-radius:50%;background:var(--olive-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;color:var(--olive);font-size:1.3rem}
-    .charge-card h4{font-size:1rem;margin-bottom:6px;color:var(--dark);font-weight:700}
-    .charge-card .charge-price{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--gold);margin-bottom:2px}
-    .charge-card .charge-from{font-size:.78rem;color:var(--muted)}
+    .charge-card{position:relative;border-radius:16px;padding:0;text-align:center;overflow:hidden;border:none;transition:transform .3s,box-shadow .3s;background:var(--olive-dark);text-decoration:none;display:block;cursor:pointer}
+    .charge-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,.2)}
+    .charge-card-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.25;transition:opacity .3s}
+    .charge-card:hover .charge-card-bg{opacity:.35}
+    .charge-card-content{position:relative;z-index:2;padding:32px 20px 28px}
+    .charge-card .charge-icon{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.12);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;color:var(--gold);font-size:1.2rem}
+    .charge-card h4{font-size:1rem;margin-bottom:8px;color:#fff;font-weight:700}
+    .charge-card .charge-price{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--gold);margin-bottom:4px}
+    .charge-card .charge-from{font-size:.75rem;color:rgba(255,255,255,.5);margin-bottom:14px}
+    .charge-card .charge-link{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1px;opacity:.7;transition:opacity .3s}
+    .charge-card:hover .charge-link{opacity:1}
     @media(max-width:700px){
       .charges-grid-wrap{overflow:hidden;width:100%;display:flex;margin:0 -5%;padding:0}
       .charges-grid{display:flex;flex-wrap:nowrap;gap:14px;flex-shrink:0;padding:8px 5% 12px;animation:chScroll 22s linear infinite;will-change:transform}
@@ -414,41 +416,125 @@
   <a href="index.html"><i class="fas fa-home"></i> Home</a>
 
   <div class="mob-accordion">
-    <div class="mob-acc-head"><i class="fas fa-building"></i> About Us <i class="fas fa-chevron-down mob-acc-arrow"></i></div>
+    <div class="mob-acc-head"><i class="fas fa-building"></i> The Practice <span class="mob-acc-arrow"></span></div>
     <div class="mob-acc-body">
       <a href="staff.html"><i class="fas fa-user-doctor"></i> Team of Specialist</a>
       <a href="clinic-tour.html"><i class="fas fa-hospital"></i> Clinic Tour Images</a>
       <a href="technology.html"><i class="fas fa-microchip"></i> Technology</a>
-      <a href="awards.html"><i class="fas fa-trophy"></i> Awards &amp; Recognitions</a>
-    </div>
-  </div>
-
-  <div class="mob-accordion">
-    <div class="mob-acc-head"><i class="fas fa-teeth"></i> Treatments <i class="fas fa-chevron-down mob-acc-arrow"></i></div>
-    <div class="mob-acc-body">
-      <a href="treatments.html"><i class="fas fa-list"></i> All Treatments</a>
-      <a href="smile-makeover.html"><i class="fas fa-star"></i> Smile Makeover</a>
-      <a href="single-tooth-implants.html"><i class="fas fa-tooth"></i> Dental Implants</a>
-      <a href="clear-aligners.html"><i class="fas fa-align-center"></i> Clear Aligners</a>
-      <a href="teeth-whitening.html"><i class="fas fa-bolt"></i> Teeth Whitening</a>
-      <a href="root-canal-treatment.html"><i class="fas fa-syringe"></i> Root Canal</a>
-      <a href="crowns-bridge.html"><i class="fas fa-crown"></i> Crowns &amp; Bridges</a>
-      <a href="laser-gummy-smile-correction.html"><i class="fas fa-wand-magic-sparkles"></i> Gummy Smile</a>
-      <a href="gums-surgery.html"><i class="fas fa-heart-pulse"></i> Gum Surgery</a>
-    </div>
-  </div>
-
-  <div class="mob-accordion">
-    <div class="mob-acc-head"><i class="fas fa-users"></i> Patient Resources <i class="fas fa-chevron-down mob-acc-arrow"></i></div>
-    <div class="mob-acc-body">
-      <a href="testimonials.html"><i class="fas fa-comments"></i> Testimonials</a>
-      <a href="cases.html"><i class="fas fa-images"></i> Patient Gallery</a>
-      <a href="charges.html"><i class="fas fa-indian-rupee-sign"></i> Charges</a>
-      <a href="smile-analysis.html"><i class="fas fa-face-smile-beam"></i> Smile Analysis</a>
       <a href="articles.html"><i class="fas fa-newspaper"></i> Articles</a>
     </div>
   </div>
 
+  <div class="mob-accordion">
+    <div class="mob-acc-head"><i class="fas fa-teeth"></i> Treatments <span class="mob-acc-arrow"></span></div>
+    <div class="mob-acc-body">
+
+      <div class="mob-sub-accordion">
+        <div class="mob-sub-head">Dental Implants <span class="mob-acc-arrow"></span></div>
+        <div class="mob-sub-body">
+          <a href="single-tooth-implants.html">Single Tooth Implant</a>
+          <a href="multiple-tooth-implants.html">Multiple Teeth Implants</a>
+          <a href="full-mouth-rehabilitation.html">All Teeth Implants</a>
+          <a href="all-on-4-dental-implants.html">All-on-4 Technology</a>
+          <a href="nobel-guide-surgery.html">Nobel Guide Surgery</a>
+        </div>
+      </div>
+
+      <div class="mob-sub-accordion">
+        <div class="mob-sub-head">Cosmetic Dentistry <span class="mob-acc-arrow"></span></div>
+        <div class="mob-sub-body">
+          <a href="smile-makeover.html">Smile Makeover</a>
+          <a href="gap-closure.html">Gap Closure</a>
+          <a href="no-prep-veneers.html">No Prep Veneers</a>
+          <a href="crooked-tooth-correction.html">Crooked Tooth Correction</a>
+          <a href="teeth-whitening.html">Teeth Whitening</a>
+          <a href="jetting-out-teeth-correction.html">Jetting Out Teeth</a>
+          <a href="mottling-of-teeth-correction.html">Mottling of Teeth</a>
+          <a href="cosmetic-contouring.html">Cosmetic Contouring</a>
+          <a href="root-canal-treatment.html">Root Canal Treatment</a>
+          <a href="cosmetic-fillings.html">Cosmetic Fillings</a>
+          <a href="tooth-crystal.html">Tooth Crystal</a>
+          <a href="inlays-onlays.html">Inlays &amp; Onlays</a>
+        </div>
+      </div>
+
+      <div class="mob-sub-accordion">
+        <div class="mob-sub-head">Gums Treatment <span class="mob-acc-arrow"></span></div>
+        <div class="mob-sub-body">
+          <a href="laser-gummy-smile-correction.html">Laser Gummy Smile</a>
+          <a href="scaling-polishing.html">Scaling &amp; Polishing</a>
+          <a href="deep-cleaning.html">Deep Cleaning</a>
+          <a href="gums-surgery.html">Gums Surgery</a>
+          <a href="socket-preservation.html">Socket Preservation</a>
+          <a href="bad-breath-treatment.html">Bad Breath Treatment</a>
+          <a href="laser-gums-depigmentation.html">Laser Gums Depigmentation</a>
+          <a href="mobile-teeth-solution.html">Mobile Teeth Solution</a>
+        </div>
+      </div>
+
+      <div class="mob-sub-accordion">
+        <div class="mob-sub-head">Kids Dentistry <span class="mob-acc-arrow"></span></div>
+        <div class="mob-sub-body">
+          <a href="fluoride-fillings.html">Fluoride Fillings</a>
+          <a href="kids-root-canal.html">Kids Root Canal</a>
+          <a href="fluoride-applications.html">Fluoride Applications</a>
+        </div>
+      </div>
+
+      <div class="mob-sub-accordion">
+        <div class="mob-sub-head">Maxillofacial Surgery <span class="mob-acc-arrow"></span></div>
+        <div class="mob-sub-body">
+          <a href="surgical-extractions.html">Surgical Extractions</a>
+          <a href="sinus-lift-surgery.html">Sinus Lift Surgery</a>
+        </div>
+      </div>
+
+      <div class="mob-sub-accordion">
+        <div class="mob-sub-head">Orthodontics <span class="mob-acc-arrow"></span></div>
+        <div class="mob-sub-body">
+          <a href="braces.html">Braces</a>
+          <a href="lingual-braces.html">Lingual Braces</a>
+          <a href="clear-aligners.html">Clear Aligners</a>
+        </div>
+      </div>
+
+      <div class="mob-sub-accordion">
+        <div class="mob-sub-head">Dental Radiology <span class="mob-acc-arrow"></span></div>
+        <div class="mob-sub-body">
+          <a href="digital-rvg-xrays.html">Digital RVG X-rays</a>
+          <a href="digital-panoramic-xray.html">Panoramic X-Ray</a>
+        </div>
+      </div>
+
+      <a href="crowns-bridge.html">Crowns &amp; Bridges</a>
+      <a href="microscopic-dentistry.html">Microscopic Dentistry</a>
+      <a href="oral-cancer-detection.html">Oral Cancer Detection</a>
+    </div>
+  </div>
+
+  <div class="mob-accordion">
+    <div class="mob-acc-head"><i class="fas fa-award"></i> Credibility <span class="mob-acc-arrow"></span></div>
+    <div class="mob-acc-body">
+      <a href="awards.html"><i class="fas fa-trophy"></i> Awards &amp; Recognitions</a>
+      <a href="testimonials.html"><i class="fas fa-comments"></i> Testimonials</a>
+      <a href="video-testimonials.html"><i class="fas fa-video"></i> Video Testimonials</a>
+      <a href="accreditation.html"><i class="fas fa-certificate"></i> Accreditation</a>
+      <a href="community-outreach.html"><i class="fas fa-hands-helping"></i> Community Outreach</a>
+      <a href="campaigns.html"><i class="fas fa-bullhorn"></i> Campaigns</a>
+      <a href="news-events.html"><i class="fas fa-calendar-alt"></i> News &amp; Events</a>
+    </div>
+  </div>
+
+  <div class="mob-accordion">
+    <div class="mob-acc-head"><i class="fas fa-images"></i> Cases <span class="mob-acc-arrow"></span></div>
+    <div class="mob-acc-body">
+      <a href="cases.html"><i class="fas fa-camera"></i> Patient Gallery</a>
+      <a href="virtual-smile-makeover.html"><i class="fas fa-wand-magic-sparkles"></i> Virtual Smile Makeover</a>
+    </div>
+  </div>
+
+  <a href="charges.html"><i class="fas fa-indian-rupee-sign"></i> Charges</a>
+  <a href="smile-analysis.html"><i class="fas fa-face-smile-beam"></i> Smile Analysis</a>
   <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
   <a href="tel:1800117272" class="mobile-cta"><i class="fas fa-calendar-check"></i> Book Appointment</a>
 </div>
@@ -456,18 +542,14 @@
 <!-- ══════════════════ HERO SLIDER ══════════════════ -->
 <div class="hero-wrap">
 
-  <!-- Image track — natural flow, no crop ever -->
+  <!-- Image track — swipe slider -->
   <div class="hs-track">
-    <img loading="lazy" class="hs-img active" src="https://www.delhidental.com/wp-content/uploads/2024/10/Website-Banner-1800-x-726-pxjj.png" alt="Dr. Kathuria's Dentistry"/>
-    <img loading="lazy" class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2026/02/next-seasonfdfsdf.png" alt=""/>
-    <img loading="lazy" class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2024/04/1-2.png" alt=""/>
-    <img loading="lazy" class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2025/02/lip.jpg" alt=""/>
-    <img loading="lazy" class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2019/02/3.png" alt=""/>
-    <img loading="lazy" class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2020/10/5.png" alt=""/>
-    <img loading="lazy" class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2024/08/4.png" alt=""/>
-    <img loading="lazy" class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2017/09/7-1.png" alt=""/>
-    <img loading="lazy" class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2025/02/baja.jpg" alt=""/>
-    <img loading="lazy" class="hs-img" src="https://www.delhidental.com/wp-content/uploads/2024/08/6-1.png" alt=""/>
+    <img class="hs-img" src="images/banners/banner-1.jpg" alt="Dr. Kathuria's Dentistry"/>
+    <img loading="lazy" class="hs-img" src="images/banners/banner-2.jpg" alt="Dr. Kathuria's Dentistry"/>
+    <img loading="lazy" class="hs-img" src="images/banners/banner-3.jpg" alt="Dr. Kathuria's Dentistry"/>
+    <img loading="lazy" class="hs-img" src="images/banners/banner-4.jpg" alt="Dr. Kathuria's Dentistry"/>
+    <img loading="lazy" class="hs-img" src="images/banners/banner-5.jpg" alt="Dr. Kathuria's Dentistry"/>
+    <img loading="lazy" class="hs-img" src="images/banners/banner-6.jpg" alt="Dr. Kathuria's Dentistry"/>
   </div>
 
   <!-- Bottom bar — overlaid on image -->
@@ -490,8 +572,6 @@
   <div class="hs-dots">
     <button class="hs-dot on"></button><button class="hs-dot"></button><button class="hs-dot"></button>
     <button class="hs-dot"></button><button class="hs-dot"></button><button class="hs-dot"></button>
-    <button class="hs-dot"></button><button class="hs-dot"></button><button class="hs-dot"></button>
-    <button class="hs-dot"></button>
   </div>
 
 </div>
@@ -516,7 +596,7 @@
 <section style="position:relative;background:var(--olive-dark);padding:70px 5%;overflow:hidden">
   <!-- Background team image with overlay -->
   <div style="position:absolute;inset:0;background-image:url('images/team-bg.jpg');background-size:cover;background-position:center;opacity:.18"></div>
-  <div style="position:relative;z-index:2;max-width:1100px;margin:0 auto">
+  <div style="position:relative;z-index:2;max-width:1000px;margin:0 auto;padding:0">
     <div style="text-align:center;margin-bottom:50px">
       <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#fff;letter-spacing:2px;text-transform:uppercase">Meet Your <em style="font-style:italic;color:var(--gold)">Doctor</em></h2>
       <div style="width:60px;height:3px;background:var(--gold);margin:16px auto 0"></div>
@@ -570,31 +650,49 @@
 
   <div class="cases-marquee-wrap">
     <div class="cases-row row-1">
-      <div class="case-card"><img loading="lazy" src="images/cases/case-01.jpeg" alt="Case 1"/></div>
-      <div class="case-card"><img loading="lazy" src="images/cases/case-02.jpeg" alt="Case 2"/></div>
-      <div class="case-card"><img loading="lazy" src="images/cases/case-03.jpeg" alt="Case 3"/></div>
-      <div class="case-card"><img loading="lazy" src="images/cases/case-04.jpeg" alt="Case 4"/></div>
-      <div class="case-card"><img loading="lazy" src="images/cases/case-05.jpeg" alt="Case 5"/></div>
-      <div class="case-card"><img loading="lazy" src="images/cases/case-06.jpeg" alt="Case 6"/></div>
-      <div class="case-card"><img loading="lazy" src="images/cases/case-07.jpeg" alt="Case 7"/></div>
-      <div class="case-card"><img loading="lazy" src="images/cases/case-08.jpeg" alt="Case 8"/></div>
-      <div class="case-card"><img loading="lazy" src="images/cases/case-09.jpeg" alt="Case 9"/></div>
-      <div class="case-card"><img loading="lazy" src="images/cases/case-10.jpeg" alt="Case 10"/></div>
-      <div class="case-card"><img loading="lazy" src="images/cases/case-11.jpeg" alt="Case 11"/></div>
-      <div class="case-card"><img loading="lazy" src="images/cases/case-12.jpeg" alt="Case 12"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-01.png" alt="Case 1"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-02.png" alt="Case 2"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-03.png" alt="Case 3"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-04.png" alt="Case 4"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-05.png" alt="Case 5"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-06.png" alt="Case 6"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-07.png" alt="Case 7"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-08.png" alt="Case 8"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-09.png" alt="Case 9"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-10.png" alt="Case 10"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-11.png" alt="Case 11"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-12.png" alt="Case 12"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-13.png" alt="Case 13"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-14.png" alt="Case 14"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-15.png" alt="Case 15"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-16.png" alt="Case 16"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-17.png" alt="Case 17"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-18.png" alt="Case 18"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-19.png" alt="Case 19"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-20.png" alt="Case 20"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-21.png" alt="Case 21"/></div>
       <!-- Duplicate for seamless loop -->
-      <div class="case-card"><img loading="lazy" src="images/cases/case-01.jpeg" alt="Case 1"/></div>
-      <div class="case-card"><img loading="lazy" src="images/cases/case-02.jpeg" alt="Case 2"/></div>
-      <div class="case-card"><img loading="lazy" src="images/cases/case-03.jpeg" alt="Case 3"/></div>
-      <div class="case-card"><img loading="lazy" src="images/cases/case-04.jpeg" alt="Case 4"/></div>
-      <div class="case-card"><img loading="lazy" src="images/cases/case-05.jpeg" alt="Case 5"/></div>
-      <div class="case-card"><img loading="lazy" src="images/cases/case-06.jpeg" alt="Case 6"/></div>
-      <div class="case-card"><img loading="lazy" src="images/cases/case-07.jpeg" alt="Case 7"/></div>
-      <div class="case-card"><img loading="lazy" src="images/cases/case-08.jpeg" alt="Case 8"/></div>
-      <div class="case-card"><img loading="lazy" src="images/cases/case-09.jpeg" alt="Case 9"/></div>
-      <div class="case-card"><img loading="lazy" src="images/cases/case-10.jpeg" alt="Case 10"/></div>
-      <div class="case-card"><img loading="lazy" src="images/cases/case-11.jpeg" alt="Case 11"/></div>
-      <div class="case-card"><img loading="lazy" src="images/cases/case-12.jpeg" alt="Case 12"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-01.png" alt="Case 1"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-02.png" alt="Case 2"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-03.png" alt="Case 3"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-04.png" alt="Case 4"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-05.png" alt="Case 5"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-06.png" alt="Case 6"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-07.png" alt="Case 7"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-08.png" alt="Case 8"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-09.png" alt="Case 9"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-10.png" alt="Case 10"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-11.png" alt="Case 11"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-12.png" alt="Case 12"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-13.png" alt="Case 13"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-14.png" alt="Case 14"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-15.png" alt="Case 15"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-16.png" alt="Case 16"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-17.png" alt="Case 17"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-18.png" alt="Case 18"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-19.png" alt="Case 19"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-20.png" alt="Case 20"/></div>
+      <div class="case-card"><img loading="lazy" src="images/cases/case-21.png" alt="Case 21"/></div>
     </div>
   </div>
 
@@ -935,13 +1033,7 @@
     </div>
    </div><!-- end gr-track -->
   </div><!-- end google-grid -->
-  <script>
-    (function(){
-      var t=document.querySelector('.gr-track');
-      if(!t) return;
-      t.parentNode.appendChild(t.cloneNode(true));
-    })();
-  </script>
+  <!-- no clone needed — alternate bounce animation -->
 </section>
 
 <!-- ══════════════════ 5. CELEBRITY SMILES ══════════════════ -->
@@ -964,96 +1056,62 @@
 
   <!-- Horizontal scroll -->
   <div class="cs-scroll" style="overflow:hidden;width:100%;display:flex">
-    <div class="cs-track" style="display:flex;flex-shrink:0;gap:20px;padding:8px 5% 12px;animation:csScroll 28s linear infinite;will-change:transform">
-<style>.cs-scroll:hover .cs-track{animation-play-state:paused}@keyframes csScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}</style>
+    <div class="cs-track" style="display:flex;flex-shrink:0;gap:20px;padding:8px 5% 12px;animation:csScroll 20s linear infinite alternate;will-change:transform">
+<style>.cs-scroll:hover .cs-track{animation-play-state:paused}@keyframes csScroll{0%{transform:translateX(0)}100%{transform:translateX(calc(-100% + 100vw))}}</style>
 
       <div class="cs-card">
         <div class="cs-card-img">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&q=80" alt="Miss India Finalist"/>
-          <div class="cs-card-overlay">
-            <span class="cs-tag">Smile Makeover</span>
-          </div>
+          <img loading="lazy" src="images/celebrity/celeb-01.jpeg" alt="Kuldeep Yadav"/>
         </div>
         <div class="cs-card-info">
-          <h4>Miss India Finalist</h4>
-          <span>Porcelain Veneers &bull; Whitening</span>
+          <h4>Kuldeep Yadav</h4>
+          <span>Indian Cricketer</span>
         </div>
       </div>
 
       <div class="cs-card">
         <div class="cs-card-img">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80" alt="IPL Team Member"/>
-          <div class="cs-card-overlay">
-            <span class="cs-tag">Veneers</span>
-          </div>
+          <img loading="lazy" src="images/celebrity/celeb-02.jpeg" alt="Krushna Abhishek"/>
         </div>
         <div class="cs-card-info">
-          <h4>IPL Team Member</h4>
-          <span>E-Max Porcelain Veneers</span>
+          <h4>Krushna Abhishek</h4>
+          <span>Indian Actor &amp; Comedian</span>
         </div>
       </div>
 
       <div class="cs-card">
         <div class="cs-card-img">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&q=80" alt="TV Personality"/>
-          <div class="cs-card-overlay">
-            <span class="cs-tag">Whitening</span>
-          </div>
+          <img loading="lazy" src="images/celebrity/celeb-03.jpeg" alt="Nita Mehta"/>
         </div>
         <div class="cs-card-info">
-          <h4>TV Personality</h4>
-          <span>Zoom Advanced Whitening</span>
+          <h4>Nita Mehta</h4>
+          <span>Indian Celebrity Chef</span>
         </div>
       </div>
 
       <div class="cs-card">
         <div class="cs-card-img">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&q=80" alt="Film Producer"/>
-          <div class="cs-card-overlay">
-            <span class="cs-tag">Full Makeover</span>
-          </div>
+          <img loading="lazy" src="images/celebrity/celeb-04.jpeg" alt="Prashant Bhushan"/>
         </div>
         <div class="cs-card-info">
-          <h4>Film Producer</h4>
-          <span>Complete Smile Redesign</span>
+          <h4>Prashant Bhushan</h4>
+          <span>Supreme Court Lawyer</span>
         </div>
       </div>
 
       <div class="cs-card">
         <div class="cs-card-img">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&q=80" alt="Fashion Influencer"/>
-          <div class="cs-card-overlay">
-            <span class="cs-tag">E-Max Veneers</span>
-          </div>
+          <img loading="lazy" src="images/celebrity/celeb-05.jpeg" alt="Aashi Bagga"/>
         </div>
         <div class="cs-card-info">
-          <h4>Fashion Influencer</h4>
-          <span>No-Prep Veneers</span>
-        </div>
-      </div>
-
-      <div class="cs-card">
-        <div class="cs-card-img">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&q=80" alt="Sports Celebrity"/>
-          <div class="cs-card-overlay">
-            <span class="cs-tag">Implants</span>
-          </div>
-        </div>
-        <div class="cs-card-info">
-          <h4>Sports Celebrity</h4>
-          <span>Dental Implants &bull; Crowns</span>
+          <h4>Aashi Bagga</h4>
+          <span>Pageant Groomer &amp; Founder Flying Femme</span>
         </div>
       </div>
 
     </div><!-- end cs-track -->
   </div><!-- end cs-scroll -->
-  <script>
-    (function(){
-      var t=document.querySelector('.cs-track');
-      if(!t) return;
-      t.parentNode.appendChild(t.cloneNode(true));
-    })();
-  </script>
+  <!-- no clone needed — alternate bounce animation -->
 </section>
 
 <!-- ══════════════════ 6. INSTAGRAM FEED ══════════════════ -->
@@ -1075,10 +1133,10 @@
     <div id="instaWidget" style="max-width:700px;margin:0 auto">
       <!-- Placeholder 2x2 grid until widget is connected -->
       <div class="insta-grid" style="grid-template-columns:repeat(2,1fr) !important;gap:14px">
-        <a href="https://www.instagram.com/drkathuriasdentistry/" target="_blank" rel="noopener" class="insta-card"><img loading="lazy" src="images/cases/case-01.jpeg" alt="Latest post"/><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
-        <a href="https://www.instagram.com/drkathuriasdentistry/" target="_blank" rel="noopener" class="insta-card"><img loading="lazy" src="images/cases/case-03.jpeg" alt="Latest post"/><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
-        <a href="https://www.instagram.com/drkathuriasdentistry/" target="_blank" rel="noopener" class="insta-card"><img loading="lazy" src="images/cases/case-06.jpeg" alt="Latest post"/><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
-        <a href="https://www.instagram.com/drkathuriasdentistry/" target="_blank" rel="noopener" class="insta-card"><img loading="lazy" src="images/cases/case-09.jpeg" alt="Latest post"/><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
+        <a href="https://www.instagram.com/drkathuriasdentistry/" target="_blank" rel="noopener" class="insta-card"><img loading="lazy" src="images/cases/case-01.png" alt="Latest post"/><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
+        <a href="https://www.instagram.com/drkathuriasdentistry/" target="_blank" rel="noopener" class="insta-card"><img loading="lazy" src="images/cases/case-05.png" alt="Latest post"/><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
+        <a href="https://www.instagram.com/drkathuriasdentistry/" target="_blank" rel="noopener" class="insta-card"><img loading="lazy" src="images/cases/case-10.png" alt="Latest post"/><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
+        <a href="https://www.instagram.com/drkathuriasdentistry/" target="_blank" rel="noopener" class="insta-card"><img loading="lazy" src="images/cases/case-15.png" alt="Latest post"/><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
       </div>
     </div>
   </div>
@@ -1176,30 +1234,30 @@
     </div>
 
     <div class="countries-wrap">
-      <a href="testimonials.html#gb" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/gb.png" alt="gb"> United Kingdom</a>
-      <a href="testimonials.html#us" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/us.png" alt="us"> United States</a>
-      <a href="testimonials.html#au" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/au.png" alt="au"> Australia</a>
-      <a href="testimonials.html#ca" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/ca.png" alt="ca"> Canada</a>
-      <a href="testimonials.html#ae" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/ae.png" alt="ae"> UAE</a>
-      <a href="testimonials.html#sa" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/sa.png" alt="sa"> Saudi Arabia</a>
-      <a href="testimonials.html#ke" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/ke.png" alt="ke"> Kenya</a>
-      <a href="testimonials.html#ng" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/ng.png" alt="ng"> Nigeria</a>
-      <a href="testimonials.html#de" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/de.png" alt="de"> Germany</a>
-      <a href="testimonials.html#fr" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/fr.png" alt="fr"> France</a>
-      <a href="testimonials.html#it" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/it.png" alt="it"> Italy</a>
-      <a href="testimonials.html#my" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/my.png" alt="my"> Malaysia</a>
-      <a href="testimonials.html#sg" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/sg.png" alt="sg"> Singapore</a>
-      <a href="testimonials.html#th" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/th.png" alt="th"> Thailand</a>
-      <a href="testimonials.html#ru" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/ru.png" alt="ru"> Russia</a>
-      <a href="testimonials.html#jp" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/jp.png" alt="jp"> Japan</a>
-      <a href="testimonials.html#kr" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/kr.png" alt="kr"> South Korea</a>
-      <a href="testimonials.html#za" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/za.png" alt="za"> South Africa</a>
-      <a href="testimonials.html#bd" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/bd.png" alt="bd"> Bangladesh</a>
-      <a href="testimonials.html#np" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/np.png" alt="np"> Nepal</a>
-      <a href="testimonials.html#af" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/af.png" alt="af"> Afghanistan</a>
-      <a href="testimonials.html#mv" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/mv.png" alt="mv"> Maldives</a>
-      <a href="testimonials.html#om" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/om.png" alt="om"> Oman</a>
-      <a href="testimonials.html#qa" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/qa.png" alt="qa"> Qatar</a>
+      <a href="uk-testimonials.html" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/gb.png" alt="gb"> United Kingdom</a>
+      <a href="usa-testimonials.html" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/us.png" alt="us"> United States</a>
+      <a href="australia-testimonials.html" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/au.png" alt="au"> Australia</a>
+      <a href="canada-testimonials.html" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/ca.png" alt="ca"> Canada</a>
+      <a href="asia-testimonials.html" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/ae.png" alt="ae"> UAE</a>
+      <a href="asia-testimonials.html" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/sa.png" alt="sa"> Saudi Arabia</a>
+      <a href="africa-testimonials.html" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/ke.png" alt="ke"> Kenya</a>
+      <a href="africa-testimonials.html" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/ng.png" alt="ng"> Nigeria</a>
+      <a href="europe-testimonials.html" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/de.png" alt="de"> Germany</a>
+      <a href="europe-testimonials.html" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/fr.png" alt="fr"> France</a>
+      <a href="europe-testimonials.html" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/it.png" alt="it"> Italy</a>
+      <a href="asia-testimonials.html" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/my.png" alt="my"> Malaysia</a>
+      <a href="asia-testimonials.html" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/sg.png" alt="sg"> Singapore</a>
+      <a href="asia-testimonials.html" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/th.png" alt="th"> Thailand</a>
+      <a href="asia-testimonials.html" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/ru.png" alt="ru"> Russia</a>
+      <a href="asia-testimonials.html" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/jp.png" alt="jp"> Japan</a>
+      <a href="asia-testimonials.html" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/kr.png" alt="kr"> South Korea</a>
+      <a href="africa-testimonials.html" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/za.png" alt="za"> South Africa</a>
+      <a href="asia-testimonials.html" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/bd.png" alt="bd"> Bangladesh</a>
+      <a href="asia-testimonials.html" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/np.png" alt="np"> Nepal</a>
+      <a href="asia-testimonials.html" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/af.png" alt="af"> Afghanistan</a>
+      <a href="asia-testimonials.html" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/mv.png" alt="mv"> Maldives</a>
+      <a href="asia-testimonials.html" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/om.png" alt="om"> Oman</a>
+      <a href="asia-testimonials.html" class="country-pill"><img loading="lazy" src="https://flagcdn.com/24x18/qa.png" alt="qa"> Qatar</a>
       <a href="testimonials.html" class="country-pill">+ 20 more</a>
     </div>
   </div>
@@ -1217,60 +1275,66 @@
 
     <div class="charges-grid-wrap">
     <div class="charges-grid">
-      <div class="charge-card reveal">
+      <a href="charges.html" class="charge-card reveal">
         <div class="charge-card-bg" style="background-image:url('images/treatments/wide03.jpg')"></div>
         <div class="charge-card-content">
           <div class="charge-icon"><i class="fas fa-teeth"></i></div>
           <h4>Smile Makeover</h4>
           <div class="charge-price">&#8377;17,000</div>
           <div class="charge-from">Starting from</div>
+          <span class="charge-link">View Details <i class="fas fa-arrow-right"></i></span>
         </div>
-      </div>
-      <div class="charge-card reveal">
+      </a>
+      <a href="charges.html" class="charge-card reveal">
         <div class="charge-card-bg" style="background-image:url('images/treatments/wide07.jpg')"></div>
         <div class="charge-card-content">
           <div class="charge-icon"><i class="fas fa-tooth"></i></div>
           <h4>Dental Implant</h4>
           <div class="charge-price">&#8377;35,000</div>
           <div class="charge-from">Starting from</div>
+          <span class="charge-link">View Details <i class="fas fa-arrow-right"></i></span>
         </div>
-      </div>
-      <div class="charge-card reveal">
+      </a>
+      <a href="charges.html" class="charge-card reveal">
         <div class="charge-card-bg" style="background-image:url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=400&q=60')"></div>
         <div class="charge-card-content">
           <div class="charge-icon"><i class="fas fa-bolt"></i></div>
           <h4>Zoom Whitening</h4>
           <div class="charge-price">&#8377;20,000</div>
           <div class="charge-from">Starting from</div>
+          <span class="charge-link">View Details <i class="fas fa-arrow-right"></i></span>
         </div>
-      </div>
-      <div class="charge-card reveal">
+      </a>
+      <a href="charges.html" class="charge-card reveal">
         <div class="charge-card-bg" style="background-image:url('images/treatments/wide05.jpg')"></div>
         <div class="charge-card-content">
           <div class="charge-icon"><i class="fas fa-teeth-open"></i></div>
           <h4>Clear Aligners</h4>
           <div class="charge-price">&#8377;60,000</div>
           <div class="charge-from">Starting from</div>
+          <span class="charge-link">View Details <i class="fas fa-arrow-right"></i></span>
         </div>
-      </div>
-      <div class="charge-card reveal">
+      </a>
+      <a href="charges.html" class="charge-card reveal">
         <div class="charge-card-bg" style="background-image:url('images/treatments/wide02.jpg')"></div>
         <div class="charge-card-content">
           <div class="charge-icon"><i class="fas fa-syringe"></i></div>
           <h4>Root Canal</h4>
           <div class="charge-price">&#8377;8,000</div>
           <div class="charge-from">Starting from</div>
+          <span class="charge-link">View Details <i class="fas fa-arrow-right"></i></span>
         </div>
-      </div>
-      <div class="charge-card reveal">
+      </a>
+      <a href="charges.html" class="charge-card reveal">
         <div class="charge-card-bg" style="background-image:url('images/treatments/wide04.jpg')"></div>
         <div class="charge-card-content">
           <div class="charge-icon"><i class="fas fa-crown"></i></div>
           <h4>Zirconia Crown</h4>
           <div class="charge-price">&#8377;12,000</div>
           <div class="charge-from">Starting from</div>
+          <span class="charge-link">View Details <i class="fas fa-arrow-right"></i></span>
         </div>
-      </div>
+      </a>
     </div>
     </div><!-- end charges-grid-wrap -->
     <script>
@@ -1287,8 +1351,8 @@
   </div>
 </section>
 
-<!-- ══════════════════ 11. CLINIC IMAGES ══════════════════ -->
-<section class="reveal">
+<!-- ══════════════════ 11. CLINIC IMAGES (HIDDEN — will add real images later) ══════════════════ -->
+<section class="reveal" style="display:none">
   <div class="container">
     <div class="sec-h center">
       <span class="sec-chip"><i class="fas fa-hospital"></i> Our Clinic</span>
@@ -1459,26 +1523,25 @@
       </div>
       <p>NABH accredited, ISO certified multi-speciality dental clinic in East of Kailash, New Delhi. Trusted by over 15,000 patients from 44+ countries for world-class dental treatments.</p>
       <div class="ft-socials">
-        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.facebook.com/DrKathuriasDentistry/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/drkathuriasdentistry/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/user/dentalclinicindelhi" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/company/dr-kathuria/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://in.pinterest.com/kathuriasdental/" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
       </div>
     </div>
 
     <!-- Quick Links -->
     <div class="ft-col">
-      <h4>Quick Links</h4>
+      <h4>Useful Links</h4>
       <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
-      <a href="staff.html"><i class="fas fa-chevron-right"></i> Our Doctors</a>
-      <a href="cases.html"><i class="fas fa-chevron-right"></i> Smile Gallery</a>
-      <a href="awards.html"><i class="fas fa-chevron-right"></i> Awards &amp; Accreditation</a>
-      <a href="charges.html"><i class="fas fa-chevron-right"></i> Treatment Charges</a>
-      <a href="smile-analysis.html"><i class="fas fa-chevron-right"></i> Smile Analysis</a>
+      <a href="articles.html"><i class="fas fa-chevron-right"></i> Articles</a>
+      <a href="teledentistry.html"><i class="fas fa-chevron-right"></i> Teledentistry</a>
+      <a href="career.html"><i class="fas fa-chevron-right"></i> Career</a>
+      <a href="dental-tourism.html"><i class="fas fa-chevron-right"></i> Dental Tourism</a>
+      <a href="family-privilege-card.html"><i class="fas fa-chevron-right"></i> Family Privilege Card</a>
       <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a>
-    
-      <a href="dental-tourism.html"><i class="fas fa-chevron-right"></i> Dental Tourism</a></div>
+    </div>
 
     <!-- Treatments -->
     <div class="ft-col">
@@ -1506,8 +1569,12 @@
         <div class="ft-contact-icon"><i class="fas fa-phone"></i></div>
         <div class="ft-contact-text">
           <span>Phone</span>
-          <a href="tel:1800117272">1800-11-7272 (Toll Free)</a><br/>
-          <a href="tel:+919811026060">+91-9811026060</a>
+          <div class="ft-phone-grid">
+            <a href="tel:18001177272">1800-11-7272 <small>(Toll Free)</small></a>
+            <a href="tel:+919811026060">+91-9811026060</a>
+            <a href="tel:+919811776073">+91-9811776073</a>
+            <a href="tel:+911126280184">+91-11-26280184</a>
+          </div>
         </div>
       </div>
       <div class="ft-contact-item">
@@ -1528,12 +1595,15 @@
   </div>
 
   <div class="ft-bottom">
-    <span>&copy; 2026 Dr. Kathuria's Dentistry. All rights reserved.</span>
+    <span>&copy; 2026 U and K Oral Wellness LLP &mdash; Dr. Kathuria's Dentistry. All rights reserved.</span>
     <span>
       <a href="#">Privacy Policy</a> &bull;
       <a href="#">Terms of Service</a> &bull;
       <a href="#">Sitemap</a>
     </span>
+  </div>
+  <div class="ft-credit">
+    Designed &amp; Developed by <a href="https://clicksemrus.com" target="_blank" rel="noopener">Click Semrus</a>
   </div>
 </footer>
 

@@ -79,28 +79,36 @@ const counterObs = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.stat-num').forEach(el => counterObs.observe(el));
 
-/* ── BANNER SLIDER ── */
+/* ── BANNER SLIDER (swipe) ── */
 (function() {
+  const track = document.querySelector('.hs-track');
   const imgs = document.querySelectorAll('.hs-track .hs-img');
   const dots = document.querySelectorAll('.hs-dot');
-  if (!imgs.length) return;
-  let cur = 0, timer;
+  if (!track || !imgs.length) return;
+  let cur = 0, timer, startX = 0;
 
   function goTo(n) {
-    imgs[cur].classList.remove('active');
     dots[cur]?.classList.remove('on');
     cur = (n + imgs.length) % imgs.length;
-    imgs[cur].classList.add('active');
+    track.style.transform = 'translateX(-' + (cur * 100) + '%)';
     dots[cur]?.classList.add('on');
     resetTimer();
   }
 
   function resetTimer() {
     clearInterval(timer);
-    timer = setInterval(() => goTo(cur + 1), 5000);
+    timer = setInterval(function(){ goTo(cur + 1); }, 5000);
   }
 
-  dots.forEach((d, i) => d.onclick = () => goTo(i));
+  dots.forEach(function(d, i){ d.onclick = function(){ goTo(i); }; });
+
+  // Touch swipe
+  track.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, {passive:true});
+  track.addEventListener('touchend', function(e){
+    var diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) goTo(cur + (diff > 0 ? 1 : -1));
+  }, {passive:true});
+
   resetTimer();
 })();
 
@@ -490,10 +498,18 @@ document.querySelectorAll('.nav-links a').forEach(a => {
 document.querySelectorAll('.mob-acc-head').forEach(function(head){
   head.addEventListener('click', function(){
     var acc = head.parentElement;
-    // Close others
     document.querySelectorAll('.mob-accordion.open').forEach(function(o){
-      if(o !== acc) o.classList.remove('open');
+      if(o !== acc){ o.classList.remove('open'); o.querySelectorAll('.mob-sub-accordion.open').forEach(function(s){ s.classList.remove('open'); }); }
     });
     acc.classList.toggle('open');
+  });
+});
+document.querySelectorAll('.mob-sub-head').forEach(function(head){
+  head.addEventListener('click', function(){
+    var sub = head.parentElement;
+    document.querySelectorAll('.mob-sub-accordion.open').forEach(function(o){
+      if(o !== sub) o.classList.remove('open');
+    });
+    sub.classList.toggle('open');
   });
 });
